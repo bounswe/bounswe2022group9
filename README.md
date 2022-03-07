@@ -12,5 +12,5 @@ In order to see more information about our team members, meeting notes, communic
 * [Furkan Özdemir]()
 * [Sena Özpınar](https://github.com/bounswe/bounswe2022group9/wiki/Sena-%C3%96zp%C4%B1nar)
 * [Kutay Saran]()
-* [Berkant Koç]()
+* [Berkant Koç](https://github.com/bounswe/bounswe2022group9/wiki/Berkant-Ko%C3%A7)
 * [Can Bora Uğur]()
