@@ -12,7 +12,7 @@ If you have these, then run the following code:
 In order to prevent any possible conflicts, you can set up a virtual environment. You can learn more about virtual environments on [here](https://docs.python.org/3/library/venv.html#module-venv)
 
 ## Deployment ##
-First, create the .env file and insert the necessary information given below:
+First, create an .env file under src folder and insert the necessary information given below:
 
 ```
 MYSQL_DATABASE=<YOUR_DB_NAME>
