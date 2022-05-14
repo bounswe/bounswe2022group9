@@ -1,0 +1,24 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<title>Login</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="wrapper">
+        <div style="background-color:lavender; !important" class="jumbotron text-center bg-primary">
+            <h1> Welcome to Practice Application.</h1>
+            <p>
+                There will be some description here.
+            </p>
+        </div>
+	</div>
+
+    <a href="{%url 'sign_in' %}"> <p style="text-align:center">Sign In</p></a>
+    <a href="{%url 'sign_up' %}"> <p style="text-align:center">Sign Up</p></a>
+
+</body>
+</html>

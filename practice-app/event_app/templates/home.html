@@ -1,0 +1,31 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<title>Login</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div style="background-color:lavender; !important" class="jumbotron text-center bg-primary">
+            <h2> Welcome back {{username}}.</h2>
+            <p>
+                Please select the operation you will perform.
+            </p>
+        </div>
+    </div>
+
+    <a href="{%url 'home' %}"> <p style="text-align:center">List All Events</p></a>
+    <a href="{%url 'home' %}"> <p style="text-align:center">Add New Event</p></a>
+    <a href="{%url 'home' %}"> <p style="text-align:center">Find Events</p></a>
+    <a href="{%url 'home' %}"> <p style="text-align:center">List All Users</p></a>
+    <a href="{%url 'home' %}"> <p style="text-align:center">Find Currency</p></a>
+    <a href="{%url 'home' %}"> <p style="text-align:center">Find Restaurant</p></a>
+    <a href="{%url 'home' %}"> <p style="text-align:center">Find Weather Forecast</p></a>
+    <a href="{%url 'home' %}"> <p style="text-align:center">Find City Info</p></a>
+    <a href="{%url 'index' %}"> <p style="text-align:center">Logout</p></a>
+
+</body>
+</html>
