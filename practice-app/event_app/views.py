@@ -3,6 +3,7 @@ This python script creates necessary functions for our practice application.
 The template is taken from CMPE321 course.
 """
 import hashlib
+import requests
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .forms import *
@@ -62,4 +63,22 @@ def user_login(req):
         return HttpResponseRedirect('../event_app/login?fail=true')
 
 
+def viewGithubInfoPage(req):
+    username = req.session["username"]  # Retrieve the username of the logged-in user
+    isFailed = req.GET.get("fail", False)  # Try to retrieve GET parameter "fail", if it's not given set it to False
+    return render(req, 'viewGithubInfo.html', {"action_fail": isFailed, "username": username})
 
+
+def viewGithubInfo(req):
+    github_username = req.POST["github_username"]
+    url = "https://api.github.com/users/" + github_username
+    try:
+        username = req.session["username"]  # Retrieve the username of the logged-in user
+        isFailed = req.GET.get("fail", False)  # Try to retrieve GET parameter "fail", if it's not given set it to False
+        response = requests.get(url)
+        r = response.json()
+        result = [[r["login"], r["name"], r["email"], r["public_repos"], r["followers"]]]
+        return render(req, 'viewGithubInfo.html', {"results": result, "action_fail": isFailed, "username": username})
+    except Exception as e:
+        print(str(e))
+        return HttpResponseRedirect('../boun/viewGithubInfoPage?fail=true')

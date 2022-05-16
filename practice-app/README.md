@@ -1,4 +1,4 @@
-## Practice App##
+## Practice App ##
 
 This is the repository for our practice app. Some code parts in this project are taken from CMPE321 course.
 
