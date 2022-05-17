@@ -125,6 +125,8 @@ def show_universities(req):
         return HttpResponseRedirect('../event_app/login?fail=true')
     country_name = req.POST["country_name"]
     resp = requests.get("http://universities.hipolabs.com/search?country=" + country_name)
+    if resp.status_code != 200:
+        return render(req, 'universityShowPage.html', {"info": [],"country_name":country_name,"action_fail":True})
     unv_info = resp.json()
     info = []
     cnt = 0
@@ -132,5 +134,5 @@ def show_universities(req):
         cnt += 1
         info.append( [ cnt, unv["name"], unv["web_pages"][0] ])
     print(info)
-    return render(req, 'universityShowPage.html', {"info": info,"country_name":country_name})
+    return render(req, 'universityShowPage.html', {"info": info,"country_name":country_name, "action_fail":False})
 

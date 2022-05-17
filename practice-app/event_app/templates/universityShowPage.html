@@ -29,6 +29,12 @@
     </style>
   </head>
   <body>
+    {% if action_fail %}
+		  <div class="alert alert-danger" role="alert">
+			  <h4 class="alert-heading">Sign up Failed</h4>
+			  <p>External API call is unsuccessful</p>
+		  </div>
+	  {% endif %}
     <div class="container">
 		<h1>Universities in {{country_name}} </h1>
 		<br>
