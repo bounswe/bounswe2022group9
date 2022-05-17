@@ -11,3 +11,5 @@ class EventForm(forms.Form):
     date = forms.CharField(widget=forms.TextInput)
     city = forms.CharField(widget=forms.TextInput)
     definition = forms.CharField(widget=forms.TextInput)
+class UniversityForm(forms.Form):
+    country_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Country name'}))
