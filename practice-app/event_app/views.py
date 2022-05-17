@@ -102,7 +102,6 @@ def viewActivity(req):
 
         username = req.session["username"]
 
-<<<<<<< HEAD
         r = resp.json()
         result = [[r["activity"], r["type"], r["participants"], r["price"], r["link"], r["key"], r["accessibility"]]]
         return render(req, 'viewActivity.html', {"result": result, "username": username})
@@ -110,14 +109,6 @@ def viewActivity(req):
     except Exception as e:
         print(str(e))
         return HttpResponseRedirect('../boun/viewGithubInfoPage?fail=true')
-||||||| 0384422
-    r = resp.json()
-    result = [[r["activity"], r["type"], r["participants"], r["price"], r["link"], r["key"], r["accessibility"]]]
-    return render(req, 'viewActivity.html', {"result": result, "username": username})
-=======
-    r = resp.json()
-    result = [[r["activity"], r["type"], r["participants"], r["price"], r["link"], r["key"], r["accessibility"]]]
-    return render(req, 'viewActivity.html', {"result": result, "username": username})
 
 
 def addEventPage(req):
@@ -141,4 +132,3 @@ def add_event(req):
         print(str(e))
         return HttpResponseRedirect('../event_app/add_event?fail=true')
 
->>>>>>> bbe96d7bf160d5bdbc5cd9862b500cae371d6045
