@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS Event (
   username VARCHAR(500) NOT NULL,
   event_name VARCHAR(500) NOT NULL,
   date VARCHAR(500) NOT NULL,
-  definition TEXT NOT NULL,
+  definition VARCHAR(500) NOT NULL,
   UNIQUE(username),
   PRIMARY KEY(username),
   FOREIGN KEY (username)
@@ -69,6 +69,16 @@ cursor.execute("""
 CREATE PROCEDURE AddUser(IN username VARCHAR(500), IN password VARCHAR(500))
 BEGIN
 INSERT INTO User VALUES (username,password);
+END;
+""")
+
+cursor.execute("""
+DROP PROCEDURE IF EXISTS AddEvent;
+""")
+cursor.execute("""
+CREATE PROCEDURE AddEvent(IN username VARCHAR(500), IN event_name VARCHAR(500), IN date VARCHAR(500), IN city VARCHAR(500), IN definition VARCHAR(500))
+BEGIN
+INSERT INTO Event VALUES (username,event_name,date,city,definition);
 END;
 """)
 

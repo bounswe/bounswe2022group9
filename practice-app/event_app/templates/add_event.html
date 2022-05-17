@@ -1,0 +1,25 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<title>Add Event</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="d-flex justify-content-around" style="margin-top: 20px">
+            
+				<form  method="POST">{% csrf_token %}
+					{{form.as_p}}
+					<button type="submit">Add Event</button>
+					
+				</form>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

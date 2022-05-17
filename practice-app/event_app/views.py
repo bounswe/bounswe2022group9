@@ -91,3 +91,26 @@ def viewGithubInfo(req):
     except Exception as e:
         print(str(e))
         return HttpResponseRedirect('../boun/viewGithubInfoPage?fail=true')
+
+def add_event(req):
+        username=req.session["username"]
+        form=EventForm()
+        if req.method == 'POST':
+            form=EventForm(req.POST)
+            if form.is_valid():
+               event_name=EventForm.cleaned_data.get('event_name')
+               date=EventForm.cleaned_data.get('date')
+               city=EventForm.cleaned_data.get('city')
+               definition=EventForm.cleaned_data.get('definition')
+               try: 
+                run_statement(f"CALL AddEvent('123','{event_name}','{date}','{city}','{definition}')")
+                return HttpResponseRedirect("home")
+               except Exception as e:
+                    print(str(e))
+                    return HttpResponseRedirect('../event_app/add_event?fail=true')
+            else :
+                form=EventForm()
+                return render(req, 'add_event.html', {"form": form })
+        else :
+            form=EventForm()
+            return render(req, 'add_event.html', {"form": form })
