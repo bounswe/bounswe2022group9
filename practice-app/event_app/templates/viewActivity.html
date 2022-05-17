@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Math Expression</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        table, th, td {
+            border: 1px solid;
+            height: fit-content;
+            width: fit-content;
+            text-align: center;
+        }
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
+        }
+        form {
+            margin: 0 auto;
+            width:250px;
+        }
+
+        h2, p {
+            text-align: center;
+        }
+        
+    </style>
+
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <h2>Hello {{username}}, this is Bored Api !!</h2>
+
+        <br>
+        <p>Here is some random activity to make you excited!</p>
+        <br>
+
+    </div>
+
+    <div class="container">
+        <table class="center">
+            <colgroup>
+                <col span="1" style="width: 20%;">
+                <col span="1" style="width: 20%;">
+                <col span="1" style="width: 20%;">
+                <col span="1" style="width: 20%;">
+                <col span="1" style="width: 20%;">
+            </colgroup>
+            <tr>
+                <th>Activity</th>
+                <th>Type</th>
+                <th>Participants</th>
+                <th>Price</th>
+                <th>Link</th>
+                <th>Key</th>
+                <th>Accessibility</th>
+            </tr>
+            {% for row in result %}
+            <tr>
+                {% for value in row %}
+                <td>
+                    {{value}}
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+</body>
+</html>
