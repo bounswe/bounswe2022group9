@@ -93,6 +93,24 @@ def viewGithubInfo(req):
         return HttpResponseRedirect('../boun/viewGithubInfoPage?fail=true')
 
 
+def viewActivity(req):
+
+    url = "https://www.boredapi.com/api/activity" 
+
+    try:
+        resp = requests.get(url)
+
+        username = req.session["username"]
+
+        r = resp.json()
+        result = [[r["activity"], r["type"], r["participants"], r["price"], r["link"], r["key"], r["accessibility"]]]
+        return render(req, 'viewActivity.html', {"result": result, "username": username})
+        
+    except Exception as e:
+        print(str(e))
+        return HttpResponseRedirect('../boun/viewGithubInfoPage?fail=true')
+
+
 def addEventPage(req):
     isFailed = req.GET.get("fail", False)  # Check the value of the GET parameter "fail"
     eventForm = EventForm()  # Use Django Form object to create a blank form for the HTML page
