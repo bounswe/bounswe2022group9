@@ -11,4 +11,6 @@ urlpatterns = [
     path('user_login', views.user_login, name="user_login"),
     path('viewGithubInfo', views.viewGithubInfo, name="viewGithubInfo"),
     path('viewGithubInfoPage', views.viewGithubInfoPage, name="viewGithubInfoPage"),
+    path('add_event', views.add_event, name="add_event"),
+    path('addEventPage', views.addEventPage, name="addEventPage")
 ]

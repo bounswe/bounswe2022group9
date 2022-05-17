@@ -91,3 +91,26 @@ def viewGithubInfo(req):
     except Exception as e:
         print(str(e))
         return HttpResponseRedirect('../boun/viewGithubInfoPage?fail=true')
+
+
+def addEventPage(req):
+    isFailed = req.GET.get("fail", False)  # Check the value of the GET parameter "fail"
+    eventForm = EventForm()  # Use Django Form object to create a blank form for the HTML page
+    return render(req, 'add_event.html', {"event_form": eventForm, "action_fail": isFailed})
+
+
+def add_event(req):
+    # Retrieve the username of the logged-in user
+    username = req.session["username"]
+    # Retrieve data from the request body
+    event_name = req.POST["event_name"]
+    date = req.POST["date"]
+    city = req.POST["city"]
+    definition = req.POST["definition"]
+    try:
+        run_statement(f"CALL AddEvent('{username}','{event_name}','{date}','{city}','{definition}')")
+        return HttpResponseRedirect("../event_app/home")
+    except Exception as e:
+        print(str(e))
+        return HttpResponseRedirect('../event_app/add_event?fail=true')
+
