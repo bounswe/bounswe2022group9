@@ -114,3 +114,23 @@ def add_event(req):
         print(str(e))
         return HttpResponseRedirect('../event_app/add_event?fail=true')
 
+def university_form(req):
+    if not req.session.get("username"):
+        return HttpResponseRedirect('../event_app/login?fail=true')
+    university_form = UniversityForm()
+    return render(req, 'universityFormPage.html', {"university_form": university_form})
+    
+def show_universities(req):
+    if not req.session.get("username"):
+        return HttpResponseRedirect('../event_app/login?fail=true')
+    country_name = req.POST["country_name"]
+    resp = requests.get("http://universities.hipolabs.com/search?country=" + country_name)
+    unv_info = resp.json()
+    info = []
+    cnt = 0
+    for unv in unv_info:
+        cnt += 1
+        info.append( [ cnt, unv["name"], unv["web_pages"][0] ])
+    print(info)
+    return render(req, 'universityShowPage.html', {"info": info,"country_name":country_name})
+

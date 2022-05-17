@@ -12,5 +12,7 @@ urlpatterns = [
     path('viewGithubInfo', views.viewGithubInfo, name="viewGithubInfo"),
     path('viewGithubInfoPage', views.viewGithubInfoPage, name="viewGithubInfoPage"),
     path('add_event', views.add_event, name="add_event"),
-    path('addEventPage', views.addEventPage, name="addEventPage")
+    path('addEventPage', views.addEventPage, name="addEventPage"),
+    path('university_form', views.university_form, name="university_form"),
+    path('show_universities', views.show_universities, name="show_universities")
 ]
