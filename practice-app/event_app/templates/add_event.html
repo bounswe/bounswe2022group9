@@ -11,15 +11,21 @@
 	<div class="container">
 		<div class="row">
 			<div class="d-flex justify-content-around" style="margin-top: 20px">
-            
-				<form  method="POST">{% csrf_token %}
-					{{form.as_p}}
-					<button type="submit">Add Event</button>
-					
+				{% if action_fail%}
+					<div class="alert alert-danger" role="alert">
+						<h4 class="alert-heading">Add Event Failed</h4>
+						<p>Something went wrong.</p>
+					</div>
+				{% endif %}
+				<form class="form-group" method="POST" novalidate action="{% url 'add_event' %}">
+					{{event_form|crispy}}
+					{% csrf_token %}
+					<button type="submit" style="margin-top: 10px;"class="btn btn-success">Add Event</button>
 				</form>
 			</div>
 		</div>
 	</div>
+
 	
 </body>
 </html>

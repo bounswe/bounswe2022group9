@@ -37,6 +37,7 @@ CREATE TABLE IF NOT EXISTS Event (
   username VARCHAR(500) NOT NULL,
   event_name VARCHAR(500) NOT NULL,
   date VARCHAR(500) NOT NULL,
+  city VARCHAR(500) NOT NULL,
   definition VARCHAR(500) NOT NULL,
   UNIQUE(username),
   PRIMARY KEY(username),
