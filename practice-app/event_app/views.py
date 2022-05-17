@@ -96,10 +96,15 @@ def viewActivity(req):
 
     url = "https://www.boredapi.com/api/activity" 
 
-    resp = requests.get(url)
+    try:
+        resp = requests.get(url)
 
-    username = req.session["username"]
+        username = req.session["username"]
 
-    r = resp.json()
-    result = [[r["activity"], r["type"], r["participants"], r["price"], r["link"], r["key"], r["accessibility"]]]
-    return render(req, 'viewActivity.html', {"result": result, "username": username})
+        r = resp.json()
+        result = [[r["activity"], r["type"], r["participants"], r["price"], r["link"], r["key"], r["accessibility"]]]
+        return render(req, 'viewActivity.html', {"result": result, "username": username})
+        
+    except Exception as e:
+        print(str(e))
+        return HttpResponseRedirect('../boun/viewGithubInfoPage?fail=true')
