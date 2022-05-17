@@ -30,6 +30,15 @@ def sign_up(req):
     # Logout the user if logged
     if req.session:
         req.session.flush()
+    isFailed = req.GET.get("fail", False)  # Check the value of the GET parameter "fail"
+    loginForm = UserLoginForm()  # Use Django Form object to create a blank form for the HTML page
+    return render(req, 'sign_up.html', {"login_form": loginForm, "action_fail": isFailed})
+
+
+def addUser(req):
+    # Logout the user if logged
+    if req.session:
+        req.session.flush()
     # Retrieve data from the request body
     username = req.POST["username"]
     password = req.POST["password"]
@@ -60,7 +69,7 @@ def user_login(req):
         req.session["username"] = username  # Record username into the current session
         return HttpResponseRedirect('../event_app/home')  # Redirect user to home page
     else:
-        return HttpResponseRedirect('../event_app/login?fail=true')
+        return HttpResponseRedirect('../event_app/sign_in?fail=true')
 
 
 def viewGithubInfoPage(req):
