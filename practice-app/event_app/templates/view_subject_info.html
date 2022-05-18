@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  	<title>View Subject Information</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        table, th, td {
+            border: 1px solid;
+        }
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
+        }
+        form {
+            margin: 0 auto;
+            width:250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div style="background-color:lavender; !important" class="jumbotron text-center bg-primary">
+            <h2> Please type any subject to see information about it.</h2>
+    </div>
+    {% if wrong_username %}
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">View Subject Information failed</h4>
+        <p>Please log in.</p>
+    </div>
+    {% endif %}
+    {% if search_failed %}
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">View Subject Information failed</h4>
+        <p>Failed to search for this subject.</p>
+    </div>
+    {% endif %}
+    {% if no_search_results %}
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">View Subject Information failed</h4>
+        <p>Couldn't find any page with a similar name.</p>
+    </div>
+    {% endif %}
+    {% if summary_fetch_failed %}
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">View Subject Information failed</h4>
+        <p>Couldn't load the page of this subject.</p>
+    </div>
+    {% endif %}
+    {% if action_fail %}
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">View Subject Information failed</h4>
+        <p>An unknown error occurred.</p>
+    </div>
+    {% endif %}
+    <div class="container">
+        <table class="center">
+            <colgroup>
+                <col span="1" style="width: 20%;">
+                <col span="1" style="width: 20%;">
+                <col span="1" style="width: 20%;">
+            </colgroup>
+            <tr>
+                <th>Given subject</th>
+                <th>First search result</th>
+                <th>Information</th>
+            </tr>
+            {% for row in results %}
+            <tr>
+                {% for value in row %}
+                <td>
+                    {{value}}
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="center">
+        <form id="postform" class="form-group" method="POST" action="{%url 'view_subject_info_results' %}">
+            {%csrf_token%}
+            <br>
+            <label>Learn about subject:</label>
+            <br>
+            <input type="subject_name" name="subject_name" placeholder="Subject" required>
+            <br>
+            <input type="submit" name="submit" value="Find">
+            <br>
+        </form>
+    </div>
+    <a href="{%url 'home' %}"> <p style="text-align:center">Back</p></a>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Useless Fact</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        table, th, td {
+            border: 1px solid;
+            width: fit-content;
+            text-align: center;
+        }
+        h2, p {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+
+        <h2>Hello {{username}}, this is Random Useless Facts Api !!</h2>
+
+        <br>
+        <p>Here is some random useless facts and useless fact of today </p>
+        <br>
+        <div class="container">
+            <table class="center" height="111" >
+                <tr>
+                    <th>Random useless fact</th>
+                      
+                    
+                </tr>
+                {% for text in result_one %}
+            <tr>
+                {% for value in text %}
+                <td>
+                    {{value}}
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+            </table>
+
+        </div>
+        <br>
+        <br>
+    </div>
+    <div class="container">
+        <table class="center" height="111">
+            <tr>
+                <th>Useless fact of today. (Updates every 24 hours)</th>
+                  
+                
+            </tr>
+            {% for text in result_two %}
+        <tr>
+            {% for value in text %}
+            <td>
+                {{value}}
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        </table>
+
+    </div>
+</div>
+<a href="{%url 'viewRandomUselessFact' %}"> <p style="text-align:center">Another useless fact</p></a>
+
+
+</body>
+</html>
