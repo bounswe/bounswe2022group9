@@ -3,6 +3,7 @@ This python script creates necessary functions for our practice application.
 The template is taken from CMPE321 course.
 """
 import hashlib
+import json
 import requests
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
@@ -249,3 +250,27 @@ def see_education(req):
     except Exception as e:
         print(str(e))
         return render(req, 'ShowEducationPage.html', {"result": [],"action_fail":True})
+def findCurrency_page(req):
+    return render(req, 'findCurrency_page.html',{"result": [],"action_fail":False})
+def findCurrency(req):
+    country_code = req.POST["country"]
+    if len(country_code) != 2:
+        return render(req, 'findCurrency_page.html', {"result": [],"action_fail":True})
+    resp = requests.get("https://restcountries.com/v3.1/alpha/" + country_code.lower())
+    json_resp = resp.json()
+    currencies = json_resp[0]["currencies"]
+    str =""
+    res = ()
+    res = list(res)
+    for key,value in currencies.items():
+        str = str + key + ", "
+        string = {'INPUT': value["name"]}
+        json_dump = json.dumps(string)
+        json_object=json.loads(json_dump)
+        l = requests.post("HTTP://API.SHOUTCLOUD.IO/V1/SHOUT",json = json_object)
+        str = str + l.json()["OUTPUT"] + ", " + value["symbol"] + "; "
+        res.append((key, l.json()["OUTPUT"],value["symbol"]))  
+    res = tuple(res)
+    print(res) 
+    result = str[:-2]
+    return render(req, 'findCurrency.html',{"result": res,"action_fail":False})
