@@ -196,3 +196,23 @@ def show_universities(req):
         info.append( [ cnt, unv["name"], unv["web_pages"][0] ])
     print(info)
     return render(req, 'universityShowPage.html', {"info": info,"country_name":country_name, "action_fail":False})
+  
+def viewRandomUselessFact(req):
+
+    url_one = "https://uselessfacts.jsph.pl/random.json?language=en" 
+    url_two = "https://uselessfacts.jsph.pl/today.json?language=en" 
+
+    try:
+        resp_one = requests.get(url_one)
+        resp_two = requests.get(url_two)
+        username = req.session["username"]
+        r1 = resp_one.json()
+        r2 = resp_two.json()
+        result_one = [[ r1["text"]]]
+        result_two = [[ r2["text"]]]
+        return render(req, 'viewRandomUselessFact.html', {"result_one": result_one,"result_two": result_two, "username": username})
+        
+    except Exception as e:
+        print(str(e))
+        return HttpResponseRedirect('../event_app/viewRandomUselessFact?fail=true')
+      

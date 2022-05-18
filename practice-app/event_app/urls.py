@@ -17,5 +17,6 @@ urlpatterns = [
     path('view_subject_info', views.view_subject_info, name="view_subject_info"),
     path('view_subject_info_results', views.view_subject_info_results, name="view_subject_info_results"),
     path('university_form', views.university_form, name="university_form"),
-    path('show_universities', views.show_universities, name="show_universities")
+    path('show_universities', views.show_universities, name="show_universities"),
+    path('viewRandomUselessFact',views.viewRandomUselessFact, name="viewRandomUselessFact")
 ]
