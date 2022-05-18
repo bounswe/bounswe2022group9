@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid;
+      }
+      .center {
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+      }
+      form {
+        margin: 0 auto;
+        width: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    {% if action_fail %}
+		  <div class="alert alert-danger" role="alert">
+			  <h4 class="alert-heading">Sign up Failed</h4>
+			  <p>External API call is unsuccessful</p>
+		  </div>
+	  {% endif %}
+    <div class="container">
+		<h1>Universities in {{country_name}} </h1>
+		<br>
+		<br>
+      <table class="center">
+        <colgroup>
+          <col span="1" style="width: 15%" />
+          <col span="1" style="width: 70%" />
+          <col span="1" style="width: 15%" />
+        </colgroup>
+        <tr>
+          <th>Number</th>
+          <th>University Name</th>
+          <th>University Website</th>
+        </tr>
+        {% for row in info %}
+        <tr>
+          {% for value in row %}
+		  {% if value > 0 %}
+				<td>
+					{{value}}
+				</td>
+			{% endif %}
+			{% if "www." not in value %}
+				<td>
+					{{value}}
+				</td>
+			{% endif %}
+		  	{% if "www." in value %}
+         	 <td>
+				  <a href = {{value}}>{{value}}</a>
+			</td>
+			{% endif %}
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <a href="{%url 'home' %}"> <p style="text-align: center">Logout</p></a>
+  </body>
+</html>

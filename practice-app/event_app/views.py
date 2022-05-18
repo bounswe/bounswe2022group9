@@ -93,6 +93,24 @@ def viewGithubInfo(req):
         return HttpResponseRedirect('../boun/viewGithubInfoPage?fail=true')
 
 
+def viewActivity(req):
+
+    url = "https://www.boredapi.com/api/activity" 
+
+    try:
+        resp = requests.get(url)
+
+        username = req.session["username"]
+
+        r = resp.json()
+        result = [[r["activity"], r["type"], r["participants"], r["price"], r["link"], r["key"], r["accessibility"]]]
+        return render(req, 'viewActivity.html', {"result": result, "username": username})
+        
+    except Exception as e:
+        print(str(e))
+        return HttpResponseRedirect('../boun/viewGithubInfoPage?fail=true')
+
+
 def addEventPage(req):
     isFailed = req.GET.get("fail", False)  # Check the value of the GET parameter "fail"
     eventForm = EventForm()  # Use Django Form object to create a blank form for the HTML page
@@ -113,7 +131,6 @@ def add_event(req):
     except Exception as e:
         print(str(e))
         return HttpResponseRedirect('../event_app/add_event?fail=true')
-
 
 def view_subject_info(req):
     username = req.session["username"]  # Retrieve the username of the logged-in user
@@ -157,3 +174,25 @@ def view_subject_info_results(req):
         print(str(e))
         return render(req, 'view_subject_info.html', {"action_fail": True,
                                                       "username": username})
+
+def university_form(req):
+    if not req.session.get("username"):
+        return HttpResponseRedirect('../event_app/login?fail=true')
+    university_form = UniversityForm()
+    return render(req, 'universityFormPage.html', {"university_form": university_form})
+    
+def show_universities(req):
+    if not req.session.get("username"):
+        return HttpResponseRedirect('../event_app/login?fail=true')
+    country_name = req.POST["country_name"]
+    resp = requests.get("http://universities.hipolabs.com/search?country=" + country_name)
+    if resp.status_code != 200:
+        return render(req, 'universityShowPage.html', {"info": [],"country_name":country_name,"action_fail":True})
+    unv_info = resp.json()
+    info = []
+    cnt = 0
+    for unv in unv_info:
+        cnt += 1
+        info.append( [ cnt, unv["name"], unv["web_pages"][0] ])
+    print(info)
+    return render(req, 'universityShowPage.html', {"info": info,"country_name":country_name, "action_fail":False})
