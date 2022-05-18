@@ -132,6 +132,49 @@ def add_event(req):
         print(str(e))
         return HttpResponseRedirect('../event_app/add_event?fail=true')
 
+def view_subject_info(req):
+    username = req.session["username"]  # Retrieve the username of the logged-in user
+    return render(req, 'view_subject_info.html', {"username": username})
+
+
+def view_subject_info_results(req):
+    given_name = req.POST["subject_name"]
+    try:
+        username = req.session["username"]  # Retrieve the username of the logged-in user
+        wrong_username = req.GET.get("fail", False)  # Try to retrieve GET parameter "fail", if it's not given set it to False
+        if wrong_username:
+            return render(req, 'view_subject_info.html', {"wrong_username": True,
+                                                          "username": username})
+
+        # Search for the given keyword on wikipedia
+        search_url = f"https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch={given_name}&srlimit=1&format=json"
+        search_response = requests.get(search_url)
+        if search_response.status_code != 200:  # Wikipedia returned a non-200 status code. Fail
+            return render(req, 'view_subject_info.html', {"search_failed": True,
+                                                          "username": username})
+        search_json = search_response.json()
+        search_results = search_json["query"]["search"]
+        if len(search_results) == 0:  # Successfully searched but found no results
+            return render(req, 'view_subject_info.html', {"no_search_results": True,
+                                                          "username": username})
+        page_title = search_results[0]["title"]  # Title of first search result
+
+        # Get a summary of the page
+        summary_url = f"https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exlimit=1&exintro=1&titles={page_title}&explaintext=1&formatversion=2&format=json"
+        summary_response = requests.get(summary_url)
+        if summary_response.status_code != 200:  # Wikipedia returned a non-200 status code. Fail
+            return render(req, 'view_subject_info.html', {"summary_fetch_failed": True,
+                                                          "username": username})
+        summary_json = summary_response.json()
+        summary_text = summary_json["query"]["pages"][0]["extract"]
+        result_table = [[given_name, page_title, summary_text]]
+        return render(req, 'view_subject_info.html', {"results": result_table,
+                                                      "username": username})
+    except Exception as e:
+        print(str(e))
+        return render(req, 'view_subject_info.html', {"action_fail": True,
+                                                      "username": username})
+
 def university_form(req):
     if not req.session.get("username"):
         return HttpResponseRedirect('../event_app/login?fail=true')
@@ -153,4 +196,3 @@ def show_universities(req):
         info.append( [ cnt, unv["name"], unv["web_pages"][0] ])
     print(info)
     return render(req, 'universityShowPage.html', {"info": info,"country_name":country_name, "action_fail":False})
-
