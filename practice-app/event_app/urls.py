@@ -14,6 +14,12 @@ urlpatterns = [
     path('viewActivity', views.viewActivity, name="viewActivity"),
     path('add_event', views.add_event, name="add_event"),
     path('addEventPage', views.addEventPage, name="addEventPage"),
+    path('view_subject_info', views.view_subject_info, name="view_subject_info"),
+    path('view_subject_info_results', views.view_subject_info_results, name="view_subject_info_results"),
     path('university_form', views.university_form, name="university_form"),
-    path('show_universities', views.show_universities, name="show_universities")
+    path('show_universities', views.show_universities, name="show_universities"),
+    path('add_education_form', views.add_education_form, name="add_education_form"),
+    path('add_education_function', views.add_education_function, name="add_education_function"),
+    path('see_education', views.see_education, name="see_education"),
+    path('viewRandomUselessFact',views.viewRandomUselessFact, name="viewRandomUselessFact")
 ]

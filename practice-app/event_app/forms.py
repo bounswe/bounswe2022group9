@@ -15,3 +15,8 @@ class EventForm(forms.Form):
 
 class UniversityForm(forms.Form):
     country_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Country name'}))
+
+class AddEducationForm(forms.Form):
+    institute_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Institute name'}))
+    degree = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Degree (like Bachelor)'}))
+    end_year = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'end year'}))

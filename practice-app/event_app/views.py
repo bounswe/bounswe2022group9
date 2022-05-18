@@ -132,6 +132,48 @@ def add_event(req):
         print(str(e))
         return HttpResponseRedirect('../event_app/add_event?fail=true')
 
+def view_subject_info(req):
+    username = req.session["username"]  # Retrieve the username of the logged-in user
+    return render(req, 'view_subject_info.html', {"username": username})
+
+
+def view_subject_info_results(req):
+    given_name = req.POST["subject_name"]
+    try:
+        username = req.session["username"]  # Retrieve the username of the logged-in user
+        wrong_username = req.GET.get("fail", False)  # Try to retrieve GET parameter "fail", if it's not given set it to False
+        if wrong_username:
+            return render(req, 'view_subject_info.html', {"wrong_username": True,
+                                                          "username": username})
+
+        # Search for the given keyword on wikipedia
+        search_url = f"https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch={given_name}&srlimit=1&format=json"
+        search_response = requests.get(search_url)
+        if search_response.status_code != 200:  # Wikipedia returned a non-200 status code. Fail
+            return render(req, 'view_subject_info.html', {"search_failed": True,
+                                                          "username": username})
+        search_json = search_response.json()
+        search_results = search_json["query"]["search"]
+        if len(search_results) == 0:  # Successfully searched but found no results
+            return render(req, 'view_subject_info.html', {"no_search_results": True,
+                                                          "username": username})
+        page_title = search_results[0]["title"]  # Title of first search result
+
+        # Get a summary of the page
+        summary_url = f"https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exlimit=1&exintro=1&titles={page_title}&explaintext=1&formatversion=2&format=json"
+        summary_response = requests.get(summary_url)
+        if summary_response.status_code != 200:  # Wikipedia returned a non-200 status code. Fail
+            return render(req, 'view_subject_info.html', {"summary_fetch_failed": True,
+                                                          "username": username})
+        summary_json = summary_response.json()
+        summary_text = summary_json["query"]["pages"][0]["extract"]
+        result_table = [[given_name, page_title, summary_text]]
+        return render(req, 'view_subject_info.html', {"results": result_table,
+                                                      "username": username})
+    except Exception as e:
+        print(str(e))
+        return render(req, 'view_subject_info.html', {"action_fail": True,
+                                                      "username": username})
 
 def university_form(req):
     if not req.session.get("username"):
@@ -154,3 +196,56 @@ def show_universities(req):
         cnt += 1
         info.append([cnt, unv["name"], unv["web_pages"][0]])
     return render(req, 'universityShowPage.html', {"info": info, "country_name": country_name, "action_fail": False})
+  
+def viewRandomUselessFact(req):
+
+    url_one = "https://uselessfacts.jsph.pl/random.json?language=en" 
+    url_two = "https://uselessfacts.jsph.pl/today.json?language=en"
+    try:
+      resp_one = requests.get(url_one)
+      resp_two = requests.get(url_two)
+      username = req.session["username"]
+      r1 = resp_one.json()
+      r2 = resp_two.json()
+      result_one = [[ r1["text"]]]
+      result_two = [[ r2["text"]]]
+      return render(req, 'viewRandomUselessFact.html', {"result_one": result_one,"result_two": result_two, "username": username})
+    except Exception as e:
+      print(str(e))
+      return HttpResponseRedirect('../event_app/viewRandomUselessFact?fail=true')
+    
+def add_education_form(req):
+    if not req.session.get("username"):
+        return HttpResponseRedirect('../event_app/login?fail=true')
+    education_form = AddEducationForm()
+    return render(req, 'AddEducationFormPage.html', {"education_form": education_form, "action_fail" : False})
+
+def add_education_function(req):
+    if not req.session.get("username"):
+        return HttpResponseRedirect('../event_app/login?fail=true')
+    username = req.session.get("username")
+    institute_name = req.POST["institute_name"]
+    degree = req.POST["degree"]
+    end_year = req.POST["end_year"]
+    try:
+        print("end year is: ",end_year)
+        print(f"CALL AddEducation('{username}','{institute_name}','{degree}',{end_year})")
+        run_statement(f"CALL AddEducation('{username}','{institute_name}','{degree}',{end_year})")
+        return HttpResponseRedirect("../event_app/home")
+    except Exception as e:
+        print(str(e))
+        education_form = AddEducationForm()
+        return render(req, 'AddEducationFormPage.html', {"education_form": education_form, "action_fail" : True})
+
+def see_education(req):
+    if not req.session.get("username"):
+        return HttpResponseRedirect('../event_app/login?fail=true')
+    username = req.session.get("username")
+    try:
+        # Run the query in DB
+        result = run_statement(f"SELECT * FROM Education WHERE username='{username}' ORDER BY end_year DESC;")
+        print("result: ",result)
+        return render(req, 'ShowEducationPage.html', {"result": result,"action_fail":False})
+    except Exception as e:
+        print(str(e))
+        return render(req, 'ShowEducationPage.html', {"result": [],"action_fail":True})
