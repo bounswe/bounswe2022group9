@@ -136,3 +136,39 @@ def show_universities(req):
     print(info)
     return render(req, 'universityShowPage.html', {"info": info,"country_name":country_name, "action_fail":False})
 
+def add_education_form(req):
+    if not req.session.get("username"):
+        return HttpResponseRedirect('../event_app/login?fail=true')
+    education_form = AddEducationForm()
+    return render(req, 'AddEducationFormPage.html', {"education_form": education_form, "action_fail" : False})
+
+def add_education_function(req):
+    if not req.session.get("username"):
+        return HttpResponseRedirect('../event_app/login?fail=true')
+    username = req.session.get("username")
+    institute_name = req.POST["institute_name"]
+    degree = req.POST["degree"]
+    end_year = req.POST["end_year"]
+    try:
+        print("end year is: ",end_year)
+        print(f"CALL AddEducation('{username}','{institute_name}','{degree}',{end_year})")
+        run_statement(f"CALL AddEducation('{username}','{institute_name}','{degree}',{end_year})")
+        return HttpResponseRedirect("../event_app/home")
+    except Exception as e:
+        print(str(e))
+        education_form = AddEducationForm()
+        return render(req, 'AddEducationFormPage.html', {"education_form": education_form, "action_fail" : True})
+
+def see_education(req):
+    if not req.session.get("username"):
+        return HttpResponseRedirect('../event_app/login?fail=true')
+    username = req.session.get("username")
+    try:
+        # Run the query in DB
+        result = run_statement(f"SELECT * FROM Education WHERE username='{username}' ORDER BY end_year DESC;")
+        print("result: ",result)
+        return render(req, 'ShowEducationPage.html', {"result": result,"action_fail":False})
+    except Exception as e:
+        print(str(e))
+        return render(req, 'ShowEducationPage.html', {"result": [],"action_fail":True})
+
