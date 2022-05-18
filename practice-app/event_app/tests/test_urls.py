@@ -27,3 +27,23 @@ class TestUrls(SimpleTestCase):
     def test_user_login(self):
         url = reverse("user_login")
         self.assertEqual(resolve(url).func, user_login)
+    
+    def test_university_form(self):
+        url = reverse("university_form")
+        self.assertEqual(resolve(url).func, university_form)
+    
+    def test_show_universities(self):
+        url = reverse("show_universities")
+        self.assertEqual(resolve(url).func, show_universities)
+    
+    def test_add_education_form(self):
+        url = reverse("add_education_form")
+        self.assertEqual(resolve(url).func, add_education_form)
+    
+    def test_add_education_function(self):
+        url = reverse("add_education_function")
+        self.assertEqual(resolve(url).func, add_education_function)
+    
+    def test_see_education(self):
+        url = reverse("see_education")
+        self.assertEqual(resolve(url).func, see_education)
