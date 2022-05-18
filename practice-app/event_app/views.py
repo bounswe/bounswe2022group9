@@ -259,18 +259,14 @@ def findCurrency(req):
     resp = requests.get("https://restcountries.com/v3.1/alpha/" + country_code.lower())
     json_resp = resp.json()
     currencies = json_resp[0]["currencies"]
-    str =""
     res = ()
     res = list(res)
     for key,value in currencies.items():
-        str = str + key + ", "
         string = {'INPUT': value["name"]}
         json_dump = json.dumps(string)
         json_object=json.loads(json_dump)
         l = requests.post("HTTP://API.SHOUTCLOUD.IO/V1/SHOUT",json = json_object)
-        str = str + l.json()["OUTPUT"] + ", " + value["symbol"] + "; "
         res.append((key, l.json()["OUTPUT"],value["symbol"]))  
     res = tuple(res)
     print(res) 
-    result = str[:-2]
     return render(req, 'findCurrency.html',{"result": res,"action_fail":False})
