@@ -90,7 +90,7 @@ def viewGithubInfo(req):
         return render(req, 'viewGithubInfo.html', {"results": result, "action_fail": isFailed, "username": username})
     except Exception as e:
         print(str(e))
-        return HttpResponseRedirect('../boun/viewGithubInfoPage?fail=true')
+        return HttpResponseRedirect('../event_app/viewGithubInfoPage?fail=true')
 
 
 def viewActivity(req):
@@ -108,7 +108,7 @@ def viewActivity(req):
         
     except Exception as e:
         print(str(e))
-        return HttpResponseRedirect('../boun/viewGithubInfoPage?fail=true')
+        return HttpResponseRedirect('../event_app/viewActivity?fail=true')
 
 
 def addEventPage(req):
@@ -180,22 +180,22 @@ def university_form(req):
         return HttpResponseRedirect('../event_app/login?fail=true')
     university_form = UniversityForm()
     return render(req, 'universityFormPage.html', {"university_form": university_form})
-    
+
+
 def show_universities(req):
     if not req.session.get("username"):
         return HttpResponseRedirect('../event_app/login?fail=true')
     country_name = req.POST["country_name"]
     resp = requests.get("http://universities.hipolabs.com/search?country=" + country_name)
     if resp.status_code != 200:
-        return render(req, 'universityShowPage.html', {"info": [],"country_name":country_name,"action_fail":True})
+        return render(req, 'universityShowPage.html', {"info": [], "country_name": country_name, "action_fail": True})
     unv_info = resp.json()
     info = []
     cnt = 0
     for unv in unv_info:
         cnt += 1
-        info.append( [ cnt, unv["name"], unv["web_pages"][0] ])
-    print(info)
-    return render(req, 'universityShowPage.html', {"info": info,"country_name":country_name, "action_fail":False})
+        info.append([cnt, unv["name"], unv["web_pages"][0]])
+    return render(req, 'universityShowPage.html', {"info": info, "country_name": country_name, "action_fail": False})
   
 def viewRandomUselessFact(req):
 
