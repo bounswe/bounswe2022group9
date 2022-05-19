@@ -4,6 +4,7 @@ The template is taken from CMPE321 course.
 """
 import hashlib
 import requests
+import pytz
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .forms import *
@@ -251,3 +252,27 @@ def see_education(req):
     except Exception as e:
         print(str(e))
         return render(req, 'ShowEducationPage.html', {"result": [], "action_fail": True})
+
+def viewIpInfoPage(req):
+    username = req.session["username"]  # Retrieve the username of the logged-in user
+    isFailed = req.GET.get("fail", False)  # Try to retrieve GET parameter "fail", if it's not given set it to False
+    return render(req, 'viewIpInfo.html', {"action_fail": isFailed, "username": username})
+
+
+def viewIpInfo(req):
+    ip_addr = req.POST["ip_addr"]
+    url = "https://api.country.is/" + ip_addr
+
+    try:
+        username = req.session["username"]  # Retrieve the username of the logged-in user
+        isFailed = req.GET.get("fail", False)  # Try to retrieve GET parameter "fail", if it's not given set it to False
+        response = requests.get(url)
+        r = response.json()
+        country_name = pytz.country_names[r["country"]]
+        version = requests.get("https://api.country.is/version").json()
+        result = [[r["ip"], country_name, r["country"], version["updatedOn"]]]
+        return render(req, 'viewIpInfo.html', {"results": result, "action_fail": isFailed, "username": username})
+    except Exception as e:
+        print(str(e))
+        return HttpResponseRedirect('../boun/viewIpInfoPage?fail=true')
+
