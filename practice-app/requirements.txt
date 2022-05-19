@@ -6,3 +6,4 @@ mysqlclient
 django-crispy-forms
 requests
 djangorestframework
+pytz

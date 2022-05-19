@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'github_api',
     'university_api',
     'education_api',
+    'geolocation_api',
+    'countryCodes_api',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'rest_framework',
+    'formula1_api',
 ]
 
 MIDDLEWARE = [
