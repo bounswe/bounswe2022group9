@@ -24,5 +24,7 @@ urlpatterns = [
     path('add_education_form', views.add_education_form, name="add_education_form"),
     path('add_education_function', views.add_education_function, name="add_education_function"),
     path('see_education', views.see_education, name="see_education"),
-    path('viewRandomUselessFact',views.viewRandomUselessFact, name="viewRandomUselessFact")
+    path('viewRandomUselessFact',views.viewRandomUselessFact, name="viewRandomUselessFact"),
+    path('race_standing', views.race_standing_api, name="race_standing"),
+    path('race_standing/standing', views.race_standing_api, name="standing")
 ]

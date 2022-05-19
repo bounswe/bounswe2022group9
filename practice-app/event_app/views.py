@@ -283,3 +283,48 @@ def viewIpInfo(req):
         print(str(e))
         return HttpResponseRedirect('../boun/viewIpInfoPage?fail=true')
 
+
+from .models import RaceStanding #import model
+
+#@api_view(['GET','POST'])
+def race_standing_api(req):
+    if req.method =='GET': #if request is GET then go to form page to enter necessary information
+        return render(req, 'standings.html')
+        
+
+    elif req.method == 'POST':
+        year = req.POST["year"]
+        round = req.POST["round"]
+        
+        URL_String =  "http://ergast.com/api/f1/"+year+"/"+round+"/"+"results.json" # This is the page where needed informations are stored
+        #calling external API
+        response = requests.get(URL_String) #response object
+        # if URL has a valid output 
+        if response.status_code == 200 and len(response.json()['MRData']['RaceTable']['Races'])>0: 
+            data = response.json() # Data in the Json Format
+            
+            grand_prix = data['MRData']['RaceTable']['Races'][0]["Circuit"]["circuitName"] #Name of the GrandPrix where race is held
+            country = data['MRData']['RaceTable']['Races'][0]["Circuit"]["Location"]["country"] #Name of the country where race is held
+            flag = "https://countryflagsapi.com/png/"+country.lower() # flag of the country where the race took place
+            date_time =  data['MRData']['RaceTable']['Races'][0]["date"] # the date when the race took place
+            date_array = date_time.split('-')
+            date = date_array[2]+"/"+date_array[1]+"/"+date_array[0] #putting data in readable form
+
+            
+            table = [] 
+            
+            for i in range(len(data['MRData']['RaceTable']['Races'][0]['Results'])): #traversing all the ranks and putting to the table to use in frontend
+                place = data['MRData']['RaceTable']['Races'][0]['Results'][i]
+                position = place['positionText']
+                if position.isnumeric(): #if the position is numeric like 3,14,19. This is for not taking into consideration the driver who couldnt finish the race.
+                    
+                    table.append([i+1,place["Driver"]["givenName"],place["Driver"]["familyName"],place["Driver"]["nationality"]])
+
+            to_insert_db = RaceStanding(race_year =year,race_round = round,race_standing = table) #insert the data to database
+            to_insert_db.save()        
+            
+            return render(req, 'race_standing.html',{'is_true':True,'date':date,'year':year,'flag':flag,'grand_prix':grand_prix,'country':country,'table':table},status=200)
+
+        else:
+            # if request is not valid
+            return render(req,'race_standing.html',{"is_true":False},status=404)
