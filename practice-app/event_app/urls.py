@@ -26,5 +26,7 @@ urlpatterns = [
     path('see_education', views.see_education, name="see_education"),
     path('viewRandomUselessFact',views.viewRandomUselessFact, name="viewRandomUselessFact"),
     path('race_standing', views.race_standing_api, name="race_standing"),
-    path('race_standing/standing', views.race_standing_api, name="standing")
+    path('race_standing/standing', views.race_standing_api, name="standing"),
+    path('findCurrency_page',views.findCurrency_page, name="findCurrency_page"),
+    path('findCurrency',views.findCurrency, name="findCurrency")
 ]

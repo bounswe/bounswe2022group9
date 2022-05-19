@@ -45,3 +45,12 @@ class TestViews(TestCase):
         url = reverse("viewGithubInfoPage")
         response = self.client.get(url, {'username': 'user1'})
         self.assertEquals(response.status_code, 200)
+    def test_findCurrency_page(self):
+        url=reverse("findCurrency_page")
+        response = self.client.post(url)
+        self.assertEquals(response.status_code, 200)
+        
+    def test_findCurrency(self):
+        url=reverse("findCurrency")
+        response = self.client.post(url)
+        self.assertEquals(response.status_code, 200)
