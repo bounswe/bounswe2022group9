@@ -5,3 +5,4 @@ mysql_connector_python
 mysqlclient
 django-crispy-forms
 requests
+djangorestframework
