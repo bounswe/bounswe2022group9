@@ -20,6 +20,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path('github_api/', include('github_api.urls')),
+    path('countryCodes_api/', include('countryCodes_api.urls')),
     path('admin/', admin.site.urls),
     path('event_app/', include('event_app.urls')),
     path('', lambda req: redirect('event_app/'))
