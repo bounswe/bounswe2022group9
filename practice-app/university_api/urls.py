@@ -5,5 +5,5 @@ from university_api.views import university_list
 
 
 urlpatterns = [
-    path('list/',university_list)
+    path('list/',university_list,name="list")
 ]

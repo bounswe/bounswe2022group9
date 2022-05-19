@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'event_app',
     'github_api',
     'university_api',
+    'education_api',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
