@@ -35,6 +35,13 @@ def sign_up(req):
     return render(req, 'sign_up.html', {"login_form": loginForm, "action_fail": isFailed})
 
 
+def api(req):
+    # Logout the user if logged
+    if req.session:
+        req.session.flush()
+    return render(req, 'api.html')
+
+
 def addUser(req):
     # Logout the user if logged
     if req.session:

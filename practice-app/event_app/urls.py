@@ -7,6 +7,7 @@ urlpatterns = [
     path('sign_in', views.sign_in, name="sign_in"),
     path('sign_up', views.sign_up, name="sign_up"),
     path('addUser', views.addUser, name="addUser"),
+    path('api', views.api, name="api"),
     path('home', views.home, name="home"),
     path('user_login', views.user_login, name="user_login"),
     path('viewGithubInfo', views.viewGithubInfo, name="viewGithubInfo"),
