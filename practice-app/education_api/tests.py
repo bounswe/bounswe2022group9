@@ -1,5 +1,6 @@
 from django.test import TestCase, Client
-from django.urls import reverse
+from django.urls import reverse, resolve
+from education_api.views import *
 
 # Create your tests here.
 
@@ -8,6 +9,14 @@ class TestViews(TestCase):
     def setUp(self):
         self.client = Client()
         self.session = self.client.session
+    
+    def test_add_education_url(self):
+        url = reverse("add")
+        self.assertEqual(resolve(url).func, add_education)
+
+    def test_list_education_url(self):
+        url = reverse("list")
+        self.assertEqual(resolve(url).func, list_education)
 
     def test_add_education_POST(self):
         session = self.client.session
