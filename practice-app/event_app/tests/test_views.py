@@ -16,7 +16,6 @@ class TestViews(TestCase):
         response = self.client.post(url, {
             'github_username': 'ozdemirfurkan'
         })
-        print(response)
         self.assertEquals(response.status_code, 200)
 
     def test_sign_in_GET(self):
@@ -97,4 +96,14 @@ class TestViews(TestCase):
         url = reverse("add_education_form")
         response = self.client.get(url, {})
         print(response)
+        self.assertEquals(response.status_code, 200)
+        
+    def test_findCurrency_page(self):
+        url=reverse("findCurrency_page")
+        response = self.client.post(url)
+        self.assertEquals(response.status_code, 200)
+        
+    def test_findCurrency(self):
+        url=reverse("findCurrency")
+        response = self.client.post(url)
         self.assertEquals(response.status_code, 200)

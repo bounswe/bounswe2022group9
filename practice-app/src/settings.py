@@ -37,6 +37,9 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'event_app',
+    'github_api',
+    'geolocation_api',
+    'countryCodes_api',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,7 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
-    
+    'rest_framework',
+    'formula1_api',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  	<title>View IP Address Information</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        table, th, td {
+            border: 1px solid;
+        }
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
+        }
+        form {
+            margin: 0 auto;
+            width:250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div style="background-color:lavender; !important" class="jumbotron text-center bg-primary">
+            <h2> Please type an IP address and see the information about it.</h2>
+    </div>
+    {% if action_fail %}
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">View IP Information failed</h4>
+        <p>Please type a correct IP address.</p>
+    </div>
+    {% endif %}
+    <div class="container">
+        <table class="center">
+            <colgroup>
+                <col span="1" style="width: 20%;">
+                <col span="1" style="width: 20%;">
+                <col span="1" style="width: 20%;">
+                <col span="1" style="width: 20%;">
+            </colgroup>
+            <tr>
+                <th>IP Address</th>
+                <th>Country Name</th>
+                <th>Country Id</th>
+                <th>Updated On</th>
+            </tr>
+            {% for row in results %}
+            <tr>
+                {% for value in row %}
+                <td>
+                    {{value}}
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="center">
+        <form id="postform" class="form-group" method="POST" action="{%url 'viewIpInfo' %}">
+            {%csrf_token%}
+            <br>
+            <label>View IP Address Location:</label>
+            <br>
+            <input type="ip_addr" name="ip_addr" placeholder="x.x.x.x" required>
+            <br>
+            <input type="submit" name="submit" value="Find">
+            <br>
+        </form>
+    </div>
+    <a href="{%url 'home' %}"> <p style="text-align:center">Back</p></a>
+</body>
+</html> 
+

@@ -1,6 +1,5 @@
 src/.env
-src/__pycache__/*
+**/__pycache__
 event_app/migrations/*
-event_app/__pycache__/*
 .env
 .idea

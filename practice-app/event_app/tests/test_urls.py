@@ -47,3 +47,11 @@ class TestUrls(SimpleTestCase):
     def test_see_education(self):
         url = reverse("see_education")
         self.assertEqual(resolve(url).func, see_education)
+
+    def test_findCurrency_page(self):
+        url = reverse("findCurrency_page")
+        self.assertEqual(resolve(url).func, findCurrency_page)
+        
+    def test_findCurrency(self):
+        url = reverse("findCurrency")
+        self.assertEqual(resolve(url).func, findCurrency)
