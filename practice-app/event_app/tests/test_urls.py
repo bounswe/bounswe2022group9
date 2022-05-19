@@ -27,3 +27,15 @@ class TestUrls(SimpleTestCase):
     def test_user_login(self):
         url = reverse("user_login")
         self.assertEqual(resolve(url).func, user_login)
+
+    def test_view_activity(self):
+        url = reverse("viewActivity")
+        self.assertEqual(resolve(url).func, viewActivity)
+
+    def test_view_ip_info_page(self):
+        url = reverse("viewIpInfoPage")
+        self.assertEqual(resolve(url).func, viewIpInfoPage)
+
+    def test_view_ip_info(self):
+        url = reverse("viewIpInfo")
+        self.assertEqual(resolve(url).func, viewIpInfo)

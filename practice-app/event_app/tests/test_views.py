@@ -45,3 +45,30 @@ class TestViews(TestCase):
         url = reverse("viewGithubInfoPage")
         response = self.client.get(url, {'username': 'user1'})
         self.assertEquals(response.status_code, 200)
+
+    def test_view_ip_info_POST(self):
+        session = self.client.session
+        session['username'] = 'user1'
+        session.save()
+        url = reverse("viewIpInfo")
+        response = self.client.post(url, {
+            'ip_addr': '176.89.104.137'
+        })
+        self.assertEquals(response.status_code, 200)
+
+    def test_view_ip_info_page_GET(self):
+        session = self.client.session
+        session['username'] = 'user1'
+        session.save()
+        url = reverse("viewIpInfoPage")
+        response = self.client.get(url, {'username': 'user1'})
+        self.assertEquals(response.status_code, 200)
+
+    def test_view_activity_GET(self):
+        session = self.client.session
+        session['username'] = 'user1'
+        session.save()
+        url = reverse("viewActivity")
+        response = self.client.get(url, {'username': 'user1'})
+        self.assertEquals(response.status_code, 200)
+
