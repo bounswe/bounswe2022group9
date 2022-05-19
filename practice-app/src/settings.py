@@ -38,6 +38,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'event_app',
     'github_api',
+    'geolocation_api',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
