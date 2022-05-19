@@ -16,7 +16,6 @@ class TestViews(TestCase):
         response = self.client.post(url, {
             'github_username': 'ozdemirfurkan'
         })
-        print(response)
         self.assertEquals(response.status_code, 200)
 
     def test_sign_in_GET(self):

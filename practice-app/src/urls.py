@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.shortcuts import redirect
 from django.urls import include, path
 
+
 urlpatterns = [
+    path('github_api/', include('github_api.urls')),
     path('admin/', admin.site.urls),
     path('event_app/', include('event_app.urls')),
     path('', lambda req: redirect('event_app/'))
