@@ -3,6 +3,7 @@ This python script creates necessary functions for our practice application.
 The template is taken from CMPE321 course.
 """
 import hashlib
+import json
 import requests
 import pytz
 from django.shortcuts import render
@@ -328,3 +329,24 @@ def race_standing_api(req):
         else:
             # if request is not valid
             return render(req,'race_standing.html',{"is_true":False},status=404)
+
+def findCurrency_page(req):
+    return render(req, 'findCurrency_page.html',{"result": [],"action_fail":False})
+def findCurrency(req):
+    country_code = req.POST["country"]
+    if len(country_code) != 2:
+        return render(req, 'findCurrency_page.html', {"result": [],"action_fail":True})
+    resp = requests.get("https://restcountries.com/v3.1/alpha/" + country_code.lower())
+    json_resp = resp.json()
+    currencies = json_resp[0]["currencies"]
+    res = ()
+    res = list(res)
+    for key,value in currencies.items():
+        string = {'INPUT': value["name"]}
+        json_dump = json.dumps(string)
+        json_object=json.loads(json_dump)
+        l = requests.post("HTTP://API.SHOUTCLOUD.IO/V1/SHOUT",json = json_object)
+        res.append((key, l.json()["OUTPUT"],value["symbol"]))  
+    res = tuple(res)
+    print(res) 
+    return render(req, 'findCurrency.html',{"result": res,"action_fail":False})
