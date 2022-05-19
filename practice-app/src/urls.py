@@ -21,6 +21,7 @@ from django.urls import include, path
 urlpatterns = [
     path('github_api/', include('github_api.urls')),
     path('geolocation_api/', include('geolocation_api.urls')),
+    path('summary_api/', include('summary_api.urls')),
     path('admin/', admin.site.urls),
     path('event_app/', include('event_app.urls')),
     path('', lambda req: redirect('event_app/'))
