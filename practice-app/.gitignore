@@ -1,8 +1,5 @@
 src/.env
-src/__pycache__/*
+**/__pycache__
 event_app/migrations/*
-event_app/__pycache__/*
-github_api/__pycache__/*
-event_app/tests/__pycache__/*
 .env
 .idea
