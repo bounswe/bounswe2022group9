@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'rest_framework',
     'formula1_api',
+    'player_info_api'
 ]
 
 MIDDLEWARE = [
