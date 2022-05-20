@@ -65,7 +65,7 @@ class TestViews(TestCase):
         response = self.client.get(url, {})
         print(response)
         self.assertEquals(response.status_code, 200)
-    
+  
     def test_add_education_form_GET(self):
         session = self.client.session
         session['username'] = 'user1'
@@ -107,3 +107,30 @@ class TestViews(TestCase):
         url=reverse("findCurrency")
         response = self.client.post(url)
         self.assertEquals(response.status_code, 200)
+        
+    def test_add_event_page_GET(self):
+        session = self.client.session
+        session['username'] = 'user1'
+        session.save()
+        url = reverse("addEventPage")
+        
+    def test_add_event_page_POST(self):
+        session = self.client.session
+        session['username'] = 'user1'
+        session.save()
+        url = reverse("add_event")
+        response = self.client.post(url, {
+            'event_name' : 'Cinema' ,
+            'date' : '23/07/2022' ,
+            'city': 'Istanbul',
+            'definition' : 'adventure'
+        })
+        print(response)
+        self.assertEquals(response.status_code, 200)
+
+    def test_view_random_useless_fact_GET(self):
+        session = self.client.session
+        session['username'] = 'user1'
+        session.save()
+        url = reverse("viewRandomUselessFact")
+        response = self.client.get(url, {'username': 'user1'})

@@ -27,6 +27,18 @@ class TestUrls(SimpleTestCase):
     def test_user_login(self):
         url = reverse("user_login")
         self.assertEqual(resolve(url).func, user_login)
+
+    def test_add_event(self):
+        url=reverse("add_event")
+        self.assertEqual(resolve(url).func,add_event)
+    
+    def test_add_event_page(self):
+        url=reverse("addEventPage")
+        self.assertEqual(resolve(url).func,addEventPage)
+
+    def test_view_random_useless_fact(self):
+        url=reverse("viewRandomUselessFact")
+        self.assertEqual(resolve(url).func,viewRandomUselessFact)
     
     def test_university_form(self):
         url = reverse("university_form")
@@ -55,3 +67,4 @@ class TestUrls(SimpleTestCase):
     def test_findCurrency(self):
         url = reverse("findCurrency")
         self.assertEqual(resolve(url).func, findCurrency)
+

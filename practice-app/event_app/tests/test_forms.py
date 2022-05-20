@@ -42,3 +42,19 @@ class TestForms(SimpleTestCase):
         form = AddEducationForm(data={})
         self.assertFalse(form.is_valid())
         self.assertEquals(len(form.errors), 3)
+        
+    def test_event_form_valid_data(self):
+        form = EventForm(data={
+            'event_name' : 'Cinema' ,
+            'date' : '23/07/2022' ,
+            'city': 'Istanbul',
+            'definition' : 'adventure'
+
+        })
+        
+        self.assertTrue(form.is_valid())
+
+    def test_event_form_no_data(self):
+        form = EventForm(data={})
+        self.assertFalse(form.is_valid())
+        self.assertEquals(len(form.errors), 4)
