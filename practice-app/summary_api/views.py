@@ -6,13 +6,16 @@ import requests
 
 # Create your views here.
 
-
+"""
+The GET method returns a summary for Istanbul.
+The POST method takes a parameter of the form {"subject": subject-name} and returns a summary for that.
+"""
 @api_view(['GET', 'POST'])
 def get_summary(request):
     if request.method == "GET":
         given_name = request.GET.get("search", "Istanbul")
     elif request.method == "POST":
-        given_name = request.data  # The name should be given as a string
+        given_name = request.data["subject"]  # The name should be given as a string
 
     if len(given_name) > 100:
         return Response(status=status.HTTP_400_BAD_REQUEST)
