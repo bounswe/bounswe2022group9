@@ -3,6 +3,7 @@ This python script creates necessary functions for our practice application.
 The template is taken from CMPE321 course.
 """
 import hashlib
+import json
 import requests
 import pytz
 from django.shortcuts import render
@@ -37,9 +38,6 @@ def sign_up(req):
 
 
 def api(req):
-    # Logout the user if logged
-    if req.session:
-        req.session.flush()
     return render(req, 'api.html')
 
 
@@ -192,7 +190,7 @@ def university_form(req):
 
 def show_universities(req):
     if not req.session.get("username"):
-        return HttpResponseRedirect('../event_app/login?fail=true')
+        return HttpResponseRedirect('../event_app/sign_in?fail=true')
     country_name = req.POST["country_name"]
     resp = requests.get("http://universities.hipolabs.com/search?country=" + country_name)
     if resp.status_code != 200:
@@ -225,14 +223,14 @@ def viewRandomUselessFact(req):
 
 def add_education_form(req):
     if not req.session.get("username"):
-        return HttpResponseRedirect('../event_app/login?fail=true')
+        return HttpResponseRedirect('../event_app/sign_in?fail=true')
     education_form = AddEducationForm()
     return render(req, 'AddEducationFormPage.html', {"education_form": education_form, "action_fail": False})
 
 
 def add_education_function(req):
     if not req.session.get("username"):
-        return HttpResponseRedirect('../event_app/login?fail=true')
+        return HttpResponseRedirect('../event_app/sign_in?fail=true')
     username = req.session.get("username")
     institute_name = req.POST["institute_name"]
     degree = req.POST["degree"]
@@ -250,7 +248,7 @@ def add_education_function(req):
 
 def see_education(req):
     if not req.session.get("username"):
-        return HttpResponseRedirect('../event_app/login?fail=true')
+        return HttpResponseRedirect('../event_app/sign_in?fail=true')
     username = req.session.get("username")
     try:
         # Run the query in DB
@@ -283,3 +281,69 @@ def viewIpInfo(req):
         print(str(e))
         return HttpResponseRedirect('../event_app/viewIpInfoPage?fail=true')
 
+
+from .models import RaceStanding #import model
+
+#@api_view(['GET','POST'])
+def race_standing_api(req):
+    if req.method =='GET': #if request is GET then go to form page to enter necessary information
+        return render(req, 'standings.html')
+        
+
+    elif req.method == 'POST':
+        year = req.POST["year"]
+        round = req.POST["round"]
+        
+        URL_String =  "http://ergast.com/api/f1/"+year+"/"+round+"/"+"results.json" # This is the page where needed informations are stored
+        #calling external API
+        response = requests.get(URL_String) #response object
+        # if URL has a valid output 
+        if response.status_code == 200 and len(response.json()['MRData']['RaceTable']['Races'])>0: 
+            data = response.json() # Data in the Json Format
+            
+            grand_prix = data['MRData']['RaceTable']['Races'][0]["Circuit"]["circuitName"] #Name of the GrandPrix where race is held
+            country = data['MRData']['RaceTable']['Races'][0]["Circuit"]["Location"]["country"] #Name of the country where race is held
+            flag = "https://countryflagsapi.com/png/"+country.lower() # flag of the country where the race took place
+            date_time =  data['MRData']['RaceTable']['Races'][0]["date"] # the date when the race took place
+            date_array = date_time.split('-')
+            date = date_array[2]+"/"+date_array[1]+"/"+date_array[0] #putting data in readable form
+
+            
+            table = [] 
+            
+            for i in range(len(data['MRData']['RaceTable']['Races'][0]['Results'])): #traversing all the ranks and putting to the table to use in frontend
+                place = data['MRData']['RaceTable']['Races'][0]['Results'][i]
+                position = place['positionText']
+                if position.isnumeric(): #if the position is numeric like 3,14,19. This is for not taking into consideration the driver who couldnt finish the race.
+                    
+                    table.append([i+1,place["Driver"]["givenName"],place["Driver"]["familyName"],place["Driver"]["nationality"]])
+
+            to_insert_db = RaceStanding(race_year =year,race_round = round,race_standing = table) #insert the data to database
+            to_insert_db.save()        
+            
+            return render(req, 'race_standing.html',{'is_true':True,'date':date,'year':year,'flag':flag,'grand_prix':grand_prix,'country':country,'table':table},status=200)
+
+        else:
+            # if request is not valid
+            return render(req,'race_standing.html',{"is_true":False},status=404)
+
+def findCurrency_page(req):
+    return render(req, 'findCurrency_page.html',{"result": [],"action_fail":False})
+def findCurrency(req):
+    country_code = req.POST["country"]
+    if len(country_code) != 2:
+        return render(req, 'findCurrency_page.html', {"result": [],"action_fail":True})
+    resp = requests.get("https://restcountries.com/v3.1/alpha/" + country_code.lower())
+    json_resp = resp.json()
+    currencies = json_resp[0]["currencies"]
+    res = ()
+    res = list(res)
+    for key,value in currencies.items():
+        string = {'INPUT': value["name"]}
+        json_dump = json.dumps(string)
+        json_object=json.loads(json_dump)
+        l = requests.post("HTTP://API.SHOUTCLOUD.IO/V1/SHOUT",json = json_object)
+        res.append((key, l.json()["OUTPUT"],value["symbol"]))  
+    res = tuple(res)
+    print(res) 
+    return render(req, 'findCurrency.html',{"result": res,"action_fail":False})

@@ -39,3 +39,45 @@ class TestUrls(SimpleTestCase):
     def test_view_ip_info(self):
         url = reverse("viewIpInfo")
         self.assertEqual(resolve(url).func, viewIpInfo)
+
+    def test_add_event(self):
+        url=reverse("add_event")
+        self.assertEqual(resolve(url).func,add_event)
+    
+    def test_add_event_page(self):
+        url=reverse("addEventPage")
+        self.assertEqual(resolve(url).func,addEventPage)
+
+    def test_view_random_useless_fact(self):
+        url=reverse("viewRandomUselessFact")
+        self.assertEqual(resolve(url).func,viewRandomUselessFact)
+    
+    def test_university_form(self):
+        url = reverse("university_form")
+        self.assertEqual(resolve(url).func, university_form)
+    
+    def test_show_universities(self):
+        url = reverse("show_universities")
+        self.assertEqual(resolve(url).func, show_universities)
+    
+    def test_add_education_form(self):
+        url = reverse("add_education_form")
+        self.assertEqual(resolve(url).func, add_education_form)
+    
+    def test_add_education_function(self):
+        url = reverse("add_education_function")
+        self.assertEqual(resolve(url).func, add_education_function)
+    
+    def test_see_education(self):
+        url = reverse("see_education")
+        self.assertEqual(resolve(url).func, see_education)
+
+    def test_findCurrency_page(self):
+        url = reverse("findCurrency_page")
+        self.assertEqual(resolve(url).func, findCurrency_page)
+        
+    def test_findCurrency(self):
+        url = reverse("findCurrency")
+        self.assertEqual(resolve(url).func, findCurrency)
+
+
