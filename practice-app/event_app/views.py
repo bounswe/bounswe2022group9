@@ -38,9 +38,6 @@ def sign_up(req):
 
 
 def api(req):
-    # Logout the user if logged
-    if req.session:
-        req.session.flush()
     return render(req, 'api.html')
 
 
@@ -193,7 +190,7 @@ def university_form(req):
 
 def show_universities(req):
     if not req.session.get("username"):
-        return HttpResponseRedirect('../event_app/login?fail=true')
+        return HttpResponseRedirect('../event_app/sign_in?fail=true')
     country_name = req.POST["country_name"]
     resp = requests.get("http://universities.hipolabs.com/search?country=" + country_name)
     if resp.status_code != 200:
@@ -226,14 +223,14 @@ def viewRandomUselessFact(req):
 
 def add_education_form(req):
     if not req.session.get("username"):
-        return HttpResponseRedirect('../event_app/login?fail=true')
+        return HttpResponseRedirect('../event_app/sign_in?fail=true')
     education_form = AddEducationForm()
     return render(req, 'AddEducationFormPage.html', {"education_form": education_form, "action_fail": False})
 
 
 def add_education_function(req):
     if not req.session.get("username"):
-        return HttpResponseRedirect('../event_app/login?fail=true')
+        return HttpResponseRedirect('../event_app/sign_in?fail=true')
     username = req.session.get("username")
     institute_name = req.POST["institute_name"]
     degree = req.POST["degree"]
@@ -251,7 +248,7 @@ def add_education_function(req):
 
 def see_education(req):
     if not req.session.get("username"):
-        return HttpResponseRedirect('../event_app/login?fail=true')
+        return HttpResponseRedirect('../event_app/sign_in?fail=true')
     username = req.session.get("username")
     try:
         # Run the query in DB
