@@ -279,7 +279,7 @@ def viewIpInfo(req):
         return render(req, 'viewIpInfo.html', {"results": result, "action_fail": isFailed, "username": username})
     except Exception as e:
         print(str(e))
-        return HttpResponseRedirect('../boun/viewIpInfoPage?fail=true')
+        return HttpResponseRedirect('../event_app/viewIpInfoPage?fail=true')
 
 
 from .models import RaceStanding #import model
