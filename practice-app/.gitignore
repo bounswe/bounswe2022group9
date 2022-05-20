@@ -3,6 +3,8 @@ src/.env
 event_app/migrations/*
 event_app/__pycache__/*
 github_api/__pycache__/*
+geolocation_api/__pycache__/*
+summary_api/__pycache__/*
 event_app/tests/__pycache__/*
 university_api/__pycache__/*
 education_api/__pycache__/*

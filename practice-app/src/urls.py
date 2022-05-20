@@ -25,6 +25,7 @@ urlpatterns = [
     path('education_api/', include('education_api.urls')),
     path('countryCodes_api/', include('countryCodes_api.urls')),
     path('geolocation_api/', include('geolocation_api.urls')),
+    path('summary_api/', include('summary_api.urls')),
     path('admin/', admin.site.urls),
     path('event_app/', include('event_app.urls')),
     path('', lambda req: redirect('event_app/')),
