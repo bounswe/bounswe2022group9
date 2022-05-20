@@ -19,6 +19,7 @@ from django.urls import include, path
 
 
 urlpatterns = [
+    path('player_info_api/',include('player_info_api.urls')),
     path('formula1_api/', include('formula1_api.urls')),
     path('github_api/', include('github_api.urls')),
     path('university_api/', include('university_api.urls')),
