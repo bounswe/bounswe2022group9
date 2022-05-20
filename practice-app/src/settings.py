@@ -38,6 +38,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'event_app',
     'github_api',
+    'university_api',
+    'education_api',
     'geolocation_api',
     'countryCodes_api',
     'django.contrib.admin',

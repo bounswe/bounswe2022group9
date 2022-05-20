@@ -21,6 +21,8 @@ from django.urls import include, path
 urlpatterns = [
     path('formula1_api/', include('formula1_api.urls')),
     path('github_api/', include('github_api.urls')),
+    path('university_api/', include('university_api.urls')),
+    path('education_api/', include('education_api.urls')),
     path('countryCodes_api/', include('countryCodes_api.urls')),
     path('geolocation_api/', include('geolocation_api.urls')),
     path('admin/', admin.site.urls),
