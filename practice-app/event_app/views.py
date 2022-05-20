@@ -282,7 +282,7 @@ def viewIpInfo(req):
         return HttpResponseRedirect('../event_app/viewIpInfoPage?fail=true')
 
 
-from .models import RaceStanding #import model
+from formula1_api.models import RaceStanding #import model
 
 #@api_view(['GET','POST'])
 def race_standing_api(req):

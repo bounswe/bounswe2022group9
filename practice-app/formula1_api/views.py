@@ -47,8 +47,8 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
-from event_app.models import RaceStanding
-from event_app.serializer import RaceStandingSerializer
+from .models import RaceStanding
+from .serializer import RaceStandingSerializer
 
 @api_view(['GET', 'POST'])
 def formula1_race_standing(request):
