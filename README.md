@@ -15,3 +15,4 @@ In order to see more information about our team members, meeting notes, communic
 * [Berkant Koç](https://github.com/bounswe/bounswe2022group9/wiki/Berkant-Ko%C3%A7)
 * [Can Bora Uğur](https://github.com/bounswe/bounswe2022group9/wiki/Can-Bora-U%C4%9Fur)
 * [Hüseyin Türker Erdem](https://github.com/bounswe/bounswe2022group9/wiki/H%C3%BCseyin-T%C3%BCrker-Erdem)
+* [İbrahim Buğra Elmas](https://github.com/bounswe/bounswe2022group9/wiki/%C4%B0brahim-Bu%C4%9Fra-Elmas)
