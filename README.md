@@ -11,7 +11,7 @@ In order to see more information about our team members, meeting notes, communic
 * [Kutay Saran](https://github.com/bounswe/bounswe2022group9/wiki/Kutay-Saran)
 * [Hüseyin Türker Erdem](https://github.com/bounswe/bounswe2022group9/wiki/H%C3%BCseyin-T%C3%BCrker-Erdem)
 * [İbrahim Buğra Elmas](https://github.com/bounswe/bounswe2022group9/wiki/%C4%B0brahim-Bu%C4%9Fra-Elmas)
-* [Yağmur Göktaş]() (Communicator)
+* [Yağmur Göktaş](https://github.com/bounswe/bounswe2022group9/wiki/Yagmur-Goktas) (Communicator)
 * [Ufuk Karagöz](https://github.com/bounswe/bounswe2022group9/wiki/Ufuk-Karagoz)
 * [Oğuzhan Özboyacı](https://github.com/bounswe/bounswe2022group9/wiki/O%C4%9Fuzhan-%C3%96zboyac%C4%B1)
 
