@@ -1,9 +1,0 @@
-This is an example file to use concepts of git.
-
-updated by:
-Can Bora Uğur
-
-updated by:
-Ömer Faruk Şişman
-Repo is cloned to my local. The file example.txt is updated on my local and then added to stage. Will be committed and pushed to the repo.
-
