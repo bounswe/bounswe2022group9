@@ -21,10 +21,14 @@ def health_check(request):
 
 
 @api_view(['POST'])
-def signup(req):
-    username = req.data['username']
-    password = req.data['password']
-    email = req.data['email']
+def signup(req, is_json=True):
+    data = json.loads(req.body)
+    try:
+        username = data['username']
+        password = data['password']
+        email = data['email']
+    except:
+        return HttpResponseBadRequest("missing fields")
     token = hashlib.sha256((username+password+email).encode('utf-8')).hexdigest()
     hashed_password = hashlib.sha256(password.encode('utf-8')).hexdigest()
     print("email is: ", email)
