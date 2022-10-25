@@ -1,4 +1,5 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import Colors from "./constants/Colors";
 
 const Settings = (props) => {
   const { navigation } = props;
@@ -20,7 +21,6 @@ export default Settings;
 const styles = StyleSheet.create({
   button: {
     padding: 8,
-    backgroundColor: "tomato",
-    borderWidth: 1,
+    backgroundColor: Colors.primary,
   },
 });

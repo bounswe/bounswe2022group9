@@ -7,6 +7,7 @@ import Settings from "./Settings";
 import { Ionicons } from "@expo/vector-icons";
 import Exhibitions from "./Exhibitons";
 import Profile from "./Profile";
+import Colors from "./constants/Colors";
 
 const Tab = createBottomTabNavigator();
 
@@ -29,10 +30,9 @@ const Home = () => {
             iconName = "aperture-outline";
           }
 
-          // You can return any component that you like here!
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: "tomato",
+        tabBarActiveTintColor: Colors.primary,
         tabBarInactiveTintColor: "gray",
       })}
     >

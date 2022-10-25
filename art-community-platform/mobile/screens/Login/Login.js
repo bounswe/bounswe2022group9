@@ -1,4 +1,5 @@
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import Colors from "../constants/Colors";
 
 const Login = (props) => {
   const { navigation } = props;
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
     padding: 8,
     paddingHorizontal: 12,
     marginTop: 12,
-    backgroundColor: "tomato",
+    backgroundColor: Colors.primary,
     borderRadius: 6,
     alignSelf: "center",
   },
