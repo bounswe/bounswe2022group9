@@ -13,7 +13,8 @@ const Signup = () => {
     >
       <Text style={{color: "#173679", fontWeight: "bold", marginTop: 50}}>Signup</Text>
       <View style={styles.inputContainer}>
-        
+        <Text style={{color: "#173679" , fontWeight: "bold"}}>Username</Text>
+        <TextInput secureTextEntry style={styles.input} />
       </View>
     </View>
   );
