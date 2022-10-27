@@ -11,7 +11,7 @@ const Signup = () => {
       paddingBottom: 200,
     }}
     >
-      <Text>Signup Screen</Text>
+      <Text style={{color: "#173679", fontWeight: "bold", marginTop: 50}}>Signup</Text>
     </View>
   );
 };
