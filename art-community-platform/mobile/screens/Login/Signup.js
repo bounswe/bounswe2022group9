@@ -12,6 +12,9 @@ const Signup = () => {
     }}
     >
       <Text style={{color: "#173679", fontWeight: "bold", marginTop: 50}}>Signup</Text>
+      <View style={styles.inputContainer}>
+        
+      </View>
     </View>
   );
 };
