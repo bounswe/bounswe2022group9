@@ -19,6 +19,14 @@ const Signup = () => {
         <TextInput secureTextEntry style={styles.input} />
         <Text style={{color: "#173679" , fontWeight: "bold"}}>Email</Text>
         <TextInput secureTextEntry style={styles.input} />
+        <Pressable
+          style={styles.button}
+          onPress={() => {
+            navigation.navigate("Login");
+          }}
+        >
+          <Text style={styles.buttonText}>Signup</Text>
+        </Pressable>
       </View>
     </View>
   );
