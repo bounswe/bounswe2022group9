@@ -35,6 +35,17 @@ const Signup = () => {
 export default Signup;
 
 const styles = StyleSheet.create({
+  button: {
+    padding: 8,
+    paddingHorizontal: 12,
+    marginTop: 12,
+    backgroundColor: Colors.primary,
+    borderRadius: 6,
+    alignSelf: "center",
+  },
+  buttonText: {
+    color: "white",
+  },
 
   inputContainer: {
     
@@ -53,5 +64,12 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
 
     elevation: 5,
+  },
+  input: {
+    borderWidth: 0.2,
+    borderRadius: 8,
+    padding: 8,
+    marginBottom: 16,
+    width: "100%",
   },
 });
