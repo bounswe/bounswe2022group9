@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TextInput, Pressable} from "react-native";
 
 const Signup = () => {
   return (
