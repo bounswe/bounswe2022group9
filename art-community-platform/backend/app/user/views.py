@@ -13,6 +13,7 @@ from urllib import response
 from rest_framework.response import Response
 from rest_framework import status
 from django.core.mail import send_mail
+import validation_methods
 
 
 @api_view(['GET'])
@@ -31,35 +32,23 @@ def signup(req, is_json=True):
         return HttpResponseBadRequest("missing fields")
     token = hashlib.sha256((username+password+email).encode('utf-8')).hexdigest()
     hashed_password = hashlib.sha256(password.encode('utf-8')).hexdigest()
-    print("email is: ", email)
-    m = re.match(r"(\w|\.)*@\w*.com", email)
-    print("email is: ", email)
-    if m is None:
-        return HttpResponseBadRequest("email is invalid")
-    print("email is: ", email)
-    if len(username) < 5:
-        return HttpResponseBadRequest("username can't be shorter than 5 characters")
-    print("email is: ", email)
-    if len(password) < 8:
-        return HttpResponseBadRequest("password can't be shorter than 8 characters")
-    lower = False
-    upper = False
-    digit = False
-    for p in password:
-        if ord("0") <= ord(p) <= ord("9"):
-            digit = True
-        if ord("a") <= ord(p) <= ord("z"):
-            lower = True
-        if ord("A") <= ord(p) <= ord("Z"):
-            upper = True
-    if not upper:
-        return HttpResponseBadRequest("password should contain at least one upper case letter")
-    if not lower:
-        return HttpResponseBadRequest("password should contain at least one lower case letter")
-    if not digit:
-        return HttpResponseBadRequest("password should contain at least one numerical digit")
+
+    # email validation (e.g. does it have @ sign in it)
+    is_email_valid, email_validation_msg = validation_methods.validate_email(email)
+    if not is_email_valid:
+        return HttpResponseBadRequest(email_validation_msg)
+
+    # username validation
+    is_username_valid, username_validation_msg = validation_methods.validate_username(username)
+    if not is_username_valid:
+        return HttpResponseBadRequest(username_validation_msg)
+
+    # password validation
+    is_password_valid, pass_validation_msg = validation_methods.validate_password(password)
+    if not is_password_valid:
+        return HttpResponseBadRequest(pass_validation_msg)
+
     try:
-        print("trya girdik")
         obj = User.objects.get(email=email)
         return HttpResponseBadRequest("user with this email already exists")
         obj = User.objects.get(username=username)
