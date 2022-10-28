@@ -1,8 +1,8 @@
-import React , {Component} from 'react';
-import { View, Text, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { View, Text, ScrollView, SafeAreaView, Pressable} from 'react-native';
 
-class TermsAndConditions extends Component{
-    render(){
+const TermsAndConditions = () =>{
+    
         return (
             <SafeAreaView style={styles.container}>
                 <Text style={styles.title}>Terms and Conditions</Text>
@@ -46,7 +46,7 @@ class TermsAndConditions extends Component{
                 </Pressable>
             </SafeAreaView>
         );
-    }
+    
 }
 
 

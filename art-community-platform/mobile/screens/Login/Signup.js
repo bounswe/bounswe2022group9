@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, TextInput, Pressable} from "react-native";
 
-const Signup = () => {
+const Signup = (props) => {
+  const { navigation } = props;
   return (
     <View
     style={{
