@@ -36,6 +36,14 @@ class TermsAndConditions extends Component{
                     <Text>{'\n'}Limitation of liability</Text>
                     <Text>{'\n'}In no event shall aaaaaaaaa, nor any of its officers, directors and employees, shall be held liable for anything arising out of or in any way connected with your use of this application whether such liability is under contract.  aaaaaaaaa, including its officers, directors and employees shall not be held liable for any indirect, consequential or special liability arising out of or in any way related to your use of this application.</Text><Text>Indemnification</Text><Text>You hereby indemnify to the fullest extent aaaaaaaaa from and against any and/or all liabilities, costs, demands, causes of action, damages and expenses arising in any way related to your breach of any of the provisions of these Terms.</Text><Text>Severability</Text><Text>If any provision of these Terms is found to be invalid under any applicable law, such provisions shall be deleted without affecting the remaining provisions herein.</Text><Text>Variation of Terms</Text><Text>aaaaaaaaa is permitted to revise these Terms at any time as it sees fit, and by using this application you are expected to review these Terms on a regular basis.</Text><Text>Assignment</Text><Text>The aaaaaaaaa is allowed to assign, transfer, and subcontract its rights and/or obligations under these Terms without any notification. However, you are not allowed to assign, transfer, or subcontract any of your rights and/or obligations under these Terms.</Text><Text>Entire Agreement</Text><Text>These Terms constitute the entire agreement between aaaaaaaaa and you in relation to your use of this application, and supersede all prior agreements and understandings.</Text><Text>Governing Law & Jurisdiction</Text><Text>These Terms will be governed by and interpreted in accordance with the laws of the State of tr, and you submit to the non-exclusive jurisdiction of the state and federal courts located in tr for the resolution of any disputes.</Text>
                 </ScrollView>
+                <Pressable
+                    style={styles.button}
+                    onPress={() => {
+                        navigation.navigate("Signup");
+                    }}
+                    >
+                    <Text style={styles.buttonText}>Back</Text>
+                </Pressable>
             </SafeAreaView>
         );
     }
@@ -45,7 +53,17 @@ class TermsAndConditions extends Component{
 export default TermsAndConditions;
 
 const styles = {
-
+    button: {
+        padding: 8,
+        paddingHorizontal: 12,
+        marginTop: 12,
+        backgroundColor: Colors.primary,
+        borderRadius: 6,
+        alignSelf: "center",
+      },
+      buttonText: {
+        color: "white",
+      },
     container:{
       marginTop: 20,
       marginLeft: 10,
