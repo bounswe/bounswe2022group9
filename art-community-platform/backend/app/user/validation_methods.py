@@ -20,17 +20,17 @@ def validate_password(password):
         return [False, "password should contain at least one lower case letter"]
     if not digit:
         return [False, "password should contain at least one numerical digit"]
-    return [True, "ok"]
+    return [True, ""]
 
 
 def validate_email(email):
     m = re.match(r"(\w|\.)*@\w*.com", email)
     if m is None:
         return [False, "email is invalid"]
-    return [True, "ok"]
+    return [True, ""]
 
 
 def validate_username(username):
     if len(username) < 5:
         return [False, "username can't be shorter than 5 characters"]
-    return [True, "ok"]
+    return [True, ""]

@@ -1,19 +1,10 @@
-import re
-
-from django.shortcuts import render
-from django.http import HttpResponse,HttpResponseBadRequest
-from django.core.exceptions import BadRequest
+from django.http import HttpResponse, HttpResponseBadRequest
 from rest_framework.decorators import api_view
 import hashlib
 import json
-import random
 from .models import User
-from .serializers import UserSerializer
-from urllib import response
-from rest_framework.response import Response
-from rest_framework import status
-from django.core.mail import send_mail
-import validation_methods
+from . import validation_methods
+from django.core.exceptions import ObjectDoesNotExist
 
 
 @api_view(['GET'])
@@ -22,7 +13,7 @@ def health_check(request):
 
 
 @api_view(['POST'])
-def signup(req, is_json=True):
+def signup(req):
     data = json.loads(req.body)
     try:
         username = data['username']
@@ -48,18 +39,14 @@ def signup(req, is_json=True):
     if not is_password_valid:
         return HttpResponseBadRequest(pass_validation_msg)
 
+    # check if user is registered before, add new user if user isn't registered before
     try:
         obj = User.objects.get(email=email)
         return HttpResponseBadRequest("user with this email already exists")
-        obj = User.objects.get(username=username)
-        return HttpResponseBadRequest("user with this username already exists")
-    except :
-        User.objects.create(username=username, password=hashed_password, email=email, token=token)
-    return HttpResponse("ok")
-
-
-@api_view(['GET'])
-def users(req):
-    all_users = User.objects.all()  # fetch data from db
-    serializer = UserSerializer(all_users, many=True)  # convert to JSON format
-    return Response(serializer.data)
+    except:
+        try:
+            obj = User.objects.get(username=username)
+            return HttpResponseBadRequest("user with this username already exists")
+        except:
+            User.objects.create(username=username, password=hashed_password, email=email, token=token)
+    return HttpResponse(status=201)
