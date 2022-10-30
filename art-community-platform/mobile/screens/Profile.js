@@ -1,11 +1,12 @@
-import { StyleSheet, Text, View, Image,ScrollView } from "react-native";
+import { StyleSheet, Text, View, Image,ScrollView, SafeAreaView } from "react-native";
 
 const Profile = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
           <View style={styles.header}>
-            <Text style={[styles.follower , {marginTop:60}]}> Followers: 0</Text>
+            <Text style={[styles.follower , {marginTop:50}]}> Followers: 0</Text>
             <Text style={styles.follower}> Followees: 0</Text>
+            <Text style={styles.follower}> Posts: 1</Text>
           </View>
           <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
           <ScrollView style={{marginTop:20}}>
@@ -13,7 +14,7 @@ const Profile = () => {
             <Text style={styles.namee}>Yagmur Goktas</Text>
             <Text style={styles.description}>Software Engineer</Text>
           </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 
