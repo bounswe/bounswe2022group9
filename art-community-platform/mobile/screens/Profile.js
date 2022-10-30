@@ -18,11 +18,11 @@ const Profile = () => {
           <View style={[styles.photosCard , {paddingBottom: 50}]}>
             <Text style={styles.namee}>POSTS</Text>
             <View style={styles.photosContainer}>
-              <Image style={styles.photo} source={{uri: "https://bootdey.com/img/Content/avatar/avatar1.png"}} />
-              <Image style={styles.photo} source={{uri: "https://bootdey.com/img/Content/avatar/avatar2.png"}} />
-              <Image style={styles.photo} source={{uri: "https://bootdey.com/img/Content/avatar/avatar4.png"}} />
-              <Image style={styles.photo} source={{uri: "https://bootdey.com/img/Content/avatar/avatar5.png"}} />
-              <Image style={styles.photo} source={{uri: "https://bootdey.com/img/Content/avatar/avatar6.png"}} />
+              <Image style={styles.photo} source = {require("../assets/bus.jpg")} />
+              <Image style={styles.photo} source = {require("../assets/water.jpg")} />
+              <Image style={styles.photo} source = {require("../assets/concert.jpg")} />
+              <Image style={styles.photo} source = {require("../assets/rabit.jpg")} />
+              <Image style={styles.photo} source = {require("../assets/road.jpg")} />
             </View>
           </View>
           </View>
