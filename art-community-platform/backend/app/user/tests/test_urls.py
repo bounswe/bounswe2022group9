@@ -11,3 +11,7 @@ class TestUrls(SimpleTestCase):
     def test_signup_url_is_resolved(self):
         url = reverse('signup')
         self.assertEqual(resolve(url).func, views.signup)
+
+    def test_login_url_is_resolved(self):
+        url = reverse('login')
+        self.assertEqual(resolve(url).func, views.login)

@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseBadRequest
+from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse
 from rest_framework.decorators import api_view
 import hashlib
 import json
@@ -50,3 +50,25 @@ def signup(req):
         except:
             User.objects.create(username=username, password=hashed_password, email=email, token=token)
     return HttpResponse(status=201)
+
+@api_view(['POST'])
+def login(req):
+    data = json.loads(req.body)
+
+    try:
+        username = data['username']
+        password = data['password']
+    except:
+        return HttpResponseBadRequest("username or password is missing")
+
+    try:
+        u = User.objects.get(username=username)
+    except:
+        return HttpResponseBadRequest("no user found with this username")
+
+    hashed_password = hashlib.sha256(password.encode('utf-8')).hexdigest()
+
+    if hashed_password != u.password:
+        return HttpResponseBadRequest("wrong password")
+
+    return JsonResponse({'token': u.token})
