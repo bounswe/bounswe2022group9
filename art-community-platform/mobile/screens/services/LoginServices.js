@@ -1,6 +1,6 @@
 import axios from "axios";
 
-let token = undefined;
+let token = "";
 export const login = async (username, password) => {
   return axios
     .post(
