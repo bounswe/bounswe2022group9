@@ -13,6 +13,18 @@ const Profile = () => {
           <View style={styles.bodyContent}></View>
             <Text style={styles.namee}>Yagmur Goktas</Text>
             <Text style={styles.description}>Software Engineer</Text>
+
+          <View style={styles.photosCard}>
+            <Text style={styles.namee}>POSTS</Text>
+            <View style={styles.photosContainer}>
+              <Image style={styles.photo} source={{uri: "https://bootdey.com/img/Content/avatar/avatar1.png"}} />
+              <Image style={styles.photo} source={{uri: "https://bootdey.com/img/Content/avatar/avatar2.png"}} />
+              <Image style={styles.photo} source={{uri: "https://bootdey.com/img/Content/avatar/avatar3.png"}} />
+              <Image style={styles.photo} source={{uri: "https://bootdey.com/img/Content/avatar/avatar4.png"}} />
+              <Image style={styles.photo} source={{uri: "https://bootdey.com/img/Content/avatar/avatar5.png"}} />
+              <Image style={styles.photo} source={{uri: "https://bootdey.com/img/Content/avatar/avatar6.png"}} />
+            </View>
+          </View>
           </ScrollView>
     </SafeAreaView>
   );
@@ -56,4 +68,20 @@ const styles = StyleSheet.create({
     marginTop:10,
     textAlign: 'center'
   },
+  photosContainer:{
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    height: 'auto',
+    padding: 10,
+    marginLeft: 20,
+  },
+  photosCard:{
+    marginTop:10,
+  },
+  photo:{
+    width:113,
+    height:113,
+    marginTop:5,
+    marginRight:5,
+  }
 });
