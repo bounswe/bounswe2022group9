@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, TextInput, Pressable} from "react-native";
 
-const Signup = () => {
+const Signup = (props) => {
+  const { navigation } = props;
   return (
     <View
     style={{
@@ -19,6 +20,13 @@ const Signup = () => {
         <TextInput secureTextEntry style={styles.input} />
         <Text style={{color: "#173679" , fontWeight: "bold"}}>Email</Text>
         <TextInput secureTextEntry style={styles.input} />
+        <View style={styles.termsContainer}>
+          <Text style = {styles.term_service}>By signing up, you agree to </Text>
+          
+          <Text  onPress={() => navigation.navigate("TermsAndConditions")}
+          style={styles.terms_text}>Terms of Service and Privacy Policy.</Text>
+    
+        </View>
         <Pressable
           style={styles.button}
           onPress={() => {
@@ -45,6 +53,10 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "white",
+  },
+  terms_text: {
+    flexDirection:"row",
+    color: "blue",
   },
 
   inputContainer: {
