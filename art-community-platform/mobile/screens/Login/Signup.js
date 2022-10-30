@@ -1,36 +1,84 @@
-import { StyleSheet, Text, View, TextInput, Pressable} from "react-native";
+import React from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Pressable,
+  Alert,
+} from "react-native";
+import { signup } from "../services/LoginServices";
 
 const Signup = (props) => {
   const { navigation } = props;
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [username, setUsername] = React.useState("");
+
+  const handleSigngup = () => {
+    signup(username, email, password)
+      .then((response) => {
+        if (response.status === 201) {
+          Alert.alert("Signup Succesful ✅", "Click OK to go to Login Screen", [
+            { text: "OK", onPress: () => navigation.navigate("Login") },
+          ]);
+        } else if (response.status === 400) {
+          Alert.alert("Signup Failed ❌", response.data);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <View
-    style={{
-      backgroundColor: "white", 
-      flex: 1,
-      alignItems: "center",
-      justifyContent: "center",
-      paddingBottom: 200,
-    }}
+      style={{
+        backgroundColor: "white",
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+        paddingBottom: 200,
+      }}
     >
-      <Text style={{color: "#173679", fontWeight: "bold", marginTop: 50}}>Signup</Text>
+      <Text style={{ color: "#173679", fontWeight: "bold", marginTop: 50 }}>
+        Signup
+      </Text>
       <View style={styles.inputContainer}>
-        <Text style={{color: "#173679" , fontWeight: "bold"}}>Username</Text>
-        <TextInput secureTextEntry style={styles.input} />
-        <Text style={{color: "#173679" , fontWeight: "bold"}}>Password</Text>
-        <TextInput secureTextEntry style={styles.input} />
-        <Text style={{color: "#173679" , fontWeight: "bold"}}>Email</Text>
-        <TextInput secureTextEntry style={styles.input} />
+        <Text style={{ color: "#173679", fontWeight: "bold" }}>Username</Text>
+        <TextInput
+          value={username}
+          onChangeText={(text) => setUsername(text)}
+          style={styles.input}
+        />
+        <Text style={{ color: "#173679", fontWeight: "bold" }}>Email</Text>
+        <TextInput
+          value={email}
+          onChangeText={(text) => setEmail(text)}
+          style={styles.input}
+        />
+        <Text style={{ color: "#173679", fontWeight: "bold" }}>Password</Text>
+        <TextInput
+          value={password}
+          onChangeText={(text) => setPassword(text)}
+          secureTextEntry
+          style={styles.input}
+        />
+
         <View style={styles.termsContainer}>
-          <Text style = {styles.term_service}>By signing up, you agree to </Text>
-          
-          <Text  onPress={() => navigation.navigate("TermsAndConditions")}
-          style={styles.terms_text}>Terms of Service and Privacy Policy.</Text>
-    
+          <Text style={styles.term_service}>By signing up, you agree to </Text>
+
+          <Text
+            onPress={() => navigation.navigate("TermsAndConditions")}
+            style={styles.terms_text}
+          >
+            Terms of Service and Privacy Policy.
+          </Text>
         </View>
         <Pressable
           style={styles.button}
           onPress={() => {
-            navigation.navigate("Login");
+            handleSigngup();
           }}
         >
           <Text style={styles.buttonText}>Signup</Text>
@@ -55,13 +103,12 @@ const styles = StyleSheet.create({
     color: "white",
   },
   terms_text: {
-    flexDirection:"row",
+    flexDirection: "row",
     color: "blue",
   },
 
   inputContainer: {
-    
-    justifyContent:'flex-end',
+    justifyContent: "flex-end",
     width: "80%",
     padding: 16,
     marginVertical: 24,
