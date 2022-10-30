@@ -33,9 +33,9 @@ const Login = (props) => {
       }}
     >
       <View style={styles.inputContainer}>
-        <Text value={username}
-          onChangeText={(text) => setUsername(text)} style={{ color: Colors.primaryDark }}>Username</Text>
-        <TextInput style={styles.input} />
+        <Text style={{ color: Colors.primaryDark }}>Username</Text>
+        <TextInput value={username}
+          onChangeText={(text) => setUsername(text)} style={styles.input} />
         <Text style={{ color: Colors.primaryDark }}>Password</Text>
         <TextInput secureTextEntry style={styles.input} />
         <Pressable
