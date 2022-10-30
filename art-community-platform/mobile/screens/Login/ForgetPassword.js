@@ -1,9 +1,17 @@
-import {Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import Colors from "../constants/Colors";
 
 const ForgetPassword = (props) => {
   const { navigation } = props;
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+    <View
+      style={{
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "white",
+      }}
+    >
       <View style={styles.inputContainer}>
         <Text>Email</Text>
         <TextInput style={styles.input} />
@@ -18,7 +26,6 @@ const ForgetPassword = (props) => {
       </View>
     </View>
   );
-  
 };
 
 export default ForgetPassword;
@@ -28,7 +35,7 @@ const styles = StyleSheet.create({
     padding: 8,
     paddingHorizontal: 12,
     marginTop: 12,
-    backgroundColor: "tomato",
+    backgroundColor: Colors.primary,
     borderRadius: 6,
     alignSelf: "center",
   },
@@ -36,6 +43,7 @@ const styles = StyleSheet.create({
     color: "white",
   },
   inputContainer: {
+    marginBottom: 240,
     width: "80%",
     padding: 16,
     marginVertical: 24,

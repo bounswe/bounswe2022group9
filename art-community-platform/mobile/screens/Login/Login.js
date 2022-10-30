@@ -10,12 +10,13 @@ const Login = (props) => {
         alignItems: "center",
         justifyContent: "center",
         paddingBottom: 200,
+        backgroundColor: "white",
       }}
     >
       <View style={styles.inputContainer}>
-        <Text>Username</Text>
+        <Text style={{ color: Colors.primaryDark }}>Username</Text>
         <TextInput style={styles.input} />
-        <Text>Password</Text>
+        <Text style={{ color: Colors.primaryDark }}>Password</Text>
         <TextInput secureTextEntry style={styles.input} />
         <Pressable
           style={styles.button}
@@ -86,5 +87,6 @@ const styles = StyleSheet.create({
     padding: 8,
     marginBottom: 16,
     width: "100%",
+    borderColor: Colors.primaryLight,
   },
 });

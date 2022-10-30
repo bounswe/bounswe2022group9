@@ -8,6 +8,7 @@ import {
   Alert,
 } from "react-native";
 import { signup } from "../services/LoginServices";
+import Colors from "../constants/Colors";
 
 const Signup = (props) => {
   const { navigation } = props;
@@ -41,23 +42,20 @@ const Signup = (props) => {
         paddingBottom: 200,
       }}
     >
-      <Text style={{ color: "#173679", fontWeight: "bold", marginTop: 50 }}>
-        Signup
-      </Text>
       <View style={styles.inputContainer}>
-        <Text style={{ color: "#173679", fontWeight: "bold" }}>Username</Text>
+        <Text style={{ color: Colors.primaryDark }}>Username</Text>
         <TextInput
           value={username}
           onChangeText={(text) => setUsername(text)}
           style={styles.input}
         />
-        <Text style={{ color: "#173679", fontWeight: "bold" }}>Email</Text>
+        <Text style={{ color: Colors.primaryDark }}>Email</Text>
         <TextInput
           value={email}
           onChangeText={(text) => setEmail(text)}
           style={styles.input}
         />
-        <Text style={{ color: "#173679", fontWeight: "bold" }}>Password</Text>
+        <Text style={{ color: Colors.primaryDark }}>Password</Text>
         <TextInput
           value={password}
           onChangeText={(text) => setPassword(text)}
@@ -104,7 +102,7 @@ const styles = StyleSheet.create({
   },
   terms_text: {
     flexDirection: "row",
-    color: "blue",
+    color: Colors.primaryDark,
   },
 
   inputContainer: {
@@ -130,5 +128,6 @@ const styles = StyleSheet.create({
     padding: 8,
     marginBottom: 16,
     width: "100%",
+    borderColor: Colors.primaryLight,
   },
 });
