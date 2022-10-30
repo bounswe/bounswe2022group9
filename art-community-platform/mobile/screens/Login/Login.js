@@ -1,3 +1,4 @@
+import React from "react";
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import Colors from "../constants/Colors";
 import { login } from "../services/LoginServices";
@@ -6,6 +7,20 @@ const Login = (props) => {
   const { navigation } = props;
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
+
+  const handleLogin = () => {
+    signup(username, password)
+      .then((response) => {
+        if (response.status === 200) {
+          navigation.navigate("Home")
+        } else if (response.status === 400) {
+          Alert.alert("Login Failed ❌", response.data);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <View
