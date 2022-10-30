@@ -37,7 +37,9 @@ const Login = (props) => {
         <TextInput value={username}
           onChangeText={(text) => setUsername(text)} style={styles.input} />
         <Text style={{ color: Colors.primaryDark }}>Password</Text>
-        <TextInput secureTextEntry style={styles.input} />
+        <TextInput value={password}
+          onChangeText={(text) => setPassword(text)}
+          secureTextEntry style={styles.input} />
         <Pressable
           style={styles.button}
           onPress={() => {
