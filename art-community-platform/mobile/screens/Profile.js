@@ -11,6 +11,7 @@ const Profile = () => {
           <ScrollView style={{marginTop:20}}>
           <View style={styles.bodyContent}></View>
             <Text style={styles.namee}>Yagmur Goktas</Text>
+            <Text style={styles.description}>Software Engineer</Text>
           </ScrollView>
     </View>
   );
@@ -47,5 +48,11 @@ const styles = StyleSheet.create({
     alignSelf:'center',
     color:'#173679',
     fontWeight: "bold",
-  }
+  },
+  description:{
+    fontSize:12,
+    color: "#696969",
+    marginTop:10,
+    textAlign: 'center'
+  },
 });
