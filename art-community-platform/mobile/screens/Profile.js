@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image,ScrollView } from "react-native";
 
 const Profile = () => {
   return (
@@ -8,10 +8,10 @@ const Profile = () => {
             <Text style={styles.follower}> Followees: 0</Text>
           </View>
           <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
-          <View style={{marginTop:40}}>
+          <ScrollView style={{marginTop:20}}>
           <View style={styles.bodyContent}></View>
-
-          </View>
+            <Text style={styles.namee}>Yagmur Goktas</Text>
+          </ScrollView>
     </View>
   );
 };
@@ -43,7 +43,9 @@ const styles = StyleSheet.create({
     color:'white',
     fontWeight: "bold"
   },
-  followee:{
-
+  namee:{
+    alignSelf:'center',
+    color:'#173679',
+    fontWeight: "bold",
   }
 });
