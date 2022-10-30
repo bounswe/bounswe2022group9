@@ -4,6 +4,9 @@ import { login } from "../services/LoginServices";
 
 const Login = (props) => {
   const { navigation } = props;
+  const [username, setUsername] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
   return (
     <View
       style={{
