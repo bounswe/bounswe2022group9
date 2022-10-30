@@ -1,5 +1,5 @@
 import React from "react";
-import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { Pressable, StyleSheet, Text, TextInput, View, Alert } from "react-native";
 import Colors from "../constants/Colors";
 import { login } from "../services/LoginServices";
 
@@ -9,7 +9,7 @@ const Login = (props) => {
   const [password, setPassword] = React.useState("");
 
   const handleLogin = () => {
-    signup(username, password)
+    login(username, password)
       .then((response) => {
         if (response.status === 200) {
           navigation.navigate("Home")
