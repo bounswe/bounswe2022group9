@@ -5,7 +5,10 @@ const Profile = () => {
     <View style={styles.container}>
           <View style={styles.header}></View>
           <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
-    
+          <View style={{marginTop:40}}>
+          <View style={styles.bodyContent}></View>
+
+          </View>
     </View>
   );
 };
