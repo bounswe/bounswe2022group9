@@ -16,8 +16,7 @@ export const login = async (username, password) => {
       }
     )
     .then((response) => {
-      token = response.body.token;
-      console.log(token)
+      token = response.data.token;
       return response;
     })
     .catch((error) => {
