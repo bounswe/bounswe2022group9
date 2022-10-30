@@ -43,7 +43,7 @@ const Login = (props) => {
         <Pressable
           style={styles.button}
           onPress={() => {
-            navigation.navigate("Home");
+            handleLogin();
           }}
         >
           <Text style={styles.buttonText}>Login</Text>
