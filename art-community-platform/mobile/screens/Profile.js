@@ -9,7 +9,7 @@ const Profile = () => {
             <Text style={styles.follower}> Followees: 0</Text>
             <Text style={styles.follower}> Posts: 1</Text>
           </View>
-          <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
+          <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar3.png'}}/>
           <View style={{marginTop:20}}>
           <View style={styles.bodyContent}></View>
             <Text style={styles.namee}>Yagmur Goktas</Text>
@@ -20,7 +20,6 @@ const Profile = () => {
             <View style={styles.photosContainer}>
               <Image style={styles.photo} source={{uri: "https://bootdey.com/img/Content/avatar/avatar1.png"}} />
               <Image style={styles.photo} source={{uri: "https://bootdey.com/img/Content/avatar/avatar2.png"}} />
-              <Image style={styles.photo} source={{uri: "https://bootdey.com/img/Content/avatar/avatar3.png"}} />
               <Image style={styles.photo} source={{uri: "https://bootdey.com/img/Content/avatar/avatar4.png"}} />
               <Image style={styles.photo} source={{uri: "https://bootdey.com/img/Content/avatar/avatar5.png"}} />
               <Image style={styles.photo} source={{uri: "https://bootdey.com/img/Content/avatar/avatar6.png"}} />
