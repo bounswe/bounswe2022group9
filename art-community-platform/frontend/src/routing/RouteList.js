@@ -6,9 +6,9 @@ import {
   Navigate,
 } from "react-router-dom";
 import LoginPage from "../pages/LoginPage";
-import RegistrationPage from "../pages/RegistrationPage";
-import ConfirmationPage from "../pages/ConfirmationPage";
-import HomePage from "../pages/HomePage";
+import SignupPage from "../pages/SignupPage";
+// import ConfirmationPage from "../pages/ConfirmationPage";
+// import HomePage from "../pages/HomePage";
 import history from "../history";
 import PublicRoute from "./PublicRoute";
 import AuthRoute from "./AuthRoute";
@@ -27,30 +27,12 @@ export default function RouteList() {
           }
         />
         <Route
-          path="/register"
+          path="/signup"
           exact
           element={
             <PublicRoute>
-              <RegistrationPage />
+              <SignupPage />
             </PublicRoute>
-          }
-        />
-        <Route
-          path="/confirmation"
-          exact
-          element={
-            <PublicRoute>
-              <ConfirmationPage />
-            </PublicRoute>
-          }
-        />
-        <Route
-          path="/home"
-          exact
-          element={
-            <AuthRoute>
-              <HomePage />
-            </AuthRoute>
           }
         />
         <Route path="*" element={<Navigate replace to="/login" />} />

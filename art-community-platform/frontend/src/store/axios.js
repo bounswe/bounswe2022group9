@@ -1,5 +1,5 @@
 import axios from "axios";
-import { LOGIN_ENDPOINT, LOGOUT_ENDPOINT, REGISTER_ENDPOINT } from "./urls";
+import { LOGIN_ENDPOINT, LOGOUT_ENDPOINT, SIGNUP_ENDPOINT } from "./urls";
 
 export async function login(info) {
   const header = {
@@ -24,7 +24,7 @@ export async function login(info) {
   }
 }
 
-export async function register(info) {
+export async function signup(info) {
   try {
     const header = {
       headers: {
@@ -38,7 +38,7 @@ export async function register(info) {
       password: info.password,
     };
     const response = await axios.post(
-      REGISTER_ENDPOINT,
+      SIGNUP_ENDPOINT,
       { ...body },
       { ...header }
     );

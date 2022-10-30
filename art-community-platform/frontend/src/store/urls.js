@@ -1,5 +1,5 @@
-export const BASE_URL = "";
+export const BASE_URL = "http://ec2-44-202-130-117.compute-1.amazonaws.com";
 
-export const LOGIN_ENDPOINT = `${BASE_URL}auth/login`;
-export const LOGOUT_ENDPOINT = `${BASE_URL}auth/logout`;
-export const REGISTER_ENDPOINT = `${BASE_URL}auth/register`;
+export const LOGIN_ENDPOINT = `${BASE_URL}/user/login`;
+export const LOGOUT_ENDPOINT = `${BASE_URL}/user/logout`;
+export const SIGNUP_ENDPOINT = `${BASE_URL}/user/signup`;
