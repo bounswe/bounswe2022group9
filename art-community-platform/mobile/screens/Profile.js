@@ -3,18 +3,19 @@ import { StyleSheet, Text, View, Image,ScrollView, SafeAreaView } from "react-na
 const Profile = () => {
   return (
     <SafeAreaView style={styles.container}>
+      <ScrollView>
           <View style={styles.header}>
             <Text style={[styles.follower , {marginTop:50}]}> Followers: 0</Text>
             <Text style={styles.follower}> Followees: 0</Text>
             <Text style={styles.follower}> Posts: 1</Text>
           </View>
           <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
-          <ScrollView style={{marginTop:20}}>
+          <View style={{marginTop:20}}>
           <View style={styles.bodyContent}></View>
             <Text style={styles.namee}>Yagmur Goktas</Text>
             <Text style={styles.description}>Software Engineer</Text>
 
-          <View style={styles.photosCard}>
+          <View style={[styles.photosCard , {paddingBottom: 50}]}>
             <Text style={styles.namee}>POSTS</Text>
             <View style={styles.photosContainer}>
               <Image style={styles.photo} source={{uri: "https://bootdey.com/img/Content/avatar/avatar1.png"}} />
@@ -24,6 +25,7 @@ const Profile = () => {
               <Image style={styles.photo} source={{uri: "https://bootdey.com/img/Content/avatar/avatar5.png"}} />
               <Image style={styles.photo} source={{uri: "https://bootdey.com/img/Content/avatar/avatar6.png"}} />
             </View>
+          </View>
           </View>
           </ScrollView>
     </SafeAreaView>
