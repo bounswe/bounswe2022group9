@@ -12,7 +12,7 @@ const Profile = () => {
           <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar3.png'}}/>
           <View style={{marginTop:20}}>
           <View style={styles.bodyContent}></View>
-            <Text style={styles.namee}>Yagmur Goktas</Text>
+            <Text style={styles.namee}>yagmur.goktas</Text>
             <Text style={styles.description}>Software Engineer</Text>
 
           <View style={[styles.photosCard , {paddingBottom: 50}]}>
