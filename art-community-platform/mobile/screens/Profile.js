@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Image,ScrollView, SafeAreaView, Dimensions } from "react-native";
 
+const dimensions = Dimensions.get("window");
 const Profile = () => {
   return (
     <SafeAreaView style={styles.container}>
