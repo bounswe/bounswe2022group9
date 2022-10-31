@@ -1,8 +1,27 @@
-import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import React from "react";
+import { Pressable, StyleSheet, Text, TextInput, View, Alert } from "react-native";
 import Colors from "../constants/Colors";
+import { login } from "../services/LoginServices";
 
 const Login = (props) => {
   const { navigation } = props;
+  const [username, setUsername] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
+  const handleLogin = () => {
+    login(username, password)
+      .then((response) => {
+        if (response.status === 200) {
+          navigation.navigate("Home")
+        } else if (response.status === 400) {
+          Alert.alert("Login Failed ❌", response.data);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <View
       style={{
@@ -15,13 +34,16 @@ const Login = (props) => {
     >
       <View style={styles.inputContainer}>
         <Text style={{ color: Colors.primaryDark }}>Username</Text>
-        <TextInput style={styles.input} />
+        <TextInput value={username}
+          onChangeText={(text) => setUsername(text)} style={styles.input} />
         <Text style={{ color: Colors.primaryDark }}>Password</Text>
-        <TextInput secureTextEntry style={styles.input} />
+        <TextInput value={password}
+          onChangeText={(text) => setPassword(text)}
+          secureTextEntry style={styles.input} />
         <Pressable
           style={styles.button}
           onPress={() => {
-            navigation.navigate("Home");
+            handleLogin();
           }}
         >
           <Text style={styles.buttonText}>Login</Text>
