@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import LoginPage from "../pages/LoginPage";
 import SignupPage from "../pages/SignupPage";
+import ProfilePage from "../pages/ProfilePage"
 // import ConfirmationPage from "../pages/ConfirmationPage";
 // import HomePage from "../pages/HomePage";
 import history from "../history";
@@ -32,6 +33,15 @@ export default function RouteList() {
           element={
             <PublicRoute>
               <SignupPage />
+            </PublicRoute>
+          }
+        />
+      <Route
+          path="/profile"
+          exact
+          element={
+            <PublicRoute>
+              <ProfilePage />
             </PublicRoute>
           }
         />

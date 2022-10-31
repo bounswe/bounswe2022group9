@@ -50,7 +50,7 @@ const Login = () => {
         </Col>
         <Col span={24} align="middle">
           <Button style={LoginButtonStyle} type="primary" shape="round" icon={<LoginOutlined />}
-            onClick={login}>
+            href="profile">
             Log In
           </Button>
         </Col>
