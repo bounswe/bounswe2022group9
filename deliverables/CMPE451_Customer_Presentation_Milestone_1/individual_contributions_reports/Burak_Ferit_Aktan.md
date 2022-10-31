@@ -29,6 +29,7 @@ Also, I revised Use Case Diagrams
 * [Document Signup endpoint of API](https://github.com/bounswe/bounswe2022group9/issues/279)
 * [Open a discord server for CmpE451](https://github.com/bounswe/bounswe2022group9/issues/233)
 * [Backend Meeting Notes for Meeting 1](https://github.com/bounswe/bounswe2022group9/issues/282)
+* [Scenario Preparation for Sign Up](https://github.com/bounswe/bounswe2022group9/issues/290)
 
 ## Pull Requests
  * [Signup Backend](https://github.com/bounswe/bounswe2022group9/pull/259)
