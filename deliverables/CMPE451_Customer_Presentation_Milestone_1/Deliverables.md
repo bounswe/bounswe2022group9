@@ -22,7 +22,7 @@ The hyperlinks to all deliverable documents are added below.
 * [Commenting on Content](https://github.com/bounswe/bounswe2022group9/wiki/%22Commenting-on-content%22-scenario)
 
 ### Individual Contribution Reports
-* [Burak Ferit Aktan]()
+* [Burak Ferit Aktan](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/individual_contributions_reports/Burak_Ferit_Aktan.md)
 * [İbrahim Buğra Elmas]()
 * [Hüseyin Türker Erdem]()
 * [Yağmur Göktaş]()
