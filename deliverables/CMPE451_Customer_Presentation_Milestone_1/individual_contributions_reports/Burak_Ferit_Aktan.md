@@ -25,8 +25,8 @@ Also, I revised Use Case Diagrams
 * [[Backend] Write Unit Tests for Signup](https://github.com/bounswe/bounswe2022group9/issues/277)
 
 ### Management Related Significant Issues
-* [Use Case Revision](https://github.com/bounswe/bounswe2022group9/issues/236)
-* [Document Signup endpoint of API](https://github.com/bounswe/bounswe2022group9/issues/279)
+* [Revising Use Case Diagrams](https://github.com/bounswe/bounswe2022group9/issues/236)
+* [API Documentation (signup)](https://github.com/bounswe/bounswe2022group9/issues/279)
 * [Open a discord server for CmpE451](https://github.com/bounswe/bounswe2022group9/issues/233)
 * [Backend Meeting Notes for Meeting 1](https://github.com/bounswe/bounswe2022group9/issues/282)
 * [Scenario Preparation for Sign Up](https://github.com/bounswe/bounswe2022group9/issues/290)
