@@ -4,7 +4,7 @@
 Name: İbrahim Buğra Elmas
 
 Student Number: 2017400228
-e
+
 Group: Group 9
 
 Subgroup: Mobile
