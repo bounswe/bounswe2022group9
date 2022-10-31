@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image,ScrollView, SafeAreaView } from "react-native";
+import { StyleSheet, Text, View, Image,ScrollView, SafeAreaView, Dimensions } from "react-native";
 
 const Profile = () => {
   return (
