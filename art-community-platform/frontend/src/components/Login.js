@@ -1,71 +1,118 @@
-import PropTypes from 'prop-types';
-import { useState } from 'react';
-import { Input, Row, Col, Button, Typography, Layout } from 'antd';
+import PropTypes from "prop-types";
+import { useState } from "react";
+
+import { Form, Input, Row, Col, Button, Typography, Layout, Space, message } from "antd";
+
+import { useNavigate } from "react-router-dom";
 
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import { LoginOutlined, EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
-import 'antd/dist/antd.css';
+import { Login as LoginHelper } from "../utils/helper";
 
-const LoginButtonStyle = {
-  backgroundColor: '#00c853',
-  borderColor: '#00c853'
-};
+import { LoginOutlined } from "@ant-design/icons";
+import "antd/dist/antd.css";
+import Colors from "../constants/Colors";
 
 const { Text } = Typography;
+const buttonStyle = {
+    fontSize: "20px",
+    color: Colors.primary,
+    cursor: "pointer",
+  };
+
 
 const Login = () => {
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-  
-    const login = () => {
-      console.log('Trying to log in with', username, password);
-    }
-  
-    const onKeyPress = (e) => {
-      if (e.charCode === 13) {
-        login();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const onFinish = async (values) => {
+    console.log("Success:", values);
+    const response = await LoginHelper(
+      { username: values.username, password: values.password },
+      dispatch
+    );
+    if (response.status === 200) {
+        navigate("/profile");
+      } else {
+        message.error(response.response.data);
       }
-    }
-    return (
-        <Row gutter={[0, 16]}>
-        <Col span={24}></Col>
-        <Col span={6} offset={9}>
-          <Text strong>Username or Email</Text>
-          <Input
-            placeholder="Enter username or email"
-            onKeyPress={onKeyPress}
-            onChange={e => setUsername(e.target.value)}
-            value={username}
-          />
-        </Col>
-        <Col span={6} offset={9}>
+  };
+
+  const onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+  };
+
+  const sendToSignup = () => {
+    console.log("Sending to signup");
+    navigate("/signup");
+  };
+
+  const sendToResetPassword = () => {
+    console.log("Sending to reset password");
+    navigate("/resetPassword");
+  };
+
+  return (
+    <Row gutter={[0, 16]}>
+      <Col span={24}></Col>
+      <Col span={6} offset={9}>
+        <Form
+          style={{ marginBottom: "20px" }}
+          name="basic"
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+        >
+          <Text strong>Username</Text>
+          <Form.Item
+            name="username"
+            rules={[
+              {
+                required: true,
+                message: "Please enter your username.",
+              },
+            ]}
+          >
+            <Input placeholder="Enter username" />
+          </Form.Item>
+
           <Text strong>Password</Text>
-          <Input.Password
-            placeholder="Enter password"
-            onKeyPress={onKeyPress}
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)} />
-        </Col>
+          <Form.Item
+            name="password"
+            rules={[
+              {
+                required: true,
+                message: "Please enter your password.",
+              },
+            ]}
+          >
+            <Input.Password placeholder="Enter password" />
+          </Form.Item>
+
+          <Col span={24} align="middle">
+            <Button
+              type="primary"
+              htmlType="submit"
+              shape="round"
+              icon={<LoginOutlined />}
+            >
+              Login
+            </Button>
+          </Col>
+        </Form>
         <Col span={24} align="middle">
-          <Button style={LoginButtonStyle} type="primary" shape="round" icon={<LoginOutlined />}
-            href="profile">
-            Log In
-          </Button>
+          <Space size={"large"}>
+            <Text style={buttonStyle} onClick={sendToResetPassword}>
+              Forgot your password?
+            </Text>
+            <Text style={buttonStyle} onClick={sendToSignup}>
+              Don't have an account?
+            </Text>
+          </Space>
         </Col>
-        <Col span={24} align="middle">
-          <Button type="link"
-            onClick={login}>
-            Forgot your password?
-          </Button>
-          <Button type="link"
-            onClick={login}>
-            Don't have an account?
-          </Button>
-        </Col>
-      </Row>
-    )
-}
+      </Col>
+    </Row>
+  );
+};
 
 export default Login;

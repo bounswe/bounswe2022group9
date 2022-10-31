@@ -5,5 +5,5 @@ import { useSelector } from "react-redux";
 
 export default function PublicRoute({ children }) {
   const { isAuthenticated } = useSelector((state) => state.login);
-  return !isAuthenticated ? children : <Navigate to="/home" />;
+  return !isAuthenticated ? children : <Navigate to="/profile" />;
 }

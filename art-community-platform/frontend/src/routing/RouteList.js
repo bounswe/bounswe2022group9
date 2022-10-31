@@ -40,9 +40,9 @@ export default function RouteList() {
           path="/profile"
           exact
           element={
-            <PublicRoute>
+            <AuthRoute>
               <ProfilePage />
-            </PublicRoute>
+            </AuthRoute>
           }
         />
         <Route path="*" element={<Navigate replace to="/login" />} />

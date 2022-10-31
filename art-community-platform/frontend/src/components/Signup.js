@@ -1,35 +1,60 @@
-import React from 'react';
-import { Form, Input, Button, Checkbox, Typography, Row, Col } from 'antd';
-import 'antd/dist/antd.css';
+import { useNavigate } from "react-router-dom";
 
-const {Text} = Typography;
+import React from "react";
+import { useDispatch } from "react-redux";
 
+import { Form, Input, Button, Checkbox, Typography, Row, Col, message } from "antd";
+import "antd/dist/antd.css";
+import Colors from "../constants/Colors";
+import { Signup as SignupHelper } from "../utils/helper";
+
+const { Text } = Typography;
+const buttonStyle = {
+  fontSize: "20px",
+  color: Colors.primary,
+  cursor: "pointer",
+};
 const Signup = () => {
-  const onFinish = (values) => {
-    console.log('Success:', values);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const onFinish = async (values) => {
+
+    console.log("Success:", values);
+    if( values.password === values.passwordSecond ) {
+      const response = await SignupHelper(
+        { username: values.username, email: values.email, password: values.password },
+        dispatch
+      );
+      if (response.status === 201) {
+        navigate("/login");
+      } else {
+        message.error(response.response.data);
+      }
+    } else {
+      message.error("Passwords are not equal");
+    }
+    
+
   };
 
   const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
+    console.log("Failed:", errorInfo);
   };
 
   return (
     <Row gutter={[0, 16]}>
       <Col span={24}></Col>
       <Col span={6} offset={9}>
-        <Form
-          name="basic"
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-        > 
-        <Text strong>Username</Text>
+        <Form name="basic" onFinish={onFinish} onFinishFailed={onFinishFailed}>
+          <Text strong>Username</Text>
           <Form.Item
             name="username"
             required
             rules={[
               {
                 required: true,
-                message: 'Please input your username!',
+                message: "Please input your username!",
               },
             ]}
           >
@@ -42,7 +67,7 @@ const Signup = () => {
             rules={[
               {
                 required: true,
-                message: 'Please input your e-mail!',
+                message: "Please input your e-mail!",
               },
             ]}
           >
@@ -55,7 +80,7 @@ const Signup = () => {
             rules={[
               {
                 required: true,
-                message: 'Please input your password!',
+                message: "Please input your password!",
               },
             ]}
           >
@@ -68,25 +93,23 @@ const Signup = () => {
             rules={[
               {
                 required: true,
-                message: 'Please input your password again!',
+                message: "Please input your password again!",
               },
             ]}
           >
             <Input.Password placeholder="Enter password again" />
           </Form.Item>
 
-          <Form.Item
-            name="remember"
-            valuePropName="checked"
-            required
-          >
-            <Checkbox required><a href="##">Accepting the terms of GPDR and KVKK</a></Checkbox>
+          <Form.Item name="remember" valuePropName="checked" required>
+            <Checkbox required>
+              <a style={buttonStyle} href="##">Accepting the terms of GPDR and KVKK</a>
+            </Checkbox>
           </Form.Item>
 
           <Form.Item
             wrapperCol={{
               offset: 4,
-          }}
+            }}
           >
             <Button type="primary" htmlType="submit" shape="round">
               Submit Signup Form
@@ -96,6 +119,6 @@ const Signup = () => {
       </Col>
     </Row>
   );
-}
+};
 
 export default Signup;
