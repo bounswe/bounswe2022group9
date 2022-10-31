@@ -11,7 +11,11 @@ Subgroup: Backend
 
 ## Responsibilites
 
-Writing, testing backend codes (signup feature). Documenting API endpoints related to signup. Use case diagrams revision
+I'm a member of backend group, this brings me responsibility of writing and testing backend code. I wrote and tested backend codes for signup. Also, I'm taking meeting notes and documenting them on wiki page in some of the meetings.
+
+I am also working for API documentation. In these documentations, I'm telling "how to send requests to API endpoints,  what are possible API responses and which type of responses are given in which conditions" These documentations are important for both customers and group communication.
+
+Also, I revised Use Case Diagrams
 
 ## Main Contributions
 
@@ -24,7 +28,7 @@ Writing, testing backend codes (signup feature). Documenting API endpoints relat
 * [Use Case Revision](https://github.com/bounswe/bounswe2022group9/issues/236)
 * [Document Signup endpoint of API](https://github.com/bounswe/bounswe2022group9/issues/279)
 * [Open a discord server for CmpE451](https://github.com/bounswe/bounswe2022group9/issues/233)
-* [Backend Meeting Notes](https://github.com/bounswe/bounswe2022group9/issues/282)
+* [Backend Meeting Notes for Meeting 1](https://github.com/bounswe/bounswe2022group9/issues/282)
 
 ## Pull Requests
  * [Signup Backend](https://github.com/bounswe/bounswe2022group9/pull/259)
