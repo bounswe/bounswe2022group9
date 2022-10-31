@@ -1,5 +1,12 @@
 import React from "react";
-import { Pressable, StyleSheet, Text, TextInput, View, Alert } from "react-native";
+import {
+  Pressable,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  Alert,
+} from "react-native";
 import Colors from "../constants/Colors";
 import { login } from "../services/LoginServices";
 
@@ -12,7 +19,7 @@ const Login = (props) => {
     login(username, password)
       .then((response) => {
         if (response.status === 200) {
-          navigation.navigate("Home")
+          navigation.navigate("Home");
         } else if (response.status === 400) {
           Alert.alert("Login Failed ❌", response.data);
         }
@@ -28,18 +35,23 @@ const Login = (props) => {
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        paddingBottom: 200,
         backgroundColor: "white",
       }}
     >
       <View style={styles.inputContainer}>
         <Text style={{ color: Colors.primaryDark }}>Username</Text>
-        <TextInput value={username}
-          onChangeText={(text) => setUsername(text)} style={styles.input} />
+        <TextInput
+          value={username}
+          onChangeText={(text) => setUsername(text)}
+          style={styles.input}
+        />
         <Text style={{ color: Colors.primaryDark }}>Password</Text>
-        <TextInput value={password}
+        <TextInput
+          value={password}
           onChangeText={(text) => setPassword(text)}
-          secureTextEntry style={styles.input} />
+          secureTextEntry
+          style={styles.input}
+        />
         <Pressable
           style={styles.button}
           onPress={() => {
