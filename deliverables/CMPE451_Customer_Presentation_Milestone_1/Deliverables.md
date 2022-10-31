@@ -31,7 +31,7 @@ The hyperlinks to all deliverable documents are added below.
 * [Oğuzhan Özboyacı]()
 * [Furkan Özdemir]()
 * [Kutay Saran]()
-* [Ömer Faruk Şişman]()
+* [Ömer Faruk Şişman](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/individual_contributions_reports/Omer_Faruk_Sisman.md)
 
 ### Customer Milestone 1 Group Review
 * [Customer Milestone 1 Group Review](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Milestone-Group-Review.md)
