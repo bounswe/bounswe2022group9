@@ -3,7 +3,7 @@ The hyperlinks to all deliverable documents are added below.
 
 ## Deliverables
 * [Software Requirements Specification](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Deliverables.md#software-requirements-specification)
-* [Software Design (UML)](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/deliverables.md#software-design-uml)
+* [Software Design (UML)](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Deliverables.md#software-design-uml)
 * [Scenarios and Mockups](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/deliverables.md#scenarios-and-mockups)
 * [Individual Contribution Reports](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Deliverables.md#individual-contribution-reports)
 * [Customer Milestone 1 Group Review](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Deliverables.md#customer-milestone-1-group-review)
