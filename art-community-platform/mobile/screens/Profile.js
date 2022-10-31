@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View, Image,ScrollView, SafeAreaView } from "react-native";
+import { StyleSheet, Text, View, Image,ScrollView, SafeAreaView, Dimensions } from "react-native";
 
+const dimensions = Dimensions.get("window");
 const Profile = () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -80,8 +81,8 @@ const styles = StyleSheet.create({
     marginTop:10,
   },
   photo:{
-    width:113,
-    height:113,
+    width: dimensions.width*0.28,
+    height: dimensions.width*0.28,
     marginTop:5,
     marginRight:5,
   }
