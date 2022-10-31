@@ -7,7 +7,7 @@ const Profile = () => {
           <View style={styles.header}>
             <Text style={[styles.follower , {marginTop:50}]}> Followers: 0</Text>
             <Text style={styles.follower}> Followees: 0</Text>
-            <Text style={styles.follower}> Posts: 1</Text>
+            <Text style={styles.follower}> Posts: 5</Text>
           </View>
           <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar3.png'}}/>
           <View style={{marginTop:20}}>
