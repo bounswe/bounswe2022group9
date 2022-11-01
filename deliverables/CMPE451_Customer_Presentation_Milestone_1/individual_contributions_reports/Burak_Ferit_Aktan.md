@@ -32,4 +32,4 @@ Also, I revised and updated Use Case Diagrams. Worked on scenario preparation fo
 * [Scenario Preparation(signup) for Milestone](https://github.com/bounswe/bounswe2022group9/issues/290)
 
 ## Pull Requests
- * [Signup Backend](https://github.com/bounswe/bounswe2022group9/pull/259)
+ * [[Backend] Signup (register)](https://github.com/bounswe/bounswe2022group9/pull/259)
