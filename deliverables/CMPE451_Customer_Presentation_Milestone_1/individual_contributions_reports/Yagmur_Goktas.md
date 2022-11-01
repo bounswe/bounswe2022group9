@@ -27,6 +27,7 @@ First of all, before I wrote the code for the mobile application, I created a th
 ### Management related significant issues
 * [Introduction to React Native] https://github.com/bounswe/bounswe2022group9/issues/250
 * [[Mobile] - Determining background, primary and secondary colors for mobile application] https://github.com/bounswe/bounswe2022group9/issues/256
+* [Communication Plan Revision] https://github.com/bounswe/bounswe2022group9/issues/246
 
 ## Pull Requests
 * [[Mobil] Feature/signup] https://github.com/bounswe/bounswe2022group9/pull/265
