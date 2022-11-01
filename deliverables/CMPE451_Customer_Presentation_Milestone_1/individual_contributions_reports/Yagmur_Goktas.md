@@ -9,6 +9,8 @@ Group: Group 9
 
 Subgroup: Mobile
 
+Personal Wiki Page : https://github.com/bounswe/bounswe2022group9/wiki/Yagmur-Goktas
+
 ## Responsibilites
 Since I was added to this team this term, the most important and fundamental part for me was to understand the project, repeat the requirements and give feedback on them.
 First of all, before I wrote the code for the mobile application, I created a three-day learning program with the resources we found. Then I prepared the user interface for the Signup page. I added a terms and privacy policy confirmation to this user interface and made it user readable. This week, I created the backend link of the login page and created a mock profile page to show an example in milestone.
