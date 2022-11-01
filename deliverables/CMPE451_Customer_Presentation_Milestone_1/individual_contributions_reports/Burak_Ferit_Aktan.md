@@ -13,9 +13,9 @@ Subgroup: Backend
 
 I'm a member of backend group, this brings me responsibility of writing and testing backend code. I wrote and tested backend codes for signup. Also, I'm taking meeting notes and documenting them on wiki page in some of the meetings.
 
-I am also working for API documentation. In these documentations, I'm telling "how to send requests to API endpoints,  what are possible API responses and which type of responses are given in which conditions" These documentations are important for both customers and group communication.
+I am also working for API documentation (signup part). In these documentations, I'm telling "how to send requests to API endpoints,  what are possible API responses and which type of responses are given in which kinds of requests" These documentations are important for both customers and team communication.
 
-Also, I revised Use Case Diagrams
+Also, I revised and updated Use Case Diagrams. Worked on scenario preparation for milestone. Opened a Discord server to help team communication.
 
 ## Main Contributions
 
