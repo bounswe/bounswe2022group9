@@ -28,6 +28,7 @@ about frontend code. Lastly, I created an installation and running guide for bac
 * [Revising Requirements](https://github.com/bounswe/bounswe2022group9/issues/248) 
 * [API Documentation (login)](https://github.com/bounswe/bounswe2022group9/issues/307) 
 * [Creating an installation guide for backend](https://github.com/bounswe/bounswe2022group9/issues/306)
+* [Creating pre-release version of project](https://github.com/bounswe/bounswe2022group9/issues/288)
 
 ## Pull Requests
  * [[Backend] Login](https://github.com/bounswe/bounswe2022group9/pull/280) --reviewed
