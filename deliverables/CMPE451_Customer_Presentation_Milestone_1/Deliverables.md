@@ -5,6 +5,7 @@ The hyperlinks to all deliverable documents are added below.
 * [Software Requirements Specification](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Deliverables.md#software-requirements-specification)
 * [Software Design (UML)](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Deliverables.md#software-design-uml)
 * [Scenarios and Mockups](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Deliverables.md#scenarios-and-mockups)
+* [Project Plan](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Deliverables.md#project-plan)
 * [Individual Contribution Reports](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Deliverables.md#individual-contribution-reports)
 * [Customer Milestone 1 Group Review](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Deliverables.md#customer-milestone-1-group-review)
 
@@ -20,6 +21,9 @@ The hyperlinks to all deliverable documents are added below.
 * [Sharing an Art](https://github.com/bounswe/bounswe2022group9/wiki/%22Sharing-an-art%22)
 * [Following a User](https://github.com/bounswe/bounswe2022group9/wiki/Following-a-User)
 * [Commenting on Content](https://github.com/bounswe/bounswe2022group9/wiki/%22Commenting-on-content%22-scenario)
+
+### Project Plan
+* [Project Plan](https://github.com/bounswe/bounswe2022group9/tree/master/resources)
 
 ### Individual Contribution Reports
 * [Burak Ferit Aktan](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/individual_contributions_reports/Burak_Ferit_Aktan.md)
