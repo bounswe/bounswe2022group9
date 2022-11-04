@@ -1,9 +1,16 @@
-Your milestone report must include at least the following:
-1. Executive Summary: Summary of the project status and any changes that are planned for
-moving forward.
-2. List and status of deliverables.
-3. Evaluation of the status of deliverables and its impact on your project plan.
-4. Evaluation of tools and processes you have used to manage your team project.
+
+### 1. Executive Summary
+
+In this part, we will summarize the current status of the project for each team and we will mention about the changes that we planned for moving forward. Firstly, at the beginning of this semester we divided into three subgroups as frontend, backend and mobile. We revised the things we did in CMPE352 and reshaped our project plan according to our needs. Now, after our first customer presentation, we achieved some of our goals and presented it to our customers. Below, you can find the status of the project and changes in the plan for each subgroup.
+    
+* Frontend
+* Backend
+* Mobile
+    
+    
+### 2. List and Status of Deliverables
+### 3. Evaluation of the status of deliverables and its impact on your project plan
+### 4. Evaluation of tools and processes you have used to manage your team project.
     
     i) Meeting formats: every wednesday @22.00 @Discord
     
@@ -22,8 +29,8 @@ moving forward.
     - Expo: It is nearly nested with React Native. Actually, when you read React Native’s docs, it recommends using Expo. Main focus of Expo is easing the development process of react native apps. We used Expo to make our app ready and running while we write code. It enables you to see real time code changes in the simulator. Also, making APK releases with Expo is just a single line code, so we integrated it with our. Project.
     - Android Studio: We use this program to only use emulators built within it. So that when we run our code we can see what we are doing.
 
-5. The requirements addressed in this milestone.
-6. Overall description of responsibilities that are assigned to each member.
+### 5. The requirements addressed in this milestone.
+### 6. Overall description of responsibilities that are assigned to each member.
   * İbrahim Buğra Elmas
       - Creating a scheme for our mobile application and adding it to our repo. 
       - Main tasks until Customer Meeting 1 were adding login page, linking sign up feature of app with backend endpoint and creating a mockup for search page. 
@@ -46,7 +53,7 @@ moving forward.
      - I am also working for API documentation (signup part). In these documentations, I'm telling "how to send requests to API endpoints, what are possible API responses and which type of responses are given in which kinds of requests" These documentations are important for both customers and team communication.
       - I worked on scenario preparation for Milestone 1. I created a "sign up scenario" to present with Ömer Faruk Şişman on Customer Meeting (Milestone).
 
-7. A Summary of work performed by each team member (in tabular format).
+### 7. A Summary of work performed by each team member (in tabular format).
 
 
    **İbrahim Buğra Elmas**
