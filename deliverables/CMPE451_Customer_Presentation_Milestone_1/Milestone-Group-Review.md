@@ -86,7 +86,7 @@ There are 3 types of UML diagrams, we prepared use case, sequence and class diag
 
 **Sequence diagrams** shows in how subsystems, modules and services in the code are being interacted with user in which cases, they also show which functions are called during these interactions and what are responses. One of the numerous benefits of sequence diagrams is, they help communication of developers coding different modules.
 
-While we were deciding what endpoints we need to implement, one of the places we looked was our use case and sequence diagrams pages, since they are also showing users' interaction with the system, and all places user interacts is an endpoint.
+While we were deciding what endpoints we need to implement, one of the places we looked was our use case and sequence diagrams pages, since they are also showing users' interaction with the system, and all places user interacts is an endpoint. These diagrams also used to decide possible request reponse pairs.
 
 **Class Diagrams** shows classes, functions, variables, their acces modifiers in the code. Preparing a class diagram before coding, helps developers to have a better design.They also help us to find out largeness/hardness of classes/functionalities . While we are developing our project plan, it's an information used frequently.
 
