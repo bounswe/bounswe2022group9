@@ -61,6 +61,20 @@ In this part, we will summarize the current status of the project for each team 
     - Android Studio: We use this program to only use emulators built within it. So that when we run our code we can see what we are doing.
 
 ### 5. The [requirements]() addressed in this milestone
+* **3.1.1.1.** Guest users shall be able to sign up to the platform with their name, their email account, a username and password.
+* **3.1.1.2.** Users should be able to delete their platform accounts.
+* **.1.1.3.** Guest users should have access only to registration and login pages.
+* **3.1.1.4.** User password should be at least 8 characters long should contain at least one uppercase, one lowercase and one symbol.
+* **3.1.2.** Login
+* **3.1.2.1.** Users shall be able to log in with their username and their password.
+* **3.1.2.2.** Users shall be able to log out.
+* **3.1.2.3.** Users shall be able to change their password if they are logged out. In this case, a confirmation mail will go to their email boxes.
+* **3.1.2.4.** Users shall be able to change their username and passwords later after logging in.
+
+* **4.2.1.** Any user input that is designed to attack the site shall be detected and prevented.
+* **4.2.2.** User data shall be kept safe from possible attacks via encryption algorithms such as AES-256. All of these data should be encrypted in the database.
+* **4.2.3.** User passwords shall contain at least one uppercase letter, one lowercase letter, and one number in order to make brute force algorithms harder to succeed.
+* **4.2.4.** User passwords shall contain at least eight characters.
 ### 6. Overall description of responsibilities that are assigned to each member.
   * İbrahim Buğra Elmas
       - Creating a scheme for our mobile application and adding it to our repo. 
