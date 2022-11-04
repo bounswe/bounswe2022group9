@@ -165,6 +165,7 @@ When the current version of the software and the project plan is compared, it ca
           - I was note taker of first backend meeting. I documented first backend meeting's notes.
      - I am also working for API documentation (signup part). In these documentations, I'm telling "how to send requests to API endpoints, what are possible API responses and which type of responses are given in which kinds of requests" These documentations are important for both customers and team communication.
       - I worked on scenario preparation for Milestone 1. I created a "sign up scenario" to present with Ömer Faruk Şişman on Customer Meeting (Milestone).
+      - I have written 3.1.1, 3.2, 3.3, 3.4 numbered sections on Milestone Group Review
  
   * Oğuzhan Özboyacı
       - I created my personale Wiki page because I am new member. Understanding the project is another reponsibilty for me.
@@ -272,6 +273,7 @@ When the current version of the software and the project plan is compared, it ca
   |[Milestone] Creating frontend scenario for signup|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/290)|
   |[Milestone] Write Individual Contributions Report for Burak Ferit Aktan|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/309)|
   |[Milestone] Add project plan link to the Deliverables|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/311)|
+  |[Milestone] "Evaluation of the status of deliverables and its impact on your project plan" part of Group Review|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/319)|
   
   |Pull Request Title|Link|
   |-----|:--------:|
