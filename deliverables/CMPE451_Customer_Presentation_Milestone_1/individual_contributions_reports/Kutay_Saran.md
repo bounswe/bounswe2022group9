@@ -1,5 +1,5 @@
 ## Member
-* Name: [Kutay Saran](https://github.com/bounswe/bounswe2022group9/wiki/kutaysaran)
+* Name: [Kutay Saran](https://github.com/bounswe/bounswe2022group9/wiki/Kutay-Saran)
 * Group: [Group 9](https://github.com/bounswe/bounswe2022group9)
 * Subgroup: Frontend
 
