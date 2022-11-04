@@ -204,6 +204,14 @@ When the current version of the software and the project plan is compared, it ca
      - I created an installation and running guide for backend.
      - I documented one of the meeting notes.
      - I wrote backend part of the executive summary and filled parts related to personal effort.
+     
+   * Kutay Saran
+     - I am a member of frontend part of application.
+     - I researched on react and ant design.
+     - I researched on old projects for profile and login pages.
+     - I revised communication plan.
+     - I have created my personal effort page for Milestone 1.
+     - I have created "Executive Summary" part of the  Milestone 1 for frontend.
 
 ### 7. A Summary of Work Performed by Each Team Member 
 
