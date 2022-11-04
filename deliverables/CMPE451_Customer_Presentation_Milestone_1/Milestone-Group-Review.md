@@ -74,6 +74,9 @@ And our [API documentation can be reached from here](https://github.com/bounswe/
 
 
 When our project plan is checked, it can be seen that we succesfully complied with our project plan and we plan to continue successfully tracking project plan during the course.
+##### 3.1.2 Mobile
+
+As mobile team, we proceeded in line with the endpoints given to us by the backend and the project plan and we reached the point we wanted. There were two functions that we connected in the backend, one of them is signup and the other is login. In addition, we have prepared mock feed search and profile pages in order to set an example at the customer meeting and to make the customer feel our main purpose. We put random artistic paintings in the feed, we prepared the words picasso and renaissance in the search section, and finally, we put 5 posts as examples of the person's own uploads on the profile page.
 
 #### 3.2 Software Design (UML Diagrams)
 
@@ -165,7 +168,6 @@ When the current version of the software and the project plan is compared, it ca
           - I was note taker of first backend meeting. I documented first backend meeting's notes.
      - I am also working for API documentation (signup part). In these documentations, I'm telling "how to send requests to API endpoints, what are possible API responses and which type of responses are given in which kinds of requests" These documentations are important for both customers and team communication.
       - I worked on scenario preparation for Milestone 1. I created a "sign up scenario" to present with Ömer Faruk Şişman on Customer Meeting (Milestone).
-      - I have written 3.1.1, 3.2, 3.3, 3.4 numbered sections on Milestone Group Review
  
   * Oğuzhan Özboyacı
       - I created my personale Wiki page because I am new member. Understanding the project is another reponsibilty for me.
@@ -273,7 +275,6 @@ When the current version of the software and the project plan is compared, it ca
   |[Milestone] Creating frontend scenario for signup|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/290)|
   |[Milestone] Write Individual Contributions Report for Burak Ferit Aktan|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/309)|
   |[Milestone] Add project plan link to the Deliverables|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/311)|
-  |[Milestone] "Evaluation of the status of deliverables and its impact on your project plan" part of Group Review|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/319)|
   
   |Pull Request Title|Link|
   |-----|:--------:|
