@@ -17,8 +17,8 @@ moving forward.
     - Expo: It is nearly nested with React Native. Actually, when you read React Native’s docs, it recommends using Expo. Main focus of Expo is easing the development process of react native apps. We used Expo to make our app ready and running while we write code. It enables you to see real time code changes in the simulator. Also, making APK releases with Expo is just a single line code, so we integrated it with our. Project.
     - Android Studio: We use this program to only use emulators built within it. So that when we run our code we can see what we are doing.
 
-6. The requirements addressed in this milestone.
-7. Overall description of responsibilities that are assigned to each member.
+5. The requirements addressed in this milestone.
+6. Overall description of responsibilities that are assigned to each member.
   * İbrahim Buğra Elmas
       - Creating a scheme for our mobile application and adding it to our repo. 
       - Main tasks until Customer Meeting 1 were adding login page, linking sign up feature of app with backend endpoint and creating a mockup for search page. 
@@ -26,4 +26,4 @@ moving forward.
       - Revising sequence diagrams from last semester.
 
 
-8. A Summary of work performed by each team member (in tabular format).
+7. A Summary of work performed by each team member (in tabular format).
