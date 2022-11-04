@@ -35,6 +35,16 @@ moving forward.
       - I was assigned to the frontend subgroup and the coding part was implemented. I primarily code about the connection and architecture part of the front-end project. We chose to React for the frontend implementation. 
       - I used the Axios library for the backend API requests. The project manages the user states and tokens with Redux implementation. 
       - URL routing architecture was implemented. There are two different types of URLs such as public and authorized. Users cannot access authorized URLs without the login step and the information checked by using Redux's states.
+     
+   * Burak Ferit Aktan
+     - I opened a Discord server to help team communication. Team meetings are done on this Discord server. I opened seperate text and voice channels for general usage, backend, frontend and mobile teams.
+     - I reviewed and revised Use Case Diagrams. 
+     - I'm a member of backend group, this brings me responsibility of writing and testing backend code.
+          - I wrote backend codes for signup.
+          - I wrote tests for signup.
+          - I was note taker of first backend meeting. I documented first backend meeting's notes.
+      -I am also working for API documentation (signup part). In these documentations, I'm telling "how to send requests to API endpoints, what are possible API responses and which type of responses are given in which kinds of requests" These documentations are important for both customers and team communication.
+      - I worked on scenario preparation for Milestone 1. I created a "sign up scenario" to present with Ömer Faruk Şişman on Customer Meeting (Milestone).
 
 7. A Summary of work performed by each team member (in tabular format).
 
