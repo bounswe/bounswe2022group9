@@ -3,7 +3,14 @@
 
 In this part, we will summarize the current status of the project for each team and we will mention about the changes that we planned for moving forward. Firstly, at the beginning of this semester we divided into three subgroups as frontend, backend and mobile. We revised the things we did in CMPE352 and reshaped our project plan according to our needs. Now, after our first customer presentation, we achieved some of our goals and presented it to our customers. Below, you can find the status of the project and changes in the plan for each subgroup.
     
-* Frontend
+* Frontend 
+
+    First of all, at the beginning of this project, we code about the connection and architecture part of this project which is front-end project. In the implementation phase, we use React. Moreover, Axios Library was used for the back-end API requests. 
+This project manages the user states and tokens with Redux implementation. Moreover, URL routing architecture was implemented in this project. When we look at the types of URLs, there are two different types which are public and authorized. Authorized URLs are URLs which users cannot access them without the login step and also information checked by using Redux’s stages.
+Moreover, we implemented some basic functionalities such as login, sign up, profile page, etc. We mentioned some of the properties of these functionalities below:
+    - If not logged in before, the user can create a new account in our application.
+    - If logged in, the user can log out of the application.
+    - Navigation bar was implemented in our application for the user to navigate between different pages of this application.
 * Backend
 
     Before the first customer presentation, the predefined tasks for backend team was
