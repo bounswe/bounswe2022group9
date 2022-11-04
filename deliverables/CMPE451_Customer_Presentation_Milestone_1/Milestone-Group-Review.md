@@ -24,16 +24,16 @@ In this part, we will summarize the current status of the project for each team 
 
 |**Deliverable**|**Status**|
 |---|---|
-[Software Requirements Specification]()|Completed|
-[Class Diagram]()|Completed|
-[Use Case Diagram]()|Completed|
-[Sequence Diagrams]()|Completed|
-[Scenario & Mockup 1]()|Completed|
-[Scenario & Mockup 2]()|Completed|
-[Scenario & Mockup 3]()|Completed|
-[Project Plan]()|Completed|
-[Individual Contribution Reports]()|Completed|
-[Customer Milestone 1 Group Review]()|Completed|
+[Requirement Analysis](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis)|Completed|
+[Class Diagram](https://github.com/bounswe/bounswe2022group9/wiki/Class-Diagram)|Completed|
+[Use Case Diagram](https://github.com/bounswe/bounswe2022group9/wiki/Use-Case-Diagram)|Completed|
+[Sequence Diagrams](https://github.com/bounswe/bounswe2022group9/wiki/Sequence-Diagrams)|Completed|
+[Scenario & Mockup 1](https://github.com/bounswe/bounswe2022group9/wiki/%22Sharing-an-art%22)|Completed|
+[Scenario & Mockup 2](https://github.com/bounswe/bounswe2022group9/wiki/Following-a-User)|Completed|
+[Scenario & Mockup 3](https://github.com/bounswe/bounswe2022group9/wiki/%22Commenting-on-content%22-scenario)|Completed|
+[Project Plan](https://github.com/bounswe/bounswe2022group9/wiki/Project-Plan)|Completed|
+[Individual Contribution Reports](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Deliverables.md#individual-contribution-reports)|Completed|
+[Customer Milestone 1 Group Review](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Milestone-Group-Review.md)|Completed|
 
 ### 3. Evaluation of the status of deliverables and its impact on your project plan
 ### 4. Evaluation of tools and processes you have used to manage your team project.
