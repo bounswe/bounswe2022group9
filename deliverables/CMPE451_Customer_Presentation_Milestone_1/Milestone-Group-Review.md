@@ -43,7 +43,7 @@ moving forward.
           - I wrote backend codes for signup.
           - I wrote tests for signup.
           - I was note taker of first backend meeting. I documented first backend meeting's notes.
-      -I am also working for API documentation (signup part). In these documentations, I'm telling "how to send requests to API endpoints, what are possible API responses and which type of responses are given in which kinds of requests" These documentations are important for both customers and team communication.
+     - I am also working for API documentation (signup part). In these documentations, I'm telling "how to send requests to API endpoints, what are possible API responses and which type of responses are given in which kinds of requests" These documentations are important for both customers and team communication.
       - I worked on scenario preparation for Milestone 1. I created a "sign up scenario" to present with Ömer Faruk Şişman on Customer Meeting (Milestone).
 
 7. A Summary of work performed by each team member (in tabular format).
