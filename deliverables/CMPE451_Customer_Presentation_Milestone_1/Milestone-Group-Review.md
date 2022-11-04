@@ -1,4 +1,3 @@
-## Group Review
 
 ### 1. Executive Summary
 
@@ -112,9 +111,9 @@ When our project plan is checked, it can be seen that we succesfully complied wi
 * **3.1.2.4.** Users shall be able to change their username and passwords later after logging in.
 
 * **4.2.1.** Any user input that is designed to attack the site shall be detected and prevented.
-* **4.2.3.** User data shall be kept safe from possible attacks via encryption algorithms such as AES-256. All of these data should be encrypted in the database.
-* **4.2.4.** User passwords shall contain at least one uppercase letter, one lowercase letter, and one number in order to make brute force algorithms harder to succeed.
-* **4.2.5.** User passwords shall contain at least eight characters.
+* **4.2.2.** User data shall be kept safe from possible attacks via encryption algorithms such as AES-256. All of these data should be encrypted in the database.
+* **4.2.3.** User passwords shall contain at least one uppercase letter, one lowercase letter, and one number in order to make brute force algorithms harder to succeed.
+* **4.2.4.** User passwords shall contain at least eight characters.
 ### 6. Overall description of responsibilities that are assigned to each member.
   * İbrahim Buğra Elmas
       - Creating a scheme for our mobile application and adding it to our repo. 
@@ -158,6 +157,17 @@ When our project plan is checked, it can be seen that we succesfully complied wi
      - I have worked on scenario preparation for Milestone 1. I created a "sign up scenario" to present with Burak Ferit Aktan on Customer Meeting (Milestone).
      - I have created and filled report for Milestone 1 Deliverables.
      - I have added "requirements addressed" and "status of deliverables" parts to Milestone 1 Group Review.
+    
+  * Berkkant Koç
+     - I have updated my personal wiki page.
+     - I am a member of backend part of the application.
+        - I have prepared my local desktop to develop the project
+        - I have reviewed old projects for login authentication.
+        - I have collaborated with my teammate to create login page.
+     - I have taken the notes in the group presentation of Milestone 1.
+     - I have created my personel effort page for Milestone 1.
+     - I have created "Evaluation of tools" part of the Milestone 1.
+      
 
 
 ### 7. A Summary of work performed by each team member (in tabular format).
