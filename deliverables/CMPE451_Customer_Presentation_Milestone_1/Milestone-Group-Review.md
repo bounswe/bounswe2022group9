@@ -74,3 +74,23 @@ moving forward.
   |-----|:--------:|
   |initial react files|[#258](https://github.com/bounswe/bounswe2022group9/pull/258)|
   |[Frontend] - Axios, Rounting and Login & Sign up pages|[#292](https://github.com/bounswe/bounswe2022group9/pull/292)|
+  
+   **Burak Ferit Aktan**
+     
+  |Issue Title|Link|
+  |-----|:--------:|
+  |Open a discord server for CmpE451| [Issue Link](https://github.com/bounswe/bounswe2022group9/issues/233)|
+  |Use Case Revision|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/236)|
+  |Updating Burak Ferit Aktan's personal wiki page|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/235)|
+  |[Backend] Implement Signup Feature|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/251)|
+  |[Backend] Write Unit Tests for Signup|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/277)|
+  |Open a Wiki Page for API documentation|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/278)|
+  |Document Signup endpoint of API|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/279)|
+  |[Backend] Add Backend Meeting 1 Notes to Wiki|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/282)|
+  |[Milestone] Creating frontend scenario for signup|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/290)|
+  |[Milestone] Write Individual Contributions Report for Burak Ferit Aktan|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/309)|
+  |[Milestone] Add project plan link to the Deliverables|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/311)|
+  
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |[Backend] Signup(register)|[#259](https://github.com/bounswe/bounswe2022group9/pull/259)|
