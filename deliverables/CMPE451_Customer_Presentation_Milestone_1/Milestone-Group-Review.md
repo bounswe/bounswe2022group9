@@ -229,7 +229,7 @@ When the current version of the software and the project plan is compared, it ca
 
 ### 7. A Summary of Work Performed by Each Team Member 
     
-   **Yağmur Göktaş
+   **Yağmur Göktaş**
    
    |Issue Title|Link|
   |-----|:--------:|
