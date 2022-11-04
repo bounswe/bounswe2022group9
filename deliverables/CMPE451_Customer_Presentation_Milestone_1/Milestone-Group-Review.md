@@ -31,14 +31,18 @@ In this part, we will summarize the current status of the project for each team 
 
 ### 2. List and status of deliverables.
 
-|**Deliverable**|**Status**|**Last Update Date**|
-|---|---|---|
-| | | |
-| | | |
-| | | |
-| | | |
-| | | |
-| | | |
+|**Deliverable**|**Status**|
+|---|---|
+[Requirement Analysis](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis)|Completed|
+[Class Diagram](https://github.com/bounswe/bounswe2022group9/wiki/Class-Diagram)|Completed|
+[Use Case Diagram](https://github.com/bounswe/bounswe2022group9/wiki/Use-Case-Diagram)|Completed|
+[Sequence Diagrams](https://github.com/bounswe/bounswe2022group9/wiki/Sequence-Diagrams)|Completed|
+[Scenario & Mockup 1](https://github.com/bounswe/bounswe2022group9/wiki/%22Sharing-an-art%22)|Completed|
+[Scenario & Mockup 2](https://github.com/bounswe/bounswe2022group9/wiki/Following-a-User)|Completed|
+[Scenario & Mockup 3](https://github.com/bounswe/bounswe2022group9/wiki/%22Commenting-on-content%22-scenario)|Completed|
+[Project Plan](https://github.com/bounswe/bounswe2022group9/wiki/Project-Plan)|Completed|
+[Individual Contribution Reports](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Deliverables.md#individual-contribution-reports)|Completed|
+[Customer Milestone 1 Group Review](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Milestone-Group-Review.md)|Completed|
 
 ### 3. Evaluation of the status of deliverables and its impact on your project plan
 ### 4. Evaluation of tools and processes you have used to manage your team project.
@@ -60,7 +64,7 @@ In this part, we will summarize the current status of the project for each team 
     - Expo: It is nearly nested with React Native. Actually, when you read React Native’s docs, it recommends using Expo. Main focus of Expo is easing the development process of react native apps. We used Expo to make our app ready and running while we write code. It enables you to see real time code changes in the simulator. Also, making APK releases with Expo is just a single line code, so we integrated it with our. Project.
     - Android Studio: We use this program to only use emulators built within it. So that when we run our code we can see what we are doing.
 
-### 5. The [requirements]() addressed in this milestone
+### 5. The [requirements](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis) addressed in this milestone
 * **3.1.1.1.** Guest users shall be able to sign up to the platform with their name, their email account, a username and password.
 * **3.1.1.2.** Users should be able to delete their platform accounts.
 * **.1.1.3.** Guest users should have access only to registration and login pages.
