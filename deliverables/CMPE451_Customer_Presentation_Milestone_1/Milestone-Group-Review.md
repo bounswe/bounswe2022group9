@@ -8,7 +8,18 @@ In this part, we will summarize the current status of the project for each team 
 * Mobile
     
     
-### 2. List and Status of Deliverables
+
+### 2. List and status of deliverables.
+
+|**Deliverable**|**Status**|**Last Update Date**|
+|---|---|---|
+| | | |
+| | | |
+| | | |
+| | | |
+| | | |
+| | | |
+
 ### 3. Evaluation of the status of deliverables and its impact on your project plan
 ### 4. Evaluation of tools and processes you have used to manage your team project.
     
