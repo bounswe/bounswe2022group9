@@ -9,16 +9,15 @@
 
 ## Main Contribution
 ### Code-related significant issues
-* https://github.com/bounswe/bounswe2022group9/issues/253
-* https://github.com/bounswe/bounswe2022group9/issues/254
+* [Frontend] - Sign up/Password Reset Pages Implementations [Issue Link](https://github.com/bounswe/bounswe2022group9/issues/253)
+* [Frontend] - Axios and Routing Implementations [Issue Link](https://github.com/bounswe/bounswe2022group9/issues/254)
 ### Management-related significant issues 
-* https://github.com/bounswe/bounswe2022group9/issues/239
-* https://github.com/bounswe/bounswe2022group9/issues/249
-* [Frontend Meeting Notes #1](https://github.com/bounswe/bounswe2022group9/wiki/Frontend-Meeting-Notes-1)
+* Updating README Page  [Issue Link](https://github.com/bounswe/bounswe2022group9/issues/239)
+* Creating Project Plan on ProjectLibre  [Issue Link](https://github.com/bounswe/bounswe2022group9/issues/249)
+* Frontend Meeting Notes #1 [Issue Link](https://github.com/bounswe/bounswe2022group9/wiki/Frontend-Meeting-Notes-1)
 
 ## Pull Requests
-* https://github.com/bounswe/bounswe2022group9/pull/258
-* https://github.com/bounswe/bounswe2022group9/pull/292
-
+* initial react files [#258](https://github.com/bounswe/bounswe2022group9/pull/258)
+* [Frontend] - Axios, Rounting and Login & Sign up pages [#292](https://github.com/bounswe/bounswe2022group9/pull/292)
 ## Additional Information
 Because of last-minute changes in the subgroup members, I also implement the Login and Sign up pages. For page UI implementations, they will be upgraded. Also still some bugs on the frontend part and also those parts will be fixed.
