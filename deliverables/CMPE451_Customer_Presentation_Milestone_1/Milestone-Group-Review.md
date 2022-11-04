@@ -345,7 +345,10 @@ When the current version of the software and the project plan is compared, it ca
   |[Milestone] Creating report for deliverables.|[#289](https://github.com/bounswe/bounswe2022group9/issues/289)|
   |[Milestone] Creating frontend scenario for signup|[#290](https://github.com/bounswe/bounswe2022group9/issues/290)|
   |[Backend] CORS error on server side|[#294](https://github.com/bounswe/bounswe2022group9/issues/294)|
-  |[Milestone] Creating report for deliverables.|[#289](https://github.com/bounswe/bounswe2022group9/issues/289)|
+  |[Milestone] Adding "Status of Deliverables" part to Milestone 1 Group Review|[#320](https://github.com/bounswe/bounswe2022group9/issues/320)|
+  |[Milestone] Adding "Addressed Requirements" part to Milestone 1 Report|[#321](https://github.com/bounswe/bounswe2022group9/issues/321)|
+  |[Milestone] Creating individual contributions report for Ömer Faruk Şişman|[#322](https://github.com/bounswe/bounswe2022group9/issues/322)|
+  
   
   |Pull Request Title|Link|
   |-----|:--------:|
