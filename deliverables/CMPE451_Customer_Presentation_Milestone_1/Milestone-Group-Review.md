@@ -5,6 +5,16 @@ In this part, we will summarize the current status of the project for each team 
     
 * Frontend
 * Backend
+
+    Before the first customer presentation, the predefined tasks for backend team was
+    - Dockerizing the app
+    - Deploying the app
+    - Writing code for sign-up
+    - Writing code for login
+    - Creating a connection with database
+
+    The backend team has completed all these tasks and presented them in the customer presentation. About the changes that we planned for moving forward, we added a       new part for annotations in our project plan. We decided to show more focus on annotations.
+    
 * Mobile
     
     
