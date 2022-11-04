@@ -73,6 +73,21 @@ And our [API documentation can be reached from here](https://github.com/bounswe/
 
 
 When our project plan is checked, it can be seen that we succesfully complied with our project plan and we plan to continue successfully tracking project plan during the course.
+
+#### 3.2 Software Design (UML Diagrams)
+
+There are 3 types of UML diagrams, we prepared use case, sequence and class diagrams. They were first prepared during CmpE 352, in this semester they are reviewed and revised.
+
+**Use Case diagrams** helps customers and developers to understand how users, software and external sources are interacting each other while the software is being used.
+
+**Sequence diagrams** shows in how subsystems, modules and services in the code are being interacted with user in which cases, they also show which functions are called during these interactions and what are responses. One of the numerous benefits of sequence diagrams is, they help communication of developers coding different modules.
+
+**Class Diagrams** shows classes, functions, variables, their acces modifiers in the code. Preparing a class diagram before coding, helps developers to have a better design.
+
+#### 3.3 Individual Contributions Reports
+
+Individual contributions reports are showing contributions, responsibilities, code-related and management-related significant issues and pull requests of each developer in the group. Every single member of the group is preparing their own Individual Contributions Reports.
+
 ### 4. Evaluation of tools and processes you have used to manage your team project.
     
     i) Meeting formats: every wednesday @22.00 @Discord
