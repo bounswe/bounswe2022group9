@@ -73,11 +73,7 @@ In this part, we will summarize the current status of the project for each team 
           - I was note taker of first backend meeting. I documented first backend meeting's notes.
      - I am also working for API documentation (signup part). In these documentations, I'm telling "how to send requests to API endpoints, what are possible API responses and which type of responses are given in which kinds of requests" These documentations are important for both customers and team communication.
       - I worked on scenario preparation for Milestone 1. I created a "sign up scenario" to present with Ömer Faruk Şişman on Customer Meeting (Milestone).
-
-    * Oğuzhan Özboyacı
-      - I created my personal wiki page as a new group member. Understanding the project is another responsibility for me.
-      - I rewieved the Scnarios and MockUps.
-      - I am a mobile subgroup member. I created forget password page and created a mockup feed page. 
+ 
 
 ### 7. A Summary of work performed by each team member (in tabular format).
 
