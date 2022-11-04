@@ -228,8 +228,31 @@ When the current version of the software and the project plan is compared, it ca
      - I have created "Executive Summary" part of the  Milestone 1 for frontend.
 
 ### 7. A Summary of Work Performed by Each Team Member 
-
-
+    
+   **Yağmur Göktaş
+   
+   |Issue Title|Link|
+  |-----|:--------:|
+  |[Mobile] - Terms and Privacy Policy|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/266)|
+  |[Mobile] - Profile Page |[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/276)|
+  |[Mobile] - Backend Connection for Login|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/284)|
+  |[Mobile] -On the profile page, the images are disorganized according to the screen size|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/297)|
+  |[Mobile] - Application name should be added to Terms and Privacy Policy|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/295)|
+  |[Mobile] - Mock Art Image Collection|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/285)|
+  |[Mobile] - Post number is wrong|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/299)|
+  |[Mobile] - Determining background, primary and secondary colors for mobile application |[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/256)|
+  
+    
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |[Mobil] Feature/signup|[#265](https://github.com/bounswe/bounswe2022group9/pull/265)|
+  |[Mobil] Feature/privacy policy|[#275](https://github.com/bounswe/bounswe2022group9/pull/275)|
+  |[Mobile] Feature/mock profile|[#286](https://github.com/bounswe/bounswe2022group9/pull/286)|
+  |[Mobile] Feature/login backend|[#287](https://github.com/bounswe/bounswe2022group9/pull/287)|
+  |[Mobile] App name added to Terms and Privacy text|[#296](https://github.com/bounswe/bounswe2022group9/pull/296)|
+  |[Mobile] Bugfix/image size|[#298](https://github.com/bounswe/bounswe2022group9/pull/298)|
+  |[Mobile] Post number is corrected|[#300](https://github.com/bounswe/bounswe2022group9/pull/300)|
+  
    **İbrahim Buğra Elmas**
    
   |Issue Title|Link|
