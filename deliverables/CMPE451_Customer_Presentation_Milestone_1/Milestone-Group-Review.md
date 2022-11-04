@@ -12,10 +12,10 @@ moving forward.
     iii) Managing project: Github for PRs and peer reviews
     
   * Frontend
-    - React: It is the most common framework for web application development for now. Therefore we choose to implement on this framework. It has lots of tutorials and documents for using complex implementations. Also person who don't know React can easily adapt to coding with React because of javascript usage.
-    - Axios: Axios library mainly using for API requests. For API requests we use Axios too. In the React applications the program sends POST or GET requests to backend and the response message will be waited. There has API documentation which is coming from backend and the program processes the response by using this API documentation.
-    - Redux:The second popular UI library for React applications. Every member in the frontend group can smoothly start using this library. The components of our project has detailed features and the library give us the control of complex features and we can use every details by appling minor changes in the code.
-    - Visual Studio Code: We choose this program for common coding platform. It is easy to use and lite program so everyone can handle with every devices.
+    - React: It is the most common framework for web application development. Therefore we choose to implement this framework. It has lots of tutorials and documents for using complex implementations. Also, someone who doesn't know React can fastly adapt to coding with React because of javascript usage.
+    - Axios: Axios library handles various API requests. For API requests, we use Axios too. In the React applications, the program sends POST or GET requests to the backend and the response message will be waited. The backend group has implemented documentation for API responses, and the program processes the response using this API documentation.
+    - Antd: The second popular UI library for React applications. Every member in the frontend group can smoothly start using this library. The components of our project have detailed features and the library gives us control of complex components. Therefore we can use every detail by applying minor changes in the code.
+    - Visual Studio Code: We choose this program for a common coding platform. It's easy to use and has a lite program so everyone can handle it on every device.
     
   * Mobile
     - React Native: It is a very straightforward tool to getting started with mobile application development. We read its docs and watched some tutorials to get started. React native is still in a beta version, currently in 0.70, there is a lot of things to do make it a complete product but, this for course and for our application, after we analyzed the requirements, we decided that current situation of React Native is sufficient for us. So we chose React Native as our main development tool.
