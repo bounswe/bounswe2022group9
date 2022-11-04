@@ -73,6 +73,15 @@ And our [API documentation can be reached from here](https://github.com/bounswe/
 
 
 When our project plan is checked, it can be seen that we succesfully complied with our project plan and we plan to continue successfully tracking project plan during the course.
+
+#### 3.4 Project Plan
+
+Project plan is one of the most important components of a project. To prepare a project plan, we first decided what are the tasks in this project and then we decided  how much time each seperate tasks requires. We carefully considered prerequisite relationships of the tasks (e.g., sign up functionality is a prerequisite for login functionality, while database configuration is a prerequisite for both them). There is a famous saying, "If you place the first button of a shirt wrong, then all remaining buttons will be placed wrong." We decided the order and start-end times of the jobs according the time consumption of the jobs, our groups internal dynamics,  milestone deadlines and prerequisite relationships of the jobs.
+
+To prepare our project plan, we have used an open-source project planning tool named Project Libre.
+
+When the current version of the software and the project plan is compared, it can be easily seen that we are tracking the project plan successfully.
+
 ### 4. Evaluation of tools and processes you have used to manage your team project.
     
     i) Meeting formats: every wednesday @22.00 @Discord
