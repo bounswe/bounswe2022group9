@@ -147,6 +147,12 @@ When the current version of the software and the project plan is compared, it ca
 * **4.2.3.** User passwords shall contain at least one uppercase letter, one lowercase letter, and one number in order to make brute force algorithms harder to succeed.
 * **4.2.4.** User passwords shall contain at least eight characters.
 ### 6. Overall Description of Responsibilities
+  * Yağmur Göktaş
+     - I found resources to get into React Native and implemented an internal daily training.
+     -  the signup page in user interface
+     -  a mock profile page to show an example in Customer Milestone
+     -  the backend link of the login page
+
   * İbrahim Buğra Elmas
       - Creating a scheme for our mobile application and adding it to our repo. 
       - Main tasks until Customer Meeting 1 were adding login page, linking sign up feature of app with backend endpoint and creating a mockup for search page. 
