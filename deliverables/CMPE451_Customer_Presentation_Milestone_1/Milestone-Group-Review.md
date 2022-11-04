@@ -115,6 +115,21 @@ Moreover, we implemented some basic functionalities such as login, sign up, prof
       - I am mobile subgroup member. I created forget password page and feed mockup page.
       - I reviewed my subgroup friend's PRs.
 
+  * Ömer Faruk Şişman
+     - I have updated README and my personal wiki page.
+     - I have updated weekly efforts page and wiki sidebar.
+     - I'm a member of backend group, this brings me responsibility of writing and testing backend code.
+     	  - I have created EC2 instance on AWS.
+     	  - I have initialized Django project.
+     	  - I have made connection between backend app and database.
+     	  - I have dockerized Django app and database.
+          - I have written backend codes for login.
+          - I have written tests for login.
+          - I have deployed login and singup.
+     - I have worked on scenario preparation for Milestone 1. I created a "sign up scenario" to present with Burak Ferit Aktan on Customer Meeting (Milestone).
+     - I have created and filled report for Milestone 1 Deliverables.
+     - I have added "requirements addressed" and "status of deliverables" parts to Milestone 1 Group Review.
+
 
 ### 7. A Summary of work performed by each team member (in tabular format).
 
