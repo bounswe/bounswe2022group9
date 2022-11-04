@@ -1,4 +1,3 @@
-## Group Review
 
 ### 1. Executive Summary
 
@@ -18,22 +17,28 @@ In this part, we will summarize the current status of the project for each team 
     
 * Mobile
     
+    Until the first customer meeting, the taks expected of us
+    - Creating login-in page
+    - Creating sing-up page
+    - Creating forget password page
+    - Creating mock-up for profile page
+    - Creating mock-up for search page
+    - Creating mock-up for feed page
+    
+    The mobile team completed all the tasks. Our future plan is make changes on some futures in KVKK text and convert the mock up pages to a functional pages and link them to the backend end points.
+    
     
 
 ### 2. List and status of deliverables.
 
-|**Deliverable**|**Status**|
-|---|---|
-[Requirement Analysis](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis)|Completed|
-[Class Diagram](https://github.com/bounswe/bounswe2022group9/wiki/Class-Diagram)|Completed|
-[Use Case Diagram](https://github.com/bounswe/bounswe2022group9/wiki/Use-Case-Diagram)|Completed|
-[Sequence Diagrams](https://github.com/bounswe/bounswe2022group9/wiki/Sequence-Diagrams)|Completed|
-[Scenario & Mockup 1](https://github.com/bounswe/bounswe2022group9/wiki/%22Sharing-an-art%22)|Completed|
-[Scenario & Mockup 2](https://github.com/bounswe/bounswe2022group9/wiki/Following-a-User)|Completed|
-[Scenario & Mockup 3](https://github.com/bounswe/bounswe2022group9/wiki/%22Commenting-on-content%22-scenario)|Completed|
-[Project Plan](https://github.com/bounswe/bounswe2022group9/wiki/Project-Plan)|Completed|
-[Individual Contribution Reports](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Deliverables.md#individual-contribution-reports)|Completed|
-[Customer Milestone 1 Group Review](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Milestone-Group-Review.md)|Completed|
+|**Deliverable**|**Status**|**Last Update Date**|
+|---|---|---|
+| | | |
+| | | |
+| | | |
+| | | |
+| | | |
+| | | |
 
 ### 3. Evaluation of the status of deliverables and its impact on your project plan
 ### 4. Evaluation of tools and processes you have used to manage your team project.
@@ -79,6 +84,12 @@ In this part, we will summarize the current status of the project for each team 
      - I am also working for API documentation (signup part). In these documentations, I'm telling "how to send requests to API endpoints, what are possible API responses and which type of responses are given in which kinds of requests" These documentations are important for both customers and team communication.
       - I worked on scenario preparation for Milestone 1. I created a "sign up scenario" to present with Ömer Faruk Şişman on Customer Meeting (Milestone).
  
+  * Oğuzhan Özboyacı
+      - I created my personale Wiki page because I am new member. Understanding the project is another reponsibilty for me.
+      - I reviewed the Scenarios and MockUps from the last semester.
+      - I am mobile subgroup member. I created forget password page and feed mockup page.
+      - I reviewed my subgroup friend's PRs.
+
 
 ### 7. A Summary of work performed by each team member (in tabular format).
 
