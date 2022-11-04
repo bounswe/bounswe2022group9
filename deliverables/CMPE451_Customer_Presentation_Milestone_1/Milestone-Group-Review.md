@@ -1,4 +1,3 @@
-## Group Review
 
 ### 1. Executive Summary
 
@@ -75,6 +74,11 @@ In this part, we will summarize the current status of the project for each team 
      - I am also working for API documentation (signup part). In these documentations, I'm telling "how to send requests to API endpoints, what are possible API responses and which type of responses are given in which kinds of requests" These documentations are important for both customers and team communication.
       - I worked on scenario preparation for Milestone 1. I created a "sign up scenario" to present with Ömer Faruk Şişman on Customer Meeting (Milestone).
  
+    * Oğuzhan Özboyacı
+        - I created my personale Wiki page because I am new member. Understanding the project is another reponsibilty for me.
+        - I reviewed the Scenarios and MockUps from the last semester.
+        - I am mobile subgroup member. I created forget password page and feed mockup page.
+        - I reviewed my subgroup friend's PRs.
 
 ### 7. A Summary of work performed by each team member (in tabular format).
 
