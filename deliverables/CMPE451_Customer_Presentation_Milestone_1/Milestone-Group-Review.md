@@ -210,6 +210,7 @@ When the current version of the software and the project plan is compared, it ca
      - I researched on react and ant design.
      - I researched on old projects for profile and login pages.
      - I revised communication plan.
+     - I have written frontend codes for login and profile pages.
      - I have created my personal effort page for Milestone 1.
      - I have created "Executive Summary" part of the  Milestone 1 for frontend.
 
