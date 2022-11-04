@@ -27,3 +27,23 @@ moving forward.
 
 
 7. A Summary of work performed by each team member (in tabular format).
+
+
+   **İbrahim Buğra Elmas**
+   
+  |Issue Title|Link|
+  |-----|:--------:|
+  |[Mobile] - Login/Signup Pages Implementations|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/252)|
+  |[Mobile] - Axios and Linking App with Backend |[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/262)|
+  |[Mobile] - Search Page Mockup|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/283)|
+  |Revising Sequence Diagrams |[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/244)|
+  |[Mobile] - Determining background, primary and secondary colors for mobile application|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/256)|
+  |Adding Meeting Notes (9/10/2022)|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/234)|
+  
+  
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |mobile initial commit|[#255](https://github.com/bounswe/bounswe2022group9/pull/255)|
+  |[Mobile] - add constant colors|[#261](https://github.com/bounswe/bounswe2022group9/pull/261)|
+  |signup backend connection|[#281](https://github.com/bounswe/bounswe2022group9/pull/281)|
+  |[Mobil] - search mockup|[#293](https://github.com/bounswe/bounswe2022group9/pull/293)|
