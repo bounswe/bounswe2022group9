@@ -58,17 +58,15 @@ Moreover, we implemented some basic functionalities such as login, sign up, prof
 
 As backend team, we coded and tested 2 functionalities. These are:
 
-    * Signup (register)
-    
-    * Login
+* Signup (register)
+* Login
         
 These 2 functionalities are working as expected.
     
 Our backend API has been Dockerized and deployed to AWS. Deployed API links are:
 
-    * Signup API endpoint (accepts POST request): http://ec2-44-202-130-117.compute-1.amazonaws.com/user/signup
-    
-    * Login API endpoint (accepts POST request): http://ec2-44-202-130-117.compute-1.amazonaws.com/user/login
+* Signup API endpoint (accepts POST request): http://ec2-44-202-130-117.compute-1.amazonaws.com/user/signup
+* Login API endpoint (accepts POST request): http://ec2-44-202-130-117.compute-1.amazonaws.com/user/login
         
 And our [API documentation can be reached from here](https://github.com/bounswe/bounswe2022group9/wiki/API-Documentation)
 
