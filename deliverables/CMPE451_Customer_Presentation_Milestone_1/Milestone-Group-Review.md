@@ -293,11 +293,26 @@ When the current version of the software and the project plan is compared, it ca
   |-----|:--------:|
   |[Backend] Login|[#280](https://github.com/bounswe/bounswe2022group9/pull/280)|
   
+  
+   **Furkan Özdemir**
+   
+  |Issue Title|Link|
+  |-----|:--------:|
+  |[Backend] Review Login Pull Request|[#304](https://github.com/bounswe/bounswe2022group9/issues/304)|
+  |[Frontend] Review for Axios and Routing Pull Request|[#305](https://github.com/bounswe/bounswe2022group9/issues/305)|
+  |Research on Dockerization|[#302](https://github.com/bounswe/bounswe2022group9/issues/302)|
+  |Revising Requirements|[#248](https://github.com/bounswe/bounswe2022group9/issues/248)|
+  |API Documentation (login)|[#307](https://github.com/bounswe/bounswe2022group9/issues/307)|  
+  |Creating an installation guide for backend|[#306](https://github.com/bounswe/bounswe2022group9/issues/306)|
+  |Creating pre-release version of project|[#288](https://github.com/bounswe/bounswe2022group9/issues/288)|
+  |[Milestone] Writing Executive Summary of Milestone Group Review|[#312](https://github.com/bounswe/bounswe2022group9/issues/312)|
+  |Documenting Meeting Notes|[#313](https://github.com/bounswe/bounswe2022group9/issues/313)|
+  
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |[Backend] Login --reviewed|[#280](https://github.com/bounswe/bounswe2022group9/pull/280)|
+  |[Frontend] Axios and Routing -- reviewed|[#292](https://github.com/bounswe/bounswe2022group9/pull/292)|
+  
 
   
   
-
-  
-
-  
-
