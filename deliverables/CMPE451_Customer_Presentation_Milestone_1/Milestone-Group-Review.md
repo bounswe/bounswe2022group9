@@ -112,9 +112,9 @@ When our project plan is checked, it can be seen that we succesfully complied wi
 * **3.1.2.4.** Users shall be able to change their username and passwords later after logging in.
 
 * **4.2.1.** Any user input that is designed to attack the site shall be detected and prevented.
-* **4.2.2.** User data shall be kept safe from possible attacks via encryption algorithms such as AES-256. All of these data should be encrypted in the database.
-* **4.2.3.** User passwords shall contain at least one uppercase letter, one lowercase letter, and one number in order to make brute force algorithms harder to succeed.
-* **4.2.4.** User passwords shall contain at least eight characters.
+* **4.2.3.** User data shall be kept safe from possible attacks via encryption algorithms such as AES-256. All of these data should be encrypted in the database.
+* **4.2.4.** User passwords shall contain at least one uppercase letter, one lowercase letter, and one number in order to make brute force algorithms harder to succeed.
+* **4.2.5.** User passwords shall contain at least eight characters.
 ### 6. Overall description of responsibilities that are assigned to each member.
   * İbrahim Buğra Elmas
       - Creating a scheme for our mobile application and adding it to our repo. 
