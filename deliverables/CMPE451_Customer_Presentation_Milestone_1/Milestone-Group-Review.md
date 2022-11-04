@@ -52,7 +52,7 @@ Moreover, we implemented some basic functionalities such as login, sign up, prof
 [Customer Milestone 1 Group Review](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Milestone-Group-Review.md)|Completed|
 
 
-### 3. Evaluation of The Status of Deliverables and Its Impact on Project Plan
+### 3. Evaluation of the status of deliverables and its impact on your project plan
 #### 3.1 Software
 ##### 3.1.1 Backend
 
@@ -83,7 +83,11 @@ There are 3 types of UML diagrams, we prepared use case, sequence and class diag
 
 **Sequence diagrams** shows in how subsystems, modules and services in the code are being interacted with user in which cases, they also show which functions are called during these interactions and what are responses. One of the numerous benefits of sequence diagrams is, they help communication of developers coding different modules.
 
-**Class Diagrams** shows classes, functions, variables, their acces modifiers in the code. Preparing a class diagram before coding, helps developers to have a better design.
+While we were deciding what endpoints we need to implement, one of the places we looked was our use case and sequence diagrams pages, since they are also showing users' interaction with the system, and all places user interacts is an endpoint.
+
+**Class Diagrams** shows classes, functions, variables, their acces modifiers in the code. Preparing a class diagram before coding, helps developers to have a better design.They also help us to find out largeness/hardness of classes/functionalities . While we are developing our project plan, it's an information used frequently.
+
+One of the most important steps of preparing the project plan was deciding some parameters including : what are the tasks, what are prerequisite relationships between tasks(e.g., sign up functionality is a prerequisite for login functionality, while database configuration is a prerequisite for both them). These diagrams also helped us to determine these parameters. As a result, UML diagrams are used while project plan is being prepared.
 
 #### 3.3 Individual Contributions Reports
 
