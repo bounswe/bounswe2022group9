@@ -1,3 +1,4 @@
+## Group Review
 
 ### 1. Executive Summary
 
@@ -21,14 +22,18 @@ In this part, we will summarize the current status of the project for each team 
 
 ### 2. List and status of deliverables.
 
-|**Deliverable**|**Status**|**Last Update Date**|
-|---|---|---|
-| | | |
-| | | |
-| | | |
-| | | |
-| | | |
-| | | |
+|**Deliverable**|**Status**|
+|---|---|
+[Software Requirements Specification]()|Completed|
+[Class Diagram]()|Completed|
+[Use Case Diagram]()|Completed|
+[Sequence Diagrams]()|Completed|
+[Scenario & Mockup 1]()|Completed|
+[Scenario & Mockup 2]()|Completed|
+[Scenario & Mockup 3]()|Completed|
+[Project Plan]()|Completed|
+[Individual Contribution Reports]()|Completed|
+[Customer Milestone 1 Group Review]()|Completed|
 
 ### 3. Evaluation of the status of deliverables and its impact on your project plan
 ### 4. Evaluation of tools and processes you have used to manage your team project.
@@ -74,12 +79,6 @@ In this part, we will summarize the current status of the project for each team 
      - I am also working for API documentation (signup part). In these documentations, I'm telling "how to send requests to API endpoints, what are possible API responses and which type of responses are given in which kinds of requests" These documentations are important for both customers and team communication.
       - I worked on scenario preparation for Milestone 1. I created a "sign up scenario" to present with Ömer Faruk Şişman on Customer Meeting (Milestone).
  
-  * Oğuzhan Özboyacı
-      - I created my personale Wiki page because I am new member. Understanding the project is another reponsibilty for me.
-      - I reviewed the Scenarios and MockUps from the last semester.
-      - I am mobile subgroup member. I created forget password page and feed mockup page.
-      - I reviewed my subgroup friend's PRs.
-
 
 ### 7. A Summary of work performed by each team member (in tabular format).
 
