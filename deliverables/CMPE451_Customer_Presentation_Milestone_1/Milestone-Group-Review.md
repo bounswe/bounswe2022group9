@@ -132,3 +132,18 @@ In this part, we will summarize the current status of the project for each team 
   |Pull Request Title|Link|
   |-----|:--------:|
   |[Backend] Signup(register)|[#259](https://github.com/bounswe/bounswe2022group9/pull/259)|
+  
+  **Oğuzhan Özboyacı**
+   
+  |Issue Title|Link|
+  |-----|:--------:|
+  |Scenarios and Mockups Revision|[#245](https://github.com/bounswe/bounswe2022group9/issues/245)|
+  |[Mobile] - Determining background, primary and secondary colors for mobile application]|[#256](https://github.com/bounswe/bounswe2022group9/issues/256)|
+  |[Mobile] - Login/Signup Pages Implementations] |[#252](https://github.com/bounswe/bounswe2022group9/issues/252)|
+  |[Mobile] Feed Page MockUp] |[#303](https://github.com/bounswe/bounswe2022group9/issues/303)|
+  
+  
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |[Mobile]ForgetPassword page]|[#260](https://github.com/bounswe/bounswe2022group9/pull/260)|
+  |[Mobile] feed page mockup]|[#301](https://github.com/bounswe/bounswe2022group9/pull/301)|
