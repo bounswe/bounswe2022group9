@@ -126,6 +126,10 @@ Our [Software Requirements Specification](https://github.com/bounswe/bounswe2022
 
 As a team, we are trying to stay in our [Project Plan](https://github.com/bounswe/bounswe2022group9/wiki/Project-Plan). Meanwhile, we consider to develop our software to be relevant to the designs that we have already done as in our Scenarios and Mockups. All the scenarios are actually ahead of our project plan now, but we develop our project to be related to the scenarios. In the frontend, for example, while we were designing the web pages, we based on the mockups.
 
+#### 3.7 Milestone 1 Group Review
+
+At the end of this Milestone, we collaboratively created a general [Review](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Milestone-Group-Review.md) of our project. This review is also a good way of seeing what we have accomplished so far and what needs to be focused from now on. 
+
 ### 4. Evaluation of Tools and Processes
     
     i) Meeting formats: every wednesday @22.00 @Discord
@@ -251,7 +255,7 @@ As a team, we are trying to stay in our [Project Plan](https://github.com/bounsw
 
    * Hüseyin Türker Erdem
      - I researched on react and ant design.
-     - I have added sections 3.1.3, 3.5, 3.6 to Milestone 1 Group Review.
+     - I have added sections 3.1.3, 3.5, 3.6 and 3.7 to Milestone 1 Group Review.
 
 
 ### 7. A Summary of Work Performed by Each Team Member 
