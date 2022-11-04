@@ -52,6 +52,27 @@ Moreover, we implemented some basic functionalities such as login, sign up, prof
 [Customer Milestone 1 Group Review](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Milestone-Group-Review.md)|Completed|
 
 ### 3. Evaluation of the status of deliverables and its impact on your project plan
+#### 3.1 Software
+##### 3.1.1 Backend
+
+As backend team, we coded and tested 2 functionalities. These are:
+
+    * Signup (register)
+    
+    * Login
+        
+These 2 functionalities are working as expected.
+    
+Our backend API has been Dockerized and deployed to AWS. Deployed API links are:
+
+    * Signup API endpoint (accepts POST request): http://ec2-44-202-130-117.compute-1.amazonaws.com/user/signup
+    
+    * Login API endpoint (accepts POST request): http://ec2-44-202-130-117.compute-1.amazonaws.com/user/login
+        
+And our [API documentation can be reached from here](https://github.com/bounswe/bounswe2022group9/wiki/API-Documentation)
+
+
+When our project plan is checked, it can be seen that we succesfully complied with our project plan and we plan to continue successfully tracking project plan during the course.
 ### 4. Evaluation of tools and processes you have used to manage your team project.
     
     i) Meeting formats: every wednesday @22.00 @Discord
