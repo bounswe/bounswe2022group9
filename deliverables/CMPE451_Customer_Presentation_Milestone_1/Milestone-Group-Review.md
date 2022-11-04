@@ -36,7 +36,7 @@ Moreover, we implemented some basic functionalities such as login, sign up, prof
     
     
 
-### 2. List and status of deliverables.
+### 2. List and Status of Deliverables
 
 |**Deliverable**|**Status**|
 |---|---|
@@ -52,7 +52,7 @@ Moreover, we implemented some basic functionalities such as login, sign up, prof
 [Customer Milestone 1 Group Review](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Milestone-Group-Review.md)|Completed|
 
 
-### 3. Evaluation of the status of deliverables and its impact on your project plan
+### 3. Evaluation of The Status of Deliverables and Its Impact on Project Plan
 #### 3.1 Software
 ##### 3.1.1 Backend
 
@@ -98,7 +98,7 @@ To prepare our project plan, we have used an open-source project planning tool n
 
 When the current version of the software and the project plan is compared, it can be easily seen that we are tracking the project plan successfully.
 
-### 4. Evaluation of tools and processes you have used to manage your team project.
+### 4. Evaluation of Tools and Processes
     
     i) Meeting formats: every wednesday @22.00 @Discord
     
@@ -124,10 +124,10 @@ When the current version of the software and the project plan is compared, it ca
      - AWS: This is the cloud platform that we used to deploy our program. 
      - PostgreSQL: In this project, we used postgresql as a database system. Data is sent from frontend to the backend and we need to store our data. This is the place where we store the data.
 
-### 5. The [requirements](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis) addressed in this milestone
+### 5. The [Requirements](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis) Addressed in Milestone
 * **3.1.1.1.** Guest users shall be able to sign up to the platform with their name, their email account, a username and password.
 * **3.1.1.2.** Users should be able to delete their platform accounts.
-* **.1.1.3.** Guest users should have access only to registration and login pages.
+* **3.1.1.3.** Guest users should have access only to registration and login pages.
 * **3.1.1.4.** User password should be at least 8 characters long should contain at least one uppercase, one lowercase and one symbol.
 * **3.1.2.** Login
 * **3.1.2.1.** Users shall be able to log in with their username and their password.
@@ -139,7 +139,7 @@ When the current version of the software and the project plan is compared, it ca
 * **4.2.2.** User data shall be kept safe from possible attacks via encryption algorithms such as AES-256. All of these data should be encrypted in the database.
 * **4.2.3.** User passwords shall contain at least one uppercase letter, one lowercase letter, and one number in order to make brute force algorithms harder to succeed.
 * **4.2.4.** User passwords shall contain at least eight characters.
-### 6. Overall description of responsibilities that are assigned to each member.
+### 6. Overall Description of Responsibilities
   * İbrahim Buğra Elmas
       - Creating a scheme for our mobile application and adding it to our repo. 
       - Main tasks until Customer Meeting 1 were adding login page, linking sign up feature of app with backend endpoint and creating a mockup for search page. 
@@ -193,9 +193,19 @@ When the current version of the software and the project plan is compared, it ca
      - I have created my personel effort page for Milestone 1.
      - I have created "Evaluation of tools" part of the Milestone 1.
       
+   * Furkan Özdemir
+     - I revised software requirements.
+     - I joined all meetings that I should join.
+     - I made a research about dockerize & deploying django apps.
+     - I created a dockerfile.
+     - I worked on API documentation and wrote login part.
+     - I reviewed a pull request about backend code of login page.
+     - I reviewed a pull request about frontend code.
+     - I created an installation and running guide for backend.
+     - I documented one of the meeting notes.
+     - I wrote backend part of the executive summary and filled parts related to personal effort.
 
-
-### 7. A Summary of work performed by each team member (in tabular format).
+### 7. A Summary of Work Performed by Each Team Member 
 
 
    **İbrahim Buğra Elmas**
