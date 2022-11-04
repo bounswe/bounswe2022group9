@@ -237,14 +237,26 @@ When our project plan is checked, it can be seen that we succesfully complied wi
    
   |Issue Title|Link|
   |-----|:--------:|
-  |||
-  |||
-  |||
-  
+  |Updating Ömer Faruk Şişman's Personal Wiki Page|[#240](https://github.com/bounswe/bounswe2022group9/issues/240)|
+  |Updating Weekly Efforts Page|[#241](https://github.com/bounswe/bounswe2022group9/issues/241)|
+  |Updating Wiki Sidebar|[#242](https://github.com/bounswe/bounswe2022group9/issues/242)|
+  |Updating "Login" and "Follow" Use-Case Diagrams|[#243](https://github.com/bounswe/bounswe2022group9/issues/243)|
+  |[Backend] Research on CI/CD process and AWS products.|[#267](https://github.com/bounswe/bounswe2022group9/issues/267)|  
+  |[Backend] Creating AWS free-tier account and ECR for docker images.|[#268](https://github.com/bounswe/bounswe2022group9/issues/268)|
+  |[Backend] Initializing the backend app. |[#269](https://github.com/bounswe/bounswe2022group9/issues/269)|
+  |[Backend] Dockerizing the backend app.|[#270](https://github.com/bounswe/bounswe2022group9/issues/270)|
+  |[Backend] Creating EC2 instance for deployment.|[#271](https://github.com/bounswe/bounswe2022group9/issues/271)|
+  |[Backend] Deploying the signup endpoint.|[#272](https://github.com/bounswe/bounswe2022group9/issues/272)|
+  |[Backend] Implementing the login endpoint.|[#273](https://github.com/bounswe/bounswe2022group9/issues/273)|
+  |[Backend] Deploying the login endpoint.|[#274](https://github.com/bounswe/bounswe2022group9/issues/274)|
+  |[Milestone] Creating Pre-Release version of project|[#288](https://github.com/bounswe/bounswe2022group9/issues/288)|
+  |[Milestone] Creating report for deliverables.|[#289](https://github.com/bounswe/bounswe2022group9/issues/289)|
+  |[Milestone] Creating frontend scenario for signup|[#290](https://github.com/bounswe/bounswe2022group9/issues/290)|
+  |[Backend] CORS error on server side|[#294](https://github.com/bounswe/bounswe2022group9/issues/294)|
+  |[Milestone] Creating report for deliverables.|[#289](https://github.com/bounswe/bounswe2022group9/issues/289)|
   
   |Pull Request Title|Link|
   |-----|:--------:|
-  |||
-  |||
-  |||
+  |[Backend] Login|[#280](https://github.com/bounswe/bounswe2022group9/pull/280)|
+  |[Backend] Signup --reviewed|[#259](https://github.com/bounswe/bounswe2022group9/pull/259)|
 
