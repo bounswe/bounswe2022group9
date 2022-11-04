@@ -77,6 +77,20 @@ When our project plan is checked, it can be seen that we succesfully complied wi
 
 As mobile team, we proceeded in line with the endpoints given to us by the backend and the project plan and we reached the point we wanted. There were two functions that we connected in the backend, one of them is signup and the other is login. In addition, we have prepared mock feed search and profile pages in order to set an example at the customer meeting and to make the customer feel our main purpose. We put random artistic paintings in the feed, we prepared the words picasso and renaissance in the search section, and finally, we put 5 posts as examples of the person's own uploads on the profile page.
 
+##### 3.1.3 Frontend
+
+We developed 3 web pages which are:
+
+    * Sign up page
+
+    * Login page
+
+    * Profile page (Static)
+
+As stated in our project plan, we completed sign up and login features and designed the profile page in time. We have basic controls over frontend such as minimum number of characters on username while signing up.
+
+Our [Login Page can be reached here](http://react-app-group-9.s3-website.eu-central-1.amazonaws.com/login). 
+
 #### 3.2 Software Design (UML Diagrams)
 
 There are 3 types of UML diagrams, we prepared use case, sequence and class diagrams. They were first prepared during CmpE 352, in this semester they are reviewed and revised.
@@ -103,6 +117,14 @@ Project plan is one of the most important components of a project. To prepare a 
 To prepare our project plan, we have used an open-source project planning tool named Project Libre.
 
 When the current version of the software and the project plan is compared, it can be easily seen that we are tracking the project plan successfully.
+
+#### 3.5 Software Requirements Specification
+
+Our [Software Requirements Specification](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis) state that our project has to obey those specification, so our software also provide them. As written [here](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#314-profile), one can easily see that all of our sub-teams work to meet these requirements. For example on mobile, profile page shows user's own art items, his/her profile picture, etc. In conclusion, we stay in the borders that we had drawn.
+
+#### 3.6 Scenarios and mockups
+
+As a team, we are trying to stay in our [Project Plan](https://github.com/bounswe/bounswe2022group9/wiki/Project-Plan). Meanwhile, we consider to develop our software to be relevant to the designs that we have already done as in our Scenarios and Mockups. All the scenarios are actually ahead of our project plan now, but we develop our project to be related to the scenarios. In the frontend, for example, while we were designing the web pages, we based on the mockups.
 
 ### 4. Evaluation of Tools and Processes
     
@@ -227,6 +249,11 @@ When the current version of the software and the project plan is compared, it ca
      - I have created my personal effort page for Milestone 1.
      - I have created "Executive Summary" part of the  Milestone 1 for frontend.
 
+   * Hüseyin Türker Erdem
+     - I researched on react and ant design.
+     - I have added sections 3.1.3, 3.5, 3.6 to Milestone 1 Group Review.
+
+
 ### 7. A Summary of Work Performed by Each Team Member 
     
    **Yağmur Göktaş**
@@ -234,7 +261,7 @@ When the current version of the software and the project plan is compared, it ca
    |Issue Title|Link|
   |-----|:--------:|
   |[Mobile] - Terms and Privacy Policy|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/266)|
-  |[Mobile] - Profile Page |[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/276)|
+  |[Mobile] - Profile Page |[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/276)|
   |[Mobile] - Backend Connection for Login|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/284)|
   |[Mobile] -On the profile page, the images are disorganized according to the screen size|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/297)|
   |[Mobile] - Application name should be added to Terms and Privacy Policy|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/295)|
@@ -258,9 +285,9 @@ When the current version of the software and the project plan is compared, it ca
   |Issue Title|Link|
   |-----|:--------:|
   |[Mobile] - Login/Signup Pages Implementations|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/252)|
-  |[Mobile] - Axios and Linking App with Backend |[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/262)|
+  |[Mobile] - Axios and Linking App with Backend |[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/262)|
   |[Mobile] - Search Page Mockup|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/283)|
-  |Revising Sequence Diagrams |[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/244)|
+  |Revising Sequence Diagrams |[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/244)|
   |[Mobile] - Determining background, primary and secondary colors for mobile application|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/256)|
   |Adding Meeting Notes (9/10/2022)|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/234)|
   
@@ -401,4 +428,8 @@ When the current version of the software and the project plan is compared, it ca
   |-----|:--------:|
   |[Frontend] Axios and Routing -- reviewed|[#292](https://github.com/bounswe/bounswe2022group9/pull/292)|
   
-  
+**Hüseyin Türker Erdem**
+   
+  |Issue Title|Link|
+  |-----|:--------:|
+  |[Milestone] "Evaluation of the status of deliverables and its impact on your project plan" part of Group Review|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/319)|
