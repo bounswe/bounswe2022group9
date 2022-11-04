@@ -40,7 +40,7 @@ In this part, we will summarize the current status of the project for each team 
     - Expo: It is nearly nested with React Native. Actually, when you read React Native’s docs, it recommends using Expo. Main focus of Expo is easing the development process of react native apps. We used Expo to make our app ready and running while we write code. It enables you to see real time code changes in the simulator. Also, making APK releases with Expo is just a single line code, so we integrated it with our. Project.
     - Android Studio: We use this program to only use emulators built within it. So that when we run our code we can see what we are doing.
 
-### 5. The requirements addressed in this milestone.
+### 5. The [requirements]() addressed in this milestone
 ### 6. Overall description of responsibilities that are assigned to each member.
   * İbrahim Buğra Elmas
       - Creating a scheme for our mobile application and adding it to our repo. 
