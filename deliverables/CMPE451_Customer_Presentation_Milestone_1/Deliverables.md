@@ -30,7 +30,7 @@ The hyperlinks to all deliverable documents are added below.
 * [İbrahim Buğra Elmas](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/individual_contributions_reports/%C4%B0brahim_Bu%C4%9Fra_Elmas.md)
 * [Hüseyin Türker Erdem]()
 * [Yağmur Göktaş](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/individual_contributions_reports/Yagmur_Goktas.md)
-* [Ufuk Karagöz]()
+* [Ufuk Karagöz](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/individual_contributions_reports/Ufuk_Karagoz.md)
 * [Berkant Koç]()
 * [Oğuzhan Özboyacı]()
 * [Furkan Özdemir]()
