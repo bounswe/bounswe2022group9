@@ -334,7 +334,7 @@ When the current version of the software and the project plan is compared, it ca
   |Issue Title|Link|
   |-----|:--------:|
   |Communication Plan Revision|[#246](https://github.com/bounswe/bounswe2022group9/issues/246)|
-  |[Frontend] - Login/Profile Reset Pages Implementations||[#257](https://github.com/bounswe/bounswe2022group9/issues/257)|
+  |[Frontend] - Login/Profile Reset Pages Implementations|[#257](https://github.com/bounswe/bounswe2022group9/issues/257)|
   |[Milestone] "Executive Summary" part of Milestone report for front-end |[#318](https://github.com/bounswe/bounswe2022group9/issues/318)|
   
   
