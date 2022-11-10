@@ -6,3 +6,5 @@ const ArtItemDisplay = () => {
         <Text>Yagmur Goktas</Text>
     )
 }
+
+export default ArtItemDisplay;
