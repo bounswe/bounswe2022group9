@@ -8,3 +8,5 @@ const ArtItemDisplay = () => {
 }
 
 export default ArtItemDisplay;
+
+const styles = StyleSheet.create({})
