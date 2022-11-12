@@ -16,6 +16,8 @@ def health_check(request):
 def signup(req):
     data = json.loads(req.body)
     try:
+        name = data['name']
+        birthdate = data['birthdate']
         username = data['username']
         password = data['password']
         email = data['email']
@@ -48,8 +50,9 @@ def signup(req):
             obj = User.objects.get(username=username)
             return HttpResponseBadRequest("user with this username already exists")
         except:
-            User.objects.create(username=username, password=hashed_password, email=email, token=token)
+            User.objects.create(name=name, birthdate=birthdate, username=username, password=hashed_password, email=email, token=token)
     return HttpResponse(status=201)
+
 
 @api_view(['POST'])
 def login(req):
