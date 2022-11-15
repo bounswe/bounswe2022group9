@@ -1,12 +1,31 @@
 import React from "react";
-import { Text, StyleSheet, Image, View, Dimensions} from "react-native";
+import { Text, StyleSheet, Image, View, Dimensions, ScrollView, SafeAreaView} from "react-native";
 
 const dimensions = Dimensions.get("window");
 const ArtItemDisplay = () => {
+    var comments = [];
+
+	for(let i = 0; i < 20; i++){
+
+		comments.push(
+			<View key = {i}>
+				<View >
+					<Text >HELLO</Text>
+				</View>
+
+			</View>
+		)
+	}
     return(
-        <View>
-        <Text style= { styles.creator }>Yagmur Goktas</Text>
-        <Image style= { styles.photo } source = {require("../assets/bus.jpg")} /></View>
+        <SafeAreaView>
+            <ScrollView>
+                <Text style= { styles.creator }>Yagmur Goktas</Text>
+                <Image style= { styles.photo } source = {require("../assets/bus.jpg")} />
+                <Text> 5 Likes </Text>
+                <View style= {styles.commentcontainer}>{ comments }</View>
+            </ScrollView>
+        </SafeAreaView>
+
     )
 }
 
@@ -24,5 +43,13 @@ const styles = StyleSheet.create({
         width: dimensions.width*0.70,
         height: dimensions.width*0.70,
         alignSelf:'center',
+    },
+    commentcontainer: {
+        marginTop: 10,
+        width: dimensions.width*0.70,
+        alignSelf:'center',
+    },
+    comment:{
+        backgroundColor: '#173679',
     },
 })
