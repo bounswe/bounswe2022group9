@@ -9,8 +9,9 @@ const ArtItemDisplay = () => {
 
 		comments.push(
 			<View key = {i}>
-				<View >
-					<Text >HELLO</Text>
+				<View style = {styles.comment}>
+					<Text style = {{ fontWeight: "bold", color:'#173679'}}>yagmur.goktas</Text>
+                    <Text>Really nice pic</Text>
 				</View>
 
 			</View>
@@ -21,7 +22,8 @@ const ArtItemDisplay = () => {
             <ScrollView>
                 <Text style= { styles.creator }>Yagmur Goktas</Text>
                 <Image style= { styles.photo } source = {require("../assets/bus.jpg")} />
-                <Text> 5 Likes </Text>
+                <Text style= {{ alignSelf: "center" , marginTop: 20 }}> 5 Likes </Text>
+                <Text style = { styles.creator }> Comments </Text>
                 <View style= {styles.commentcontainer}>{ comments }</View>
             </ScrollView>
         </SafeAreaView>
@@ -33,7 +35,7 @@ export default ArtItemDisplay;
 
 const styles = StyleSheet.create({
     creator: {
-        marginTop: 50,
+        marginTop: 40,
         alignSelf:'center',
         color:'#173679',
         fontWeight: "bold",
@@ -50,6 +52,7 @@ const styles = StyleSheet.create({
         alignSelf:'center',
     },
     comment:{
-        backgroundColor: '#173679',
+        marginTop: 20,
+        backgroundColor: '#c8f4ff',
     },
 })
