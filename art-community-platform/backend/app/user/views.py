@@ -3,6 +3,9 @@ from rest_framework.decorators import api_view
 import hashlib
 import json
 
+from .helper.comment_helpers import get_comment_by_id_helper
+from .helper.exhibition_helpers import get_exhibition_by_id_helper
+from .helper.notification_helpers import get_notification_by_id_helper
 from .helper.tag_helpers import get_tag_by_id_helper
 from .helper.art_item_helpers import get_art_item_by_id_helper
 from .helper.user_helpers import get_user_by_id_helper, get_follower_by_id_helper
@@ -246,3 +249,73 @@ def get_favourites_of_user(req, user_id):
         favourites.append(get_art_item_by_id_helper(favourite_id))
 
     return JsonResponse({"favourites": favourites})
+
+
+@api_view(['GET'])
+def get_comments_of_user(req, user_id):
+    data = json.loads(req.body)
+    try:
+        token = data['token']
+    except:
+        return HttpResponse("token is missing", status=400)
+
+    try:
+        u = User.objects.get(id=user_id)
+    except:
+        return HttpResponse("no user found with this user id", status=404)
+
+    if u.token != token:
+        return HttpResponse("user id and token mismatch", status=401)
+
+    comments = []
+    for comment_id in u.comments:
+        comments.append(get_comment_by_id_helper(comment_id))
+
+    return JsonResponse({"comments": comments})
+
+
+@api_view(['GET'])
+def get_exhibitions_of_user(req, user_id):
+    data = json.loads(req.body)
+    try:
+        token = data['token']
+    except:
+        return HttpResponse("token is missing", status=400)
+
+    try:
+        u = User.objects.get(id=user_id)
+    except:
+        return HttpResponse("no user found with this user id", status=404)
+
+    if u.token != token:
+        return HttpResponse("user id and token mismatch", status=401)
+
+    exhibitions = []
+    for exhibition_id in u.exhibitions:
+        exhibitions.append(get_exhibition_by_id_helper(exhibition_id))
+
+    return JsonResponse({"exhibitions": exhibitions})
+
+
+@api_view(['GET'])
+def get_notifications_of_user(req, user_id):
+    data = json.loads(req.body)
+    try:
+        token = data['token']
+    except:
+        return HttpResponse("token is missing", status=400)
+
+    try:
+        u = User.objects.get(id=user_id)
+    except:
+        return HttpResponse("no user found with this user id", status=404)
+
+    if u.token != token:
+        return HttpResponse("user id and token mismatch", status=401)
+
+    notifications = []
+    for notification_id in u.notifications:
+        notifications.append(get_notification_by_id_helper(notification_id))
+
+    return JsonResponse({"notifications": notifications})
+

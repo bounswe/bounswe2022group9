@@ -18,8 +18,8 @@ urlpatterns = [
     path('users/<int:user_id>/followers', views.get_followers_of_user, name='get_followers_of_user'),
     path('users/<int:user_id>/followings', views.get_followings_of_user, name='get_followings_of_user'),
     path('users/<int:user_id>/favourites', views.get_favourites_of_user, name='get_favourites_of_user'),
-    # path('users/<int:user_id>/comments', views.get_comments_of_user, name='get_comments_of_user'),
-    # path('users/<int:user_id>/exhibitions', views.get_followings_of_user, name='get_exhibitions_of_user'),
-    # path('users/<int:user_id>/notifications', views.get_followings_of_user, name='get_notifications_of_user'),
+    path('users/<int:user_id>/comments', views.get_comments_of_user, name='get_comments_of_user'),
+    path('users/<int:user_id>/exhibitions', views.get_exhibitions_of_user, name='get_exhibitions_of_user'),
+    path('users/<int:user_id>/notifications', views.get_notifications_of_user, name='get_notifications_of_user'),
 
 ]
