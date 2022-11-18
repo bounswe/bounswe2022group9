@@ -3,10 +3,10 @@ from rest_framework.decorators import api_view
 import hashlib
 import json
 
-from .helper_methods import get_tag_by_id_helper, get_art_item_by_id_helper
+from .helper.tag_helpers import get_tag_by_id_helper
+from .helper.art_item_helpers import get_art_item_by_id_helper
 from .models import User, ArtItem, Tag
 from . import validation_methods
-from django.core.exceptions import ObjectDoesNotExist
 
 
 @api_view(['GET'])
