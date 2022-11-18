@@ -5,7 +5,7 @@ import json
 
 from .helper.tag_helpers import get_tag_by_id_helper
 from .helper.art_item_helpers import get_art_item_by_id_helper
-from .models import User, ArtItem, Tag
+from .models import User, ArtItem, Tag, Comment
 from . import validation_methods
 
 
@@ -149,3 +149,31 @@ def get_tag_by_id(req, tag_id):
         return HttpResponse('no tag found with this id', status=404)
 
     return JsonResponse({"id": t.id, "text": t.text})
+
+
+@api_view(['GET'])
+def get_comment_by_id(req, comment_id):
+    try:
+        c = Comment.objects.get(id=comment_id)
+    except:
+        return HttpResponse('no comment found with this id', status=404)
+
+    try:
+        u = User.objects.get(id=c.owner_id)
+    except:
+        return HttpResponse('no user found with this owner id', status=404)
+
+    return JsonResponse({"id": c.id, "owner_name": u.name, "text": c.text, "date": c.date})
+
+
+@api_view(['GET'])
+def get_exhibition_by_id(req, exhibition_id):
+
+    return JsonResponse({"id": exhibition_id, "exhibition": "exhibition"})
+
+
+@api_view(['GET'])
+def get_notification_by_id(req, notification_id):
+
+    return JsonResponse({"id": notification_id, "notification": "notification"})
+
