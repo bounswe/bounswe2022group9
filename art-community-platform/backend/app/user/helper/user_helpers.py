@@ -14,3 +14,13 @@ def get_user_by_id_helper(user_id):
 
     return {"id": u.id, "username": u.username, "email": u.email, "birthdate": u.birthdate, "name": u.name,
             "art_items:": art_items, "profile_img_url": u.profile_img_url, "location": u.location}
+
+
+def get_follower_by_id_helper(follower_id):
+    try:
+        f = User.objects.get(id=follower_id)
+    except:
+        return None
+
+    return {"id": f.id, "username": f.username, "name": f.name,
+            "profile_img_url": f.profile_img_url, "location": f.location}

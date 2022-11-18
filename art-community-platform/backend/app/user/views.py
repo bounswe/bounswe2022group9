@@ -5,6 +5,7 @@ import json
 
 from .helper.tag_helpers import get_tag_by_id_helper
 from .helper.art_item_helpers import get_art_item_by_id_helper
+from .helper.user_helpers import get_user_by_id_helper, get_follower_by_id_helper
 from .models import User, ArtItem, Tag, Comment
 from . import validation_methods
 
@@ -177,3 +178,71 @@ def get_notification_by_id(req, notification_id):
 
     return JsonResponse({"id": notification_id, "notification": "notification"})
 
+
+@api_view(['GET'])
+def get_followers_of_user(req, user_id):
+    data = json.loads(req.body)
+    try:
+        token = data['token']
+    except:
+        return HttpResponse("token is missing", status=400)
+
+    try:
+        u = User.objects.get(id=user_id)
+    except:
+        return HttpResponse("no user found with this user id", status=404)
+
+    if u.token != token:
+        return HttpResponse("user id and token mismatch", status=401)
+
+    followers = []
+    for follower_id in u.followers:
+        followers.append(get_follower_by_id_helper(follower_id))
+
+    return JsonResponse({"followers": followers})
+
+
+@api_view(['GET'])
+def get_followings_of_user(req, user_id):
+    data = json.loads(req.body)
+    try:
+        token = data['token']
+    except:
+        return HttpResponse("token is missing", status=400)
+
+    try:
+        u = User.objects.get(id=user_id)
+    except:
+        return HttpResponse("no user found with this user id", status=404)
+
+    if u.token != token:
+        return HttpResponse("user id and token mismatch", status=401)
+
+    followings = []
+    for following_id in u.followings:
+        followings.append(get_follower_by_id_helper(following_id))
+
+    return JsonResponse({"followings": followings})
+
+
+@api_view(['GET'])
+def get_favourites_of_user(req, user_id):
+    data = json.loads(req.body)
+    try:
+        token = data['token']
+    except:
+        return HttpResponse("token is missing", status=400)
+
+    try:
+        u = User.objects.get(id=user_id)
+    except:
+        return HttpResponse("no user found with this user id", status=404)
+
+    if u.token != token:
+        return HttpResponse("user id and token mismatch", status=401)
+
+    favourites = []
+    for favourite_id in u.favourites:
+        favourites.append(get_art_item_by_id_helper(favourite_id))
+
+    return JsonResponse({"favourites": favourites})
