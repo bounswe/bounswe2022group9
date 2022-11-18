@@ -9,9 +9,9 @@ class User(models.Model):
     password = models.CharField(max_length=256)
     email = models.EmailField(max_length=200)
     token = models.CharField(max_length=256)
-    profileImgURL = models.URLField(default="https://www.linkpicture.com/q/LPic6370e982af0ad569150138.png")
+    profile_img_url = models.URLField(default="https://www.linkpicture.com/q/LPic6370e982af0ad569150138.png")
     location = models.CharField(max_length=100, null=True)
-    artItems = ArrayField(models.IntegerField(), null=True)
+    art_items = ArrayField(models.IntegerField(), null=True)
     followers = ArrayField(models.IntegerField(), null=True)
     followings = ArrayField(models.IntegerField(), null=True)
     favourites = ArrayField(models.IntegerField(), null=True)
@@ -24,8 +24,8 @@ class User(models.Model):
 
 
 class ArtItem(models.Model):
-    ownerid = models.IntegerField()
-    imageURL = models.URLField()
+    owner_id = models.IntegerField()
+    img_url = models.URLField()
     description = models.CharField(max_length=512)
     date = models.DateField()
     tags = ArrayField(models.CharField(max_length=100), null=True)
@@ -34,7 +34,7 @@ class ArtItem(models.Model):
 
 
 class Comment(models.Model):
-    ownerid = models.IntegerField()
+    owner_id = models.IntegerField()
     text = models.CharField(max_length=1024)
     date = models.DateField()
 
