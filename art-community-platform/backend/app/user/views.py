@@ -392,3 +392,52 @@ def create_tag(req):
         return HttpResponse('tag can not created', status=400)
 
     return JsonResponse({"id": t.id, "text": t.text})
+
+
+@api_view(['POST'])
+def follow(req):
+    try:
+        data = json.loads(req.body)
+    except:
+        return HttpResponse("request body is missing", status=400)
+
+    try:
+        user_id = data['user_id']
+        token = data['token']
+        followed_user_id = data['followed_user_id']
+        date = data['date']
+    except:
+        return HttpResponse("user id, token, followed user id or date is missing", status=400)
+
+    try:
+        u = User.objects.get(id=user_id)
+    except:
+        return HttpResponse('no user found with this id', status=404)
+
+    if u.token != token:
+        return HttpResponse("user id and token mismatch", status=401)
+
+    try:
+        f = User.objects.get(id=followed_user_id)
+    except:
+        return HttpResponse('no user to follow found with this id', status=404)
+
+    # append u.id to f.followers
+    try:
+        followers_of_f = f.followers
+        followers_of_f.append(u.id)
+        User.objects.filter(id=f.id).update(followers=followers_of_f)
+    except:
+        return HttpResponse('f nin takipcilerine u yu ekleyemedi', status=400)
+
+    # append f.id to u.followings
+    try:
+        followings_of_u = u.followings
+        followings_of_u.append(f.id)
+        User.objects.filter(id=u.id).update(followings=followings_of_u)
+    except:
+        return HttpResponse('u nun takip ettiklerine f yi ekleyemedi', status=400)
+
+    # TODO : send a notification to f like 'u started following you'
+
+    return HttpResponse(status=200)
