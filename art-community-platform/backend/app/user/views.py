@@ -319,3 +319,60 @@ def get_notifications_of_user(req, user_id):
 
     return JsonResponse({"notifications": notifications})
 
+
+@api_view(['GET'])
+def get_favourites_of_art_item(req, art_item_id):
+    data = json.loads(req.body)
+    try:
+        user_id = data['user_id']
+        token = data['token']
+    except:
+        return HttpResponse("user id or token is missing", status=400)
+
+    try:
+        u = User.objects.get(id=user_id)
+    except:
+        return HttpResponse("no user found with this id", status=404)
+
+    if u.token != token:
+        return HttpResponse("user id and token mismatch", status=401)
+
+    try:
+        a = ArtItem.objects.get(id=art_item_id)
+    except:
+        return HttpResponse("no art item found with this id", status=404)
+
+    favourites = []
+    for uid in a.favourites:
+        favourites.append(get_follower_by_id_helper(uid))
+
+    return JsonResponse({"favourites": favourites})
+
+
+@api_view(['GET'])
+def get_comments_of_art_item(req, art_item_id):
+    data = json.loads(req.body)
+    try:
+        user_id = data['user_id']
+        token = data['token']
+    except:
+        return HttpResponse("user id or token is missing", status=400)
+
+    try:
+        u = User.objects.get(id=user_id)
+    except:
+        return HttpResponse("no user found with this id", status=404)
+
+    if u.token != token:
+        return HttpResponse("user id and token mismatch", status=401)
+
+    try:
+        a = ArtItem.objects.get(id=art_item_id)
+    except:
+        return HttpResponse("no art item found with this id", status=404)
+
+    comments = []
+    for comment_id in a.comments:
+        comments.append(get_comment_by_id_helper(comment_id))
+
+    return JsonResponse({"comments": comments})

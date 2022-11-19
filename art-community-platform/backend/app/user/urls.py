@@ -22,4 +22,7 @@ urlpatterns = [
     path('users/<int:user_id>/exhibitions', views.get_exhibitions_of_user, name='get_exhibitions_of_user'),
     path('users/<int:user_id>/notifications', views.get_notifications_of_user, name='get_notifications_of_user'),
 
+    path('art-items/<int:art_item_id>/favourites', views.get_favourites_of_art_item, name='get_favourites_of_art_item'),
+    path('art-items/<int:art_item_id>/comments', views.get_comments_of_art_item, name='get_comments_of_art_item'),
+
 ]
