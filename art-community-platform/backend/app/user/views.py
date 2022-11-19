@@ -75,3 +75,24 @@ def login(req):
         return HttpResponseBadRequest("wrong password")
 
     return JsonResponse({'token': u.token})
+
+
+
+
+@api_view(['POST'])
+def favourite(req):
+    data = json.loads(req.body)
+
+    try:
+        userID = data['userID']
+        artItemID = data['artItemID']
+    
+    except:
+        return HttpResponseBadRequest("userID or/and artItemID is missing")
+
+    try:
+        pass # Will be edited after bugs are fixed
+
+    except: 
+        pass # Will be edited after the bugs are fixed
+
