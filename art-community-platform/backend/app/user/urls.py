@@ -25,4 +25,7 @@ urlpatterns = [
     path('art-items/<int:art_item_id>/favourites', views.get_favourites_of_art_item, name='get_favourites_of_art_item'),
     path('art-items/<int:art_item_id>/comments', views.get_comments_of_art_item, name='get_comments_of_art_item'),
 
+    path('tag', views.create_tag, name='create_tag'),
+    # path('follow', views.follow, name='follow'),
+
 ]

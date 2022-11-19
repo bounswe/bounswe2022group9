@@ -376,3 +376,19 @@ def get_comments_of_art_item(req, art_item_id):
         comments.append(get_comment_by_id_helper(comment_id))
 
     return JsonResponse({"comments": comments})
+
+
+@api_view(['POST'])
+def create_tag(req):
+    data = json.loads(req.body)
+    try:
+        text = data['text']
+    except:
+        return HttpResponse("tag content is missing", status=400)
+
+    try:
+        t = Tag.objects.create(text=text)
+    except:
+        return HttpResponse('tag can not created', status=400)
+
+    return JsonResponse({"id": t.id, "text": t.text})
