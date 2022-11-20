@@ -48,5 +48,20 @@ def create_exhibition(req):
 
 @api_view(['GET'])
 def get_exhibition_by_id(req, exhibition_id):
+    # TODO: Tag will change to Exhibition
+    try:
+        e = Tag.objects.get(id=exhibition_id)
+    except:
+        return HttpResponse('no exhibition found with this id', status=404)
 
-    return JsonResponse({"id": exhibition_id, "exhibition": "exhibition"})
+    try:
+        owner = User.objects.get(id=e.owner_id)
+    except:
+        return HttpResponse('no owner found with this id', status=404)
+
+    art_items = []
+    for art_item_id in e.art_items:
+        art_items.append(get_art_item_by_id_helper(art_item_id))
+
+    return JsonResponse({"id": e.id, "owner_name": owner.name, "type": e.type,
+                         "location": e.location, "date": e.date, "art_items": art_items})
