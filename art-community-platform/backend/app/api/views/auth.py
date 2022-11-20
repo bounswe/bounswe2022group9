@@ -2,14 +2,17 @@ from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse
 from rest_framework.decorators import api_view
 import hashlib
 import json
-from .models import User
-from . import validation_methods
-from django.core.exceptions import ObjectDoesNotExist
 
-
-@api_view(['GET'])
-def health_check(request):
-    return HttpResponse("Health check is successful, app is healthy.")
+from ..helpers.comment_helpers import get_comment_by_id_helper
+from ..helpers.exhibition_helpers import get_exhibition_by_id_helper
+from ..helpers.notification_helpers import get_notification_by_id_helper
+from ..helpers.tag_helpers import get_tag_by_id_helper
+from ..helpers.art_item_helpers import *
+from ..helpers.user_helpers import *
+from ..models.user import User
+from ..models.art_item import ArtItem
+from ..models.comment import Comment
+from ..models.tag import Tag
 
 
 @api_view(['POST'])
@@ -23,34 +26,35 @@ def signup(req):
         email = data['email']
     except:
         return HttpResponseBadRequest("missing fields")
-    token = hashlib.sha256((username+password+email).encode('utf-8')).hexdigest()
+    token = hashlib.sha256((username + password + email).encode('utf-8')).hexdigest()
     hashed_password = hashlib.sha256(password.encode('utf-8')).hexdigest()
 
     # email validation (e.g. does it have @ sign in it)
-    is_email_valid, email_validation_msg = validation_methods.validate_email(email)
+    is_email_valid, email_validation_msg = validate_email_helper(email)
     if not is_email_valid:
         return HttpResponseBadRequest(email_validation_msg)
 
     # username validation
-    is_username_valid, username_validation_msg = validation_methods.validate_username(username)
+    is_username_valid, username_validation_msg = validate_username_helper(username)
     if not is_username_valid:
         return HttpResponseBadRequest(username_validation_msg)
 
     # password validation
-    is_password_valid, pass_validation_msg = validation_methods.validate_password(password)
+    is_password_valid, pass_validation_msg = validate_password_helper(password)
     if not is_password_valid:
         return HttpResponseBadRequest(pass_validation_msg)
 
-    # check if user is registered before, add new user if user isn't registered before
+    # check if api is registered before, add new api if api isn't registered before
     try:
         obj = User.objects.get(email=email)
-        return HttpResponseBadRequest("user with this email already exists")
+        return HttpResponseBadRequest("api with this email already exists")
     except:
         try:
             obj = User.objects.get(username=username)
-            return HttpResponseBadRequest("user with this username already exists")
+            return HttpResponseBadRequest("api with this username already exists")
         except:
-            User.objects.create(name=name, birthdate=birthdate, username=username, password=hashed_password, email=email, token=token)
+            User.objects.create(name=name, birthdate=birthdate, username=username, password=hashed_password,
+                                email=email, token=token)
     return HttpResponse(status=201)
 
 
@@ -67,7 +71,7 @@ def login(req):
     try:
         u = User.objects.get(username=username)
     except:
-        return HttpResponseBadRequest("no user found with this username")
+        return HttpResponse('no api found with this username', status=400)
 
     hashed_password = hashlib.sha256(password.encode('utf-8')).hexdigest()
 
