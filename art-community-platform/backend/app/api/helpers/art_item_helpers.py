@@ -1,4 +1,7 @@
-from ..models import User, ArtItem
+from ..models.user import User
+from ..models.art_item import ArtItem
+from ..models.comment import Comment
+from ..models.tag import Tag
 from .tag_helpers import get_tag_by_id_helper
 
 

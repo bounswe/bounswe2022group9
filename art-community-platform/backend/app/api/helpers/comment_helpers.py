@@ -1,4 +1,7 @@
-from ..models import User, ArtItem, Tag, Comment
+from ..models.user import User
+from ..models.art_item import ArtItem
+from ..models.comment import Comment
+from ..models.tag import Tag
 
 
 def get_comment_by_id_helper(comment_id):
