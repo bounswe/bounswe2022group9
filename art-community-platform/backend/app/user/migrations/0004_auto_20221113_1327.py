@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0003_auto_20221112_1737'),
+        ('user', '0003_auto_20221112_1737'),
     ]
 
     operations = [
@@ -15,8 +15,8 @@ class Migration(migrations.Migration):
             name='ArtItem',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('owner_id', models.IntegerField()),
-                ('img_url', models.URLField()),
+                ('ownerid', models.IntegerField()),
+                ('imageURL', models.URLField()),
                 ('description', models.CharField(max_length=512)),
                 ('date', models.DateField()),
                 ('tags', django.contrib.postgres.fields.ArrayField(base_field=models.CharField(max_length=100), null=True, size=None)),
@@ -28,7 +28,7 @@ class Migration(migrations.Migration):
             name='Comment',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('owner_id', models.IntegerField()),
+                ('ownerid', models.IntegerField()),
                 ('text', models.CharField(max_length=1024)),
                 ('date', models.DateField()),
             ],
@@ -42,7 +42,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='user',
-            name='art_items',
+            name='artItems',
             field=django.contrib.postgres.fields.ArrayField(base_field=models.IntegerField(), null=True, size=None),
         ),
         migrations.AddField(
@@ -82,7 +82,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='user',
-            name='profile_img_url',
+            name='profileImgURL',
             field=models.URLField(default='https://www.linkpicture.com/q/LPic6370e982af0ad569150138.png'),
         ),
         migrations.AlterField(

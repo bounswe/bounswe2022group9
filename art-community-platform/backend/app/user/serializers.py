@@ -1,8 +1,5 @@
 from rest_framework import serializers
-from ..models.user import User
-from ..models.art_item import ArtItem
-from ..models.comment import Comment
-from ..models.tag import Tag
+from .models import User, ArtItem, Comment, Tag
 
 
 class UserSerializer(serializers.ModelSerializer):
