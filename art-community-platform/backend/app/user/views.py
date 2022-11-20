@@ -4,6 +4,7 @@ import hashlib
 import json
 from .models import User
 from . import validation_methods
+from .serializers import UserSerializer
 from django.core.exceptions import ObjectDoesNotExist
 
 
@@ -14,6 +15,7 @@ def health_check(request):
 
 @api_view(['POST'])
 def signup(req):
+    data = None
     data = json.loads(req.body)
     try:
         name = data['name']
@@ -95,4 +97,34 @@ def favourite(req):
 
     except: 
         pass # Will be edited after the bugs are fixed
+
+
+@api_view(['POST'])
+def update_profile_info(req):
+    data = json.loads(req.body)
+    try:
+        email = data['email']
+        birthdate = data['birthdate']
+        location = data['location']
+        name = data['name']
+    except :
+        return HttpResponseBadRequest("missing fields")
+    user = None
+    try:
+        user = User.objects.get(email=email)
+        user.birthdate = birthdate
+        user.location = location
+        user.name = name
+        try:
+            user.save()
+        except Exception as e:
+            print(e)
+    except:
+        return HttpResponseBadRequest("user with given email doesn't exist")
+    return HttpResponse(status=200)
+
+
+
+
+
 
