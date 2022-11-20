@@ -6,7 +6,7 @@ from .views.user import *
 from .views.art_item import *
 from .views.comment import get_comment_by_id
 from .views.exhibition import get_exhibition_by_id
-from .views.notification import get_notification_by_id
+from .views.notification import *
 from .views.tag import *
 from .views.follow import *
 

@@ -17,6 +17,11 @@ from ..models.tag import Tag
 
 @api_view(['GET'])
 def get_notification_by_id(req, notification_id):
+    # TODO: Tag will change to Notification
+    try:
+        n = Tag.objects.get(id=notification_id)
+    except:
+        return HttpResponse('no notification found with this id', status=404)
 
-    return JsonResponse({"id": notification_id, "notification": "notification"})
+    return JsonResponse({"id": n.id, "text": n.text, "date": n.date})
 
