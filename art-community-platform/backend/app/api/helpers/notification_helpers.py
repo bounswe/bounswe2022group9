@@ -1,3 +1,8 @@
+from ..models.user import User
+from ..models.art_item import ArtItem
+from ..models.comment import Comment
+from ..models.tag import Tag
+
 
 def get_notification_by_id_helper(notification_id):
 
