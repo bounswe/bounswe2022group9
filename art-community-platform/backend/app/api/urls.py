@@ -36,4 +36,6 @@ urlpatterns = [
     path('tag', create_tag, name='create_tag'),
     path('follow', follow, name='follow'),
 
+    path('users/<int:user_id>/update-profile-info', update_profile_info, name='update_profile_info')
+
 ]

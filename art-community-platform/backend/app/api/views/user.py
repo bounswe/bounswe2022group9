@@ -175,3 +175,25 @@ def get_notifications_of_user(req, user_id):
 
     return JsonResponse({"notifications": notifications})
 
+
+@api_view(['POST'])
+def update_profile_info(req, user_id):
+    data = json.loads(req.body)
+    try:
+        email = data['email']
+        birthdate = data['birthdate']
+        location = data['location']
+        name = data['name']
+    except :
+        return HttpResponseBadRequest("missing fields")
+    user = None
+    try:
+        user = User.objects.get(id=user_id)
+    except:
+        return HttpResponseBadRequest("user with given id doesn't exist")
+    user.birthdate = birthdate
+    user.location = location
+    user.name = name
+    user.save()
+    return HttpResponse(status=200)
+
