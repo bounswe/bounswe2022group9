@@ -1,8 +1,12 @@
-import React from "react";
-import { Text, StyleSheet, Image, View, Dimensions, ScrollView, SafeAreaView} from "react-native";
+import React, { useState } from "react";
+import { Text, StyleSheet, Image, View, Dimensions, ScrollView, SafeAreaView, Pressable} from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const dimensions = Dimensions.get("window");
+
+    
 const ArtItemDisplay = () => {
+    const [liked, setLiked] = useState(false);
     var comments = [];
 
 	for(let i = 0; i < 20; i++){
@@ -17,6 +21,7 @@ const ArtItemDisplay = () => {
 			</View>
 		)
 	}
+
     return(
         <SafeAreaView>
             <ScrollView>
@@ -25,6 +30,14 @@ const ArtItemDisplay = () => {
                     <Text>caption</Text>
                 </View>
                 <Image style= { styles.photo } source = {require("../assets/bus.jpg")} />
+                <Pressable onPress={() => setLiked((isLiked) => !isLiked)}>
+                    <MaterialCommunityIcons
+                    name={liked ? "heart" : "heart-outline"}
+                    size={32}
+                    color={liked ? "red" : "black"}
+                    
+                />
+                </Pressable>
                 <Text style= {{ alignSelf: "center" , marginTop: 20 }}> 5 Likes </Text>
                 <Text style = { styles.creator }> Comments </Text>
                 <View style= {styles.commentcontainer}>{ comments }</View>
@@ -58,7 +71,7 @@ const styles = StyleSheet.create({
         alignSelf:'center',
     },
     comment:{
-        marginTop: 20,
+        marginTop: 10,
         backgroundColor: '#c8f4ff',
     },
     tags:{
@@ -67,7 +80,7 @@ const styles = StyleSheet.create({
     caption:{
         width: dimensions.width*0.70,
         borderWidth: 1,
-        borderColor: '#173679',
+        borderColor: '#c8f4ff',
         alignSelf:'center',
         marginTop:20,
     },
