@@ -40,6 +40,14 @@ const ArtItemDisplay = () => {
                 </Pressable>
                 <Text style= {{ alignSelf: "center" , marginTop: 20 }}> 5 Likes </Text>
                 <Text style = { styles.creator }> Comments </Text>
+                <Pressable>
+                    <MaterialCommunityIcons
+                    name={"chat-plus"}
+                    size={32}
+                    color={"#173679"}
+                    style={{ marginLeft : dimensions.width*0.15 , marginTop : 10}}
+                />
+                </Pressable>
                 <View style= {styles.commentcontainer}>{ comments }</View>
                 <View style= {styles.tags}>
                     <Text>Tags</Text>
