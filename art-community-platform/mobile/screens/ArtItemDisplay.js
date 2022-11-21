@@ -26,10 +26,12 @@ const ArtItemDisplay = () => {
         <SafeAreaView>
             <ScrollView>
                 <Text style= { styles.creator }>Created by Yagmur Goktas</Text>
+                <Text style= { styles.timestamp }> 22.11.2022 Tuesday</Text>
                 <View style={ styles.caption }>
                     <Text>caption</Text>
                 </View>
                 <Image style= { styles.photo } source = {require("../assets/bus.jpg")} />
+
                 <Pressable onPress={() => setLiked((isLiked) => !isLiked)}>
                     <MaterialCommunityIcons
                     name={liked ? "heart" : "heart-outline"}
@@ -39,7 +41,7 @@ const ArtItemDisplay = () => {
                 />
                 </Pressable>
                 <Text style= {{ alignSelf: "center" , marginTop: 20 }}> 5 Likes </Text>
-                <Text style = { styles.creator }> Comments </Text>
+                <Text style = {{ marginTop: 40 , marginLeft: dimensions.width*0.15 , color:'#173679', fontWeight: "bold"}}> Comments </Text>
                 <Pressable>
                     <MaterialCommunityIcons
                     name={"chat-plus"}
@@ -50,7 +52,7 @@ const ArtItemDisplay = () => {
                 </Pressable>
                 <View style= {styles.commentcontainer}>{ comments }</View>
                 <View style= {styles.tags}>
-                    <Text>Tags</Text>
+                    <Text style = {{ marginTop: 20 , marginLeft: dimensions.width*0.15 , color:'#173679', fontWeight: "bold"}} >Tags</Text>
                 </View>
             </ScrollView>
         </SafeAreaView>
@@ -92,4 +94,9 @@ const styles = StyleSheet.create({
         alignSelf:'center',
         marginTop:20,
     },
+    timestamp:{
+        marginLeft: dimensions.width*0.6,        
+        color:'#173679',
+        fontSize:12
+    }
 })
