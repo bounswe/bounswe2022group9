@@ -5,7 +5,7 @@ from .views.auth import login, signup
 from .views.user import *
 from .views.art_item import *
 from .views.comment import get_comment_by_id
-from .views.exhibition import get_exhibition_by_id
+from .views.exhibition import get_exhibition_by_id, create_exhibition
 from .views.notification import get_notification_by_id
 from .views.tag import *
 from .views.follow import *
@@ -35,6 +35,7 @@ urlpatterns = [
     path('art-items/<int:art_item_id>/comments', get_comments_of_art_item, name='get_comments_of_art_item'),
 
     path('tag', create_tag, name='create_tag'),
+    path('exhibition', create_exhibition, name='create_exhibition'),
     path('follow', follow, name='follow'),
 
     path('users/<int:user_id>/update-profile-info', update_profile_info, name='update_profile_info'),
