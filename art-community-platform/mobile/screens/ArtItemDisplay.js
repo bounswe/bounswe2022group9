@@ -21,6 +21,7 @@ const ArtItemDisplay = () => {
         <SafeAreaView>
             <ScrollView>
                 <Text style= { styles.creator }>Yagmur Goktas</Text>
+                <View style={ styles.caption }></View>
                 <Image style= { styles.photo } source = {require("../assets/bus.jpg")} />
                 <Text style= {{ alignSelf: "center" , marginTop: 20 }}> 5 Likes </Text>
                 <Text style = { styles.creator }> Comments </Text>
@@ -59,4 +60,5 @@ const styles = StyleSheet.create({
     tags:{
 
     },
+    caption:{},
 })
