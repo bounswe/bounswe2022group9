@@ -3,6 +3,8 @@ from ..models.user import User
 from ..models.art_item import ArtItem
 from ..models.comment import Comment
 from ..models.tag import Tag
+from ..models.exhibition import Exhibition
+from ..models.notification import Notification
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -26,4 +28,16 @@ class CommentSerializer(serializers.ModelSerializer):
 class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tag
+        fields = '__all__'
+
+
+class ExhibitionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Exhibition
+        fields = '__all__'
+
+
+class NotificationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Notification
         fields = '__all__'

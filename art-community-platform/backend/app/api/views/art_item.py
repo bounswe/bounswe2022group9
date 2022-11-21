@@ -31,7 +31,7 @@ def get_art_item_by_id(req, art_item_id):
     try:
         u = User.objects.get(id=a.owner_id)
     except:
-        return HttpResponse('no api found with this owner id', status=404)
+        return HttpResponse('no user found with this owner id', status=404)
 
     tags = []
     for tag_id in a.tags:
@@ -60,15 +60,15 @@ def get_favourites_of_art_item(req, art_item_id):
         user_id = data['user_id']
         token = data['token']
     except:
-        return HttpResponse("api id or token is missing", status=400)
+        return HttpResponse("user id or token is missing", status=400)
 
     try:
         u = User.objects.get(id=user_id)
     except:
-        return HttpResponse("no api found with this id", status=404)
+        return HttpResponse("no user found with this id", status=404)
 
     if u.token != token:
-        return HttpResponse("api id and token mismatch", status=401)
+        return HttpResponse("user id and token mismatch", status=401)
 
     try:
         a = ArtItem.objects.get(id=art_item_id)
