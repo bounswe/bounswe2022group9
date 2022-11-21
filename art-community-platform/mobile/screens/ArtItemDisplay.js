@@ -25,6 +25,7 @@ const ArtItemDisplay = () => {
                 <Text style= {{ alignSelf: "center" , marginTop: 20 }}> 5 Likes </Text>
                 <Text style = { styles.creator }> Comments </Text>
                 <View style= {styles.commentcontainer}>{ comments }</View>
+                <View style= {styles.tags}></View>
             </ScrollView>
         </SafeAreaView>
 
@@ -54,5 +55,8 @@ const styles = StyleSheet.create({
     comment:{
         marginTop: 20,
         backgroundColor: '#c8f4ff',
+    },
+    tags:{
+
     },
 })
