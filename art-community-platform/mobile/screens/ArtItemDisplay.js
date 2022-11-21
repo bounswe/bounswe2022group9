@@ -35,7 +35,7 @@ const ArtItemDisplay = () => {
                     name={liked ? "heart" : "heart-outline"}
                     size={32}
                     color={liked ? "red" : "black"}
-                    
+                    style={{ marginLeft : dimensions.width*0.15 , marginTop : 10}}
                 />
                 </Pressable>
                 <Text style= {{ alignSelf: "center" , marginTop: 20 }}> 5 Likes </Text>
