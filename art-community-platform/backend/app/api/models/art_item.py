@@ -9,6 +9,7 @@ from django.contrib.postgres.fields import ArrayField
 class ArtItem(models.Model):
     owner_id = models.IntegerField()
     image = models.ImageField(null=True)
+    img_url = models.URLField(default='https://www.linkpicture.com/q/LPic6370e982af0ad569150138.png')
     description = models.CharField(max_length=512)
     date = models.DateField()
     tags = ArrayField(models.CharField(max_length=100), null=True)
