@@ -22,7 +22,7 @@ def search_in_users(req):
 
     q = req.GET.get('q', '')
 
-    data = list(search_users_helper(q))
+    data = search_users_helper(q)
 
     return JsonResponse({'data': data})
 

@@ -9,10 +9,11 @@ from ..models.tag import Tag
 
 
 def search_users_helper(query):
-    search_vector = SearchVector("name", "username", "email")
-
-    return (
-        User.objects.annotate(
-           similarity=TrigramSimilarity(query, 'name')
-        ).filter(similarity__gt=0.3).order_by('-similarity')
-    )
+    if query != '':
+        results = User.objects.filter(username__icontains=query)
+    else:
+        results = User.objects.all()
+    context = {
+        'results': results,
+    }
+    return context
