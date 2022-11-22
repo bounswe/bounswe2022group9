@@ -37,10 +37,9 @@ def get_art_item_by_id(req, art_item_id):
     for tag_id in a.tags:
         tags.append(get_tag_by_id_helper(tag_id))
 
-    if a.comments is not None:
-        comment_count = len(a.comments)
-    else:
-        comment_count = 0
+    comments = []
+    for comment_id in a.comments:
+        comments.append(get_comment_by_id_helper(comment_id))
 
     if a.favourites is not None:
         favourite_count = len(a.favourites)
@@ -48,7 +47,7 @@ def get_art_item_by_id(req, art_item_id):
         favourite_count = 0
 
     data = {"id": a.id, "owner_name": u.name, "img_url": a.img_url, "description": a.description, "date": a.date,
-            "tags:": tags, "comment_count": comment_count, "favourite_count": favourite_count}
+            "comments": comments, "tags:": tags, "comment_count": len(comments), "favourite_count": favourite_count}
 
     return JsonResponse(data)
 
