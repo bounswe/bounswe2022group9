@@ -17,6 +17,7 @@ urlpatterns = [
     path('signup', signup, name='signup'),
     path('login', login, name='login'),
 
+    path('users', get_all_users, name='get_all_users'),
     path('users/<int:user_id>', get_user_by_id, name='get_user_by_id'),
     path('art-items/<int:art_item_id>', get_art_item_by_id, name='get_art_item_by_id'),
     path('tags/<int:tag_id>', get_tag_by_id, name='get_tag_by_id'),

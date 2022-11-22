@@ -16,6 +16,27 @@ from ..models.tag import Tag
 
 
 @api_view(['GET'])
+def get_all_users(req):
+    data = json.loads(req.body)
+    try:
+        token = data['token']
+    except:
+        return HttpResponse("token is missing", status=401)
+
+    try:
+        users = User.objects.all()
+    except:
+        return HttpResponse('users can not fetched', status=404)
+
+    users_data = []
+    for user in users:
+        users_data.append({"id": user.id, "username": user.username,
+                          "name": user.name, "profile_img_url": user.profile_img_url})
+
+    return JsonResponse({"users": users_data})
+
+
+@api_view(['GET'])
 def get_user_by_id(req, user_id):
     data = json.loads(req.body)
     try:
@@ -198,6 +219,7 @@ def update_profile_info(req, user_id):
     return HttpResponse(status=200)
 
 
+@api_view(['POST'])
 def get_profile_info(req, user_id):
     user = None
     try:
