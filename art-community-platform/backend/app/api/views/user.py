@@ -4,7 +4,7 @@ import hashlib
 import json
 
 from ..helpers.comment_helpers import get_comment_by_id_helper
-from ..helpers.exhibition_helpers import get_exhibition_by_id_helper
+from ..helpers.exhibition_helpers import get_exhibition_by_id_helper, get_exhibition_by_id_simple
 from ..helpers.notification_helpers import get_notification_by_id_helper
 from ..helpers.tag_helpers import get_tag_by_id_helper
 from ..helpers.art_item_helpers import *
@@ -164,12 +164,9 @@ def get_exhibitions_of_user(req, user_id):
     except:
         return HttpResponse("no api found with this api id", status=404)
 
-    if u.token != token:
-        return HttpResponse("api id and token mismatch", status=401)
-
     exhibitions = []
     for exhibition_id in u.exhibitions:
-        exhibitions.append(get_exhibition_by_id_helper(exhibition_id))
+        exhibitions.append(get_exhibition_by_id_simple(exhibition_id))
 
     return JsonResponse({"exhibitions": exhibitions})
 
