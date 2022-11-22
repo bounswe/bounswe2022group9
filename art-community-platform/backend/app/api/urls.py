@@ -2,6 +2,7 @@ from django.urls import path
 
 from .views.health_check import health_check
 from .views.auth import login, signup
+from .views.search import *
 from .views.user import *
 from .views.art_item import *
 from .views.comment import get_comment_by_id
@@ -42,5 +43,9 @@ urlpatterns = [
     path('users/<int:user_id>/get-profile-info', get_profile_info, name='get_profile_info'),
 
     path('homepage', get_homepage, name='homepage'),
+
+    path('users/search', search_in_users, name='search_in_users'),
+    path('art_items/search', search_in_art_items, name='search_in_users'),
+    path('exhibitions/search', search_in_exhibitions, name='search_in_users'),
 
 ]
