@@ -4,7 +4,7 @@ import hashlib
 import json
 
 from ..helpers.comment_helpers import get_comment_by_id_helper
-from ..helpers.exhibition_helpers import get_exhibition_by_id_helper
+from ..helpers.exhibition_helpers import get_exhibition_by_id_helper, get_exhibition_by_id_simple
 from ..helpers.notification_helpers import get_notification_by_id_helper
 from ..helpers.tag_helpers import get_tag_by_id_helper
 from ..helpers.art_item_helpers import *
@@ -16,6 +16,27 @@ from ..models.tag import Tag
 
 
 @api_view(['GET'])
+def get_all_users(req):
+    data = json.loads(req.body)
+    try:
+        token = data['token']
+    except:
+        return HttpResponse("token is missing", status=401)
+
+    try:
+        users = User.objects.all()
+    except:
+        return HttpResponse('users can not fetched', status=404)
+
+    users_data = []
+    for user in users:
+        users_data.append({"id": user.id, "username": user.username,
+                          "name": user.name, "profile_img_url": user.profile_img_url})
+
+    return JsonResponse({"users": users_data})
+
+
+@api_view(['GET'])
 def get_user_by_id(req, user_id):
     data = json.loads(req.body)
     try:
@@ -24,16 +45,26 @@ def get_user_by_id(req, user_id):
         return HttpResponse("token is missing", status=401)
 
     try:
+        request_sender = User.objects.get(token=token)
+    except:
+        return HttpResponse('no user found with this token', status=404)
+
+    try:
         u = User.objects.get(id=user_id)
     except:
-        return HttpResponse('no api found with this id', status=404)
+        return HttpResponse('no user found with this id', status=404)
 
     art_items = []
     for art_item_id in u.art_items:
         art_items.append(get_art_item_by_id_helper(art_item_id))
 
-    data = {"id": u.id, "username": u.username, "email": u.email, "birthdate": u.birthdate, "name": u.name,
-            "art_items:": art_items, "profile_img_url": u.profile_img_url, "location": u.location}
+    is_following = False
+    if user_id in request_sender.followings:
+        is_following = True
+
+    data = {"id": u.id, "username": u.username, "email": u.email,
+            "birthdate": u.birthdate, "name": u.name, "art_items:": art_items,
+            "profile_img_url": u.profile_img_url, "location": u.location, "is_following": is_following}
 
     return JsonResponse(data)
 
@@ -143,12 +174,9 @@ def get_exhibitions_of_user(req, user_id):
     except:
         return HttpResponse("no api found with this api id", status=404)
 
-    if u.token != token:
-        return HttpResponse("api id and token mismatch", status=401)
-
     exhibitions = []
     for exhibition_id in u.exhibitions:
-        exhibitions.append(get_exhibition_by_id_helper(exhibition_id))
+        exhibitions.append(get_exhibition_by_id_simple(exhibition_id))
 
     return JsonResponse({"exhibitions": exhibitions})
 
@@ -198,6 +226,7 @@ def update_profile_info(req, user_id):
     return HttpResponse(status=200)
 
 
+@api_view(['POST'])
 def get_profile_info(req, user_id):
     user = None
     try:

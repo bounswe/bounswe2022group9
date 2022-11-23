@@ -23,3 +23,18 @@ def get_exhibition_by_id_helper(exhibition_id):
 
     return {"id": e.id, "owner_name": owner.name, "type": e.type,
             "location": e.location, "date": e.date, "art_items": art_items}
+
+
+def get_exhibition_by_id_simple(exhibition_id):
+    try:
+        e = Exhibition.objects.get(id=exhibition_id)
+    except:
+        return None
+
+    try:
+        owner = User.objects.get(id=e.owner_id)
+    except:
+        return None
+
+    return {"id": e.id, "owner_name": owner.name, "type": e.type,
+            "location": e.location, "date": e.date}
