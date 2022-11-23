@@ -25,7 +25,7 @@ def get_comment_by_id(req, comment_id):
     try:
         u = User.objects.get(id=c.owner_id)
     except:
-        return HttpResponse('no api found with this owner id', status=404)
+        return HttpResponse('no comment owner found with this owner id', status=404)
 
     return JsonResponse({"id": c.id, "owner_name": u.name, "text": c.text, "date": c.date})
 

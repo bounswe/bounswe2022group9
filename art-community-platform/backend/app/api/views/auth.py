@@ -81,8 +81,6 @@ def login(req):
     return JsonResponse({'token': u.token})
 
 
-
-
 @api_view(['POST'])
 def favourite(req):
     data = json.loads(req.body)

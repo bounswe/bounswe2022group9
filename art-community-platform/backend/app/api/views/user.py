@@ -82,9 +82,6 @@ def get_followers_of_user(req, user_id):
     except:
         return HttpResponse("no api found with this api id", status=404)
 
-    if u.token != token:
-        return HttpResponse("api id and token mismatch", status=401)
-
     followers = []
     for follower_id in u.followers:
         followers.append(get_follower_by_id_helper(follower_id))
@@ -104,9 +101,6 @@ def get_followings_of_user(req, user_id):
         u = User.objects.get(id=user_id)
     except:
         return HttpResponse("no api found with this api id", status=404)
-
-    if u.token != token:
-        return HttpResponse("api id and token mismatch", status=401)
 
     followings = []
     for following_id in u.followings:
@@ -128,9 +122,6 @@ def get_favourites_of_user(req, user_id):
     except:
         return HttpResponse("no api found with this api id", status=404)
 
-    if u.token != token:
-        return HttpResponse("api id and token mismatch", status=401)
-
     favourites = []
     for favourite_id in u.favourites:
         favourites.append(get_art_item_by_id_helper(favourite_id))
@@ -150,9 +141,6 @@ def get_comments_of_user(req, user_id):
         u = User.objects.get(id=user_id)
     except:
         return HttpResponse("no api found with this api id", status=404)
-
-    if u.token != token:
-        return HttpResponse("api id and token mismatch", status=401)
 
     comments = []
     for comment_id in u.comments:

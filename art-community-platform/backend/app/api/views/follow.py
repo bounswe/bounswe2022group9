@@ -33,10 +33,10 @@ def follow(req):
     try:
         u = User.objects.get(id=user_id)
     except:
-        return HttpResponse('no api found with this id', status=404)
+        return HttpResponse('no user found with this id', status=404)
 
     if u.token != token:
-        return HttpResponse("api id and token mismatch", status=401)
+        return HttpResponse("user id and token mismatch", status=401)
 
     try:
         f = User.objects.get(id=followed_user_id)
