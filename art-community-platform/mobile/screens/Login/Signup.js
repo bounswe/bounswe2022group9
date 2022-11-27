@@ -18,8 +18,8 @@ const Signup = (props) => {
   const [name, setName] = React.useState("");
   const [birthDate, setBirthdate] = React.useState("");
 
-  const handleSigngup = () => {
-    signup(username, email, password)
+  const handleSignup = () => {
+    signup(name, birthDate, username, email, password)
       .then((response) => {
         if (response.status === 201) {
           Alert.alert("Signup Succesful ✅", "Click OK to go to Login Screen", [
@@ -89,7 +89,7 @@ const Signup = (props) => {
         <Pressable
           style={styles.button}
           onPress={() => {
-            handleSigngup();
+            handleSignup();
           }}
         >
           <Text style={styles.buttonText}>Signup</Text>
