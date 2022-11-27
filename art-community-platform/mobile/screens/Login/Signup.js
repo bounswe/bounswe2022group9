@@ -15,6 +15,8 @@ const Signup = (props) => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [username, setUsername] = React.useState("");
+  const [name, setName] = React.useState("");
+  const [birthDate, setBirthdate] = React.useState("");
 
   const handleSigngup = () => {
     signup(username, email, password)
@@ -42,6 +44,18 @@ const Signup = (props) => {
       }}
     >
       <View style={styles.inputContainer}>
+      <Text style={{ color: Colors.primaryDark }}>Name</Text>
+        <TextInput
+          value={name}
+          onChangeText={(text) => setName(text)}
+          style={styles.input}
+        />
+        <Text style={{ color: Colors.primaryDark }}>Birthdate</Text>
+        <TextInput
+          value={birthDate}
+          onChangeText={(text) => setBirthdate(text)}
+          style={styles.input}
+        />
         <Text style={{ color: Colors.primaryDark }}>Username</Text>
         <TextInput
           value={username}
