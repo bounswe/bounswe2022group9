@@ -1,6 +1,6 @@
 import {React } from "react";
 import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Image } from 'react-native';
-import Colors from "../constants/Colors";
+import Colors from "./constants/Colors";
 
 const Users = [
     {
