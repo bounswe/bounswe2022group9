@@ -17,27 +17,29 @@ const Users = [
     }
 ]
 
-const User = ({ username }) => (
+const UserList = (props) => {
+  const { navigation } = props;
+
+  const User = ({ username }) => (
     <View style={styles.user}>
       <Image style={styles.photo} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar3.png'}}/>
-      <Text style={styles.username}>{username}</Text>
+      <Text onPress={() => navigation.navigate("") } style={styles.username}>{username}</Text>
     </View>
   );
-
-const UserList = () => {
-    const renderItem = ({ item }) => (
-        <User username={item.username} />
-      );
-    return (
-        
-        <SafeAreaView style={styles.container}>
-        <FlatList
-            data={Users}
-            renderItem={renderItem}
-            keyExtractor={user => user.id}
-        />
-        </SafeAreaView>
-    );
+  
+  const renderItem = ({ item }) => (
+      <User username={item.username} />
+  );
+  return (
+      
+      <SafeAreaView style={styles.container}>
+      <FlatList
+          data={Users}
+          renderItem={renderItem}
+          keyExtractor={user => user.id}
+      />
+      </SafeAreaView>
+  );
 }
 
 const styles = StyleSheet.create({
