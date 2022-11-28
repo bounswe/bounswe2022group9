@@ -4,7 +4,7 @@ let token = "";
 export const login = async (username, password) => {
   return axios
     .post(
-      "http://ec2-44-202-130-117.compute-1.amazonaws.com/user/login",
+      "http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1/login",
       {
         username: username,
         password: password,
@@ -24,14 +24,16 @@ export const login = async (username, password) => {
     });
 };
 
-export const signup = async (username, email, password) => {
+export const signup = async (name, birthDate, username, email, password) => {
   return axios
     .post(
-      "http://ec2-44-202-130-117.compute-1.amazonaws.com/user/signup",
+      "http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1/signup",
       {
+        name: name,
+        birthdate: birthDate,
         username: username,
-        email: email,
         password: password,
+        email: email,
       },
       {
         headers: {
