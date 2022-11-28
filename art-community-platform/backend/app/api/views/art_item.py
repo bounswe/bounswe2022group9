@@ -1,8 +1,10 @@
+import os
+
 from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse
 from rest_framework.decorators import api_view
-import hashlib
 import json
-
+import requests
+import base64
 from ..helpers.comment_helpers import get_comment_by_id_helper
 from ..helpers.exhibition_helpers import get_exhibition_by_id_helper
 from ..helpers.notification_helpers import get_notification_by_id_helper
@@ -108,3 +110,37 @@ def get_comments_of_art_item(req, art_item_id):
         comments.append(get_comment_by_id_helper(comment_id))
 
     return JsonResponse({"comments": comments})
+
+
+@api_view(['POST'])
+def create_art_item(req):
+    data = json.loads(req.body)
+    try:
+        owner_id = data['owner_id']
+        image = data['image']
+        description = data['description']
+        tags = data['tags']
+        date = data['date']
+        comments = data['comments']
+        favourites = data['favourites']
+    except:
+        return HttpResponse("missing fields", status=400)
+    try:
+        User.objects.get(id=owner_id)
+    except:
+        return HttpResponse('no user found with this id', status=404)
+
+    if not isinstance(image, str):
+        img_str = base64.b64encode(image.read())
+    else:
+        img_str = image
+
+    try:
+        res = requests.post("https://api.imgbb.com/1/upload", {"key": os.environ.get('IMG_KEY'), "image": img_str})
+        img_url = res.json()['data']['url']
+        ArtItem.objects.create(owner_id=owner_id, image=img_str, img_url=img_url,  description=description, date=date,
+                               tags=tags, comments=comments, favourites=favourites)
+    except:
+        return HttpResponse('Art Item can not created', status=400)
+
+    return HttpResponse(status=201)
