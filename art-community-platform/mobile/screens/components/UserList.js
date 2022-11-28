@@ -1,24 +1,25 @@
 import {React } from "react";
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar } from 'react-native';
+import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Image } from 'react-native';
 import Colors from "../constants/Colors";
 
 const Users = [
     {
         id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-        username: 'First Item',
+        username: 'First User',
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-        username: 'Second Item',
+        username: 'Second User',
     },
     {
         id: '58694a0f-3da1-471f-bd96-145571e29d72',
-        username: 'Third Item',
+        username: 'Third User',
     }
 ]
 
 const User = ({ username }) => (
     <View style={styles.user}>
+      <Image style={styles.photo} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar3.png'}}/>
       <Text style={styles.username}>{username}</Text>
     </View>
   );
@@ -41,18 +42,31 @@ const UserList = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        marginTop: StatusBar.currentHeight || 0,
+      flex: 1,
+      marginTop: StatusBar.currentHeight || 0,
       },
     user: {
-        backgroundColor: Colors.primaryDark,
-        padding: 20,
-        marginVertical: 8,
-        marginHorizontal: 16,
-      },
-      username: {
-        fontSize: 32,
-      },
+      flexDirection: "row",
+      backgroundColor: Colors.primaryLight,
+      padding: 12,
+      marginVertical: 5,
+      marginHorizontal: 10,
+    },
+    username: {
+      marginLeft: 50,
+      fontSize: 20,
+    },
+    photo: {
+      width: 30,
+      height: 30,
+      borderRadius: 18,
+      borderWidth: 4,
+      borderColor: "white",
+      marginBottom:10,
+      alignSelf:'center',
+      position: 'absolute',
+      marginLeft: 10
+    }
 });
 
 export default UserList;
