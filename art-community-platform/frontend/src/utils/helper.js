@@ -1,6 +1,5 @@
 import * as loginAction from "../store/actions/loginActions";
-import { login, signup } from "../store/axios";
-
+import { login, signup, users } from "../store/axios";
 export const Login = async (info, dispatch) => {
   dispatch(loginAction.login(info));
   const response = await login(info);
@@ -24,5 +23,12 @@ export const Signup = async (info, dispatch) => {
   } else {
     dispatch(loginAction.signupFailure());
   }
+  return response
+};
+
+export const Homepage = (info) => {
+  
+
+  const response = users(info);
   return response
 };

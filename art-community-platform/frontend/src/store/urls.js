@@ -1,4 +1,21 @@
-export const BASE_URL = "http://ec2-44-202-130-117.compute-1.amazonaws.com";
+export const BASE_URL = "http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1";
 
-export const LOGIN_ENDPOINT = `${BASE_URL}/user/login`;
-export const SIGNUP_ENDPOINT = `${BASE_URL}/user/signup`;
+export const LOGIN_ENDPOINT = `${BASE_URL}/login`;
+export const SIGNUP_ENDPOINT = `${BASE_URL}/signup`;
+export const USERS_ENDPOINT = `${BASE_URL}/users`;
+export const USER_INFO_ENDPOINT = `${BASE_URL}/users/1`;
+export const ART_INFO_ENDPOINT = `${BASE_URL}/art-items/1`;
+export const TAG_INFO_ENDPOINT = `${BASE_URL}/tags/1`;
+export const COMMENT_INFO_ENDPOINT = `${BASE_URL}/comments/1`;
+export const EXHIBITION_INFO_ENDPOINT = `${BASE_URL}/exhibitions/1`;
+export const NOTIFICATION_INFO_ENDPOINT = `${BASE_URL}/notifications/1`;
+export const FOLLOWERS_ENDPOINT = `${BASE_URL}/users/1/followers`;
+export const FOLLOWINGS_ENDPOINT = `${BASE_URL}/users/1/followings`;
+export const FAVOURITES_ENDPOINT = `${BASE_URL}/users/1/favourites`;
+export const USER_COMMENTS_ENDPOINT = `${BASE_URL}/users/1/comments`;
+export const USER_EXHIBITIONS_ENDPOINT = `${BASE_URL}/users/1/exhibitions`;
+export const USER_NOTIFICATIONS_ENDPOINT = `${BASE_URL}/users/1/notifications`;
+export const ART_FAVOURITES_ENDPOINT = `${BASE_URL}/art-items/1/favourites`;
+export const HOMEPAGE_ENDPOINT = `${BASE_URL}/homepage`;
+export const FOLLOW_ENDPOINT = `${BASE_URL}/follow`;
+export const CREATE_EXHIBITION_ENDPOINT = `${BASE_URL}/exhibition`;

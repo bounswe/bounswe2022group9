@@ -13,14 +13,14 @@ import {
 import { useNavigate } from "react-router-dom";
 
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { Logout as LogoutHelper } from "../utils/helper";
 
 import { UserOutlined } from "@ant-design/icons";
 import "./Profile.css";
 import Colors from "../constants/Colors";
-
+import { Homepage as HomepageHelper } from "../utils/helper";
 const { Header, Content, Footer } = Layout;
 const { Search } = Input;
 const { Text } = Typography;
@@ -38,6 +38,7 @@ const navbarStyle = {
 const Profile = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { token } = useSelector((state) => state.login);
 
   const sendToSignout = (values) => {
     console.log("Success:", values);
@@ -45,8 +46,11 @@ const Profile = () => {
     navigate("/login");
   };
 
-  const sendToHome = (values) => {
-    console.log("Success:", values);
+  const sendToHome = async (values) => {
+    console.log("Success to home:", token);
+    const response = await HomepageHelper({ token });
+
+    console.log("Success to home:", response);
 
     navigate("/home");
   };
