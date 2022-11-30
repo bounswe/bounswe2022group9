@@ -5,3 +5,4 @@ djangorestframework
 Faker==13.11.1
 django-cors-headers
 Pillow
+requests

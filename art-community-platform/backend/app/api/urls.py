@@ -38,6 +38,7 @@ urlpatterns = [
     path('tag', create_tag, name='create_tag'),
     path('exhibition', create_exhibition, name='create_exhibition'),
     path('follow', follow, name='follow'),
+    path('art-item', create_art_item, name='create_art_item'),
 
     path('users/<int:user_id>/update-profile-info', update_profile_info, name='update_profile_info'),
     path('users/<int:user_id>/get-profile-info', get_profile_info, name='get_profile_info'),
