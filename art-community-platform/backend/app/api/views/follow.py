@@ -18,17 +18,17 @@ from ..models.tag import Tag
 @api_view(['POST'])
 def follow(req):
     try:
-        data = json.loads(req.body)
+        body = json.loads(req.body)
     except:
         return HttpResponse("request body is missing", status=400)
 
     try:
-        user_id = data['user_id']
-        token = data['token']
-        followed_user_id = data['followed_user_id']
-        date = data['date']
+        user_id = body['user_id']
+        token = body['token']
+        followed_user_id = body['followed_user_id']
+        date = body['date']
     except:
-        return HttpResponse("api id, token, followed api id or date is missing", status=400)
+        return HttpResponse("user id, token, followed user id or date is missing", status=400)
 
     try:
         u = User.objects.get(id=user_id)
@@ -41,7 +41,7 @@ def follow(req):
     try:
         f = User.objects.get(id=followed_user_id)
     except:
-        return HttpResponse('no api to follow found with this id', status=404)
+        return HttpResponse('no user to follow found with this id', status=404)
 
     # append u.id to f.followers
     try:
@@ -49,7 +49,7 @@ def follow(req):
         followers_of_f.append(u.id)
         User.objects.filter(id=f.id).update(followers=followers_of_f)
     except:
-        return HttpResponse('f nin takipcilerine u yu ekleyemedi', status=400)
+        return HttpResponse('u can not added to followers of f', status=400)
 
     # append f.id to u.followings
     try:
@@ -57,7 +57,7 @@ def follow(req):
         followings_of_u.append(f.id)
         User.objects.filter(id=u.id).update(followings=followings_of_u)
     except:
-        return HttpResponse('u nun takip ettiklerine f yi ekleyemedi', status=400)
+        return HttpResponse('f can not added to followings of u', status=400)
 
     # TODO : send a notification to f like 'u started following you'
 

@@ -108,33 +108,44 @@ def get_comments_of_art_item(req, art_item_id):
 
 @api_view(['POST'])
 def create_art_item(req):
-    data = json.loads(req.body)
     try:
-        owner_id = data['owner_id']
-        image = data['image']
-        description = data['description']
-        tags = data['tags']
-        date = data['date']
-        comments = data['comments']
-        favourites = data['favourites']
+        token = req.headers['Authorization']
+    except:
+        return HttpResponse('token is missing', status=401)
+
+    try:
+        body = json.loads(req.body)
+    except:
+        return HttpResponse('request body is missing', status=400)
+
+    try:
+        owner_id = body['owner_id']
+        img_url = body['img_url']
+        description = body['description']
+        tags = body['tags']
+        date = body['date']
     except:
         return HttpResponse("missing fields", status=400)
+
     try:
-        User.objects.get(id=owner_id)
+        u = User.objects.get(id=owner_id)
     except:
         return HttpResponse('no user found with this id', status=404)
 
-    if not isinstance(image, str):
-        img_str = base64.b64encode(image.read())
-    else:
-        img_str = image
+    if u.token != token:
+        return HttpResponse("owner id and token mismatch", status=401)
 
     try:
-        res = requests.post("https://api.imgbb.com/1/upload", {"key": os.environ.get('IMG_KEY'), "image": img_str})
-        img_url = res.json()['data']['url']
-        ArtItem.objects.create(owner_id=owner_id, image=img_str, img_url=img_url,  description=description, date=date,
-                               tags=tags, comments=comments, favourites=favourites)
+        a = ArtItem.objects.create(owner_id=owner_id, img_url=img_url,  description=description, date=date, tags=tags)
+        a.save()
     except:
-        return HttpResponse('Art Item can not created', status=400)
+        return HttpResponse('art item can not created', status=400)
+
+    try:
+        art_items_of_u = u.art_items
+        art_items_of_u.append(a.id)
+        User.objects.filter(id=u.id).update(art_items=art_items_of_u)
+    except:
+        return HttpResponse('art item id can not added in art items of user', status=400)
 
     return HttpResponse(status=201)

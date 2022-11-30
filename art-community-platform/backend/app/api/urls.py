@@ -2,6 +2,7 @@ from django.urls import path
 
 from .views.health_check import health_check
 from .views.auth import login, signup
+from .views.image_upload import upload_image
 from .views.profile import update_profile_info, get_profile_info
 from .views.user import *
 from .views.art_item import *
@@ -37,14 +38,17 @@ urlpatterns = [
     path('art-items/<int:art_item_id>/favourites', get_favourites_of_art_item, name='get_favourites_of_art_item'),
     path('art-items/<int:art_item_id>/comments', get_comments_of_art_item, name='get_comments_of_art_item'),
 
-    path('tag', create_tag, name='create_tag'),
+    path('art-item', create_art_item, name='create_art_item'),
+    path('upload-image', upload_image, name='upload_image'),
     path('exhibition', create_exhibition, name='create_exhibition'),
     path('follow', follow, name='follow'),
-    path('art-item', create_art_item, name='create_art_item'),
+    # path('favourite', favourite, name='favourite'),
+    # path('comment', comment, name='comment'),
+    path('tag', create_tag, name='create_tag'),
+
+    path('homepage', get_homepage, name='homepage'),
 
     path('users/<int:user_id>/update-profile-info', update_profile_info, name='update_profile_info'),
     path('users/<int:user_id>/get-profile-info', get_profile_info, name='get_profile_info'),
-
-    path('homepage', get_homepage, name='homepage'),
 
 ]
