@@ -1,5 +1,6 @@
 from django.urls import path
 
+from .views.favourite import favourite
 from .views.health_check import health_check
 from .views.auth import login, signup
 from .views.image_upload import upload_image
@@ -42,7 +43,7 @@ urlpatterns = [
     path('upload-image', upload_image, name='upload_image'),
     path('exhibition', create_exhibition, name='create_exhibition'),
     path('follow', follow, name='follow'),
-    # path('favourite', favourite, name='favourite'),
+    path('favourite', favourite, name='favourite'),
     # path('comment', comment, name='comment'),
     path('tag', create_tag, name='create_tag'),
 
