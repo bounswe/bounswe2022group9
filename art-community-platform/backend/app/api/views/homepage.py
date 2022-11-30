@@ -35,8 +35,11 @@ def get_homepage(req):
         except:
             return HttpResponse("no user found with this id", status=404)
 
-        for art_item_id in f.art_items:
-            art_items.append(get_art_item_by_id_helper(art_item_id))
+        try:
+            for art_item_id in f.art_items:
+                art_items.append(get_art_item_by_id_helper(art_item_id))
+        except:
+            return HttpResponse('art items can not fetched', status=404)
 
     art_items.sort(key=lambda item: item['date'], reverse=True)
 

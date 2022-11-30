@@ -54,9 +54,17 @@ def get_exhibition_by_id(req, exhibition_id):
     except:
         return HttpResponse('no owner found with this id', status=404)
 
-    art_items = []
-    for art_item_id in e.art_items:
-        art_items.append(get_art_item_by_id_helper(art_item_id))
+    try:
+        art_items = []
+        for art_item_id in e.art_items:
+            art_items.append(get_art_item_by_id_helper(art_item_id))
+    except:
+        return HttpResponse('art items of exhibition can not fetched', status=404)
 
-    return JsonResponse({"id": e.id, "owner_name": owner.name, "type": e.type,
-                         "location": e.location, "date": e.date, "art_items": art_items})
+    try:
+        resp = {"id": e.id, "owner_name": owner.name, "type": e.type,
+                "location": e.location, "date": e.date, "art_items": art_items}
+    except:
+        return HttpResponse('response can not created', status=404)
+
+    return JsonResponse(resp)

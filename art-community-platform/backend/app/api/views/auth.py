@@ -60,41 +60,32 @@ def signup(req):
 
 @api_view(['POST'])
 def login(req):
-    data = json.loads(req.body)
+    try:
+        body = json.loads(req.body)
+    except:
+        return HttpResponse('request body is missing', status=400)
 
     try:
-        username = data['username']
-        password = data['password']
+        username = body['username']
+        password = body['password']
     except:
-        return HttpResponseBadRequest("username or password is missing")
+        return HttpResponse('username or password is missing', status=400)
 
     try:
         u = User.objects.get(username=username)
     except:
-        return HttpResponse('no api found with this username', status=400)
+        return HttpResponse('no user found with this username', status=404)
 
     hashed_password = hashlib.sha256(password.encode('utf-8')).hexdigest()
 
     if hashed_password != u.password:
-        return HttpResponseBadRequest("wrong password")
-
-    return JsonResponse({'token': u.token})
-
-
-@api_view(['POST'])
-def favourite(req):
-    data = json.loads(req.body)
+        return HttpResponse('wrong password', status=400)
 
     try:
-        userID = data['userID']
-        artItemID = data['artItemID']
-    
+        resp = {'user_id': u.id, 'token': u.token}
     except:
-        return HttpResponseBadRequest("userID or/and artItemID is missing")
+        return HttpResponse('response can not created', status=404)
 
-    try:
-        pass # Will be edited after bugs are fixed
+    return JsonResponse(resp)
 
-    except: 
-        pass # Will be edited after the bugs are fixed
 

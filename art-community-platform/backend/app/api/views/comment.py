@@ -27,5 +27,10 @@ def get_comment_by_id(req, comment_id):
     except:
         return HttpResponse('no comment owner found with this owner id', status=404)
 
-    return JsonResponse({"id": c.id, "owner_name": u.name, "text": c.text, "date": c.date})
+    try:
+        resp = {"id": c.id, "owner_name": u.name, "text": c.text, "date": c.date}
+    except:
+        return HttpResponse('response can not created', status=404)
+
+    return JsonResponse(resp)
 

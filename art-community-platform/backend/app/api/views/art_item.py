@@ -19,11 +19,10 @@ from ..models.tag import Tag
 
 @api_view(['GET'])
 def get_art_item_by_id(req, art_item_id):
-    data = json.loads(req.body)
     try:
-        token = data['token']
+        token = req.headers['Authorization']
     except:
-        return HttpResponse("token is missing", status=401)
+        return HttpResponse('token is missing', status=401)
 
     try:
         a = ArtItem.objects.get(id=art_item_id)
@@ -35,112 +34,118 @@ def get_art_item_by_id(req, art_item_id):
     except:
         return HttpResponse('no user found with this owner id', status=404)
 
-    tags = []
-    for tag_id in a.tags:
-        tags.append(get_tag_by_id_helper(tag_id))
+    try:
+        tags = []
+        for tag_id in a.tags:
+            tags.append(get_tag_by_id_helper(tag_id))
+    except:
+        return HttpResponse('tags of art item can not fetched', status=404)
 
-    comments = []
-    for comment_id in a.comments:
-        comments.append(get_comment_by_id_helper(comment_id))
+    try:
+        comments = []
+        for comment_id in a.comments:
+            comments.append(get_comment_by_id_helper(comment_id))
+    except:
+        return HttpResponse('comments of art item can not fetched', status=404)
 
     if a.favourites is not None:
         favourite_count = len(a.favourites)
     else:
         favourite_count = 0
 
-    data = {"id": a.id, "owner_name": u.name, "img_url": a.img_url, "description": a.description, "date": a.date,
-            "comments": comments, "tags:": tags, "comment_count": len(comments), "favourite_count": favourite_count}
+    try:
+        resp = {"id": a.id, "owner_name": u.name, "img_url": a.img_url, "description": a.description, "date": a.date,
+                "comments": comments, "tags:": tags, "comment_count": len(comments), "favourite_count": favourite_count}
+    except:
+        return HttpResponse('response can not created', status=404)
 
-    return JsonResponse(data)
+    return JsonResponse(resp)
 
 
 @api_view(['GET'])
 def get_favourites_of_art_item(req, art_item_id):
-    data = json.loads(req.body)
     try:
-        user_id = data['user_id']
-        token = data['token']
+        token = req.headers['Authorization']
     except:
-        return HttpResponse("user id or token is missing", status=400)
-
-    try:
-        u = User.objects.get(id=user_id)
-    except:
-        return HttpResponse("no user found with this id", status=404)
-
-    if u.token != token:
-        return HttpResponse("user id and token mismatch", status=401)
+        return HttpResponse('token is missing', status=401)
 
     try:
         a = ArtItem.objects.get(id=art_item_id)
     except:
         return HttpResponse("no art item found with this id", status=404)
 
-    favourites = []
-    for uid in a.favourites:
-        favourites.append(get_follower_by_id_helper(uid))
+    try:
+        favourites = []
+        for uid in a.favourites:
+            favourites.append(get_follower_by_id_helper(uid))
+    except:
+        return HttpResponse('favourites of art item can not fetched', status=404)
 
     return JsonResponse({"favourites": favourites})
 
 
 @api_view(['GET'])
 def get_comments_of_art_item(req, art_item_id):
-    data = json.loads(req.body)
     try:
-        user_id = data['user_id']
-        token = data['token']
+        token = req.headers['Authorization']
     except:
-        return HttpResponse("api id or token is missing", status=400)
-
-    try:
-        u = User.objects.get(id=user_id)
-    except:
-        return HttpResponse("no api found with this id", status=404)
-
-    if u.token != token:
-        return HttpResponse("api id and token mismatch", status=401)
+        return HttpResponse('token is missing', status=401)
 
     try:
         a = ArtItem.objects.get(id=art_item_id)
     except:
         return HttpResponse("no art item found with this id", status=404)
 
-    comments = []
-    for comment_id in a.comments:
-        comments.append(get_comment_by_id_helper(comment_id))
+    try:
+        comments = []
+        for comment_id in a.comments:
+            comments.append(get_comment_by_id_helper(comment_id))
+    except:
+        return HttpResponse('comments of art item can not fetched', status=404)
 
     return JsonResponse({"comments": comments})
 
 
 @api_view(['POST'])
 def create_art_item(req):
-    data = json.loads(req.body)
     try:
-        owner_id = data['owner_id']
-        image = data['image']
-        description = data['description']
-        tags = data['tags']
-        date = data['date']
-        comments = data['comments']
-        favourites = data['favourites']
+        token = req.headers['Authorization']
+    except:
+        return HttpResponse('token is missing', status=401)
+
+    try:
+        body = json.loads(req.body)
+    except:
+        return HttpResponse('request body is missing', status=400)
+
+    try:
+        owner_id = body['owner_id']
+        img_url = body['img_url']
+        description = body['description']
+        tags = body['tags']
+        date = body['date']
     except:
         return HttpResponse("missing fields", status=400)
+
     try:
-        User.objects.get(id=owner_id)
+        u = User.objects.get(id=owner_id)
     except:
         return HttpResponse('no user found with this id', status=404)
 
-    if not isinstance(image, str):
-        img_str = base64.b64encode(image.read())
-    else:
-        img_str = image
+    if u.token != token:
+        return HttpResponse("owner id and token mismatch", status=401)
 
     try:
-        res = requests.post("https://api.imgbb.com/1/upload", {"key": os.environ.get('IMG_KEY'), "image": img_str})
-        img_url = res.json()['data']['url']
-        ArtItem.objects.create(owner_id=owner_id, image=img_str, img_url=img_url,  description=description, date=date,
-                               tags=tags, comments=comments, favourites=favourites)
+        a = ArtItem.objects.create(owner_id=owner_id, img_url=img_url,  description=description, date=date, tags=tags)
+        a.save()
     except:
-        return HttpResponse('Art Item can not created', status=400)
+        return HttpResponse('art item can not created', status=400)
+
+    try:
+        art_items_of_u = u.art_items
+        art_items_of_u.append(a.id)
+        User.objects.filter(id=u.id).update(art_items=art_items_of_u)
+    except:
+        return HttpResponse('art item id can not added in art items of user', status=400)
 
     return HttpResponse(status=201)
