@@ -19,11 +19,10 @@ from ..models.tag import Tag
 
 @api_view(['GET'])
 def get_art_item_by_id(req, art_item_id):
-    data = json.loads(req.body)
     try:
-        token = data['token']
+        token = req.headers['Authorization']
     except:
-        return HttpResponse("token is missing", status=401)
+        return HttpResponse('token is missing', status=401)
 
     try:
         a = ArtItem.objects.get(id=art_item_id)
@@ -35,23 +34,32 @@ def get_art_item_by_id(req, art_item_id):
     except:
         return HttpResponse('no user found with this owner id', status=404)
 
-    tags = []
-    for tag_id in a.tags:
-        tags.append(get_tag_by_id_helper(tag_id))
+    try:
+        tags = []
+        for tag_id in a.tags:
+            tags.append(get_tag_by_id_helper(tag_id))
+    except:
+        return HttpResponse('tags of art item can not fetched', status=404)
 
-    comments = []
-    for comment_id in a.comments:
-        comments.append(get_comment_by_id_helper(comment_id))
+    try:
+        comments = []
+        for comment_id in a.comments:
+            comments.append(get_comment_by_id_helper(comment_id))
+    except:
+        return HttpResponse('comments of art item can not fetched', status=404)
 
     if a.favourites is not None:
         favourite_count = len(a.favourites)
     else:
         favourite_count = 0
 
-    data = {"id": a.id, "owner_name": u.name, "img_url": a.img_url, "description": a.description, "date": a.date,
-            "comments": comments, "tags:": tags, "comment_count": len(comments), "favourite_count": favourite_count}
+    try:
+        resp = {"id": a.id, "owner_name": u.name, "img_url": a.img_url, "description": a.description, "date": a.date,
+                "comments": comments, "tags:": tags, "comment_count": len(comments), "favourite_count": favourite_count}
+    except:
+        return HttpResponse('response can not created', status=404)
 
-    return JsonResponse(data)
+    return JsonResponse(resp)
 
 
 @api_view(['GET'])

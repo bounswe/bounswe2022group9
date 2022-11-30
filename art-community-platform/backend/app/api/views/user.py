@@ -17,56 +17,63 @@ from ..models.tag import Tag
 
 @api_view(['GET'])
 def get_all_users(req):
-    data = json.loads(req.body)
     try:
-        token = data['token']
+        token = req.headers['Authorization']
     except:
-        return HttpResponse("token is missing", status=401)
+        return HttpResponse('token is missing', status=401)
 
     try:
         users = User.objects.all()
     except:
-        return HttpResponse('users can not fetched', status=404)
+        return HttpResponse('all users can not fetched', status=404)
 
-    users_data = []
-    for user in users:
-        users_data.append({"id": user.id, "username": user.username,
-                          "name": user.name, "profile_img_url": user.profile_img_url})
+    try:
+        users_data = []
+        for user in users:
+            users_data.append({"id": user.id, "username": user.username,
+                               "name": user.name, "profile_img_url": user.profile_img_url})
+    except:
+        return HttpResponse('response can not created', status=404)
 
     return JsonResponse({"users": users_data})
 
 
 @api_view(['GET'])
 def get_user_by_id(req, user_id):
-    data = json.loads(req.body)
     try:
-        token = data['token']
+        token = req.headers['Authorization']
     except:
-        return HttpResponse("token is missing", status=401)
+        return HttpResponse('token is missing', status=401)
 
     try:
         request_sender = User.objects.get(token=token)
     except:
-        return HttpResponse('no user found with this token', status=404)
+        return HttpResponse('request sender not found with this token', status=404)
 
     try:
         u = User.objects.get(id=user_id)
     except:
         return HttpResponse('no user found with this id', status=404)
 
-    art_items = []
-    for art_item_id in u.art_items:
-        art_items.append(get_art_item_by_id_helper(art_item_id))
+    try:
+        art_items = []
+        for art_item_id in u.art_items:
+            art_items.append(get_art_item_by_id_helper(art_item_id))
+    except:
+        return HttpResponse('art items of user can not fetched', status=404)
 
     is_following = False
     if user_id in request_sender.followings:
         is_following = True
 
-    data = {"id": u.id, "username": u.username, "email": u.email,
-            "birthdate": u.birthdate, "name": u.name, "art_items:": art_items,
-            "profile_img_url": u.profile_img_url, "location": u.location, "is_following": is_following}
+    try:
+        resp = {"id": u.id, "username": u.username, "email": u.email,
+                "birthdate": u.birthdate, "name": u.name, "art_items:": art_items,
+                "profile_img_url": u.profile_img_url, "location": u.location, "is_following": is_following}
+    except:
+        return HttpResponse('response can not created', status=404)
 
-    return JsonResponse(data)
+    return JsonResponse(resp)
 
 
 @api_view(['GET'])
@@ -200,7 +207,7 @@ def update_profile_info(req, user_id):
         birthdate = data['birthdate']
         location = data['location']
         name = data['name']
-    except :
+    except:
         return HttpResponseBadRequest("missing fields")
     user = None
     try:
@@ -239,10 +246,10 @@ def get_profile_info(req, user_id):
         following_count = len(user.followings)
     except:
         following_count = 0
-    data = {"id": user.id, "username": user.username, "email": user.email, "birthdate": user.birthdate, "name": user.name,
+    data = {"id": user.id, "username": user.username, "email": user.email, "birthdate": user.birthdate,
+            "name": user.name,
             "art_items": art_items,
-            "follower_count" : follower_count,
+            "follower_count": follower_count,
             "following_count": following_count,
-            "profile_img_url": user.profile_img_url, "location": user.location, "password" : user.password}
+            "profile_img_url": user.profile_img_url, "location": user.location, "password": user.password}
     return JsonResponse(data)
-

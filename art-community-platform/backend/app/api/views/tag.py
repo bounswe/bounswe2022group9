@@ -38,5 +38,10 @@ def get_tag_by_id(req, tag_id):
     except:
         return HttpResponse('no tag found with this id', status=404)
 
-    return JsonResponse({"id": t.id, "text": t.text})
+    try:
+        resp = {"id": t.id, "text": t.text}
+    except:
+        return HttpResponse('response can not created', status=404)
+
+    return JsonResponse(resp)
 
