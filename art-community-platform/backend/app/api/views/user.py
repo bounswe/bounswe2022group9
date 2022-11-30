@@ -78,178 +78,135 @@ def get_user_by_id(req, user_id):
 
 @api_view(['GET'])
 def get_followers_of_user(req, user_id):
-    data = json.loads(req.body)
     try:
-        token = data['token']
+        token = req.headers['Authorization']
     except:
-        return HttpResponse("token is missing", status=400)
+        return HttpResponse('token is missing', status=401)
 
     try:
         u = User.objects.get(id=user_id)
     except:
-        return HttpResponse("no api found with this api id", status=404)
+        return HttpResponse('no user found with this id', status=404)
 
-    followers = []
-    for follower_id in u.followers:
-        followers.append(get_follower_by_id_helper(follower_id))
+    try:
+        followers = []
+        for follower_id in u.followers:
+            followers.append(get_follower_by_id_helper(follower_id))
+    except:
+        return HttpResponse('followers of user can not fetched', status=404)
 
     return JsonResponse({"followers": followers})
 
 
 @api_view(['GET'])
 def get_followings_of_user(req, user_id):
-    data = json.loads(req.body)
     try:
-        token = data['token']
+        token = req.headers['Authorization']
     except:
-        return HttpResponse("token is missing", status=400)
+        return HttpResponse('token is missing', status=401)
 
     try:
         u = User.objects.get(id=user_id)
     except:
-        return HttpResponse("no api found with this api id", status=404)
+        return HttpResponse("no user found with this id", status=404)
 
-    followings = []
-    for following_id in u.followings:
-        followings.append(get_follower_by_id_helper(following_id))
+    try:
+        followings = []
+        for following_id in u.followings:
+            followings.append(get_follower_by_id_helper(following_id))
+    except:
+        return HttpResponse('followings of user can not fetched', status=404)
 
     return JsonResponse({"followings": followings})
 
 
 @api_view(['GET'])
 def get_favourites_of_user(req, user_id):
-    data = json.loads(req.body)
     try:
-        token = data['token']
+        token = req.headers['Authorization']
     except:
-        return HttpResponse("token is missing", status=400)
+        return HttpResponse('token is missing', status=401)
 
     try:
         u = User.objects.get(id=user_id)
     except:
-        return HttpResponse("no api found with this api id", status=404)
+        return HttpResponse("no user found with this id", status=404)
 
-    favourites = []
-    for favourite_id in u.favourites:
-        favourites.append(get_art_item_by_id_helper(favourite_id))
+    try:
+        favourites = []
+        for favourite_id in u.favourites:
+            favourites.append(get_art_item_by_id_helper(favourite_id))
+    except:
+        return HttpResponse('favourites of user can not fetched', status=404)
 
     return JsonResponse({"favourites": favourites})
 
 
 @api_view(['GET'])
 def get_comments_of_user(req, user_id):
-    data = json.loads(req.body)
     try:
-        token = data['token']
+        token = req.headers['Authorization']
     except:
-        return HttpResponse("token is missing", status=400)
+        return HttpResponse('token is missing', status=401)
 
     try:
         u = User.objects.get(id=user_id)
     except:
-        return HttpResponse("no api found with this api id", status=404)
+        return HttpResponse("no user found with this id", status=404)
 
-    comments = []
-    for comment_id in u.comments:
-        comments.append(get_comment_by_id_helper(comment_id))
+    try:
+        comments = []
+        for comment_id in u.comments:
+            comments.append(get_comment_by_id_helper(comment_id))
+    except:
+        return HttpResponse('comments of user can not fetched', status=404)
 
     return JsonResponse({"comments": comments})
 
 
 @api_view(['GET'])
 def get_exhibitions_of_user(req, user_id):
-    data = json.loads(req.body)
     try:
-        token = data['token']
+        token = req.headers['Authorization']
     except:
-        return HttpResponse("token is missing", status=400)
+        return HttpResponse('token is missing', status=401)
 
     try:
         u = User.objects.get(id=user_id)
     except:
-        return HttpResponse("no api found with this api id", status=404)
+        return HttpResponse("no user found with this id", status=404)
 
-    exhibitions = []
-    for exhibition_id in u.exhibitions:
-        exhibitions.append(get_exhibition_by_id_simple(exhibition_id))
+    try:
+        exhibitions = []
+        for exhibition_id in u.exhibitions:
+            exhibitions.append(get_exhibition_by_id_simple(exhibition_id))
+    except:
+        return HttpResponse('exhibitions of user can not fetched', status=404)
 
     return JsonResponse({"exhibitions": exhibitions})
 
 
 @api_view(['GET'])
 def get_notifications_of_user(req, user_id):
-    data = json.loads(req.body)
     try:
-        token = data['token']
+        token = req.headers['Authorization']
     except:
-        return HttpResponse("token is missing", status=400)
+        return HttpResponse('token is missing', status=401)
 
     try:
         u = User.objects.get(id=user_id)
     except:
-        return HttpResponse("no api found with this api id", status=404)
+        return HttpResponse("no user found with this id", status=404)
 
     if u.token != token:
-        return HttpResponse("api id and token mismatch", status=401)
+        return HttpResponse("user id and token mismatch", status=401)
 
-    notifications = []
-    for notification_id in u.notifications:
-        notifications.append(get_notification_by_id_helper(notification_id))
+    try:
+        notifications = []
+        for notification_id in u.notifications:
+            notifications.append(get_notification_by_id_helper(notification_id))
+    except:
+        return HttpResponse('notifications of user can not fetched', status=404)
 
     return JsonResponse({"notifications": notifications})
 
-
-@api_view(['POST'])
-def update_profile_info(req, user_id):
-    data = json.loads(req.body)
-    try:
-        email = data['email']
-        birthdate = data['birthdate']
-        location = data['location']
-        name = data['name']
-    except:
-        return HttpResponseBadRequest("missing fields")
-    user = None
-    try:
-        user = User.objects.get(id=user_id)
-    except:
-        return HttpResponseBadRequest("user with given id doesn't exist")
-    user.birthdate = birthdate
-    user.location = location
-    user.name = name
-    user.save()
-    return HttpResponse(status=200)
-
-
-@api_view(['POST'])
-def get_profile_info(req, user_id):
-    user = None
-    try:
-        user = User.objects.get(id=user_id)
-    except:
-        return HttpResponseBadRequest("user with given id doesn't exist")
-    art_items = []
-    try:
-        for art_item_id in user.art_items:
-            art_items.append(get_art_item_by_id_helper(art_item_id))
-    except Exception as e:
-        print(e)
-
-    data = None
-    follower_count = None
-    try:
-        follower_count = len(user.followers)
-    except:
-        follower_count = 0
-    following_count = None
-    try:
-        following_count = len(user.followings)
-    except:
-        following_count = 0
-    data = {"id": user.id, "username": user.username, "email": user.email, "birthdate": user.birthdate,
-            "name": user.name,
-            "art_items": art_items,
-            "follower_count": follower_count,
-            "following_count": following_count,
-            "profile_img_url": user.profile_img_url, "location": user.location, "password": user.password}
-    return JsonResponse(data)

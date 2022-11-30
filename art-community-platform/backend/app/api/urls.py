@@ -2,6 +2,7 @@ from django.urls import path
 
 from .views.health_check import health_check
 from .views.auth import login, signup
+from .views.profile import update_profile_info, get_profile_info
 from .views.user import *
 from .views.art_item import *
 from .views.comment import get_comment_by_id

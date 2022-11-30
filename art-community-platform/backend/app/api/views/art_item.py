@@ -64,58 +64,44 @@ def get_art_item_by_id(req, art_item_id):
 
 @api_view(['GET'])
 def get_favourites_of_art_item(req, art_item_id):
-    data = json.loads(req.body)
     try:
-        user_id = data['user_id']
-        token = data['token']
+        token = req.headers['Authorization']
     except:
-        return HttpResponse("user id or token is missing", status=400)
-
-    try:
-        u = User.objects.get(id=user_id)
-    except:
-        return HttpResponse("no user found with this id", status=404)
-
-    if u.token != token:
-        return HttpResponse("user id and token mismatch", status=401)
+        return HttpResponse('token is missing', status=401)
 
     try:
         a = ArtItem.objects.get(id=art_item_id)
     except:
         return HttpResponse("no art item found with this id", status=404)
 
-    favourites = []
-    for uid in a.favourites:
-        favourites.append(get_follower_by_id_helper(uid))
+    try:
+        favourites = []
+        for uid in a.favourites:
+            favourites.append(get_follower_by_id_helper(uid))
+    except:
+        return HttpResponse('favourites of art item can not fetched', status=404)
 
     return JsonResponse({"favourites": favourites})
 
 
 @api_view(['GET'])
 def get_comments_of_art_item(req, art_item_id):
-    data = json.loads(req.body)
     try:
-        user_id = data['user_id']
-        token = data['token']
+        token = req.headers['Authorization']
     except:
-        return HttpResponse("api id or token is missing", status=400)
-
-    try:
-        u = User.objects.get(id=user_id)
-    except:
-        return HttpResponse("no api found with this id", status=404)
-
-    if u.token != token:
-        return HttpResponse("api id and token mismatch", status=401)
+        return HttpResponse('token is missing', status=401)
 
     try:
         a = ArtItem.objects.get(id=art_item_id)
     except:
         return HttpResponse("no art item found with this id", status=404)
 
-    comments = []
-    for comment_id in a.comments:
-        comments.append(get_comment_by_id_helper(comment_id))
+    try:
+        comments = []
+        for comment_id in a.comments:
+            comments.append(get_comment_by_id_helper(comment_id))
+    except:
+        return HttpResponse('comments of art item can not fetched', status=404)
 
     return JsonResponse({"comments": comments})
 
