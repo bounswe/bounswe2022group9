@@ -35,13 +35,6 @@ def get_art_item_by_id(req, art_item_id):
         return HttpResponse('no user found with this owner id', status=404)
 
     try:
-        tags = []
-        for tag_id in a.tags:
-            tags.append(get_tag_by_id_helper(tag_id))
-    except:
-        return HttpResponse('tags of art item can not fetched', status=404)
-
-    try:
         comments = []
         for comment_id in a.comments:
             comments.append(get_comment_by_id_helper(comment_id))
@@ -55,7 +48,7 @@ def get_art_item_by_id(req, art_item_id):
 
     try:
         resp = {"id": a.id, "owner_name": u.name, "img_url": a.img_url, "description": a.description, "date": a.date,
-                "comments": comments, "tags:": tags, "comment_count": len(comments), "favourite_count": favourite_count}
+                "comments": comments, "tags:": a.tags, "comment_count": len(comments), "favourite_count": favourite_count}
     except:
         return HttpResponse('response can not created', status=404)
 

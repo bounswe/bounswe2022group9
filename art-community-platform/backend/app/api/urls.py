@@ -7,7 +7,7 @@ from .views.image_upload import upload_image
 from .views.profile import update_profile_info, get_profile_info
 from .views.user import *
 from .views.art_item import *
-from .views.comment import get_comment_by_id
+from .views.comment import get_comment_by_id, comment
 from .views.exhibition import get_exhibition_by_id, create_exhibition
 from .views.notification import get_notification_by_id
 from .views.tag import *
@@ -44,7 +44,7 @@ urlpatterns = [
     path('exhibition', create_exhibition, name='create_exhibition'),
     path('follow', follow, name='follow'),
     path('favourite', favourite, name='favourite'),
-    # path('comment', comment, name='comment'),
+    path('comment', comment, name='comment'),
     path('tag', create_tag, name='create_tag'),
 
     path('homepage', get_homepage, name='homepage'),
