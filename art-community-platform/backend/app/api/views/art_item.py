@@ -41,6 +41,8 @@ def get_art_item_by_id(req, art_item_id):
     except:
         return HttpResponse('comments of art item can not fetched', status=404)
 
+    comments.sort(key=lambda item: item['id'], reverse=False)
+
     if a.favourites is not None:
         favourite_count = len(a.favourites)
     else:
