@@ -41,6 +41,6 @@ def get_homepage(req):
         except:
             return HttpResponse('art items can not fetched', status=404)
 
-    art_items.sort(key=lambda item: item['date'], reverse=True)
+    art_items.sort(key=lambda item: item['id'], reverse=False)
 
     return JsonResponse({"art_items": art_items})

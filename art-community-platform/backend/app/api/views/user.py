@@ -62,6 +62,8 @@ def get_user_by_id(req, user_id):
     except:
         return HttpResponse('art items of user can not fetched', status=404)
 
+    art_items.sort(key=lambda item: item['id'], reverse=True)
+
     is_following = False
     if user_id in request_sender.followings:
         is_following = True
