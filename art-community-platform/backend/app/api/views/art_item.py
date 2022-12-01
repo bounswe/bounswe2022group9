@@ -18,6 +18,30 @@ from ..models.tag import Tag
 
 
 @api_view(['GET'])
+def get_all_art_items(req):
+    try:
+        token = req.headers['Authorization']
+    except:
+        return HttpResponse('token is missing', status=401)
+
+    try:
+        art_items = ArtItem.objects.all()
+    except:
+        return HttpResponse('all art items can not fetched', status=404)
+
+    try:
+        art_items_data = []
+        for art_item in art_items:
+            art_items_data.append(get_art_item_by_id_helper(art_item.id))
+    except:
+        return HttpResponse('response can not created', status=404)
+
+    art_items_data.sort(key=lambda item: item['id'], reverse=True)
+
+    return JsonResponse({"art_items": art_items_data})
+
+
+@api_view(['GET'])
 def get_art_item_by_id(req, art_item_id):
     try:
         token = req.headers['Authorization']
