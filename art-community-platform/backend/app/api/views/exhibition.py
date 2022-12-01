@@ -18,26 +18,49 @@ from ..models.tag import Tag
 
 @api_view(['POST'])
 def create_exhibition(req):
-    data = json.loads(req.body)
     try:
-        owner_id = data['owner_id']
-        ex_type = data['type']
-        location = data['location']
-        date = data['date']
-        art_item_ids = data['art_items']
+        token = req.headers['Authorization']
+    except:
+        return HttpResponse('token is missing', status=401)
+
+    try:
+        body = json.loads(req.body)
+    except:
+        return HttpResponse('request body is missing', status=400)
+
+    try:
+        name = body['name']
+        description = body['description']
+        ex_type = body['type']
+        location = body['location']
+        open_address = body['open_address']
+        start_time = body['start_time']
+        end_time = body['end_time']
+        date = body['date']
+        art_item_ids = body['art_items']
     except:
         return HttpResponse("missing fields", status=400)
 
     try:
-        e = Exhibition.objects.create(owner_id=owner_id, type=ex_type,
-                                      location=location, date=date, art_items=art_item_ids)
+        u = User.objects.get(token=token)
+    except:
+        return HttpResponse('no user found with this token', status=404)
+
+    try:
+        e = Exhibition.objects.create(owner_id=u.id, name=name, description=description, type=ex_type,
+                                      location=location, open_address=open_address, start_time=start_time,
+                                      end_time=end_time, date=date, art_items=art_item_ids)
     except:
         return HttpResponse('exhibition can not created', status=400)
 
+    # append e.id to u.exhibitions
     try:
-        owner = User.objects.get(id=e.owner_id)
+        exhibitions_of_u = u.exhibitions
+        if e.id not in exhibitions_of_u:
+            exhibitions_of_u.append(e.id)
+        User.objects.filter(id=u.id).update(exhibitions=exhibitions_of_u)
     except:
-        return HttpResponse('no owner found with this id', status=404)
+        return HttpResponse('exhibition can not added to exhibitions of user', status=400)
 
     return HttpResponse(status=201)
 
@@ -62,8 +85,9 @@ def get_exhibition_by_id(req, exhibition_id):
         return HttpResponse('art items of exhibition can not fetched', status=404)
 
     try:
-        resp = {"id": e.id, "owner_name": owner.name, "type": e.type,
-                "location": e.location, "date": e.date, "art_items": art_items}
+        resp = {"id": e.id, "owner_name": owner.name, "type": e.type, "name": e.name, "description": e.description,
+                "location": e.location, "open_address": e.open_address, "start_time": e.start_time,
+                "end_time": e.end_time, "date": e.date, "art_items": art_items}
     except:
         return HttpResponse('response can not created', status=404)
 
