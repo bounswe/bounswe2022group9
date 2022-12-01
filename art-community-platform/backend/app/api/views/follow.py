@@ -18,25 +18,25 @@ from ..models.tag import Tag
 @api_view(['POST'])
 def follow(req):
     try:
+        token = req.headers['Authorization']
+    except:
+        return HttpResponse('token is missing', status=401)
+
+    try:
         body = json.loads(req.body)
     except:
         return HttpResponse("request body is missing", status=400)
 
     try:
-        user_id = body['user_id']
-        token = body['token']
         followed_user_id = body['followed_user_id']
         date = body['date']
     except:
-        return HttpResponse("user id, token, followed user id or date is missing", status=400)
+        return HttpResponse("followed user id or date is missing", status=400)
 
     try:
-        u = User.objects.get(id=user_id)
+        u = User.objects.get(token=token)
     except:
-        return HttpResponse('no user found with this id', status=404)
-
-    if u.token != token:
-        return HttpResponse("user id and token mismatch", status=401)
+        return HttpResponse('no user found with this token', status=404)
 
     try:
         f = User.objects.get(id=followed_user_id)
@@ -46,7 +46,8 @@ def follow(req):
     # append u.id to f.followers
     try:
         followers_of_f = f.followers
-        followers_of_f.append(u.id)
+        if u.id not in followers_of_f:
+            followers_of_f.append(u.id)
         User.objects.filter(id=f.id).update(followers=followers_of_f)
     except:
         return HttpResponse('u can not added to followers of f', status=400)
@@ -54,7 +55,8 @@ def follow(req):
     # append f.id to u.followings
     try:
         followings_of_u = u.followings
-        followings_of_u.append(f.id)
+        if f.id not in followings_of_u:
+            followings_of_u.append(f.id)
         User.objects.filter(id=u.id).update(followings=followings_of_u)
     except:
         return HttpResponse('f can not added to followings of u', status=400)
