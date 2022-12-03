@@ -67,3 +67,26 @@ export const like = async (token, art_item_id, date) => {
         });
 };
 
+export const comment = async (token, art_item_id, date, comment_text) => {
+    return axios
+    .post(
+        "http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1/comment",
+        {
+            art_item_id: art_item_id,
+            text: comment_text,
+            date: date,
+        },
+        {
+            headers: {
+            "Content-Type": "application/json",
+            "Authorization": token,
+            },
+        }
+        )
+        .then((response) => {
+            return response;
+        })
+        .catch((error) => {
+            return error.response;
+        });
+};
