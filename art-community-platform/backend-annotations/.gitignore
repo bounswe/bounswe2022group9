@@ -1,0 +1,10 @@
+__pycache__/
+
+.python-version
+
+__pypackages__/
+
+.env
+.venv
+
+/data
