@@ -39,7 +39,11 @@ const Profile = (props) => {
           <Text
             style={[styles.follower, { marginTop: 50 }]}
             onPress={() => {
-              navigation.navigate("UserList");
+              navigation.navigate("UserList", {
+                userId: userId,
+                token: token,
+                type: "followers",
+              });
             }}
           >
             {" "}
@@ -48,7 +52,11 @@ const Profile = (props) => {
           <Text
             style={styles.follower}
             onPress={() => {
-              navigation.navigate("UserList");
+              navigation.navigate("UserList", {
+                userId: userId,
+                token: token,
+                type: "following",
+              });
             }}
           >
             {" "}
