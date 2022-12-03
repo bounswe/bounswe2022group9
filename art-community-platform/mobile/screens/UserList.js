@@ -1,10 +1,11 @@
 import {React } from "react";
 import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Image } from 'react-native';
 import Colors from "./constants/Colors";
+import { getFollowees, getFollowers, getLikedUsers} from "./services/GeneralServices"
 
 const UserList = (props) => {
   const { navigation } = props;
-  const { userId, token, type } = props.route.params;
+  const { userId, token, type, art_item_id} = props.route.params;
   const [users, setUsers] = React.useState([])
     useEffect(() => {
       if(type == "followers"){
@@ -14,6 +15,11 @@ const UserList = (props) => {
         });
       }else if(type == "followees"){
         getFollowees(userId , token).then((response) => {
+          console.log(response.data);
+          setUsers(response.data);
+        });
+      }else{
+        getLikedUsers(token, art_item_id).then((response) => {
           console.log(response.data);
           setUsers(response.data);
         });

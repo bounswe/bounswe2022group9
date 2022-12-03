@@ -55,3 +55,22 @@ export const getFollowees = async (userId, token) => {
       return error.response;
     });
 };
+
+export const getLikedUsers = async (token, art_item_id) => {
+  return axios
+    .get(
+      `hhttp://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1/art-items/${art_item_id}/favourites`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `${token}`,
+        },
+      }
+    )
+    .then((response) => {
+      return response;
+    })
+    .catch((error) => {
+      return error.response;
+    });
+};
