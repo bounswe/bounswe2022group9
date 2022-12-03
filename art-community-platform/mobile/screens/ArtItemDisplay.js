@@ -3,10 +3,11 @@ import { Text, StyleSheet, Image, View, Dimensions, ScrollView, SafeAreaView, Pr
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const dimensions = Dimensions.get("window");
-
     
 const ArtItemDisplay = () => {
+    const { navigation } = props;
     const [liked, setLiked] = useState(false);
+    const [newComment, setNewComment] = React.useState("");
     var comments = [];
 
 	for(let i = 0; i < 20; i++){
@@ -21,6 +22,27 @@ const ArtItemDisplay = () => {
 			</View>
 		)
 	}
+
+    comments.push(
+        <View key = {21}>
+            <View style = {styles.comment}>
+                <Text style = {{ fontWeight: "bold", color:'#173679'}}>yagmur.goktas</Text>
+                <TextInput
+                    value={username}
+                    onChangeText={(text) => setNewComment(text)}
+                    style={styles.input}
+                />
+                <Pressable
+                    style={styles.button}
+                    onPress={() => { 
+                        handleLogin(); 
+                    }}
+                >
+                <Text style={styles.buttonText}>Add</Text>
+                </Pressable>            
+            </View>
+        </View>
+    )
 
     return(
         <SafeAreaView>
@@ -44,14 +66,12 @@ const ArtItemDisplay = () => {
                 </View>
                 <View style= {{flexDirection:'row'}}>
                 <Text style = {{ marginTop: 40 , marginLeft: dimensions.width*0.15 , color:'#173679', fontWeight: "bold"}}> Comments </Text>
-                <Pressable>
-                    <MaterialCommunityIcons
+                <MaterialCommunityIcons
                     name={"chat-plus"}
                     size={32}
                     color={"#173679"}
                     style={{ marginLeft : 10 , marginTop : 30}}
                 />
-                </Pressable>
                 </View>
                 <View style= {styles.commentcontainer}>{ comments }</View>
                 <View style= {styles.tags}>
@@ -101,5 +121,16 @@ const styles = StyleSheet.create({
         marginLeft: dimensions.width*0.6,        
         color:'#173679',
         fontSize:12
-    }
+    },
+    button: {
+        padding: 8,
+        paddingHorizontal: 12,
+        marginTop: 12,
+        backgroundColor: Colors.primary,
+        borderRadius: 6,
+        alignSelf: "center",
+    },
+    buttonText: {
+    color: "white",
+    },
 })
