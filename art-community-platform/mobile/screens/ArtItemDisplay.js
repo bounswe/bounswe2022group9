@@ -75,7 +75,7 @@ const ArtItemDisplay = () => {
                 </View>
                 <Image style= { styles.photo } source = {require(art_item.image_url)} />
                 <View style= {{flexDirection:'row'}}>
-                <Pressable onPress={() => setLiked((isLiked) => !isLiked) }>
+                <Pressable onPress={() => {setLiked(() => true) ; like(token , art_item_id); }}>
                     <MaterialCommunityIcons
                     name={liked ? "heart" : "heart-outline"}
                     size={32}
