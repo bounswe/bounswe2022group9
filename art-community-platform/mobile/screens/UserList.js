@@ -19,6 +19,15 @@ const Users = [
 
 const UserList = (props) => {
   const { navigation } = props;
+  const { userId, token, type } = props.route.params;
+  const [users, setUsers] = React.useState([])
+    useEffect(() => {
+      if(type == "followers"){
+        getFollowers()
+      }else if(type == "followees"){
+        getFollowees()
+      }
+    })
 
   const User = ({ username }) => (
     <View style={styles.user}>
