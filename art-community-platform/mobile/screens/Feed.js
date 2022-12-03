@@ -12,43 +12,7 @@ import Post from "./components/Post";
 const Feed = () => {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <ScrollView>
-        <Post
-          username="artLand"
-          uri={require("../assets/halloween.png")}
-          date="30m"
-        />
-
-        <Post
-          username="love.art"
-          uri={require("../assets/concert.jpg")}
-          date="1h"
-        />
-
-        <Post
-          username="photo_community"
-          uri={require("../assets/old-man.jpg")}
-          date="1h"
-        />
-
-        <Post
-          username="112233paint"
-          uri={require("../assets/halloween-gaf.jpg")}
-          date="2h"
-        />
-
-        <Post
-          username="nature_photo"
-          uri={require("../assets/witch.jpg")}
-          date="3h"
-        />
-
-        <Post
-          username="safariPhotographer"
-          uri={require("../assets/timothy-barlin.jpg")}
-          date="5h"
-        />
-      </ScrollView>
+      <Text>Feed</Text>
     </View>
   );
 };
