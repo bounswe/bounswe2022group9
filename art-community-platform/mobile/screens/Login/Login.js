@@ -9,18 +9,29 @@ import {
 } from "react-native";
 import Colors from "../constants/Colors";
 import { login } from "../services/LoginServices";
+import { useUserStore } from "../store.js";
 
 const Login = (props) => {
   const { navigation } = props;
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
+  // const setUserId = useUserStore((state) => state.setUserId);
+  // const setToken = useUserStore((state) => state.setToken);
+  const setUserId = useUserStore.getState().setUserId;
+  const setToken = useUserStore.getState().setToken;
 
   const handleLogin = () => {
     login(username, password)
       .then((response) => {
+        console.log(response);
         if (response.status === 200) {
-          navigation.navigate("Home");
+          navigation.navigate("Home", {
+            userId: response.data.user_id,
+            token: response.data.token,
+          });
         } else if (response.status === 400) {
+          Alert.alert("Login Failed ❌", response.data);
+        } else if (response.status === 404) {
           Alert.alert("Login Failed ❌", response.data);
         }
       })
