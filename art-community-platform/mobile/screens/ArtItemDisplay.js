@@ -101,7 +101,7 @@ const ArtItemDisplay = () => {
                         {art_item.tags.map((tag) => {
                             return (
                             <View style= {{flexDirection:'row'}}>
-                                <Text style={styles.tagItem}>{tag}</Text>
+                                <Text style={styles.tagItem}>{tag}{'\t'}</Text>
                             </View>
                             );
                         })}
