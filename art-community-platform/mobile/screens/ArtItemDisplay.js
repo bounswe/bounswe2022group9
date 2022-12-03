@@ -1,22 +1,43 @@
 import React, { useState } from "react";
 import { Text, StyleSheet, Image, View, Dimensions, ScrollView, SafeAreaView, Pressable} from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { getArtItem, like, comment} from "./services/ArtItemService"
+import { Colors } from "react-native/Libraries/NewAppScreen";
 
 const dimensions = Dimensions.get("window");
     
 const ArtItemDisplay = () => {
     const { navigation } = props;
+    const { token, art_item_id } = props.route.params;
     const [liked, setLiked] = useState(false);
     const [newComment, setNewComment] = React.useState("");
-    var comments = [];
+    const [art_item, setArtItem] = React.useState({
+        id: 0,
+        owner_name: "",
+        image_url: "",
+        description: "",
+        date: "",
+        comments: [],
+        tags: [],
+        comment_count: 0,
+        favorite_count: 0,
+    });
+    
+    useEffect(() => {
+        getArtItem(token, art_item_id).then((response) => {
+          console.log(response.data);
+          setArtItem(response.data);
+        });
+    }, []);
 
-	for(let i = 0; i < 20; i++){
+    var comments = [];
+	for(let i = 0; i < art_item.comment_count; i++){
 
 		comments.push(
 			<View key = {i}>
 				<View style = {styles.comment}>
-					<Text style = {{ fontWeight: "bold", color:'#173679'}}>yagmur.goktas</Text>
-                    <Text>Really nice pic</Text>
+					<Text style = {{ fontWeight: "bold", color:'#173679'}}>{art_item.comments[i].owner_name}</Text>
+                    <Text>{art_item.comments[i].text}</Text>
 				</View>
 
 			</View>
@@ -24,9 +45,9 @@ const ArtItemDisplay = () => {
 	}
 
     comments.push(
-        <View key = {21}>
+        <View key = {art_item.comment_count+1}>
             <View style = {styles.comment}>
-                <Text style = {{ fontWeight: "bold", color:'#173679'}}>yagmur.goktas</Text>
+                <Text style = {{ fontWeight: "bold", color:'#173679'}}>{art_item.owner_name}</Text>
                 <TextInput
                     value={username}
                     onChangeText={(text) => setNewComment(text)}
@@ -35,7 +56,7 @@ const ArtItemDisplay = () => {
                 <Pressable
                     style={styles.button}
                     onPress={() => { 
-                        handleLogin(); 
+                        comment(token , art_item_id , newComment); 
                     }}
                 >
                 <Text style={styles.buttonText}>Add</Text>
@@ -47,14 +68,14 @@ const ArtItemDisplay = () => {
     return(
         <SafeAreaView>
             <ScrollView>
-                <Text style= { styles.creator }>Created by Yagmur Goktas</Text>
-                <Text style= { styles.timestamp }> 22.11.2022 Tuesday</Text>
+                <Text style= { styles.creator }>Created by {art_item.owner_name}</Text>
+                <Text style= { styles.timestamp }> {art_item.date}</Text>
                 <View style={ styles.caption }>
-                    <Text>caption</Text>
+                    <Text>{art_item.description}</Text>
                 </View>
-                <Image style= { styles.photo } source = {require("../assets/bus.jpg")} />
+                <Image style= { styles.photo } source = {require(art_item.image_url)} />
                 <View style= {{flexDirection:'row'}}>
-                <Pressable onPress={() => setLiked((isLiked) => !isLiked)}>
+                <Pressable onPress={() => setLiked((isLiked) => !isLiked) }>
                     <MaterialCommunityIcons
                     name={liked ? "heart" : "heart-outline"}
                     size={32}
@@ -62,7 +83,7 @@ const ArtItemDisplay = () => {
                     style={{ marginLeft : dimensions.width*0.15 , marginTop : 10}}
                 />
                 </Pressable>
-                <Text style= {{ alignSelf: "center" , marginTop: 20 }}> 5 Likes </Text>
+                <Text style= {{ alignSelf: "center" , marginTop: 20 }}> {art_item.favorite_count} Likes </Text>
                 </View>
                 <View style= {{flexDirection:'row'}}>
                 <Text style = {{ marginTop: 40 , marginLeft: dimensions.width*0.15 , color:'#173679', fontWeight: "bold"}}> Comments </Text>
@@ -76,6 +97,15 @@ const ArtItemDisplay = () => {
                 <View style= {styles.commentcontainer}>{ comments }</View>
                 <View style= {styles.tags}>
                     <Text style = {{ marginTop: 20 , marginLeft: dimensions.width*0.15 , color:'#173679', fontWeight: "bold"}} >Tags</Text>
+                    <View>
+                        {art_item.tags.map((tag) => {
+                            return (
+                            <View>
+                                <Text style={styles.tagItem}>{tag}</Text>
+                            </View>
+                            );
+                        })}
+                    </View>
                 </View>
             </ScrollView>
         </SafeAreaView>
@@ -131,6 +161,11 @@ const styles = StyleSheet.create({
         alignSelf: "center",
     },
     buttonText: {
-    color: "white",
+        color: "white",
+    },
+    tagItem: {
+        color: '#173679',
+        fontSize:15 ,
+        backgroundColor: Colors.secondaryLight,
     },
 })
