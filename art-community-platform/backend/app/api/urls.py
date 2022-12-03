@@ -14,6 +14,7 @@ from .views.tag import *
 from .views.follow import *
 from .views.homepage import *
 from .views.searchUser import searchUser
+from .views.searchTag import searchTag
 
 urlpatterns = [
     path('health-check', health_check, name='health_check'),
@@ -56,6 +57,7 @@ urlpatterns = [
 
 
     path('users/search/<string:keyword>', searchUser, name='search_user'),
+    path('tags/search/<string:keyword>', searchTag, name='search_tag'),
     
 
 ]
