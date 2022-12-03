@@ -100,7 +100,7 @@ const ArtItemDisplay = () => {
                     <View>
                         {art_item.tags.map((tag) => {
                             return (
-                            <View>
+                            <View style= {{flexDirection:'row'}}>
                                 <Text style={styles.tagItem}>{tag}</Text>
                             </View>
                             );
