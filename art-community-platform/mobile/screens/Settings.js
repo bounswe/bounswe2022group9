@@ -1,6 +1,6 @@
 import {
   Pressable, ScrollView, StyleSheet, Text, View,
-  Image, 
+  Image, TextInput,
   SafeAreaView,
 } from "react-native";
 import Colors from "./constants/Colors";
@@ -8,6 +8,11 @@ import React from "react";
 
 const Settings = (props) => {
   const { navigation } = props;
+  
+  const [email, setEmail] = React.useState("");
+  const [username, setUsername] = React.useState("");
+  const [name, setName] = React.useState("");
+  const [birthDate, setBirthdate] = React.useState("");
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
@@ -23,7 +28,32 @@ const Settings = (props) => {
           </Pressable>
         </View>
 
-        
+        <View style={styles.inputContainer}>
+          <Text style={{ color: Colors.primaryDark }}>Name</Text>
+          <TextInput
+            value={name}
+            onChangeText={(text) => setName(text)}
+            style={styles.input}
+          />
+          <Text style={{ color: Colors.primaryDark }}>Username</Text>
+          <TextInput
+            value={username}
+            onChangeText={(text) => setUsername(text)}
+            style={styles.input}
+          />
+          <Text style={{ color: Colors.primaryDark }}>Email</Text>
+          <TextInput
+            value={email}
+            onChangeText={(text) => setEmail(text)}
+            style={styles.input}
+          />
+          <Text style={{ color: Colors.primaryDark }}>Birthdate</Text>
+          <TextInput
+            value={birthDate}
+            onChangeText={(text) => setBirthdate(text)}
+            style={styles.input}
+          />
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -59,5 +89,31 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: "#173679",
     height: 200,
+  },
+  inputContainer: {
+    justifyContent: "flex-end",
+    width: "80%",
+    padding: 16,
+    marginVertical: 24,
+    borderRadius: 12,
+    alignSelf: "center",
+    backgroundColor: "white",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
+  },
+  input: {
+    borderWidth: 0.2,
+    borderRadius: 8,
+    padding: 8,
+    marginBottom: 16,
+    width: "100%",
+    borderColor: Colors.primaryLight,
   },
 });
