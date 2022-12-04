@@ -62,7 +62,7 @@ def search_art_item(req,keyword):
 
         
         if flag is True:
-            itemList.append(get_art_item_by_id_helper(item.pk))
+            itemList.append(get_art_item_by_id_helper(item.id))
 
     
 
