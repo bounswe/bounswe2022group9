@@ -75,7 +75,7 @@ const Profile = (props) => {
 
           <View style={[styles.photosCard, { paddingBottom: 50 }]}>
             <Text style={styles.namee}>POSTS</Text>
-            {profile["art_items:"].map((item) => {
+            {profile["art_items:"]?.map((item) => {
               return (
                 <Image
                   style={styles.photo}

@@ -1,5 +1,6 @@
 import axios from "axios";
 export const getProfile = async (userId, token) => {
+  console.log(userId, token);
   return axios
     .get(
       `http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1/users/${userId}`,
