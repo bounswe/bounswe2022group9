@@ -1,26 +1,82 @@
-import {
-  Pressable, ScrollView, StyleSheet, Text, View,
-  Image, TextInput, nav,
-  SafeAreaView,
-  Dimensions
+import {Pressable, ScrollView, StyleSheet, Text, View, TextInput, SafeAreaView,
 } from "react-native";
 import Colors from "./constants/Colors";
 import React from "react";
-import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 function CreateExhibition() {
+
+  const [description, setDescription] = React.useState("");
+  const [exhibitionName, setExhibitionName] = React.useState("");
+  const [type, setType] = React.useState("");
+  const [location, setLocation] = React.useState("");
+  const [openAddress, setOpenAddress] = React.useState("");
+  const [startTime, setStartTime] = React.useState("");
+  const [endTime, setEndTime] = React.useState("");
+  const [date, setDate] = React.useState("");
+
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Exhibition!</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
+        <View style={styles.inputContainer}>
+          <Text style={{ color: Colors.primaryDark }}>Exhibition Name</Text>
+          <TextInput
+            value={exhibitionName}
+            onChangeText={(text) => setExhibitionName(text)}
+            style={styles.input}
+          />
+          <Text style={{ color: Colors.primaryDark }}>description</Text>
+          <TextInput
+            value={description}
+            onChangeText={(text) => setDescription(text)}
+            style={styles.input}
+          />
+          <Text style={{ color: Colors.primaryDark }}>Type</Text>
+          <TextInput
+            value={type}
+            onChangeText={(text) => setType(text)}
+            style={styles.input}
+          />
+          <Text style={{ color: Colors.primaryDark }}>Location</Text>
+          <TextInput
+            value={location}
+            onChangeText={(text) => setLocation(text)}
+            style={styles.input}
+          />
+          <Text style={{ color: Colors.primaryDark }}>Open Address</Text>
+          <TextInput
+            value={openAddress}
+            onChangeText={(text) => setOpenAddress(text)}
+            style={styles.input}
+          />
+          <Text style={{ color: Colors.primaryDark }}>Start Time</Text>
+          <TextInput
+            value={startTime}
+            onChangeText={(text) => setStartTime(text)}
+            style={styles.input}
+          />
+          <Text style={{ color: Colors.primaryDark }}>End Time</Text>
+          <TextInput
+            value={endTime}
+            onChangeText={(text) => setEndTime(text)}
+            style={styles.input}
+          />
+          <Text style={{ color: Colors.primaryDark }}>Date</Text>
+          <TextInput
+            value={date}
+            onChangeText={(text) => setDate(text)}
+            style={styles.input}
+          />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 function MyExhibitions() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>My Exhibitions!</Text>
+      <Text>My!</Text>
     </View>
   );
 }
@@ -38,18 +94,30 @@ export default function App() {
 
 
 const styles = StyleSheet.create({
-  button: {
-    padding: 8,
-    paddingHorizontal: 12,
-    marginTop: 100,
-    marginBottom: 30,
-    backgroundColor: Colors.primary,
-    borderRadius: 6,
+  inputContainer: {
+    justifyContent: "flex-end",
+    width: "80%",
+    padding: 16,
+    marginVertical: 24,
+    borderRadius: 12,
     alignSelf: "center",
-    justifyContent: "center",
+    backgroundColor: "white",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
   },
-  
-  buttonText: {
-    color: "white",
+  input: {
+    borderWidth: 0.2,
+    borderRadius: 8,
+    padding: 8,
+    marginBottom: 16,
+    width: "100%",
+    borderColor: Colors.primaryLight,
   },
 });
