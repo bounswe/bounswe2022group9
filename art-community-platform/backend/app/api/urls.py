@@ -13,7 +13,7 @@ from .views.notification import get_notification_by_id
 from .views.tag import *
 from .views.follow import *
 from .views.homepage import *
-from .views.searchUser import searchUser
+from .views.search import *
 
 urlpatterns = [
     path('health-check', health_check, name='health_check'),
@@ -55,7 +55,8 @@ urlpatterns = [
     path('users/<int:user_id>/get-profile-info', get_profile_info, name='get_profile_info'),
 
 
-    path('users/search/<string:keyword>', searchUser, name='search_user'),
-    
+    path('users/search/<str:keyword>', search_user, name='search_user'),
+    # path('art-items/search/<str:keyword>', search_art_item, name='search_art_item'),
+    # path('exhibitions/search/<str:keyword>', search_exhibition, name='search_exhibition'),
 
 ]
