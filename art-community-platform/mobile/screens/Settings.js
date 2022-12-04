@@ -54,6 +54,11 @@ const Settings = (props) => {
             style={styles.input}
           />
         </View>
+        <Pressable
+          style={styles.buttonSubmit}
+        >
+          <Text style={styles.buttonText}>Change Profile Info</Text>
+        </Pressable>
       </ScrollView>
     </SafeAreaView>
   );
@@ -67,6 +72,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     marginTop: 80,
     marginLeft: 180,
+    backgroundColor: Colors.primary,
+    borderRadius: 6,
+    alignSelf: "center",
+  },
+  buttonSubmit: {
+    padding: 8,
+    paddingHorizontal: 12,
+    marginBottom: 30,
     backgroundColor: Colors.primary,
     borderRadius: 6,
     alignSelf: "center",
