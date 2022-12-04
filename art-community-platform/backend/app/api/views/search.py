@@ -71,7 +71,7 @@ def search_art_item(req,keyword):
 
 
 @api_view(['GET'])
-def search_exhibiton(req,keyword):
+def search_exhibition(req,keyword):
     exhibition_list = []
 
     exhibitions = Exhibition.objects.all()
@@ -80,7 +80,7 @@ def search_exhibiton(req,keyword):
         name  = exhibition.name
         desc = exhibition.description
         address = exhibition.open_address
-        
+
         flag = False
 
         try:
