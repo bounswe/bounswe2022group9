@@ -13,6 +13,7 @@ from ..models.user import User
 from ..models.art_item import ArtItem
 from ..models.comment import Comment
 from ..models.tag import Tag
+from ..models.exhibition import Exhibition
 
 
 @api_view(['GET'])
@@ -67,3 +68,35 @@ def search_art_item(req,keyword):
     
 
     return JsonResponse({"art_items":itemList})
+
+
+@api_view(['GET'])
+def search_exhibition(req,keyword):
+    exhibition_list = []
+
+    exhibitions = Exhibition.objects.all()
+
+    for exhibition in exhibitions:
+        name  = exhibition.name
+        desc = exhibition.description
+        address = exhibition.open_address
+
+        flag = False
+
+        try:
+            if keyword in name or keyword in desc or keyword in address:
+                flag = True
+            else:
+                flag  = False
+        
+        except:
+            return HttpResponse('no Exhibition found', status=404)
+
+        if flag is True:
+            exhibition_list.append(get_exhibition_by_id_helper(exhibition.id))
+
+    
+    return JsonResponse({"exhibitions":exhibition_list})
+
+
+
