@@ -87,3 +87,20 @@ def delete_user_from_followers(follower_id, followed_id):
     followed_user.save()
     # success case
     return [True, ""]
+
+
+# deletes following_id from followings list of user with follower_id
+def delete_user_from_following(follower_id, followed_id):
+    follower_user = None
+    followed_user = None
+    # check whether users exist or not
+    try:
+        follower_user = User.objects.get(id=follower_id)
+        followed_user = User.objects.get(id=followed_id)
+    except:
+        return [False, "either follower_id or followed_id is not true"]
+    # remove follower and save the object to the database
+    follower_user.followings.remove(followed_id)
+    follower_user.save()
+    # success case
+    return [True, ""]
