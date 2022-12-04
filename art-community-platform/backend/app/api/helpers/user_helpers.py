@@ -35,6 +35,47 @@ def get_follower_by_id_helper(follower_id):
             "profile_img_url": f.profile_img_url, "location": f.location}
 
 
+def get_followers_by_user_id_helper(user_id):
+
+    try:
+        u = User.objects.get(id=user_id)
+    
+    except:
+        return None
+
+    follower_list = u.followers
+
+    return {"followers":follower_list}
+
+
+def get_art_items_by_user_id_helper(user_id):
+
+    try:
+        u = User.objects.get(id=user_id)
+    
+    except:
+        return None
+
+    art_item_list = u.art_items
+
+    return {"art_items":art_item_list}
+
+
+def get_followings_by_user_id_helper(user_id):
+
+    try:
+        u = User.objects.get(id=user_id)
+    
+    except:
+        return None
+
+    following_list = u.followings
+
+    return {"followings":following_list}
+
+
+
+
 def validate_password_helper(password):
     if len(password) < 8:
         return [False, "password can't be shorter than 8 characters"]
