@@ -68,6 +68,11 @@ function CreateExhibition() {
             style={styles.input}
           />
         </View>
+        <Pressable
+          style={styles.button}
+        >
+          <Text style={styles.buttonText}>Create Exhibition</Text>
+        </Pressable>
       </ScrollView>
     </SafeAreaView>
   );
@@ -76,7 +81,7 @@ function CreateExhibition() {
 function MyExhibitions() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>My!</Text>
+      <Text>You Don't Have Any Exhibitions!</Text>
     </View>
   );
 }
@@ -94,6 +99,18 @@ export default function App() {
 
 
 const styles = StyleSheet.create({
+  button: {
+    padding: 8,
+    paddingHorizontal: 12,
+    marginBottom: 30,
+    backgroundColor: Colors.primary,
+    borderRadius: 6,
+    alignSelf: "center",
+
+  },
+  buttonText: {
+    color: "white",
+  },
   inputContainer: {
     justifyContent: "flex-end",
     width: "80%",
