@@ -66,7 +66,7 @@ const Profile = (props) => {
         </View>
         <Image
           style={styles.avatar}
-          source={{ uri: "https://bootdey.com/img/Content/avatar/avatar3.png" }}
+          source={{ uri: profile["profile_img_url"] }}
         />
         <View style={{ marginTop: 20 }}>
           <View style={styles.bodyContent}></View>
