@@ -68,3 +68,15 @@ def validate_username_helper(username):
     if len(username) < 5:
         return [False, "username can't be shorter than 5 characters"]
     return [True, ""]
+
+def delete_user_from_followers(follower_id, followed_id):
+    follower_user = None
+    followed_user = None
+    try:
+        follower_user = User.objects.get(id=follower_id)
+        followed_user = User.objects.get(id=followed_id)
+    except:
+        return [False, "either follower_id or followed_id is not true"]
+    followed_user.followers.remove(follower_id)
+    followed_user.save()
+    return [True, ""]
