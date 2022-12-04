@@ -33,3 +33,37 @@ def search_user(req, keyword):
             users_res.append(get_follower_by_id_helper(u.id))
 
     return JsonResponse({"users": users_res})
+
+
+
+@api_view(['GET'])
+def search_art_item(req,keyword):
+
+    itemList = []
+
+    arts = ArtItem.objects.all()
+
+    for item in arts:
+        desc = item.description
+        tags = item.tags
+
+        flag = False
+
+        try:
+            if keyword in desc:
+                flag = True
+        except:
+            return HttpResponse('no Art Item found', status=404)
+
+
+        for tag in tags:
+            if keyword in tag:
+                flag = True
+
+        
+        if flag is True:
+            itemList.append(get_art_item_by_id_helper(item.pk))
+
+    
+
+    return JsonResponse({"art_items":itemList})
