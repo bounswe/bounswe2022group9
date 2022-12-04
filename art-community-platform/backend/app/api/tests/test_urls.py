@@ -1,17 +1,22 @@
-from django.test import SimpleTestCase
+import unittest
+
+from django.test import TestCase, Client
 from django.urls import resolve, reverse
 from .. import views
 
 
-class TestUrls(SimpleTestCase):
-    def test_health_check_url_is_resolved(self):
-        url = reverse('health_check')
-        self.assertEqual(resolve(url).func, views.health_check)
+class TestUrls(TestCase):
+    def setUp(self):
+        # Setup run before every test method.
+        pass
 
-    def test_signup_url_is_resolved(self):
-        url = reverse('signup')
-        self.assertEqual(resolve(url).func, views.signup)
+    def tearDown(self):
+        # Clean up run after every test method.
+        pass
 
-    def test_login_url_is_resolved(self):
-        url = reverse('login')
-        self.assertEqual(resolve(url).func, views.login)
+    def test_something_that_will_pass(self):
+        self.assertFalse(False)
+
+    def test_something_that_will_fail(self):
+        self.assertTrue(False)
+
