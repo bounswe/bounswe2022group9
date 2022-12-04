@@ -57,6 +57,6 @@ urlpatterns = [
 
     path('users/search/<str:keyword>', search_user, name='search_user'),
     path('art-items/search/<str:keyword>', search_art_item, name='search_art_item'),
-    #path('exhibitions/search/<str:keyword>', search_exhibition, name='search_exhibition'),
+    path('exhibitions/search/<str:keyword>', search_exhibition, name='search_exhibition'),
 
 ]
