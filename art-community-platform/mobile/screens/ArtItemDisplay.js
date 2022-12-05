@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Text, StyleSheet, Image, View, Dimensions, ScrollView, SafeAreaView, Pressable} from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { getArtItem, like, comment} from "./services/ArtItemService"
 import { Colors } from "react-native/Libraries/NewAppScreen";
+import { useState , useEffect } from "react";
 
 const dimensions = Dimensions.get("window");
     
@@ -10,8 +11,8 @@ const ArtItemDisplay = () => {
     const { navigation } = props;
     const { token, art_item_id } = props.route.params;
     const [liked, setLiked] = useState(false);
-    const [newComment, setNewComment] = React.useState("");
-    const [art_item, setArtItem] = React.useState({
+    const [newComment, setNewComment] = useState("");
+    const [art_item, setArtItem] = useState({
         id: 0,
         owner_name: "",
         image_url: "",
