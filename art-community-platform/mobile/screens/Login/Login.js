@@ -23,7 +23,6 @@ const Login = (props) => {
   const handleLogin = () => {
     login(username, password)
       .then((response) => {
-        console.log(response.data);
         if (response.status === 200) {
           navigation.navigate("Home", {
             userId: response.data.user_id,

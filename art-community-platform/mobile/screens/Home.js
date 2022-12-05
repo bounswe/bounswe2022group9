@@ -12,6 +12,7 @@ import Profile from "./Profile";
 import Colors from "./constants/Colors";
 import UserList from "./UserList";
 import ArtItemDisplay from "./ArtItemDisplay";
+import User from "./User";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -37,6 +38,75 @@ const ProfileStack = (props) => {
       <Stack.Screen
         name="ArtItem"
         component={ArtItemDisplay}
+        initialParams={{ userId: userId, token: token }}
+      />
+      <Stack.Screen
+        name="User"
+        component={User}
+        initialParams={{ userId: userId, token: token }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const SearchStack = (props) => {
+  const { userId, token } = props.route.params;
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen
+        name="Search"
+        component={Search}
+        initialParams={{ userId: userId, token: token }}
+      />
+      <Stack.Screen
+        name="ArtItem"
+        component={ArtItemDisplay}
+        initialParams={{ userId: userId, token: token }}
+      />
+      <Stack.Screen
+        name="User"
+        component={User}
+        initialParams={{ userId: userId, token: token }}
+      />
+      <Stack.Screen
+        name="UserList"
+        component={UserList}
+        initialParams={{ userId: userId, token: token }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const FeedStack = (props) => {
+  const { userId, token } = props.route.params;
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen
+        name="Feed"
+        component={Feed}
+        initialParams={{ userId: userId, token: token }}
+      />
+      <Stack.Screen
+        name="ArtItem"
+        component={ArtItemDisplay}
+        initialParams={{ userId: userId, token: token }}
+      />
+      <Stack.Screen
+        name="User"
+        component={User}
+        initialParams={{ userId: userId, token: token }}
+      />
+      <Stack.Screen
+        name="UserList"
+        component={UserList}
         initialParams={{ userId: userId, token: token }}
       />
     </Stack.Navigator>
@@ -71,12 +141,12 @@ const Home = (props) => {
     >
       <Tab.Screen
         name="Feed"
-        component={Feed}
+        component={FeedStack}
         initialParams={{ userId: userId, token: token }}
       />
       <Tab.Screen
         name="Search"
-        component={Search}
+        component={SearchStack}
         initialParams={{ userId: userId, token: token }}
       />
       <Tab.Screen name="Exhibitions" component={Exhibitions} />
