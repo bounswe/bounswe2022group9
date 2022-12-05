@@ -11,6 +11,7 @@ import Exhibitions from "./Exhibitons";
 import Profile from "./Profile";
 import Colors from "./constants/Colors";
 import UserList from "./UserList";
+import ArtItemDisplay from "./ArtItemDisplay";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -31,6 +32,11 @@ const ProfileStack = (props) => {
       <Stack.Screen
         name="UserList"
         component={UserList}
+        initialParams={{ userId: userId, token: token }}
+      />
+      <Stack.Screen
+        name="ArtItem"
+        component={ArtItemDisplay}
         initialParams={{ userId: userId, token: token }}
       />
     </Stack.Navigator>

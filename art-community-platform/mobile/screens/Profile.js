@@ -8,6 +8,7 @@ import {
   SafeAreaView,
   Dimensions,
   FlatList,
+  TouchableOpacity,
 } from "react-native";
 import { getProfile } from "./services/GeneralServices";
 
@@ -92,10 +93,19 @@ const Profile = (props) => {
                     margin: 1,
                   }}
                 >
-                  <Image
-                    style={styles.photo}
-                    source={{ uri: item["img_url"] }}
-                  />
+                  <TouchableOpacity
+                    onPress={() =>
+                      navigation.navigate("ArtItem", {
+                        token: token,
+                        art_item_id: item.id,
+                      })
+                    }
+                  >
+                    <Image
+                      style={styles.photo}
+                      source={{ uri: item["img_url"] }}
+                    />
+                  </TouchableOpacity>
                 </View>
               )}
               //Setting the number of column
