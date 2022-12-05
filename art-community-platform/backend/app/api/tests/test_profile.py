@@ -54,7 +54,7 @@ class TestProfile(TestCase):
 
     def test_get_profile_info(self):
 
-        req = self.factory.get('/api/v1/users/'+str(self.user.id)+'/update_profile_info', data=data, content_type="application/json")
+        req = self.factory.get('/api/v1/users/'+str(self.user.id)+'/get_profile_info', content_type="application/json")
         res = get_profile_info(req, self.user.id)
 
         self.assertEqual(res.status_code, 200)
