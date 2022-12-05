@@ -4,17 +4,40 @@ import { Ionicons } from "@expo/vector-icons";
 import Colors from "./constants/Colors";
 import Post from "./components/Post";
 import { TabController } from "react-native-ui-lib";
-import { searchPosts, searchUsers } from "./services/GeneralServices";
+import {
+  searchExhibitions,
+  searchPosts,
+  searchUsers,
+} from "./services/GeneralServices";
 
 const Search = (props) => {
   const { userId, token } = props.route.params;
   const [search, setSearch] = React.useState("");
+  const [index, setIndex] = React.useState(0);
+  const [posts, setPosts] = React.useState([]);
+  const [users, setUsers] = React.useState([]);
+  const [exhibitions, setExhibitions] = React.useState([]);
+
   useEffect(() => {
-    searchPosts(userId, token, "art").then((response) => {
-      console.log(response.data);
-      return () => {};
-    });
-  }, []);
+    if (search.length > 0) {
+      if (index === 0) {
+        searchPosts(userId, token, search).then((response) => {
+          console.log(response.data);
+          setPosts(response.data["art_items:"]);
+        });
+      } else if (index === 1) {
+        searchUsers(userId, token, search).then((response) => {
+          console.log(response.data);
+          setUsers(response.data["users"]);
+        });
+      } else if (index === 2) {
+        searchExhibitions(userId, token, search).then((response) => {
+          console.log(response.data);
+          setExhibitions(response.data["exhibitions"]);
+        });
+      }
+    }
+  }, [index, search]);
 
   return (
     <View style={{ flex: 1, alignItems: "center", backgroundColor: "white" }}>
@@ -46,6 +69,7 @@ const Search = (props) => {
         ]}
         asCarousel
         initialIndex={0}
+        onChangeIndex={(index) => setIndex(index)}
       >
         <TabController.TabBar
           height={40}
