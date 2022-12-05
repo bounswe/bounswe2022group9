@@ -37,6 +37,19 @@ class TestProfile(TestCase):
         self.new_location = 'Ankara'
         self.new_name = fake.name()
 
+    def test_get_profile_info(self):
+
+        req = self.factory.get('/api/v1/users/'+str(self.user.id)+'/get_profile_info', content_type="application/json")
+        res = get_profile_info(req, self.user.id)
+        res_json = json.loads(res.content)
+
+        self.assertEqual(res.status_code, 200)
+
+        # check the values
+        self.assertEqual(res_json['profile_img_url'], self.user.profile_img_url)
+        self.assertEqual(res_json['birthdate'], self.user.birthdate)
+        self.assertEqual(res_json['location'], self.user.location)
+
     def test_update_profile_info(self):
 
         data = {
@@ -53,13 +66,8 @@ class TestProfile(TestCase):
         self.assertEqual(res.status_code, 200)
 
         # check whether values are updated or not
-        self.assertEqual(self.user.profile_img_url, self.new_profile_image_url)
-        self.assertEqual(self.user.birthdate, self.new_birthdate)
-        self.assertEqual(self.user.location, self.new_location)
+        u = User.objects.get(id=self.user.id)
+        self.assertEqual(u.profile_img_url, self.new_profile_image_url)
+        self.assertEqual(u.birthdate, self.new_birthdate)
+        self.assertEqual(u.location, self.new_location)
 
-    def test_get_profile_info(self):
-
-        req = self.factory.get('/api/v1/users/'+str(self.user.id)+'/get_profile_info', content_type="application/json")
-        res = get_profile_info(req, self.user.id)
-
-        self.assertEqual(res.status_code, 200)
