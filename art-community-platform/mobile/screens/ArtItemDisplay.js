@@ -21,12 +21,11 @@ const ArtItemDisplay = (props) => {
         "comments": [],
         "tags:": [],
         "comment_count": 0,
-        "favorite_count": 0,
+        "favourite_count": 0,
     });
     
     useEffect(() => {
         getArtItem(token, art_item_id).then((response) => {
-          console.log(1 , response.data);
           setArtItem(response.data);
         });
     }, []);
@@ -37,8 +36,12 @@ const ArtItemDisplay = (props) => {
 		comments.push(
 			<View key = {i}>
 				<View style = {styles.comment}>
+                    <View style={{ flexDirection : 'row'}}>
 					<Text style = {{ fontWeight: "bold", color:'#173679'}}>{art_item.comments[i].owner_name}</Text>
+                    <Text style = {{ fontSize : 12 , marginLeft: dimensions.width*0.20}} >{art_item.comments[i].date}</Text>
+                    </View>
                     <Text>{art_item.comments[i].text}</Text>
+                    
 				</View>
 
 			</View>
@@ -51,13 +54,16 @@ const ArtItemDisplay = (props) => {
                 <Text style = {{ fontWeight: "bold", color:'#173679'}}>{art_item.owner_name}</Text>
                 <TextInput
                     value={newComment}
-                    onChangeText={(text) => setNewComment(text)}
+                    onChangeText={(text) => {
+                        setNewComment(text);
+                    }}
                     style={styles.input}
                 />
                 <Pressable
                     style={styles.button}
                     onPress={() => { 
-                        comment(token , art_item_id , newComment); 
+                        let now = new Date()
+                        comment(token , art_item_id ,now.toISOString().split('T')[0], newComment); 
                     }}
                 >
                 <Text style={styles.buttonText}>Add</Text>
@@ -76,7 +82,7 @@ const ArtItemDisplay = (props) => {
                 </View>
                 <Image style= { styles.photo } source = {{uri: art_item.img_url}} />
                 <View style= {{flexDirection:'row'}}>
-                <Pressable onPress={() => {setLiked(() => true) ; like(token , art_item_id); }}>
+                <Pressable onPress={() => {setLiked(() => true) ; let now = new Date() ; like(token , art_item_id , now.toISOString().split('T')[0]); }}>
                     <MaterialCommunityIcons
                     name={liked ? "heart" : "heart-outline"}
                     size={32}
@@ -84,7 +90,7 @@ const ArtItemDisplay = (props) => {
                     style={{ marginLeft : dimensions.width*0.15 , marginTop : 10}}
                 />
                 </Pressable>
-                <Text style= {{ alignSelf: "center" , marginTop: 20 }}> {art_item.favorite_count} Likes </Text>
+                <Text style= {{ alignSelf: "center" , marginTop: 20 }}> {art_item.favourite_count} Likes </Text>
                 </View>
                 <View style= {{flexDirection:'row'}}>
                 <Text style = {{ marginTop: 40 , marginLeft: dimensions.width*0.15 , color:'#173679', fontWeight: "bold"}}> Comments </Text>
