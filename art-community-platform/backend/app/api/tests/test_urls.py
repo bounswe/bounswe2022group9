@@ -8,11 +8,12 @@ from ..views.auth import *
 from ..views.comment import *
 from ..views.exhibition import *
 from ..views.favourite import favourite
-from ..views.follow import follow
+from ..views.follow import follow, unfollow
 from ..views.homepage import get_homepage
 from ..views.notification import *
 from ..views.tag import *
 from ..views.user import *
+from ..views.profile import *
 
 
 class TestUrls(TestCase):
@@ -103,4 +104,20 @@ class TestUrls(TestCase):
     def test_get_homepage_url_is_resolved(self):
         url = reverse('homepage')
         self.assertEqual(resolve(url).func, get_homepage)
+
+    def test_get_profile_info_url_is_resolved(self):
+        url = reverse('get_profile_info')
+        self.assertEqual(resolve(url).func, get_profile_info)
+
+    def test_update_profile_info_url_is_resolved(self):
+        url = reverse('update_profile_info')
+        self.assertEqual(resolve(url).func, update_profile_info)
+
+    def test_signup_url_is_resolved(self):
+        url = reverse('signup')
+        self.assertEqual(resolve(url).func, signup)
+
+    def test_unfollow_url_is_resolved(self):
+        url = reverse('unfollow')
+        self.assertEqual(resolve(url).func, unfollow)
 
