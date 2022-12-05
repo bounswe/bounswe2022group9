@@ -13,7 +13,9 @@ from ..models.user import User
 from ..models.art_item import ArtItem
 from ..models.comment import Comment
 from ..models.tag import Tag
-
+import requests
+import base64
+import os
 
 @api_view(['GET'])
 def get_all_users(req):
