@@ -7,7 +7,8 @@ import {
 } from "react-router-dom";
 import LoginPage from "../pages/LoginPage";
 import SignupPage from "../pages/SignupPage";
-import ProfilePage from "../pages/ProfilePage"
+import ProfilePage from "../pages/ProfilePage";
+import DummyPage from "../pages/DummyPage";
 // import ConfirmationPage from "../pages/ConfirmationPage";
 // import HomePage from "../pages/HomePage";
 import history from "../history";
@@ -36,12 +37,20 @@ export default function RouteList() {
             </PublicRoute>
           }
         />
-      <Route
+        <Route
           path="/profile"
           exact
           element={
             <AuthRoute>
               <ProfilePage />
+            </AuthRoute>
+          }
+        />
+        <Route
+          path="dummy/:id"
+          element={
+            <AuthRoute>
+              <DummyPage />
             </AuthRoute>
           }
         />
