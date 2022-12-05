@@ -38,8 +38,40 @@ class TestAuth(TestCase):
                                         password=password, email=email, token=token)
 
     def test_signup(self):
-        # TODO: signup test will be implemented
-        self.assertTrue(True)
+        name1 = fake.name()
+        birthdate1 = fake.date()
+        username1 = fake.username()
+        password1 = fake.password()
+        email1 = fake.email()
+
+        data = {
+            'name': name1,
+            'birthdate': birthdate1,
+            'username': username1,
+            'password': password1,
+            'email': email1
+        }
+
+        req = self.factory.post('/api/v1/signup', data=data,
+                                content_type="application/json")
+        res = signup(req)
+
+        # look at the status code
+        self.assertEqual(res.status_code, 201)
+
+        # check the values
+        u = None
+        try:
+            u = User.objects.get(email = email1)
+        except:
+            self.assertFalse(True)
+
+        self.assertEqual(u.name,name1)
+        self.assertEqual(u.username, username1)
+        self.assertEqual(u.email, email1)
+        self.assertEqual(u.birthdate, birthdate1)
+
+    def test_signup_when_user_already_exists(self):
 
     def test_login(self):
         req = self.factory.post('/api/v1/login', data=json.dumps({'username': username, 'password': password}),
