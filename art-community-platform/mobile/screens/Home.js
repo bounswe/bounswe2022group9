@@ -63,8 +63,16 @@ const Home = (props) => {
         tabBarInactiveTintColor: "gray",
       })}
     >
-      <Tab.Screen name="Feed" component={Feed} />
-      <Tab.Screen name="Search" component={Search} />
+      <Tab.Screen
+        name="Feed"
+        component={Feed}
+        initialParams={{ userId: userId, token: token }}
+      />
+      <Tab.Screen
+        name="Search"
+        component={Search}
+        initialParams={{ userId: userId, token: token }}
+      />
       <Tab.Screen name="Exhibitions" component={Exhibitions} />
       <Tab.Screen
         name="Profile"
