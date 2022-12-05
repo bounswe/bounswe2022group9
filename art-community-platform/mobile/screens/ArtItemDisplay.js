@@ -1,38 +1,82 @@
-import React, { useState } from "react";
-import { Text, StyleSheet, Image, View, Dimensions, ScrollView, SafeAreaView, Pressable} from "react-native";
+import React from "react";
+import { Text, StyleSheet, Image, View, Dimensions, ScrollView, SafeAreaView, Pressable, TextInput} from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { getArtItem, like, comment} from "./services/ArtItemService"
+import { Colors } from "react-native/Libraries/NewAppScreen";
+import { useState , useEffect } from "react";
 
 const dimensions = Dimensions.get("window");
-
     
-const ArtItemDisplay = () => {
+const ArtItemDisplay = (props) => {
+    const { navigation } = props;
+    const { token, art_item_id } = props.route.params;
     const [liked, setLiked] = useState(false);
-    var comments = [];
+    const [newComment, setNewComment] = useState("");
+    const [art_item, setArtItem] = useState({
+        "id": 0,
+        "owner_name": "",
+        "img_url": "",
+        "description": "",
+        "date": "",
+        "comments": [],
+        "tags:": [],
+        "comment_count": 0,
+        "favorite_count": 0,
+    });
+    
+    useEffect(() => {
+        getArtItem(token, art_item_id).then((response) => {
+          console.log(1 , response.data);
+          setArtItem(response.data);
+        });
+    }, []);
 
-	for(let i = 0; i < 20; i++){
+    var comments = [];
+	for(let i = 0; i < art_item.comment_count; i++){
 
 		comments.push(
 			<View key = {i}>
 				<View style = {styles.comment}>
-					<Text style = {{ fontWeight: "bold", color:'#173679'}}>yagmur.goktas</Text>
-                    <Text>Really nice pic</Text>
+					<Text style = {{ fontWeight: "bold", color:'#173679'}}>{art_item.comments[i].owner_name}</Text>
+                    <Text>{art_item.comments[i].text}</Text>
 				</View>
 
 			</View>
 		)
 	}
 
+    comments.push(
+        <View key = {art_item.comment_count+1}>
+            <View style = {styles.comment}>
+                <Text style = {{ fontWeight: "bold", color:'#173679'}}>{art_item.owner_name}</Text>
+                <TextInput
+                    value={newComment}
+                    onChangeText={(text) => setNewComment(text)}
+                    style={styles.input}
+                />
+                <Pressable
+                    style={styles.button}
+                    onPress={() => { 
+                        comment(token , art_item_id , newComment); 
+                    }}
+                >
+                <Text style={styles.buttonText}>Add</Text>
+                </Pressable>            
+            </View>
+        </View>
+    )
+
     return(
         <SafeAreaView>
             <ScrollView>
-                <Text style= { styles.creator }>Created by Yagmur Goktas</Text>
-                <Text style= { styles.timestamp }> 22.11.2022 Tuesday</Text>
+                <Text style= { styles.creator }>Created by {art_item.owner_name}</Text>
+                <Text style= { styles.timestamp }> {art_item.date}</Text>
                 <View style={ styles.caption }>
-                    <Text>caption</Text>
+                    <Text>{art_item.description}</Text>
                 </View>
-                <Image style= { styles.photo } source = {require("../assets/bus.jpg")} />
+                <Image style= { styles.photo } source = {{uri: art_item.img_url}} />
                 <View style= {{flexDirection:'row'}}>
-                <Pressable onPress={() => setLiked((isLiked) => !isLiked)}>
+                <Pressable onPress={() => {setLiked(() => true) ; like(token , art_item_id); }}>
                     <MaterialCommunityIcons
                     name={liked ? "heart" : "heart-outline"}
                     size={32}
@@ -40,22 +84,29 @@ const ArtItemDisplay = () => {
                     style={{ marginLeft : dimensions.width*0.15 , marginTop : 10}}
                 />
                 </Pressable>
-                <Text style= {{ alignSelf: "center" , marginTop: 20 }}> 5 Likes </Text>
+                <Text style= {{ alignSelf: "center" , marginTop: 20 }}> {art_item.favorite_count} Likes </Text>
                 </View>
                 <View style= {{flexDirection:'row'}}>
                 <Text style = {{ marginTop: 40 , marginLeft: dimensions.width*0.15 , color:'#173679', fontWeight: "bold"}}> Comments </Text>
-                <Pressable>
-                    <MaterialCommunityIcons
+                <MaterialCommunityIcons
                     name={"chat-plus"}
                     size={32}
                     color={"#173679"}
                     style={{ marginLeft : 10 , marginTop : 30}}
                 />
-                </Pressable>
                 </View>
                 <View style= {styles.commentcontainer}>{ comments }</View>
                 <View style= {styles.tags}>
                     <Text style = {{ marginTop: 20 , marginLeft: dimensions.width*0.15 , color:'#173679', fontWeight: "bold"}} >Tags</Text>
+                    <View>
+                        {art_item["tags:"].map((tag) => {
+                            return (
+                            <View style= {{flexDirection:'row'}}>
+                                <Text style={styles.tagItem}>{tag}{'\t'}</Text>
+                            </View>
+                            );
+                        })}
+                    </View>
                 </View>
             </ScrollView>
         </SafeAreaView>
@@ -86,6 +137,8 @@ const styles = StyleSheet.create({
     comment:{
         marginTop: 10,
         backgroundColor: '#c8f4ff',
+        borderWidth:1,
+        borderColor: Colors.primary
     },
     tags:{
         marginTop: 20,
@@ -101,5 +154,24 @@ const styles = StyleSheet.create({
         marginLeft: dimensions.width*0.6,        
         color:'#173679',
         fontSize:12
+    },
+    button: {
+        padding: 8,
+        paddingHorizontal: 12,
+        marginTop: 12,
+        backgroundColor: Colors.primaryDark,
+        borderRadius: 6,
+        alignSelf: "center",
+    },
+    buttonText: {
+        color: "white",
+    },
+    tagItem: {
+        color: '#173679',
+        fontSize:15 ,
+        backgroundColor: Colors.secondaryLight,
+    },
+    input: {
+        borderColor: Colors.primaryDark
     }
 })
