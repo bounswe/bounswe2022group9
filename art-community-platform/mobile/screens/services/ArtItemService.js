@@ -42,6 +42,7 @@ export const like = async (token, art_item_id, date) => {
     });
 };
 
+
 export const comment = async (token, art_item_id, comment_text) => {
   return axios
     .post(

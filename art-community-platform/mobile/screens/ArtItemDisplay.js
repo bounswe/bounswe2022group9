@@ -18,6 +18,7 @@ import { useState, useEffect } from "react";
 
 const dimensions = Dimensions.get("window");
 
+
 const ArtItemDisplay = (props) => {
   const { navigation } = props;
   const { token, art_item_id } = props.route.params;
@@ -52,6 +53,7 @@ const ArtItemDisplay = (props) => {
       setNewAdded(false);
     }
   }, [newAdded]);
+
 
   return (
     <SafeAreaView>
@@ -169,6 +171,7 @@ const ArtItemDisplay = (props) => {
     </SafeAreaView>
   );
 };
+
 
 export default ArtItemDisplay;
 
