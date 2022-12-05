@@ -44,7 +44,7 @@ def update_profile_info(req, user_id):
     return HttpResponse(status=200)
 
 
-@api_view(['POST'])
+@api_view(['GET'])
 def get_profile_info(req, user_id):
     user = None
     try:
