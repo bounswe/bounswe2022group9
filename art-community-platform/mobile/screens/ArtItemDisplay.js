@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleSheet, Image, View, Dimensions, ScrollView, SafeAreaView, Pressable} from "react-native";
+import { Text, StyleSheet, Image, View, Dimensions, ScrollView, SafeAreaView, Pressable, TextInput} from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { getArtItem, like, comment} from "./services/ArtItemService"
 import { Colors } from "react-native/Libraries/NewAppScreen";
@@ -7,7 +7,7 @@ import { useState , useEffect } from "react";
 
 const dimensions = Dimensions.get("window");
     
-const ArtItemDisplay = () => {
+const ArtItemDisplay = (props) => {
     const { navigation } = props;
     const { token, art_item_id } = props.route.params;
     const [liked, setLiked] = useState(false);
@@ -50,7 +50,7 @@ const ArtItemDisplay = () => {
             <View style = {styles.comment}>
                 <Text style = {{ fontWeight: "bold", color:'#173679'}}>{art_item.owner_name}</Text>
                 <TextInput
-                    value={username}
+                    value={newComment}
                     onChangeText={(text) => setNewComment(text)}
                     style={styles.input}
                 />
@@ -74,7 +74,7 @@ const ArtItemDisplay = () => {
                 <View style={ styles.caption }>
                     <Text>{art_item.description}</Text>
                 </View>
-                <Image style= { styles.photo } source = {require(art_item.image_url)} />
+                <Image style= { styles.photo } source = {{uri: art_item.image_url}} />
                 <View style= {{flexDirection:'row'}}>
                 <Pressable onPress={() => {setLiked(() => true) ; like(token , art_item_id); }}>
                     <MaterialCommunityIcons
