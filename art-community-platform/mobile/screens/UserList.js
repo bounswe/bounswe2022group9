@@ -7,6 +7,7 @@ const UserList = (props) => {
   const { navigation } = props;
   const { userId, token, type, art_item_id} = props.route.params;
   const [users, setUsers] = React.useState([])
+  
     useEffect(() => {
       if(type == "followers"){
         getFollowers( userId , token).then((response) => {
