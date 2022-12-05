@@ -45,6 +45,7 @@ urlpatterns = [
     path('upload-image', upload_image, name='upload_image'),
     path('exhibition', create_exhibition, name='create_exhibition'),
     path('follow', follow, name='follow'),
+    path('unfollow', unfollow, name='unfollow'),
     path('favourite', favourite, name='favourite'),
     path('comment', comment, name='comment'),
     path('tag', create_tag, name='create_tag'),

@@ -110,6 +110,7 @@ def validate_username_helper(username):
         return [False, "username can't be shorter than 5 characters"]
     return [True, ""]
 
+
 # deletes follower_id from followers list of user with followed_id
 def delete_user_from_followers(follower_id, followed_id):
     follower_user = None
