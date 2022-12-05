@@ -43,6 +43,7 @@ export const like = async (token, art_item_id, date) => {
 };
 
 export const comment = async (token, art_item_id, date, comment_text) => {
+    console.log(89 , comment_text)
     return axios
     .post(
         `http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1/comment`,
