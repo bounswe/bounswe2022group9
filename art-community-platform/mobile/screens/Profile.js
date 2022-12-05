@@ -7,6 +7,7 @@ import {
   ScrollView,
   SafeAreaView,
   Dimensions,
+  FlatList,
 } from "react-native";
 import { getProfile } from "./services/GeneralServices";
 
@@ -16,6 +17,9 @@ const Profile = (props) => {
   const { navigation } = props;
   const [profile, setProfile] = React.useState({
     "art_items:": [],
+    art_item_count: 0,
+    follower_count: 0,
+    following_count: 0,
     birthdate: "",
     email: "",
     id: 0,
@@ -47,7 +51,7 @@ const Profile = (props) => {
             }}
           >
             {" "}
-            Followers: 0
+            Follower: {profile.follower_count}
           </Text>
           <Text
             style={styles.follower}
@@ -60,9 +64,12 @@ const Profile = (props) => {
             }}
           >
             {" "}
-            Followees: 0
+            Following: {profile.following_count}
           </Text>
-          <Text style={styles.follower}> Posts: 5</Text>
+          <Text style={styles.follower}>
+            {" "}
+            Posts: {profile["art_item_count"]}
+          </Text>
         </View>
         <Image
           style={styles.avatar}
@@ -75,14 +82,34 @@ const Profile = (props) => {
 
           <View style={[styles.photosCard, { paddingBottom: 50 }]}>
             <Text style={styles.namee}>POSTS</Text>
-            {profile["art_items:"]?.map((item) => {
+            <FlatList
+              data={profile["art_items:"]}
+              renderItem={({ item }) => (
+                <View
+                  style={{
+                    flex: 1,
+                    flexDirection: "column",
+                    margin: 1,
+                  }}
+                >
+                  <Image
+                    style={styles.photo}
+                    source={{ uri: item["img_url"] }}
+                  />
+                </View>
+              )}
+              //Setting the number of column
+              numColumns={3}
+              keyExtractor={(item, index) => index.toString()}
+            />
+            {/* {profile["art_items:"]?.map((item) => {
               return (
                 <Image
                   style={styles.photo}
-                  source={{ uri: item.image_url }}
+                  source={{ uri: item["img_url"] }}
                 ></Image>
               );
-            })}
+            })} */}
           </View>
         </View>
       </ScrollView>
@@ -141,8 +168,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   photo: {
-    width: dimensions.width * 0.28,
-    height: dimensions.width * 0.28,
+    width: dimensions.width * 0.3,
+    height: dimensions.width * 0.3,
     marginTop: 5,
     marginRight: 5,
   },
