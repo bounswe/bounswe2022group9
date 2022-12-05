@@ -1,40 +1,54 @@
-import {React } from "react";
+import { React } from "react";
 import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Image } from 'react-native';
 import Colors from "./constants/Colors";
-
-const Users = [
-    {
-        id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-        username: 'First User',
-    },
-    {
-        id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-        username: 'Second User',
-    },
-    {
-        id: '58694a0f-3da1-471f-bd96-145571e29d72',
-        username: 'Third User',
-    }
-]
+import { getFollowees, getFollowers, getLikedUsers} from "./services/GeneralServices"
+import { useState , useEffect } from "react";
 
 const UserList = (props) => {
   const { navigation } = props;
+  const { userId, token, type, art_item_id} = props.route.params;
+  const [users, setUsers] = useState([]);
+  
+    useEffect(() => {
+      if(type == "followers"){
+        getFollowers( userId , token).then((response) => {
+          console.log(1 , response.data);
+          setUsers(response.data.followers);
+        });
+      }else if(type == "followees"){
+        getFollowees(userId , token).then((response) => {
+          console.log(2 , response.data);
+          setUsers(response.data);
+        });
+      }else{
+        getLikedUsers(token, art_item_id).then((response) => {
+          console.log(3 , response.data);
+          setUsers(response.data);
+        });
+      }
+    } , [])
 
-  const User = ({ username }) => (
-    <View style={styles.user}>
-      <Image style={styles.photo} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar3.png'}}/>
-      <Text onPress={() => navigation.navigate("") } style={styles.username}>{username}</Text>
+  const User = ({ username , profile_img_url , id , location }) => (
+    <View style={styles.user} onPress={() => {
+      navigation.navigate("Profile", {
+        userId: id,
+        token: token,
+      });
+    }}>
+      <Image style={styles.photo} source={{uri: profile_img_url}}/>
+      <Text style={styles.username}>{username}</Text>
+      <Text style={styles.location}>{"\n"}{location}</Text>
     </View>
   );
   
   const renderItem = ({ item }) => (
-      <User username={item.username} />
+      <User username={item.username} profile_img_url={item.profile_img_url} id={item.id} location={item.location} />
   );
   return (
       
       <SafeAreaView style={styles.container}>
       <FlatList
-          data={Users}
+          data={users}
           renderItem={renderItem}
           keyExtractor={user => user.id}
       />
@@ -68,6 +82,11 @@ const styles = StyleSheet.create({
       alignSelf:'center',
       position: 'absolute',
       marginLeft: 10
+    },
+    location: {
+      position: 'absolute', 
+      right: 12,
+      fontSize: 14,
     }
 });
 
