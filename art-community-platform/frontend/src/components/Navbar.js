@@ -1,9 +1,6 @@
 import {
-    Col,
     Layout,
-    Row,
-    Input,
-    Typography,
+    Menu,
   } from "antd";
   import { useNavigate } from "react-router-dom";
   
@@ -12,22 +9,14 @@ import {
   
   import { Logout as LogoutHelper } from "../utils/helper";
   
-  import Colors from "../constants/Colors";
-  import "./Profile.css";
   import { homepage } from "../store/axios";
   const { Header } = Layout;
-  const { Search } = Input;
-  const { Text } = Typography;
-  
-  const buttonStyle = {
-    fontSize: "20px",
-    color: Colors.primary,
-    cursor: "pointer",
-  };
-  
-  const navbarStyle = {
-    color: Colors.primaryDark,
-    cursor: "pointer",
+
+
+  const centerStyle = {
+    position: 'relative',
+    display: 'flex',
+    justifyContent: 'center'
   };
   const Navbar = () => {
     const navigate = useNavigate();
@@ -54,33 +43,30 @@ import {
   
       navigate("/profile");
     };
+
+    const sendToSearch = (values) => {
+        console.log("Success:", values);
+    
+        navigate("/profile");
+      };
   
     return (
       <Layout>
-        <Header style={navbarStyle}>
-          <Row>
-            <Col span={2}></Col>
-            <Col span={4}>
-              <Text style={buttonStyle} onClick={sendToHome}>
-                Home
-              </Text>
-            </Col>
-            <Col span={2}></Col>
-            <Col span={4}>
-              <Text style={buttonStyle} onClick={sendToProfile}>
-                Profile
-              </Text>
-            </Col>
-            <Col span={6}>
-              <Search placeholder="input search text" enterButton />{" "}
-            </Col>
-            <Col span={3}></Col>
-            <Col span={3}>
-              <Text style={buttonStyle} onClick={sendToSignout}>
-                Sign Out
-              </Text>
-            </Col>
-          </Row>
+        <Header>
+            <Menu style={centerStyle} mode="horizontal" defaultSelectedKeys={['Profile']} theme='dark' >
+                <Menu.Item key="Home"  onClick={sendToHome} style={{ width: '25%', textAlign: 'center'  }}>
+                    Home
+                </Menu.Item>
+                <Menu.Item key="Profile"  onClick={sendToProfile} style={{ width: '25%', textAlign: 'center' }}>
+                    Profile
+                </Menu.Item>
+                <Menu.Item key="Search"  onClick={sendToSearch} style={{ width: '25%', textAlign: 'center' }}>
+                    Search
+                </Menu.Item>
+                <Menu.Item key="SignOut"  onClick={sendToSignout} style={{ width: '25%', textAlign: 'center' }}>
+                    Sign Out
+                </Menu.Item>
+            </Menu>
         </Header>
       </Layout>
     );

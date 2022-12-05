@@ -13,7 +13,7 @@ import React from "react";
 
 import { UserOutlined } from "@ant-design/icons";
 import Navbar from "./Navbar";
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 
 const Profile = () => {
 
@@ -22,7 +22,7 @@ const Profile = () => {
       <Navbar />
       <Content>
         <Row>
-          <Col span={6}>
+          <Col span={12}>
             <UserOutlined style={{ fontSize: "240px" }} />
             <br></br>
             <br></br>
@@ -33,11 +33,10 @@ const Profile = () => {
             <br></br>
             <Divider>Description</Divider>
           </Col>
-          <Col span={1}></Col>
-          <Col span={5}>
+          <Col span={12}>
             {" "}
             <Space
-              direction="vertical"
+              direction="horizontal"
               size="middle"
               style={{
                 display: "flex",
@@ -57,8 +56,8 @@ const Profile = () => {
               </Card>
             </Space>
           </Col>
-          <Col span={1}></Col>
-          <Col span={10}>
+        </Row>
+          <Row>
             <br></br>
             <br></br>
             <Card title="My Posts" size="large">
@@ -70,10 +69,8 @@ const Profile = () => {
               <br></br>
               <Pagination defaultCurrent={1} total={23} />
             </Card>
-          </Col>
-        </Row>
+          </Row>
       </Content>
-      <Footer></Footer>
     </Layout>
   );
 };
