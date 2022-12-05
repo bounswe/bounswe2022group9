@@ -13,20 +13,20 @@ const ArtItemDisplay = (props) => {
     const [liked, setLiked] = useState(false);
     const [newComment, setNewComment] = useState("");
     const [art_item, setArtItem] = useState({
-        id: 0,
-        owner_name: "",
-        image_url: "",
-        description: "",
-        date: "",
-        comments: [],
-        tags: [],
-        comment_count: 0,
-        favorite_count: 0,
+        "id": 0,
+        "owner_name": "",
+        "img_url": "",
+        "description": "",
+        "date": "",
+        "comments": [],
+        "tags:": [],
+        "comment_count": 0,
+        "favorite_count": 0,
     });
     
     useEffect(() => {
         getArtItem(token, art_item_id).then((response) => {
-          console.log(response.data);
+          console.log(1 , response.data);
           setArtItem(response.data);
         });
     }, []);
@@ -74,7 +74,7 @@ const ArtItemDisplay = (props) => {
                 <View style={ styles.caption }>
                     <Text>{art_item.description}</Text>
                 </View>
-                <Image style= { styles.photo } source = {{uri: art_item.image_url}} />
+                <Image style= { styles.photo } source = {{uri: art_item.img_url}} />
                 <View style= {{flexDirection:'row'}}>
                 <Pressable onPress={() => {setLiked(() => true) ; like(token , art_item_id); }}>
                     <MaterialCommunityIcons
@@ -99,7 +99,7 @@ const ArtItemDisplay = (props) => {
                 <View style= {styles.tags}>
                     <Text style = {{ marginTop: 20 , marginLeft: dimensions.width*0.15 , color:'#173679', fontWeight: "bold"}} >Tags</Text>
                     <View>
-                        {art_item.tags.map((tag) => {
+                        {art_item["tags:"].map((tag) => {
                             return (
                             <View style= {{flexDirection:'row'}}>
                                 <Text style={styles.tagItem}>{tag}{'\t'}</Text>
@@ -137,6 +137,8 @@ const styles = StyleSheet.create({
     comment:{
         marginTop: 10,
         backgroundColor: '#c8f4ff',
+        borderWidth:1,
+        borderColor: Colors.primary
     },
     tags:{
         marginTop: 20,
@@ -157,7 +159,7 @@ const styles = StyleSheet.create({
         padding: 8,
         paddingHorizontal: 12,
         marginTop: 12,
-        backgroundColor: Colors.primary,
+        backgroundColor: Colors.primaryDark,
         borderRadius: 6,
         alignSelf: "center",
     },
@@ -169,4 +171,7 @@ const styles = StyleSheet.create({
         fontSize:15 ,
         backgroundColor: Colors.secondaryLight,
     },
+    input: {
+        borderColor: Colors.primaryDark
+    }
 })
