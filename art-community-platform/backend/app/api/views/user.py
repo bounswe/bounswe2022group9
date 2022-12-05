@@ -68,10 +68,20 @@ def get_user_by_id(req, user_id):
     if user_id in request_sender.followings:
         is_following = True
 
+    followers = get_followers_by_user_id_helper(user_id=user_id)
+    followings = get_followings_by_user_id_helper(user_id=user_id)
+    art_item_list = get_art_items_by_user_id_helper(user_id=user_id)
+
+    followers_count = len(followers["followers"])
+    followings_count = len(followings["followings"])
+    art_item_count = len(art_item_list["art_items"])
+
+
     try:
         resp = {"id": u.id, "username": u.username, "email": u.email,
                 "birthdate": u.birthdate, "name": u.name, "art_items:": art_items,
-                "profile_img_url": u.profile_img_url, "location": u.location, "is_following": is_following}
+                "profile_img_url": u.profile_img_url, "location": u.location, "is_following": is_following,
+                "follower_count":followers_count,"following_count":followings_count,"art_item_count":art_item_count}
     except:
         return HttpResponse('response can not created', status=404)
 

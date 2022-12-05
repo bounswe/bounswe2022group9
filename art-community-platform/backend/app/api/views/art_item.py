@@ -140,6 +140,7 @@ def create_art_item(req):
     try:
         owner_id = body['owner_id']
         img_url = body['img_url']
+        img_str = body['img_str']
         description = body['description']
         tags = body['tags']
         date = body['date']
@@ -155,7 +156,8 @@ def create_art_item(req):
         return HttpResponse("owner id and token mismatch", status=401)
 
     try:
-        a = ArtItem.objects.create(owner_id=owner_id, img_url=img_url,  description=description, date=date, tags=tags)
+        a = ArtItem.objects.create(owner_id=owner_id, img_url=img_url, image=img_str,
+                                   description=description, date=date, tags=tags)
         a.save()
     except:
         return HttpResponse('art item can not created', status=400)
