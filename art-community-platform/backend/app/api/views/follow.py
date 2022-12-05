@@ -2,6 +2,7 @@ from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse
 from rest_framework.decorators import api_view
 import hashlib
 import json
+from ..helpers.user_helpers import *
 
 from ..helpers.comment_helpers import get_comment_by_id_helper
 from ..helpers.exhibition_helpers import get_exhibition_by_id_helper
@@ -64,4 +65,45 @@ def follow(req):
     # TODO : send a notification to f like 'u started following you'
 
     return HttpResponse(status=200)
+
+@api_view(['POST'])
+def unfollow(req):
+    """
+    there is follower and followed.
+    follower is following the followed.
+    we will delete follower from followers list of the followed (use helper function)
+    we will delete followed from followings list of the follower (use helper function)
+    """
+    try:
+        token = req.headers['Authorization']
+    except:
+        return HttpResponse('token is missing', status=401)
+
+    try:
+        body = json.loads(req.body)
+    except:
+        return HttpResponse("request body is missing", status=400)
+
+    followed_id = None
+    try:
+        followed_id = body['followed_user_id']
+    except:
+        return HttpResponse("followed user id is missing", status=400)
+
+    follower_id = None
+    try:
+        u = User.objects.get(token=token)
+        follower_id = u.id
+    except:
+        return HttpResponse('no user found with this token', status=404)
+
+    result = delete_user_from_following(follower_id, followed_id)
+    result2 = delete_user_from_followers(follower_id, followed_id)
+
+    if not result2[0]:
+        result[0] = False
+
+    if result[0]:
+        return HttpResponse(status=200)
+    return HttpResponse(result[1], status=400)
 
