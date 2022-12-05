@@ -72,6 +72,24 @@ class TestAuth(TestCase):
         self.assertEqual(u.birthdate, birthdate1)
 
     def test_signup_when_user_already_exists(self):
+        # these are information of the user created in setUp
+        # it shouldn't be able to sign up again
+        data = {
+            'name': name,
+            'birthdate': birthdate,
+            'username': username,
+            'password': password,
+            'email': email
+        }
+
+        req = self.factory.post('/api/v1/signup', data=data,
+                                content_type="application/json")
+        res = signup(req)
+
+        # look at the status code
+        self.assertEqual(res.status_code, 400)
+
+
 
     def test_login(self):
         req = self.factory.post('/api/v1/login', data=json.dumps({'username': username, 'password': password}),
