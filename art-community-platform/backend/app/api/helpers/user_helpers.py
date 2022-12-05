@@ -35,6 +35,47 @@ def get_follower_by_id_helper(follower_id):
             "profile_img_url": f.profile_img_url, "location": f.location}
 
 
+def get_followers_by_user_id_helper(user_id):
+
+    try:
+        u = User.objects.get(id=user_id)
+    
+    except:
+        return None
+
+    follower_list = u.followers
+
+    return {"followers":follower_list}
+
+
+def get_art_items_by_user_id_helper(user_id):
+
+    try:
+        u = User.objects.get(id=user_id)
+    
+    except:
+        return None
+
+    art_item_list = u.art_items
+
+    return {"art_items":art_item_list}
+
+
+def get_followings_by_user_id_helper(user_id):
+
+    try:
+        u = User.objects.get(id=user_id)
+    
+    except:
+        return None
+
+    following_list = u.followings
+
+    return {"followings":following_list}
+
+
+
+
 def validate_password_helper(password):
     if len(password) < 8:
         return [False, "password can't be shorter than 8 characters"]
@@ -67,4 +108,44 @@ def validate_email_helper(email):
 def validate_username_helper(username):
     if len(username) < 5:
         return [False, "username can't be shorter than 5 characters"]
+    return [True, ""]
+
+
+# deletes follower_id from followers list of user with followed_id
+def delete_user_from_followers(follower_id, followed_id):
+    follower_user = None
+    followed_user = None
+    # check whether users exist or not
+    try:
+        follower_user = User.objects.get(id=follower_id)
+        followed_user = User.objects.get(id=followed_id)
+    except:
+        return [False, "either follower_id or followed_id is not true"]
+    # check whether user with follower_id follows user with followed_id
+    if followed_user.followers.count(follower_id) == 0:
+        return [False, "follower not exist"]
+    # remove follower and save the object to the database
+    followed_user.followers.remove(follower_id)
+    followed_user.save()
+    # success case
+    return [True, ""]
+
+
+# deletes following_id from followings list of user with follower_id
+def delete_user_from_following(follower_id, followed_id):
+    follower_user = None
+    followed_user = None
+    # check whether users exist or not
+    try:
+        follower_user = User.objects.get(id=follower_id)
+        followed_user = User.objects.get(id=followed_id)
+    except:
+        return [False, "either follower_id or followed_id is not true"]
+    # check whether user with follower_id follows user with followed_id
+    if follower_user.followings.count(followed_id) == 0:
+        return [False, "follower not exist"]
+    # remove follower and save the object to the database
+    follower_user.followings.remove(followed_id)
+    follower_user.save()
+    # success case
     return [True, ""]

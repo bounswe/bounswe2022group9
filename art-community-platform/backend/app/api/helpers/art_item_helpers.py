@@ -26,5 +26,5 @@ def get_art_item_by_id_helper(art_item_id):
     else:
         favourite_count = 0
 
-    return {"id": a.id, "owner_name": u.name, "img_url": a.img_url, "description": a.description, "date": a.date,
-            "tags:": a.tags, "comment_count": comment_count, "favourite_count": favourite_count}
+    return {"id": a.id, "owner_name": u.name, "img_url": a.img_url, "img_str": a.image, "description": a.description,
+            "date": a.date, "tags:": a.tags, "comment_count": comment_count, "favourite_count": favourite_count}
