@@ -12,6 +12,7 @@ import {
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { getArtItem, like, comment } from "./services/ArtItemService";
+import { getLikedUsers } from "./services/GeneralServices";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import { useState, useEffect } from "react";
 
@@ -23,6 +24,7 @@ const ArtItemDisplay = (props) => {
   const [liked, setLiked] = useState(false);
   const [newComment, setNewComment] = useState("");
   const [comments, setComments] = useState([]);
+  const [newAdded, setNewAdded] = useState(false);
   const [art_item, setArtItem] = useState({
     id: 0,
     owner_name: "",
@@ -40,7 +42,16 @@ const ArtItemDisplay = (props) => {
       setArtItem(response.data);
       setComments(response.data.comments);
     });
-  }, []);
+  }, [art_item_id]);
+  useEffect(() => {
+    if (newAdded) {
+      getArtItem(token, art_item_id).then((response) => {
+        setArtItem(response.data);
+        setComments(response.data.comments);
+      });
+      setNewAdded(false);
+    }
+  }, [newAdded]);
 
   return (
     <SafeAreaView>
@@ -54,7 +65,7 @@ const ArtItemDisplay = (props) => {
         <View style={{ flexDirection: "row" }}>
           <Pressable
             onPress={() => {
-              setLiked(() => true);
+              setLiked(true);
               like(token, art_item_id);
             }}
           >
@@ -75,7 +86,10 @@ const ArtItemDisplay = (props) => {
             style={{ alignSelf: "center", marginTop: 20 }}
           >
             {" "}
-            {art_item.favourite_count} Likes{" "}
+            {liked
+              ? (parseInt(art_item.favourite_count) + 1).toString()
+              : art_item.favourite_count}{" "}
+            Likes{" "}
           </Text>
         </View>
         <View style={{ flexDirection: "row" }}>
@@ -122,7 +136,10 @@ const ArtItemDisplay = (props) => {
             <Pressable
               style={styles.button}
               onPress={() => {
-                comment(token, art_item_id, newComment);
+                comment(token, art_item.id, newComment).then((response) => {
+                  setNewAdded(true);
+                  setNewComment("");
+                });
               }}
             >
               <Text style={styles.buttonText}>Add</Text>
@@ -132,26 +149,21 @@ const ArtItemDisplay = (props) => {
         <View style={styles.tags}>
           <Text
             style={{
-              marginTop: 20,
-              marginLeft: dimensions.width * 0.15,
               color: "#173679",
               fontWeight: "bold",
             }}
           >
-            Tags
+            Tags:
           </Text>
-          <View>
-            {art_item["tags:"].map((tag) => {
-              return (
-                <View style={{ flexDirection: "row" }}>
-                  <Text style={styles.tagItem}>
-                    {tag}
-                    {"\t"}
-                  </Text>
-                </View>
-              );
-            })}
-          </View>
+
+          {art_item["tags:"].map((tag) => {
+            return (
+              <Text style={styles.tagItem}>
+                {"\t"}
+                {tag}
+              </Text>
+            );
+          })}
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -188,7 +200,10 @@ const styles = StyleSheet.create({
     borderColor: Colors.primary,
   },
   tags: {
+    flexDirection: "row",
     marginTop: 20,
+    marginLeft: 12,
+    marginBottom: 20,
   },
   caption: {
     width: dimensions.width * 0.7,

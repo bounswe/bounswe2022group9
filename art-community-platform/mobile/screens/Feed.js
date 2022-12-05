@@ -19,7 +19,6 @@ const Feed = (props) => {
   const [posts, setPosts] = React.useState([]);
   useEffect(() => {
     getFeed(userId, token).then((response) => {
-      console.log(response.data);
       setPosts(response.data["art_items"]);
     });
   }, []);
@@ -33,6 +32,7 @@ const Feed = (props) => {
               navigation.navigate("ArtItem", {
                 token: token,
                 art_item_id: item.id,
+                userId: userId,
               })
             }
           >

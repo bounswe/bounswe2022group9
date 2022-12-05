@@ -33,6 +33,7 @@ const UserList = (props) => {
       });
     } else {
       getLikedUsers(token, art_item_id).then((response) => {
+        //console.log(response.data);
         setUsers(response.data.favourites);
       });
     }
@@ -59,10 +60,10 @@ const UserList = (props) => {
 
   const renderItem = ({ item }) => (
     <User
-      username={item.username}
-      profile_img_url={item.profile_img_url}
-      id={item.id}
-      location={item.location}
+      username={item?.username}
+      profile_img_url={item?.profile_img_url}
+      id={item?.id}
+      location={item?.location}
     />
   );
   return (
@@ -70,7 +71,7 @@ const UserList = (props) => {
       <FlatList
         data={users}
         renderItem={renderItem}
-        keyExtractor={(user) => user.id}
+        keyExtractor={(user) => user?.id}
       />
     </SafeAreaView>
   );
@@ -82,6 +83,7 @@ const styles = StyleSheet.create({
     marginTop: StatusBar.currentHeight || 0,
   },
   user: {
+    borderRadius: 12,
     flexDirection: "row",
     backgroundColor: Colors.primaryLight,
     padding: 12,

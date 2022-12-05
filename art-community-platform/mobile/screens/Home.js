@@ -40,11 +40,7 @@ const ProfileStack = (props) => {
         component={ArtItemDisplay}
         initialParams={{ userId: userId, token: token }}
       />
-      <Stack.Screen
-        name="User"
-        component={User}
-        initialParams={{ userId: userId, token: token }}
-      />
+      <Stack.Screen name="User" component={User} />
     </Stack.Navigator>
   );
 };
@@ -67,11 +63,7 @@ const SearchStack = (props) => {
         component={ArtItemDisplay}
         initialParams={{ userId: userId, token: token }}
       />
-      <Stack.Screen
-        name="User"
-        component={User}
-        initialParams={{ userId: userId, token: token }}
-      />
+      <Stack.Screen name="User" component={User} />
       <Stack.Screen
         name="UserList"
         component={UserList}
@@ -99,11 +91,7 @@ const FeedStack = (props) => {
         component={ArtItemDisplay}
         initialParams={{ userId: userId, token: token }}
       />
-      <Stack.Screen
-        name="User"
-        component={User}
-        initialParams={{ userId: userId, token: token }}
-      />
+      <Stack.Screen name="User" component={User} />
       <Stack.Screen
         name="UserList"
         component={UserList}

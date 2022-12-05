@@ -10,7 +10,12 @@ import {
   FlatList,
   TouchableOpacity,
 } from "react-native";
-import { followUser, getProfile } from "./services/GeneralServices";
+import {
+  followUser,
+  getFavourites,
+  getProfile,
+} from "./services/GeneralServices";
+import { TabController } from "react-native-ui-lib";
 
 const dimensions = Dimensions.get("window");
 const User = (props) => {
@@ -30,6 +35,8 @@ const User = (props) => {
     profile_img_url: "",
     username: "",
   });
+  const [index, setIndex] = React.useState(0);
+  const [posts, setPosts] = React.useState([]);
   const follow = () => {
     followUser(token, userId).then((response) => {
       if (response.status == 200) {
@@ -43,7 +50,12 @@ const User = (props) => {
     getProfile(userId, token).then((response) => {
       setProfile(response.data);
     });
-  }, [userId]);
+    if (index === 1) {
+      getFavourites(userId, token).then((response) => {
+        setPosts(response.data.favourites);
+      });
+    }
+  }, [userId, index]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -108,46 +120,86 @@ const User = (props) => {
               )}
             </View>
           </TouchableOpacity>
-          <View style={[styles.photosCard, { paddingBottom: 50 }]}>
-            <Text style={styles.namee}>POSTS</Text>
-            <FlatList
-              data={profile["art_items:"]}
-              renderItem={({ item }) => (
-                <View
-                  style={{
-                    flex: 1,
-                    flexDirection: "column",
-                    margin: 1,
-                  }}
-                >
-                  <TouchableOpacity
-                    onPress={() =>
-                      navigation.navigate("ArtItem", {
-                        token: token,
-                        art_item_id: item.id,
-                      })
-                    }
-                  >
-                    <Image
-                      style={styles.photo}
-                      source={{ uri: item["img_url"] }}
-                    />
-                  </TouchableOpacity>
-                </View>
-              )}
-              //Setting the number of column
-              numColumns={3}
-              keyExtractor={(item, index) => index.toString()}
+          <TabController
+            items={[{ label: "Posts" }, { label: "Favourites" }]}
+            asCarousel
+            initialIndex={0}
+            onChangeIndex={(index) => setIndex(index)}
+          >
+            <TabController.TabBar
+              height={40}
+              indicatorInsets={28}
+              indicatorStyle={{ backgroundColor: Colors.primary, height: 2 }}
+              selectedLabelColor={Colors.primary}
+              backgroundColor="#fdfdfd"
             />
-            {/* {profile["art_items:"]?.map((item) => {
-              return (
-                <Image
-                  style={styles.photo}
-                  source={{ uri: item["img_url"] }}
-                ></Image>
-              );
-            })} */}
-          </View>
+            <TabController.PageCarousel>
+              <TabController.TabPage index={0} lazy>
+                <View style={[styles.photosCard, { paddingBottom: 50 }]}>
+                  <FlatList
+                    data={profile["art_items:"]}
+                    renderItem={({ item }) => (
+                      <View
+                        style={{
+                          flex: 1,
+                          flexDirection: "column",
+                          margin: 1,
+                        }}
+                      >
+                        <TouchableOpacity
+                          onPress={() =>
+                            navigation.navigate("ArtItem", {
+                              token: token,
+                              art_item_id: item.id,
+                            })
+                          }
+                        >
+                          <Image
+                            style={styles.photo}
+                            source={{ uri: item["img_url"] }}
+                          />
+                        </TouchableOpacity>
+                      </View>
+                    )}
+                    //Setting the number of column
+                    numColumns={3}
+                    keyExtractor={(item, index) => index.toString()}
+                  />
+                </View>
+              </TabController.TabPage>
+              <TabController.TabPage index={1} lazy>
+                <FlatList
+                  data={posts}
+                  renderItem={({ item }) => (
+                    <View
+                      style={{
+                        flex: 1,
+                        flexDirection: "column",
+                        margin: 1,
+                      }}
+                    >
+                      <TouchableOpacity
+                        onPress={() =>
+                          navigation.navigate("ArtItem", {
+                            token: token,
+                            art_item_id: item.id,
+                          })
+                        }
+                      >
+                        <Image
+                          style={styles.photo}
+                          source={{ uri: item["img_url"] }}
+                        />
+                      </TouchableOpacity>
+                    </View>
+                  )}
+                  //Setting the number of column
+                  numColumns={3}
+                  keyExtractor={(item, index) => index.toString()}
+                />
+              </TabController.TabPage>
+            </TabController.PageCarousel>
+          </TabController>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -157,6 +209,10 @@ const User = (props) => {
 export default User;
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "white",
+    flex: 1,
+  },
   header: {
     backgroundColor: "#173679",
     height: 200,

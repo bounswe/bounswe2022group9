@@ -33,7 +33,6 @@ const Search = (props) => {
     if (search.length > 0) {
       if (index === 0) {
         searchPosts(userId, token, search).then((response) => {
-          console.log(response.data);
           setPosts(response.data["art_items"]);
         });
       } else if (index === 1) {
@@ -101,6 +100,7 @@ const Search = (props) => {
                     navigation.navigate("ArtItem", {
                       token: token,
                       art_item_id: item.id,
+                      userId: userId,
                     })
                   }
                 >
@@ -164,6 +164,7 @@ const styles = StyleSheet.create({
     padding: 12,
     marginVertical: 5,
     marginHorizontal: 10,
+    borderRadius: 12,
   },
   username: {
     marginLeft: 50,
