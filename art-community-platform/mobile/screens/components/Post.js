@@ -7,7 +7,6 @@ const imageWidth = dimensions.width * 0.85;
 const Post = (props) => {
   const { username, verified, uri, date, desc } = props;
 
-  console.log(uri);
   return (
     <View style={styles.container}>
       <View style={styles.postHeader}>
@@ -24,7 +23,7 @@ const Post = (props) => {
       {desc && (
         <Text style={{ color: "#636161", marginHorizontal: 8 }}>{desc}</Text>
       )}
-      <Image source={uri} style={styles.image} />
+      <Image source={{ uri: uri }} style={styles.image} />
     </View>
   );
 };

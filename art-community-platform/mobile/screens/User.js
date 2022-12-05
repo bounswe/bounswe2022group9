@@ -10,12 +10,15 @@ import {
   FlatList,
   TouchableOpacity,
 } from "react-native";
-import { getFavourites } from "./services/GeneralServices";
+import {
+  followUser,
+  getFavourites,
+  getProfile,
+} from "./services/GeneralServices";
 import { TabController } from "react-native-ui-lib";
-import { getProfile } from "./services/GeneralServices";
 
 const dimensions = Dimensions.get("window");
-const Profile = (props) => {
+const User = (props) => {
   const { userId, token } = props.route.params;
   const { navigation } = props;
   const [profile, setProfile] = React.useState({
@@ -34,18 +37,25 @@ const Profile = (props) => {
   });
   const [index, setIndex] = React.useState(0);
   const [posts, setPosts] = React.useState([]);
+  const follow = () => {
+    followUser(token, userId).then((response) => {
+      if (response.status == 200) {
+        getProfile(userId, token).then((response) => {
+          setProfile(response.data);
+        });
+      }
+    });
+  };
   useEffect(() => {
     getProfile(userId, token).then((response) => {
       setProfile(response.data);
     });
-  }, []);
-  useEffect(() => {
     if (index === 1) {
       getFavourites(userId, token).then((response) => {
         setPosts(response.data.favourites);
       });
     }
-  }, [index]);
+  }, [userId, index]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -90,7 +100,26 @@ const Profile = (props) => {
           <View style={styles.bodyContent}></View>
           <Text style={styles.namee}>{profile.name}</Text>
           <Text style={styles.description}>{profile.username}</Text>
-
+          <TouchableOpacity
+            onPress={profile.is_following ? null : follow}
+            style={{ width: "100%", alignItems: "center" }}
+          >
+            <View
+              style={{
+                borderWidth: 1,
+                borderRadius: 8,
+                paddingVertical: 4,
+                paddingHorizontal: 12,
+                margin: 8,
+              }}
+            >
+              {profile.is_following ? (
+                <Text>Unfollow</Text>
+              ) : (
+                <Text>Follow</Text>
+              )}
+            </View>
+          </TouchableOpacity>
           <TabController
             items={[{ label: "Posts" }, { label: "Favourites" }]}
             asCarousel
@@ -122,7 +151,6 @@ const Profile = (props) => {
                             navigation.navigate("ArtItem", {
                               token: token,
                               art_item_id: item.id,
-                              userId: userId,
                             })
                           }
                         >
@@ -155,7 +183,6 @@ const Profile = (props) => {
                           navigation.navigate("ArtItem", {
                             token: token,
                             art_item_id: item.id,
-                            userId: userId,
                           })
                         }
                       >
@@ -179,7 +206,7 @@ const Profile = (props) => {
   );
 };
 
-export default Profile;
+export default User;
 
 const styles = StyleSheet.create({
   container: {
