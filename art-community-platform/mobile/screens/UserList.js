@@ -1,47 +1,54 @@
-import {React } from "react";
+import { React } from "react";
 import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Image } from 'react-native';
 import Colors from "./constants/Colors";
 import { getFollowees, getFollowers, getLikedUsers} from "./services/GeneralServices"
+import { useState , useEffect } from "react";
 
 const UserList = (props) => {
   const { navigation } = props;
   const { userId, token, type, art_item_id} = props.route.params;
-  const [users, setUsers] = React.useState([])
+  const [users, setUsers] = useState([]);
   
     useEffect(() => {
       if(type == "followers"){
         getFollowers( userId , token).then((response) => {
-          console.log(response.data);
-          setUsers(response.data);
+          console.log(1 , response.data);
+          setUsers(response.data.followers);
         });
       }else if(type == "followees"){
         getFollowees(userId , token).then((response) => {
-          console.log(response.data);
+          console.log(2 , response.data);
           setUsers(response.data);
         });
       }else{
         getLikedUsers(token, art_item_id).then((response) => {
-          console.log(response.data);
+          console.log(3 , response.data);
           setUsers(response.data);
         });
       }
-    })
+    } , [])
 
-  const User = ({ username , profile_img_url }) => (
-    <View style={styles.user}>
+  const User = ({ username , profile_img_url , id , location }) => (
+    <View style={styles.user} onPress={() => {
+      navigation.navigate("Profile", {
+        userId: id,
+        token: token,
+      });
+    }}>
       <Image style={styles.photo} source={{uri: profile_img_url}}/>
-      <Text onPress={() => navigation.navigate("") } style={styles.username}>{username}</Text>
+      <Text style={styles.username}>{username}</Text>
+      <Text style={styles.location}>{"\n"}{location}</Text>
     </View>
   );
   
   const renderItem = ({ item }) => (
-      <User username={item.username} profile_img_url={item.profile_img_url} />
+      <User username={item.username} profile_img_url={item.profile_img_url} id={item.id} location={item.location} />
   );
   return (
       
       <SafeAreaView style={styles.container}>
       <FlatList
-          data={Users}
+          data={users}
           renderItem={renderItem}
           keyExtractor={user => user.id}
       />
@@ -75,6 +82,11 @@ const styles = StyleSheet.create({
       alignSelf:'center',
       position: 'absolute',
       marginLeft: 10
+    },
+    location: {
+      position: 'absolute', 
+      right: 12,
+      fontSize: 14,
     }
 });
 
