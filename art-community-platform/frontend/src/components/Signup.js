@@ -1,9 +1,19 @@
 import { useNavigate } from "react-router-dom";
 
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { Form, Input, Button, Checkbox, Typography, Row, Col, message } from "antd";
+import {
+  Form,
+  Input,
+  DatePicker,
+  Button,
+  Checkbox,
+  Typography,
+  Row,
+  Col,
+  message,
+} from "antd";
 import "antd/dist/antd.css";
 import Colors from "../constants/Colors";
 import { Signup as SignupHelper } from "../utils/helper";
@@ -17,13 +27,18 @@ const buttonStyle = {
 const Signup = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
+  const [birthDate, setBirthDate] = useState("1900-01-01");
   const onFinish = async (values) => {
-
     console.log("Success:", values);
-    if( values.password === values.passwordSecond ) {
+    if (values.password === values.passwordSecond) {
       const response = await SignupHelper(
-        { username: values.username, email: values.email, password: values.password },
+        {
+          username: values.username,
+          email: values.email,
+          password: values.password,
+          name: values.name,
+          birthdate: birthDate,
+        },
         dispatch
       );
       if (response.status === 201) {
@@ -34,14 +49,15 @@ const Signup = () => {
     } else {
       message.error("Passwords are not equal");
     }
-    
-
   };
 
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
 
+  const onChange = (date, dateString) => {
+    setBirthDate(dateString);
+  };
   return (
     <Row gutter={[0, 16]}>
       <Col span={24}></Col>
@@ -74,6 +90,32 @@ const Signup = () => {
             <Input placeholder="Enter email" />
           </Form.Item>
 
+          <Text strong>Name</Text>
+          <Form.Item
+            name="name"
+            rules={[
+              {
+                required: true,
+                message: "Please input your name!",
+              },
+            ]}
+          >
+            <Input placeholder="Enter name" />
+          </Form.Item>
+
+          <Text strong>Birthdate</Text>
+          <Form.Item
+            name="birthdate"
+            rules={[
+              {
+                required: true,
+                message: "Please input your birthdate!",
+              },
+            ]}
+          >
+            <DatePicker onChange={onChange} />
+          </Form.Item>
+
           <Text strong>Password</Text>
           <Form.Item
             name="password"
@@ -102,7 +144,9 @@ const Signup = () => {
 
           <Form.Item name="remember" valuePropName="checked" required>
             <Checkbox required>
-              <a style={buttonStyle} href="##">Accepting the terms of GPDR and KVKK</a>
+              <a style={buttonStyle} href="##">
+                Accepting the terms of GPDR and KVKK
+              </a>
             </Checkbox>
           </Form.Item>
 

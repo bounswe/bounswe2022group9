@@ -7,12 +7,14 @@ import {
 } from "react-router-dom";
 import LoginPage from "../pages/LoginPage";
 import SignupPage from "../pages/SignupPage";
-import ProfilePage from "../pages/ProfilePage"
-// import ConfirmationPage from "../pages/ConfirmationPage";
-// import HomePage from "../pages/HomePage";
+import ProfilePage from "../pages/ProfilePage";
+import DummyPage from "../pages/DummyPage";
 import history from "../history";
 import PublicRoute from "./PublicRoute";
 import AuthRoute from "./AuthRoute";
+import HomePage from "../pages/HomePage";
+import SearchPage from "../pages/SearchPage";
+import UserPage from "../pages/UserPage";
 
 export default function RouteList() {
   return (
@@ -36,7 +38,7 @@ export default function RouteList() {
             </PublicRoute>
           }
         />
-      <Route
+        <Route
           path="/profile"
           exact
           element={
@@ -45,6 +47,46 @@ export default function RouteList() {
             </AuthRoute>
           }
         />
+        <Route
+          path="/dummy/:id"
+          element={
+            <AuthRoute>
+              <DummyPage />
+            </AuthRoute>
+          }
+        />
+        <Route
+          path="/search/:text"
+          element={
+            <AuthRoute>
+              <SearchPage />
+            </AuthRoute>
+          }
+        />
+        <Route
+          path="/user/:id"
+          element={
+            <AuthRoute>
+              <UserPage />
+            </AuthRoute>
+          }
+        />
+        <Route
+          path="/search"
+          element={
+            <AuthRoute>
+              <SearchPage />
+            </AuthRoute>
+          }
+        />
+        <Route
+        path="/homepage"
+        element={
+          <AuthRoute>
+            <HomePage />
+          </AuthRoute>
+        }
+      />
         <Route path="*" element={<Navigate replace to="/login" />} />
       </Routes>
     </Router>

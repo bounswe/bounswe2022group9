@@ -13,59 +13,52 @@ import {
   Space,
   Row,
   Divider,
-  DatePicker,
-  Typography,
   Menu,
 } from "antd";
-import dayjs from 'dayjs';
 import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
-import {
-  CommentOutlined,
-  StarOutlined,
-  UserAddOutlined,
-  UsergroupAddOutlined,
-  UsergroupDeleteOutlined,
-} from "@ant-design/icons";
+import { CommentOutlined, StarOutlined, UserAddOutlined, UsergroupAddOutlined, UsergroupDeleteOutlined } from "@ant-design/icons";
 import {
   get_user_info,
   get_art_comments,
   get_art_favourites,
   upload_comment,
   upload_favourite,
-  update_profile,
+  follow,
   get_followers,
   get_followings,
   get_favourites,
 } from "../store/axios";
 import Navbar from "./Navbar";
+import { useNavigate } from "react-router-dom";
 const { Meta } = Card;
-const { Text } = Typography;
 const centerStyle = {
   position: 'relative',
   display: 'flex',
   justifyContent: 'center'
 };
-const User = () => {
+const User = ({ id }) => {
+  const navigate = useNavigate();
   const { token, user_id } = useSelector((state) => state.login);
+  console.log("user ids", id, user_id)
+  if(id == user_id) {
+    
+    navigate("/profile");
+  }
   const [isLoading, setLoading] = useState(true); // Loading state
   const [data, setArtItems] = useState([]);
   const [userData, setUserData] = useState();
   const [commentData, setCommentData] = useState([]);
   const [favouritesData, setFavouritesData] = useState([]);
   const [listData, setData] = useState([]);
-  const [editData, setEditData] = useState([]);
   const [listTitle, setTitle] = useState("");
-  const [selected, setSelected] = useState('post');
 
-  const [birthDate, setBirthDate] = useState("1900-01-01");
   const [artItemId, setArtItemId] = useState(0);
   const [open, setOpen] = useState(false);
   const [commentOpen, setCommentOpen] = useState(false);
   const [favouritesOpen, setFavouritesOpen] = useState(false);
-  const [editOpen, setEditOpen] = useState(false);
 
   const handleOkFavourites = () => {
     setTimeout(() => {
@@ -101,33 +94,33 @@ const User = () => {
   };
 
   const getFollowers = async () => {
-    const response = await get_followers({
-      token: token,
-      user_id: user_id,
-    });
-    if (response.status === 200 || response.status === 201) {
-      var arr = response.data.followers;
-      setData(arr);
-      setTitle("Followers");
-      setOpen(true);
-    }
+      const response = await get_followers({
+        token: token,
+        user_id: id,
+      });
+      if (response.status === 200 || response.status === 201) {
+        var arr = response.data.followers;
+        setData(arr);
+        setTitle("Followers")
+        setOpen(true);
+      }
   };
 
   const getFollowings = async () => {
     const response = await get_followings({
       token: token,
-      user_id: user_id,
+      user_id: id,
     });
     if (response.status === 200 || response.status === 201) {
       var arr = response.data.followings;
       setData(arr);
-      setTitle("Followings");
+      setTitle("Followings")
       setOpen(true);
     }
-  };
+};
 
   const changeProfilePicture = (value) => {
-    console.log("profile picture update", value);
+    console.log("profile picture update", value)
   };
 
   const newComment = async (e) => {
@@ -140,28 +133,11 @@ const User = () => {
     console.log(response.status);
   };
 
-  const handleCancelEdit = () => {
-    setEditOpen(false);
-  };
-
-  const editProfile = async () => {
-    setEditData(userData);
-    setEditOpen(true);
-  };
-
-  const onChange = (date, dateString) => {
-    setBirthDate(dateString);
-  };
-
-  const submitEditProfile = async (values) => {
-    const response = await update_profile({
+  const followUser = async () => {
+    const response = await follow({
       token: token,
       user_id: userData.id,
-      email: values.email,
-      name: values.name,
-      birthdate: birthDate,
-      image_url: values.image_url,
-      location: values.location,
+      date: moment().format("YYYY-MM-DD"),
     });
     console.log(response.status);
   };
@@ -194,15 +170,14 @@ const User = () => {
       }
     }
   };
-  
+
   const postedArts = async () => {
     setLoading(true);
-    const response = await get_user_info({ token: token, user_id: user_id }).then((result) => {
+    const response = await get_user_info({ token: token, user_id: id }).then((result) => {
       if (result.status === 200 || result.status === 201) {
         console.log("get_user_info", result.data);
         var arr = result.data["art_items:"];
         setArtItems(arr);
-        setSelected("post");
         setLoading(false); //set loading state
       }
     });
@@ -210,12 +185,11 @@ const User = () => {
   
   const favouriteArts = async () => {
     setLoading(true);
-    const response = await get_favourites({ token: token, user_id: user_id }).then((result) => {
+    const response = await get_favourites({ token: token, user_id: id }).then((result) => {
       if (result.status === 200 || result.status === 201) {
         console.log("get_user_info", result.data);
         var arr = result.data.favourites;
         setArtItems(arr);
-        setSelected("favourites");
         setLoading(false); //set loading state
       }
     });
@@ -224,7 +198,7 @@ const User = () => {
   useEffect(() => {
     // useEffect hook
     setTimeout(() => {
-      get_user_info({ token: token, user_id: user_id }).then((result) => {
+      get_user_info({ token: token, user_id: id }).then((result) => {
         if (result.status === 200 || result.status === 201) {
           console.log("get_user_info", result.data);
           var userTempData = result.data;
@@ -239,50 +213,44 @@ const User = () => {
 
   if (isLoading) {
     return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          height: "100vh",
-        }}
-      >
-        Loading the data {console.log("loading state")}
-      </div>
-    );
+    <div style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "100vh",
+    }}>Loading the data {console.log("loading state")}</div>
+  );
   }
 
   return (
     <Layout>
       <Navbar />
       <>
-        <Row>
-          <Divider />
+        <Row><Divider/>
           <Col span={7}>
             {" "}
             <Space
-              align="center"
-              style={{
-                display: "flex",
-                width: "100%",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
+            align="center"
+            style={{display: "flex",width: '100%', justifyContent: 'center', alignItems: 'center'}}
             >
               <Image
-                width={300}
-                preview={false}
-                alt="example"
-                src={userData.profile_img_url}
-                onClick={() => changeProfilePicture(userData)}
-              />
+              width={300}
+                  preview={false}
+                  alt="example"
+                  src={userData.profile_img_url}
+                  onClick={() => changeProfilePicture(userData)}
+                />
             </Space>
           </Col>
           <Divider type="vertical" />
           <Col span={7}>
-            <Space direction="vertical" style={{ display: "flex" }}>
-              <Card title="User Info">
+            <Space
+              direction="vertical"
+              style={{display: "flex"}}
+            >
+              
+              <Card title="User Info" >
                 <p>
                   <b>Username:</b> {userData.username}
                 </p>
@@ -303,42 +271,25 @@ const User = () => {
           </Col>
           <Divider type="vertical" />
           <Col span={7}>
-            <Space direction="vertical" style={{ width: "100%" }}>
-              <Button
-                size="large"
-                shape="round"
-                block
-                icon={<UsergroupAddOutlined />}
-                onClick={getFollowers}
-              >
+            <Space
+              direction="vertical"
+              style={{ width: '100%'}}
+            >
+              <Button size="large" shape="round" block icon={<UsergroupAddOutlined />} onClick={getFollowers}>
                 Followers
-              </Button>
-              <Divider />
-              <Button
-                size="large"
-                shape="round"
-                block
-                icon={<UsergroupDeleteOutlined />}
-                onClick={getFollowings}
-              >
+              </Button><Divider/>
+              <Button size="large" shape="round" block icon={<UsergroupDeleteOutlined />} onClick={getFollowings}>
                 Followings
-              </Button>
-              <Divider />
-              <Button
-                size="large"
-                shape="round"
-                block
-                icon={<UserAddOutlined />}
-                onClick={editProfile}
-              >
-                Edit Profile
+              </Button><Divider/> 
+              <Button disabled={userData.is_following} size="large" shape="round" block icon={<UserAddOutlined />} onClick={followUser}>
+                Follow User
               </Button>
             </Space>
           </Col>
         </Row>
       </>
-      <Divider />
-      <Menu style={centerStyle} mode="horizontal" theme='dark' selectedKeys={selected}>
+      <Divider/>
+      <Menu style={centerStyle} mode="horizontal" theme='dark' defaultSelectedKeys={['post']}>
       <Menu.Item key="post"  onClick={postedArts} style={{ width: '50%', textAlign: 'center'  }}>
         Posted Art Items
       </Menu.Item>
@@ -486,53 +437,6 @@ const User = () => {
             </List.Item>
           )}
         />
-      </Modal>
-      <Modal
-        open={editOpen}
-        title="Edit Profile"
-        onCancel={handleCancelEdit}
-        footer={[
-          <Button key="back" onClick={handleCancelEdit}>
-            Return
-          </Button>,
-        ]}
-      >
-        <Form name="basic" onFinish={submitEditProfile}>
-          <Text strong>Email</Text>
-          <Form.Item name="email" initialValue={editData.email}>
-            <Input />
-          </Form.Item>
-
-          <Text strong>Name</Text>
-          <Form.Item name="name" initialValue={editData.name}>
-            <Input />
-          </Form.Item>
-
-          <Text strong>Birthdate</Text>
-          <Form.Item name="birthdate">
-            <DatePicker defaultValue={dayjs(editData.birthdate, 'YYYY-MM-DD')} onChange={onChange} />
-          </Form.Item>
-
-          <Text strong>Profile Picture</Text>
-          <Form.Item name="image_url" initialValue={editData.profile_img_url}>
-            <Input />
-          </Form.Item>
-
-          <Text strong>Location</Text>
-          <Form.Item name="location" initialValue={editData.location}>
-            <Input />
-          </Form.Item>
-
-          <Form.Item
-            wrapperCol={{
-              offset: 4,
-            }}
-          >
-            <Button type="primary" htmlType="submit" shape="round">
-              Submit Form
-            </Button>
-          </Form.Item>
-        </Form>
       </Modal>
     </Layout>
   );
