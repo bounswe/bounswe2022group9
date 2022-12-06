@@ -607,7 +607,7 @@ export async function get_search_result(info) {
   console.log("response", info);
   try {
     const response = await axios.get(
-      SEARCH_ENDPOINT + info.text,
+      SEARCH_ENDPOINT+ info.text,
       {
         headers: {
           "Content-Type": "application/json",

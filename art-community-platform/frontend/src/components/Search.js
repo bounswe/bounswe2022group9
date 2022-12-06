@@ -9,6 +9,7 @@ import {
   Form,
   Input,
   Avatar,
+  Space,
 } from "antd";
 
 import { useNavigate } from "react-router-dom";
@@ -30,6 +31,7 @@ const Search = ({text}) => {
   const { token } = useSelector((state) => state.login);
   const [isLoading, setLoading] = useState(true); // Loading state
   const [data, setSearchResults] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   
 
@@ -37,6 +39,13 @@ const Search = ({text}) => {
     console.log("Success:", values);
     
     navigate("/user/"+values.id.toString());
+  };
+
+  const searchSubmit = (e) => {
+    console.log(e.target.value);
+    let temp = e.target.value;
+    setSearchText(temp);
+    navigate("/search/"+temp);
   };
 
   useEffect(() => {
@@ -58,7 +67,7 @@ const Search = ({text}) => {
         get_search_result({ token: token, text: text }).then((result) => {
           if (result.status === 200 || result.status === 201) {
             console.log(result.data);
-            var arr = result.data.art_items;
+            var arr = result.data.users;
             setSearchResults(arr);
             setLoading(false); //set loading state
           }
@@ -66,11 +75,21 @@ const Search = ({text}) => {
       }
       
     });
-  }, []);
+  }, [searchText]);
 
   return (
     <Layout>
       <Navbar />
+      <Form >
+            <Form.Item label="Search" name="search">
+              <Input placeholder="Search input" onChange={searchSubmit} />
+            </Form.Item>
+            <Form.Item>
+              <Button type="primary" htmlType="submit">
+                Submit
+              </Button>
+            </Form.Item>
+          </Form>
       <List
         size="large"
         loading={isLoading}

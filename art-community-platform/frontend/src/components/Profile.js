@@ -162,7 +162,7 @@ const User = () => {
       email: values.email,
       name: values.name,
       birthdate: birthDate,
-      image_url: values.image_url,
+      image_url: userData.profile_img_url,
       location: values.location,
     });
     console.log(response.status);
@@ -345,10 +345,10 @@ const User = () => {
       </>
       <Divider />
       <Menu style={centerStyle} mode="horizontal" theme='dark' selectedKeys={selected}>
-      <Menu.Item key="post"  onClick={postedArts} style={{ width: '50%', textAlign: 'center'  }}>
+      <Menu.Item key="post"  onClick={postedArts} style={{ width: '35%', textAlign: 'center'  }}>
         Posted Art Items
       </Menu.Item>
-      <Menu.Item key="favourites"  onClick={favouriteArts} style={{ width: '50%', textAlign: 'center'  }}>
+      <Menu.Item key="favourites"  onClick={favouriteArts} style={{ width: '35%', textAlign: 'center'  }}>
         Favourite Art Items
       </Menu.Item>
       </Menu>
@@ -518,11 +518,11 @@ const User = () => {
           <Form.Item name="birthdate">
             <DatePicker defaultValue={dayjs(editData.birthdate, 'YYYY-MM-DD')} onChange={onChange} />
           </Form.Item>
-
+{/* 
           <Text strong>Profile Picture</Text>
           <Form.Item name="image_url" initialValue={editData.profile_img_url}>
             <Input />
-          </Form.Item>
+          </Form.Item> */}
 
           <Text strong>Location</Text>
           <Form.Item name="location" initialValue={editData.location}>

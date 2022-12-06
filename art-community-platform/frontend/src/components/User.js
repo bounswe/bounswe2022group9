@@ -290,10 +290,10 @@ const User = ({ id }) => {
       </>
       <Divider/>
       <Menu style={centerStyle} mode="horizontal" theme='dark' defaultSelectedKeys={['post']}>
-      <Menu.Item key="post"  onClick={postedArts} style={{ width: '50%', textAlign: 'center'  }}>
+      <Menu.Item key="post"  onClick={postedArts} style={{ width: '35%', textAlign: 'center'  }}>
         Posted Art Items
       </Menu.Item>
-      <Menu.Item key="favourites"  onClick={favouriteArts} style={{ width: '50%', textAlign: 'center'  }}>
+      <Menu.Item key="favourites"  onClick={favouriteArts} style={{ width: '35%', textAlign: 'center'  }}>
         Favourite Art Items
       </Menu.Item>
       </Menu>
