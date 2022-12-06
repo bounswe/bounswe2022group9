@@ -196,7 +196,9 @@ const User = () => {
       }
     }
     localStorage.setItem('image',values.img_url)
+    if(key !== "favourite" && key !== "comment"){
     navigate("/art_item/"+values.id);
+    }
   };
   
   const postedArts = async () => {
