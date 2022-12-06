@@ -48,7 +48,7 @@ export default function RouteList() {
           }
         />
         <Route
-          path="/dummy/:id"
+          path="/art_item/:id"
           element={
             <AuthRoute>
               <DummyPage />
