@@ -17,6 +17,7 @@ import {
   Typography,
   Menu,
 } from "antd";
+import { useNavigate } from "react-router-dom";
 import dayjs from 'dayjs';
 import moment from "moment";
 import React, { useEffect, useState } from "react";
@@ -49,6 +50,7 @@ const centerStyle = {
   justifyContent: 'center'
 };
 const User = () => {
+  const navigate = useNavigate();
   const { token, user_id } = useSelector((state) => state.login);
   const [isLoading, setLoading] = useState(true); // Loading state
   const [data, setArtItems] = useState([]);
@@ -193,6 +195,8 @@ const User = () => {
         setFavouritesOpen(true);
       }
     }
+    localStorage.setItem('image',values.img_url)
+    navigate("/art_item/"+values.id);
   };
   
   const postedArts = async () => {
