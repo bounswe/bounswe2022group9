@@ -15,6 +15,7 @@ const initialState = {
   isAuthenticated: false,
   loading: false,
   token: "",
+  user_id: 0
 };
 const LoginReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -29,6 +30,7 @@ const LoginReducer = (state = initialState, action) => {
       return {
         ...state,
         token: action.payload.data.token,
+        user_id: action.payload.data.user_id,
         loading: false,
         isAuthenticated: true,
       };
@@ -63,6 +65,8 @@ const LoginReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         isAuthenticated: false,
+        token: "",
+        user_id: 0,
       };
     default:
       return state;
