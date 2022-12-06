@@ -45,11 +45,6 @@ const Login = () => {
     navigate("/signup");
   };
 
-  const sendToResetPassword = () => {
-    console.log("Sending to reset password");
-    navigate("/resetPassword");
-  };
-
   return (
     <Row gutter={[0, 16]}>
       <Col span={24}></Col>
@@ -99,9 +94,6 @@ const Login = () => {
         </Form>
         <Col span={24} align="middle">
           <Space size={"large"}>
-            <Text style={buttonStyle} onClick={sendToResetPassword}>
-              Forgot your password?
-            </Text>
             <Text style={buttonStyle} onClick={sendToSignup}>
               Don't have an account?
             </Text>

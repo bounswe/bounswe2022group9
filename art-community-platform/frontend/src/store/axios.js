@@ -84,11 +84,11 @@ export async function update_profile(info) {
     const response = await axios.post(
       USERS_BASE_ENDPOINT + info.user_id.toString() + UPDATE_PROFILE_INFO,
       {
-        "name": "Burak Ferit",
-        "birthdate": "1996-01-01",
-        "email" : "ferit@gmail.com",
-        "profile_img_url": "new-img-url",
-        "location": "Duzce"
+        "name": info.name,
+        "birthdate": info.birthdate,
+        "email" : info.email,
+        "profile_img_url": info.image_url,
+        "location": info.location
       },
       {
         headers: {
@@ -112,8 +112,8 @@ export async function follow(info) {
     const response = await axios.post(
       FOLLOW_ENDPOINT,
       {
-        "followed_user_id": 2,
-        "date": "2022-11-11"
+        "followed_user_id": info.user_id,
+        "date": info.date
       },
       {
         headers: {
@@ -190,8 +190,8 @@ export async function upload_favourite(info) {
     const response = await axios.post(
       UPLOAD_FAVOURITE,
       {
-        "art_item_id": 2,
-        "date": "2022-11-11"
+        "art_item_id": info.art_item_id,
+        "date": info.date
       },
       {
         headers: {
@@ -215,9 +215,9 @@ export async function upload_comment(info) {
     const response = await axios.post(
       UPLOAD_COMMENT,
       {
-        "art_item_id": 1,
-        "text": "comment text here",
-        "date": "2022-11-11"
+        "art_item_id": info.art_item_id,
+        "text": info.text,
+        "date": info.date
       },
       {
         headers: {
@@ -607,7 +607,7 @@ export async function get_search_result(info) {
   console.log("response", info);
   try {
     const response = await axios.get(
-      SEARCH_ENDPOINT + info.search,
+      SEARCH_ENDPOINT + info.text,
       {
         headers: {
           "Content-Type": "application/json",
