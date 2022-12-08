@@ -34,11 +34,13 @@ I created an empty project for Annotations, connected it to a PostgreSQL databas
 * [Add Backend Meeting 3 Notes to Wiki](https://github.com/bounswe/bounswe2022group9/issues/419)
 * [Document "update_profile_info" endpoint of the API](https://github.com/bounswe/bounswe2022group9/issues/343)
 * [[Backend] Document "unfollow" endpoint of the API](https://github.com/bounswe/bounswe2022group9/issues/437)
+* [Feeding Prod Database](https://github.com/bounswe/bounswe2022group9/issues/432)
 
 ## Pull Requests
  * [Unfollow Endpoint](https://github.com/bounswe/bounswe2022group9/pull/418)
  * [Delete user from followings list function](https://github.com/bounswe/bounswe2022group9/pull/386)
  * [Unfollow helper function - deleting follower from followers list of followed user](https://github.com/bounswe/bounswe2022group9/pull/378)
+ * [Unit tests for Unfollow, get_profile_info and update_profile_info endpoints]([https://github.com/bounswe/bounswe2022group9/pull/429/files](https://github.com/bounswe/bounswe2022group9/pull/429))
  * [Add proxy and uWSGI to empty Annotations project Docker Image](https://github.com/bounswe/bounswe2022group9/pull/391)
  * [Adding Database (dockerized) and empty sample app to Annotation Project](https://github.com/bounswe/bounswe2022group9/pull/374)
  * [Created a new empty project for Annotations and Dockerized it. ](https://github.com/bounswe/bounswe2022group9/pull/372)
@@ -47,4 +49,9 @@ I created an empty project for Annotations, connected it to a PostgreSQL databas
 
 ## Unit Tests
 
-will be added here
+* [URL tests](https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/backend/app/api/tests/test_urls.py#L108)
+* [Unfollow Endpoint tests](https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/backend/app/api/tests/test_unfollow.py)
+* [get_profile_info AND update_profile_info tests](https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/backend/app/api/tests/test_profile.py)
+* [signup tests - (function named test_signup)](https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/backend/app/api/tests/test_auth.py#L40)
+* [Signup URL tests - from Milestone 1](https://github.com/bounswe/bounswe2022group9/pull/259/files#diff-68173366f62065f95ceb878e9409992e000417c01bdcee9a64668e2274a447b4)
+* [Signup view tests - from Milestone 1](https://github.com/bounswe/bounswe2022group9/pull/259/files#diff-a2a7c75a4cdfff1fd967695ab069dd412d909227af55dcb1740f69c852c43721)
