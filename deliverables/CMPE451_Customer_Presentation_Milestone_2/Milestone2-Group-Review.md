@@ -274,6 +274,10 @@ Source: Userpage/Profile
   |[Backend] Document "unfollow" endpoint of the API|[[Backend] Document "unfollow" endpoint of the API](https://github.com/bounswe/bounswe2022group9/issues/437)|
   |Feeding Prod Database|[Feeding Prod Database](https://github.com/bounswe/bounswe2022group9/issues/432)|
   |[Documentation] Document "Annotations" and "Standards" parts of Milestone2 Group Review|[[Documentation] Document "Annotations" and "Standards" parts of Milestone2 Group Review](https://github.com/bounswe/bounswe2022group9/issues/457)|
+  |[Backend] Write unit tests for signup|[[Backend] Write unit tests for signup](https://github.com/bounswe/bounswe2022group9/issues/471)|
+  |[Backend] Write Unit Tests for "update profile info"|[[Backend] Write Unit Tests for "update profile info"](https://github.com/bounswe/bounswe2022group9/issues/470)|
+  |[Backend] Add unit tests for get profile info|[[Backend] Add unit tests for get profile info](https://github.com/bounswe/bounswe2022group9/issues/469)|
+  |[Backend] Add Unit Tests for Unfollow|[[Backend] Add Unit Tests for Unfollow](https://github.com/bounswe/bounswe2022group9/issues/460)|
   
   |Pull Request Title|Link|
   |-----|:--------:|
