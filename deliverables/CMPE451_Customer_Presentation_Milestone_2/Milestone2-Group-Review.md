@@ -13,12 +13,46 @@
 
 
 ### 4. API Endpoints
-* [The API Documentation](https://documenter.getpostman.com/view/21597705/2s8YmSqfTg)
-* Link to the API : `http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1`
-* [3 Examples of API Calls](https://github.com/bounswe/bounswe2022group9/wiki/3-Example-API-Endpoint)
 
 
 ### 5. User Interface / User Experience
+
+**Mobile**
+1. Login
+<img src="https://user-images.githubusercontent.com/45214804/206678685-2ca9ef2b-c741-4f0d-b41d-c4d5b2d57e32.png" width="240">
+Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/Login/Login.js
+
+2. Signup
+<img src="https://user-images.githubusercontent.com/45214804/206678746-e11ab1a8-e847-4296-bb7e-2fa073a0fb7b.png" width="240">
+Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/Login/Signup.js
+
+3. Feed
+<img src="https://user-images.githubusercontent.com/45214804/206678766-c32f100f-005e-4b8c-9757-5a2e1f3bbdbd.png" width="240">
+Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/Feed.js
+
+4. Art Item
+<img src="https://user-images.githubusercontent.com/45214804/206678810-2a6e41fa-b9e7-41ac-b9bb-5c7ad11085f9.png" width="240">
+Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/ArtItemDisplay.js
+
+5. Search
+<img src="https://user-images.githubusercontent.com/45214804/206678846-3afb0857-3e0d-4128-b174-1c753f912ff9.png" width="240">
+
+<img src="https://user-images.githubusercontent.com/45214804/206678853-51488267-078d-4783-aeb6-fd41f9a0fd5c.png" width="240">
+Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/Search.js
+
+6. User
+<img src="https://user-images.githubusercontent.com/45214804/206678904-7ff309b3-c925-4ba0-afd1-2bc257fee0e4.png" width="240">
+Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/User.js
+
+7. Following, Followers, Liked By
+<img src="https://user-images.githubusercontent.com/45214804/206678979-a3b17b49-714d-4ea2-85c6-e677d3da73eb.png" width="240">
+Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/UserList.js
+
+8. Profile Page
+<img src="https://user-images.githubusercontent.com/45214804/206678892-4c5cd5ef-aade-4ed1-a947-d6336da50f5f.png" width="240">
+Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/Profile.js
+
+
 
 
 ### 7. A Summary of Work Performed by Each Team Member 
