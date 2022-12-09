@@ -47,7 +47,7 @@ For the Milestone 2 group report, I was responsibile for API documentation/examp
 * [[Backend] Models Documentation](https://github.com/bounswe/bounswe2022group9/issues/416)
 (All models that we used such as User, Art Item, Exhibition, Comment, Notification)
 * [Feeding Prod Database](https://github.com/bounswe/bounswe2022group9/issues/432)
-* [Documenting 3 example backend endpoint request and response]()
+* [[Documentation]3 example backend endpoint request and response](https://github.com/bounswe/bounswe2022group9/issues/472)
 * [Creating individual report of Omer Faruk Sisman](https://github.com/bounswe/bounswe2022group9/issues/468)
 
 ## Pull Requests
