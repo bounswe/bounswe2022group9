@@ -13,6 +13,9 @@
 
 
 ### 4. API Endpoints
+* [The API Documentation](https://documenter.getpostman.com/view/21597705/2s8YmSqfTg)
+* Link to the API : `http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1`
+* [3 Examples of API Calls](https://github.com/bounswe/bounswe2022group9/wiki/3-Example-API-Endpoint)
 
 
 ### 5. User Interface / User Experience
