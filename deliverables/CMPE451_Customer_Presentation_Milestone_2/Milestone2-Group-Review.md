@@ -59,40 +59,6 @@
 
 ### 3. Progress according to requirements
 
-The requirements addressed in this milestone are as follows:
-
-3.1.3.2. Users shall be able to comment on art items.
-
-3.1.3.3. Users shall be able to like art items.
-
-3.1.3.4. Users shall be able to save an art item to favorites.
-
-3.1.3.6. Users should be able to have a repository for their favorite art items.
-
-3.1.3.7. Users shall be able to add tags to their shared art items.
-
-3.1.4.1. Users shall be able to have profiles.
-
-3.1.4.2. Users shall be able to see art items that he/she shared in his/her profile.
-
-3.1.4.3. Users shall be able to add profile picture, description and personal information into their profiles.
-
-3.1.4.4. Users shall be able to change profile picture, description and personal information from their profiles.
-
-3.1.5.1. Users shall be able to follow other users.
-
-3.1.5.2. Users shall be able to unfollow other users.
-
-3.1.5.3. Users shall be able to see the art items of followed users.
-
-3.1.5.4. Users shall be able to see the liked art items of followed users.
-
-3.1.8.2. Users shall be able to pick a category for their search(art item, art exhibit, tag, account) and get the results starting from the most relevant.
-
-3.2.2.1. The platform shall include a search engine to find other users, art items or discussion forums.
-
-3.2.2.4. The search engine shall match the arts and artists with given tags.
-
 
 ### 4. API Endpoints
 * [The API Documentation](https://documenter.getpostman.com/view/21597705/2s8YmSqfTg)
@@ -354,11 +320,12 @@ Source: Userpage/Profile
   
   |Issue Title|Link|
   |-----|:--------:|
- |||
-  |||
-  |||
-  |||
-  |||
+  |[Documentation] Create Executive part for backend |[Issue](https://github.com/bounswe/bounswe2022group9/issues/461)|
+  |[BACKEND] Search Engine for User shall be created |[Issue](https://github.com/bounswe/bounswe2022group9/issues/463)|
+  |[Backend] Search Engine For Art item shall be implemented|[Issue](https://github.com/bounswe/bounswe2022group9/issues/464)|
+  |[Backend] Search Engine For Exhibition shall be implemented|[Issue](https://github.com/bounswe/bounswe2022group9/issues/465)|
+  |[Backend] Implement count numbers for user|[Issue](https://github.com/bounswe/bounswe2022group9/issues/466)|
+  |[Backend] Write helper functions|[Issue](https://github.com/bounswe/bounswe2022group9/issues/467)|
   
   
    **Furkan Özdemir**
@@ -419,4 +386,4 @@ Source: Userpage/Profile
  ## Individual Contributions Reports
  
  * [Burak Ferit Aktan](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_2/individual_contributions_reports/Burak_Ferit_Aktan.md)
- * [Ömer Faruk Şişman](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_2/individual_contributions_reports/Omer_Faruk_Sisman.md)
+  
