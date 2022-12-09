@@ -30,7 +30,7 @@ I created an empty project for Annotations, connected it to a PostgreSQL databas
 * [[Backend] Implement Helper Function to Delete Followed Users from Followings List of Follower Users](https://github.com/bounswe/bounswe2022group9/issues/387)
 * [[Backend] Implement Helper function to delete users from followers list](https://github.com/bounswe/bounswe2022group9/issues/379)
 * [[Backend] Write unit tests for signup](https://github.com/bounswe/bounswe2022group9/issues/471)
-* [[Backend] Write Unit Tests for "update profile info"] (https://github.com/bounswe/bounswe2022group9/issues/470)
+* [[Backend] Write Unit Tests for "update profile info"](https://github.com/bounswe/bounswe2022group9/issues/470)
 * [[Backend] Add unit tests for get profile info](https://github.com/bounswe/bounswe2022group9/issues/469)
 * [[Backend] Add Unit Tests for Unfollow](https://github.com/bounswe/bounswe2022group9/issues/460)
 
