@@ -206,20 +206,20 @@ Source: Userpage/Profile
    
   |Issue Title|Link|
   |-----|:--------:|
-   |||
-  |||
-  |||
-  |||
-  |||
-  
-  
+  |[Frontend] - Endpoint connections|https://github.com/bounswe/bounswe2022group9/issues/423|
+  |[Frontend] - Navigation Bar design|https://github.com/bounswe/bounswe2022group9/issues/424|
+  |[Frontend] - Search User Implementation|https://github.com/bounswe/bounswe2022group9/issues/425|
+  |[Frontend] - Art item list|https://github.com/bounswe/bounswe2022group9/issues/427|
+  |[Frontend] - Profile update|https://github.com/bounswe/bounswe2022group9/issues/428|
+  |[Frontend] - Bulk user list|https://github.com/bounswe/bounswe2022group9/issues/434|
+  |[Frontend] - Two sub-menu on user pages|https://github.com/bounswe/bounswe2022group9/issues/435|
+  |[Documentation] Documenting Individual Contribution Report of Ufuk Karagoz|https://github.com/bounswe/bounswe2022group9/issues/450|
+  |[Documentation] Documenting UI/UX related parts in the Group Review for Web|https://github.com/bounswe/bounswe2022group9/issues/455|
+  |[Documentation] Documenting Executive Summary part in the Group Review for Frontend|https://github.com/bounswe/bounswe2022group9/issues/459|
+
   |Pull Request Title|Link|
   |-----|:--------:|
-   |||
-  |||
-  |||
-  |||
-  |||
+  |Final version of  frontend Pull Request with detailed commits|https://github.com/bounswe/bounswe2022group9/pull/436|
   
    **Burak Ferit Aktan**
      
@@ -396,4 +396,4 @@ Source: Userpage/Profile
  
  * [Burak Ferit Aktan](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_2/individual_contributions_reports/Burak_Ferit_Aktan.md)
  * [Ömer Faruk Şişman](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_2/individual_contributions_reports/Omer_Faruk_Sisman.md)
-  
+ * [Ufuk Karagöz](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_2/individual_contributions_reports/Ufuk_Karagoz.md)
