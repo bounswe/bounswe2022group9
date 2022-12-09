@@ -199,4 +199,8 @@
  
  Since, we didn't implement annotations yet, we aren't able to talk about it'a compatibility with standards.
  We will implement annotations and evaluate it's compatibility with standards at Milestone 3.
+ 
+ ## Individual Contributions Reports
+ 
+ * [Burak Ferit Aktan](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_2/individual_contributions_reports/Burak_Ferit_Aktan.md)
   
