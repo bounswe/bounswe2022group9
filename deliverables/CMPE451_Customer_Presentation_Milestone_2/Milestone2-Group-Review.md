@@ -61,6 +61,9 @@
 
 
 ### 4. API Endpoints
+* [The API Documentation](https://documenter.getpostman.com/view/21597705/2s8YmSqfTg)
+* Link to the API : `http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1`
+* [3 Examples of API Calls](https://github.com/bounswe/bounswe2022group9/wiki/3-Example-API-Endpoint)
 
 
 ### 5. User Interface / User Experience
@@ -269,22 +272,49 @@ Source: Userpage/Profile
   
   **Ömer Faruk Şişman**
    
-  |Issue Title|Link|
+ |Issue Title|Link|
   |-----|:--------:|
-   |||
-  |||
-  |||
-  |||
-  |||
+  |[Backend] [Feature] Get all users|[Issue](https://github.com/bounswe/bounswe2022group9/issues/397)|
+  |[Backend] [Feature] Get all art items|[Issue](https://github.com/bounswe/bounswe2022group9/issues/398)|
+  |[Backend] [Feature] Get user by id|[Issue](https://github.com/bounswe/bounswe2022group9/issues/399)|
+  |[Backend] [Feature] Get art item by id|[Issue](https://github.com/bounswe/bounswe2022group9/issues/400)|
+  |[Backend] [Feature] Get tag by id|[Issue](https://github.com/bounswe/bounswe2022group9/issues/401)|
+  |[Backend] [Feature] Get comment by id|[Issue](https://github.com/bounswe/bounswe2022group9/issues/402)|
+  |[Backend] [Feature] Get notification by id|[Issue](https://github.com/bounswe/bounswe2022group9/issues/403)|
+  |[Backend] [Feature] Get exhibition by id|[Issue](https://github.com/bounswe/bounswe2022group9/issues/404)|
+  |[Backend] [Feature] Get followers of a user|[Issue](https://github.com/bounswe/bounswe2022group9/issues/405)|
+  |[Backend] [Feature] Get followings of a user|[Issue](https://github.com/bounswe/bounswe2022group9/issues/406)|
+  |[Backend] [Feature] Get favourites of a user|[Issue](https://github.com/bounswe/bounswe2022group9/issues/407)|
+  |[Backend] [Feature] Get comments of a user|[Issue](https://github.com/bounswe/bounswe2022group9/issues/408)|
+  |[Backend] [Feature] Get exhibitions of a user|[Issue](https://github.com/bounswe/bounswe2022group9/issues/409)|
+  |[Backend] [Feature] Get notifications of a user|[Issue](https://github.com/bounswe/bounswe2022group9/issues/410)|
+  |[Backend] [Feature] Get favourites of an art item|[Issue](https://github.com/bounswe/bounswe2022group9/issues/411)|
+  |[Backend] [Feature] Get comments of an art item|[Issue](https://github.com/bounswe/bounswe2022group9/issues/412)|
+  |[Backend] [Feature] Homepage of a user|[Issue](https://github.com/bounswe/bounswe2022group9/issues/413)|
+  |[Backend] Deploying API|[Issue](https://github.com/bounswe/bounswe2022group9/issues/414)|
+  |PS Meeting actions|[Issue](https://github.com/bounswe/bounswe2022group9/issues/350)|
+  |[Backend] Postman Documentation|[Issue](https://github.com/bounswe/bounswe2022group9/issues/415)|
+  |[Backend] Models Documentation|[Issue](https://github.com/bounswe/bounswe2022group9/issues/416)|
+  |Feeding Prod Database|[Issue](https://github.com/bounswe/bounswe2022group9/issues/432)|
+  |Documenting 3 example backend endpoint request and response|[Issue]()|
+  |Creating individual report of Omer Faruk Sisman|[Issue]()|
   
   
   |Pull Request Title|Link|
   |-----|:--------:|
-   |||
-  |||
-  |||
-  |||
-  |||
+  |Refactor/folder structure|[PR](https://github.com/bounswe/bounswe2022group9/pull/335)|
+  |refactoring and some features|[PR](https://github.com/bounswe/bounswe2022group9/pull/338)|
+  |Homepage of user implemented|[PR](https://github.com/bounswe/bounswe2022group9/pull/341)|
+  |Backend/feature/exhibition endpoints|[PR](https://github.com/bounswe/bounswe2022group9/pull/348)|
+  |Be/fix/ps issues 1|[PR](https://github.com/bounswe/bounswe2022group9/pull/349)|
+  |Refactor Endpoints|[PR](https://github.com/bounswe/bounswe2022group9/pull/361)|
+  |exhibition feature implemented|[PR](https://github.com/bounswe/bounswe2022group9/pull/362)|
+  |favourite comment features|[PR](https://github.com/bounswe/bounswe2022group9/pull/363)|
+  |response lists sorted|[PR](https://github.com/bounswe/bounswe2022group9/pull/364)|
+  |Feature Recommendation|[PR](https://github.com/bounswe/bounswe2022group9/pull/365)|
+  |Fix search user|[PR](https://github.com/bounswe/bounswe2022group9/pull/377)|
+  |Unit tests|[PR](https://github.com/bounswe/bounswe2022group9/pull/380)|
+  |image upload fields changed|[PR](https://github.com/bounswe/bounswe2022group9/pull/394)|
   
   **Berkkant Koç**
   
