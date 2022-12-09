@@ -326,6 +326,7 @@ Source: Userpage/Profile
   |[Backend] Search Engine For Exhibition shall be implemented|[Issue](https://github.com/bounswe/bounswe2022group9/issues/465)|
   |[Backend] Implement count numbers for user|[Issue](https://github.com/bounswe/bounswe2022group9/issues/466)|
   |[Backend] Write helper functions|[Issue](https://github.com/bounswe/bounswe2022group9/issues/467)|
+  |[Documentatiton] Create individual report for Milestone 2|[Issue](https://github.com/bounswe/bounswe2022group9/issues/462)|
   
   |Pull Request Title|Link|
   |-----|:--------:|
