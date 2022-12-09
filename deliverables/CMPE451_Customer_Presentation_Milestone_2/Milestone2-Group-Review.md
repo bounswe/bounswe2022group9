@@ -197,21 +197,24 @@ Source: Userpage/Profile
    **Yağmur Göktaş**
    
    |Issue Title|Link|
-  |-----|:--------:|
-  |||
-  |||
-  |||
-  |||
-  |||
+   |-----|:--------:|
+  |[Mobile] Art Item Display | https://github.com/bounswe/bounswe2022group9/issues/323 |
+  |[Mobile] Art Item Display Page Backend Connection | https://github.com/bounswe/bounswe2022group9/issues/352|
+  |[Mobile] Component to render user list | https://github.com/bounswe/bounswe2022group9/issues/353|
+  |[Mobile] Update on Signup | https://github.com/bounswe/bounswe2022group9/issues/354|
+  |[Mobile] User List Backend Connection | https://github.com/bounswe/bounswe2022group9/issues/359 |
+  |[Mobile] Location information on User List | https://github.com/bounswe/bounswe2022group9/issues/426 |
+  |[Mobile] Likes navigate to User | https://github.com/bounswe/bounswe2022group9/issues/431 |
+  |[Documentation] Individual Report of Yağmur Göktaş | https://github.com/bounswe/bounswe2022group9/issues/449 |
+  |[Mobile] Organizing Meeting Notes | https://github.com/bounswe/bounswe2022group9/issues/332 |
   
-    
   |Pull Request Title|Link|
   |-----|:--------:|
-  |||
-  |||
-  |||
-  |||
-  |||
+  | Feature/art item display | https://github.com/bounswe/bounswe2022group9/pull/351 |
+  | Bugfix/signup update | https://github.com/bounswe/bounswe2022group9/pull/355 |
+  | Feature/user list comp | https://github.com/bounswe/bounswe2022group9/pull/358 |
+  | Feature/userlist backend | https://github.com/bounswe/bounswe2022group9/pull/422 |
+  | Feature/art item backend | https://github.com/bounswe/bounswe2022group9/pull/430 |
   
    **İbrahim Buğra Elmas**
    
@@ -448,3 +451,6 @@ Source: Userpage/Profile
  * [Ömer Faruk Şişman](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_2/individual_contributions_reports/Omer_Faruk_Sisman.md)
  * [Ufuk Karagöz](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_2/individual_contributions_reports/Ufuk_Karagoz.md)
  * [Furkan Özdemir](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_2/individual_contributions_reports/Furkan_Ozdemir.md)
+ * [Yağmur Göktaş]
+(https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_2/individual_contributions_reports/Yagmur_Goktas.md)
+
