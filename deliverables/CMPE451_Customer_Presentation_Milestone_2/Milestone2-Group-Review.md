@@ -9,13 +9,13 @@
 
 
 
-### 3. Evaluation of the status of deliverables and its impact on your project plan
+### 3. Progress according to requirements
 
 
-### 4. Evaluation of Tools and Processes
+### 4. API Endpoints
 
 
-### 5. The [Requirements]() Addressed in Milestone
+### 5. User Interface / User Experience
 
 
 ### 7. A Summary of Work Performed by Each Team Member 
