@@ -450,3 +450,4 @@ Source: Userpage/Profile
  * [Burak Ferit Aktan](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_2/individual_contributions_reports/Burak_Ferit_Aktan.md)
  * [Ömer Faruk Şişman](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_2/individual_contributions_reports/Omer_Faruk_Sisman.md)
  * [Ufuk Karagöz](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_2/individual_contributions_reports/Ufuk_Karagoz.md)
+ * [Furkan Özdemir](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_2/individual_contributions_reports/Furkan_Ozdemir.md)
