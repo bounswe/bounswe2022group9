@@ -408,24 +408,6 @@ Source: Userpage/Profile
   |response lists sorted|https://github.com/bounswe/bounswe2022group9/pull/364 (reviewed)|
   |Feature Recommendation|https://github.com/bounswe/bounswe2022group9/pull/365 (reviewed)|
   
-**Kutay Saran**
-   
-  |Issue Title|Link|
-  |-----|:--------:|
-   |||
-  |||
-  |||
-  |||
-  |||
-  
-  
-  |Pull Request Title|Link|
-  |-----|:--------:|
-   |||
-  |||
-  |||
-  |||
-  |||
   
   ## Annotations
   
