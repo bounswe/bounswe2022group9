@@ -288,20 +288,17 @@ Source: Userpage/Profile
    
   |Issue Title|Link|
   |-----|:--------:|
-   |||
-  |||
-  |||
-  |||
-  |||
+   |[Mobile] Create exhibition and exhibition page|[Issue]( https://github.com/bounswe/bounswe2022group9/issues/392 )|
+  |[Mobile] Create settings page and backend connection|[Issue](https://github.com/bounswe/bounswe2022group9/issues/393)|
+  |[Documentation] Documenting Individual Contribution Report of Oğuzhan Özboyacı]|[Issue](https://github.com/bounswe/bounswe2022group9/issues/454)|
+  |[Documentation] Documenting Executive Summary part in the Group Review for Mobile|[Issue](https://github.com/bounswe/bounswe2022group9/issues/456)|
+  
   
   
   |Pull Request Title|Link|
   |-----|:--------:|
-   |||
-  |||
-  |||
-  |||
-  |||
+   |[Mobile] Exhibition is created|[PR](https://github.com/bounswe/bounswe2022group9/pull/395)|
+  |[Mobile] Settings page is created|[PR](https://github.com/bounswe/bounswe2022group9/pull/396)|
   
   **Ömer Faruk Şişman**
    
@@ -408,6 +405,24 @@ Source: Userpage/Profile
   |response lists sorted|https://github.com/bounswe/bounswe2022group9/pull/364 (reviewed)|
   |Feature Recommendation|https://github.com/bounswe/bounswe2022group9/pull/365 (reviewed)|
   
+**Kutay Saran**
+   
+  |Issue Title|Link|
+  |-----|:--------:|
+   |||
+  |||
+  |||
+  |||
+  |||
+  
+  
+  |Pull Request Title|Link|
+  |-----|:--------:|
+   |||
+  |||
+  |||
+  |||
+  |||
   
   ## Annotations
   
