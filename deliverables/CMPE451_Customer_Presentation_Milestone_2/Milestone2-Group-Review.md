@@ -1,9 +1,9 @@
 ## Group Review
 
 ### 1. Executive Summary
-**Frontend**\
-Our development started with endpoint connections. After that, we created a detailed architecture plan for the front-end group. We split the tasks. In the end, we created three main tabs (home, search, profile) and four pages (home, search, user, profile). We created a bulk art-item show list such as a four-column table with art items and art-items details - owner name, created date, description, tags, number of comments, and number of favorites. When the user clicks the comment icon, the web page creates a comment pop-up page and the user can see details of comments and can make comments on this pop-up page. Also, a similar implementation has been done to favorites, the user can like the art item on the favorite pop-up page. We used this bulk art-item list on the homepage, user pages, and profile pages. We implemented a search page with an input bar and a list of results in the lower part of the page. When there is no input, the backend returns all users. If there is a search input, the page is refreshing at every change and the result of the search can be seen as a user list. In the result list, there have three details - the profile picture, the username, and the name of the user. When a user clicks on an element of the list, the web page navigates to the clicked user page.  The users' page and profile page has similar implementation. The only difference is in the user page, there has a follow/unfollow button but the unfollow button has not been deployed yet and on the profile page this button is the edit profile button. When the user clicks this button, a pop-up page is opening and the user can edit the details of the profile. Pages have two main parts. The upper part is the details of the user - profile picture, username, location, name, email, birthdate, follower button, and the following button. The lower part has two tabs which are posted by the user tab and favorited by the user tab. When the user posts an art item, it will show in the first tab and when the user likes an art item, it will be shown in the second tab. Implemmlented features:
-
+* Frontend
+    
+    Our development started with endpoint connections. After that, we created a detailed architecture plan for the front-end group. We split the tasks. In the end, we created three main tabs (home, search, profile) and four pages (home, search, user, profile). We created a bulk art-item show list such as a four-column table with art items and art-items details - owner name, created date, description, tags, number of comments, and number of favorites. When the user clicks the comment icon, the web page creates a comment pop-up page and the user can see details of comments and can make comments on this pop-up page. Also, a similar implementation has been done to favorites, the user can like the art item on the favorite pop-up page. We used this bulk art-item list on the homepage, user pages, and profile pages. We implemented a search page with an input bar and a list of results in the lower part of the page. When there is no input, the backend returns all users. If there is a search input, the page is refreshing at every change and the result of the search can be seen as a user list. In the result list, there have three details - the profile picture, the username, and the name of the user. When a user clicks on an element of the list, the web page navigates to the clicked user page.  The users' page and profile page has similar implementation. The only difference is in the user page, there has a follow/unfollow button but the unfollow button has not been deployed yet and on the profile page this button is the edit profile button. When the user clicks this button, a pop-up page is opening and the user can edit the details of the profile. Pages have two main parts. The upper part is the details of the user - profile picture, username, location, name, email, birthdate, follower button, and the following button. The lower part has two tabs which are posted by the user tab and favorited by the user tab. When the user posts an art item, it will show in the first tab and when the user likes an art item, it will be shown in the second tab.
     - Sign up page updated
     - Profile page created
     - Edit profile implemented
@@ -19,8 +19,9 @@ Our development started with endpoint connections. After that, we created a deta
     - Make a comment implemented
     - Add to your favourites implemented
     
-**Backend**\
-In backend, firstly we need models since all the CRUD operations will be handled using these models. We created six models: art item, notification, comment, exhibition, user, and tag. After that we started to implement end-points. Implemented features are:
+ * Backend
+   
+   In backend, firstly we need models since all the CRUD operations will be handled using these models. We created six models: art item, notification, comment, exhibition, user, and tag. After that we started to implement end-points. Implemented features are:
  
     - Get profile page
     - Update profile photo
@@ -32,9 +33,25 @@ In backend, firstly we need models since all the CRUD operations will be handled
     - Search engines for user/art item/exhibition
     - Started annotations but not complete
     
-  In addition to that features, we have written unit tests to test whether we implemented correct or not. On the other hand, we have created a lot of helper functions to make implementation easier. You can check it out helpers folder.
+  In addition to that features, we have written unit tests to test whether we implemented correct or not. On the other hand, we have created a lot of helper functions to make implemetation easier. You can check it out helpers folder.
   
-  As the backend team, we did all the things that we have planned to do so far. The project is complete except recommendation system, exhibiton feature implementation, and annotation enhancement. We will be implementing these features till the final milestone.
+  As the backend team, we did all the things that we have planned to do so far. The project is complete except recommendation system, exhibiton feature implementation, and annotation enhancement. 
+  
+ * Mobile
+    
+    For mobile, initially we updated the sing-up page with additional attributes. Afterwards, we had user interfaces that we should make backend connections for profile, sign-up, log-in,home page, feed pages and creacte new user interfaces for missing ones. We create components to show art items and user lists. For art item component we show the image, tags about the art items, likes and comments. Another component user lists can shows the person likes the art item, followers, followee and users that is searched. After creating these components we made the backend connections of these components. Another component we updated is search bar. We add search functionality for users and art items. As a summary a user can search for other user, see others' profile and art items that are shared. Users can scroll on the feed page and see others' sharings. For the future we are planning to make connections of settings page and exhibitions page and imlementation of the annottion are our priority according to our requirements.
+    
+    - Sign up page updated
+    - Profile backend connection is done
+    - Sign-up backend connection is done
+    - Log-in backend connection is done
+    - Feed page backend connection is done
+    - User list component is implemented
+    - User list backend connection is done
+    - Art item component is updated
+    - Art item component backend connection is done
+    - Search bar is updated
+    - Search is connected to backend
 
 ### 2. List and Status of Deliverables
 
@@ -42,46 +59,8 @@ In backend, firstly we need models since all the CRUD operations will be handled
 
 ### 3. Progress according to requirements
 
-The requirements addressed in this milestone are as follows:
-
-3.1.3.2. Users shall be able to comment on art items.
-
-3.1.3.3. Users shall be able to like art items.
-
-3.1.3.4. Users shall be able to save an art item to favorites.
-
-3.1.3.6. Users should be able to have a repository for their favorite art items.
-
-3.1.3.7. Users shall be able to add tags to their shared art items.
-
-3.1.4.1. Users shall be able to have profiles.
-
-3.1.4.2. Users shall be able to see art items that he/she shared in his/her profile.
-
-3.1.4.3. Users shall be able to add profile picture, description and personal information into their profiles.
-
-3.1.4.4. Users shall be able to change profile picture, description and personal information from their profiles.
-
-3.1.5.1. Users shall be able to follow other users.
-
-3.1.5.2. Users shall be able to unfollow other users.
-
-3.1.5.3. Users shall be able to see the art items of followed users.
-
-3.1.5.4. Users shall be able to see the liked art items of followed users.
-
-3.1.8.2. Users shall be able to pick a category for their search(art item, art exhibit, tag, account) and get the results starting from the most relevant.
-
-3.2.2.1. The platform shall include a search engine to find other users, art items or discussion forums.
-
-3.2.2.4. The search engine shall match the arts and artists with given tags.
-
-
 
 ### 4. API Endpoints
-* [The API Documentation](https://documenter.getpostman.com/view/21597705/2s8YmSqfTg)
-* Link to the API : `http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1`
-* [3 Examples of API Calls](https://github.com/bounswe/bounswe2022group9/wiki/3-Example-API-Endpoint)
 
 
 ### 5. User Interface / User Experience
@@ -292,47 +271,20 @@ Source: Userpage/Profile
    
   |Issue Title|Link|
   |-----|:--------:|
-  |[Backend] [Feature] Get all users|[Issue](https://github.com/bounswe/bounswe2022group9/issues/397)|
-  |[Backend] [Feature] Get all art items|[Issue](https://github.com/bounswe/bounswe2022group9/issues/398)|
-  |[Backend] [Feature] Get user by id|[Issue](https://github.com/bounswe/bounswe2022group9/issues/399)|
-  |[Backend] [Feature] Get art item by id|[Issue](https://github.com/bounswe/bounswe2022group9/issues/400)|
-  |[Backend] [Feature] Get tag by id|[Issue](https://github.com/bounswe/bounswe2022group9/issues/401)|
-  |[Backend] [Feature] Get comment by id|[Issue](https://github.com/bounswe/bounswe2022group9/issues/402)|
-  |[Backend] [Feature] Get notification by id|[Issue](https://github.com/bounswe/bounswe2022group9/issues/403)|
-  |[Backend] [Feature] Get exhibition by id|[Issue](https://github.com/bounswe/bounswe2022group9/issues/404)|
-  |[Backend] [Feature] Get followers of a user|[Issue](https://github.com/bounswe/bounswe2022group9/issues/405)|
-  |[Backend] [Feature] Get followings of a user|[Issue](https://github.com/bounswe/bounswe2022group9/issues/406)|
-  |[Backend] [Feature] Get favourites of a user|[Issue](https://github.com/bounswe/bounswe2022group9/issues/407)|
-  |[Backend] [Feature] Get comments of a user|[Issue](https://github.com/bounswe/bounswe2022group9/issues/408)|
-  |[Backend] [Feature] Get exhibitions of a user|[Issue](https://github.com/bounswe/bounswe2022group9/issues/409)|
-  |[Backend] [Feature] Get notifications of a user|[Issue](https://github.com/bounswe/bounswe2022group9/issues/410)|
-  |[Backend] [Feature] Get favourites of an art item|[Issue](https://github.com/bounswe/bounswe2022group9/issues/411)|
-  |[Backend] [Feature] Get comments of an art item|[Issue](https://github.com/bounswe/bounswe2022group9/issues/412)|
-  |[Backend] [Feature] Homepage of a user|[Issue](https://github.com/bounswe/bounswe2022group9/issues/413)|
-  |[Backend] Deploying API|[Issue](https://github.com/bounswe/bounswe2022group9/issues/414)|
-  |PS Meeting actions|[Issue](https://github.com/bounswe/bounswe2022group9/issues/350)|
-  |[Backend] Postman Documentation|[Issue](https://github.com/bounswe/bounswe2022group9/issues/415)|
-  |[Backend] Models Documentation|[Issue](https://github.com/bounswe/bounswe2022group9/issues/416)|
-  |Feeding Prod Database|[Issue](https://github.com/bounswe/bounswe2022group9/issues/432)|
-  |Documenting 3 example backend endpoint request and response|[Issue]()|
-  |Creating individual report of Omer Faruk Sisman|[Issue]()|
+   |||
+  |||
+  |||
+  |||
+  |||
   
   
   |Pull Request Title|Link|
   |-----|:--------:|
-  |Refactor/folder structure|[PR](https://github.com/bounswe/bounswe2022group9/pull/335)|
-  |refactoring and some features|[PR](https://github.com/bounswe/bounswe2022group9/pull/338)|
-  |Homepage of user implemented|[PR](https://github.com/bounswe/bounswe2022group9/pull/341)|
-  |Backend/feature/exhibition endpoints|[PR](https://github.com/bounswe/bounswe2022group9/pull/348)|
-  |Be/fix/ps issues 1|[PR](https://github.com/bounswe/bounswe2022group9/pull/349)|
-  |Refactor Endpoints|[PR](https://github.com/bounswe/bounswe2022group9/pull/361)|
-  |exhibition feature implemented|[PR](https://github.com/bounswe/bounswe2022group9/pull/362)|
-  |favourite comment features|[PR](https://github.com/bounswe/bounswe2022group9/pull/363)|
-  |response lists sorted|[PR](https://github.com/bounswe/bounswe2022group9/pull/364)|
-  |Feature Recommendation|[PR](https://github.com/bounswe/bounswe2022group9/pull/365)|
-  |Fix search user|[PR](https://github.com/bounswe/bounswe2022group9/pull/377)|
-  |Unit tests|[PR](https://github.com/bounswe/bounswe2022group9/pull/380)|
-  |image upload fields changed|[PR](https://github.com/bounswe/bounswe2022group9/pull/394)|
+   |||
+  |||
+  |||
+  |||
+  |||
   
   **Berkkant Koç**
   
