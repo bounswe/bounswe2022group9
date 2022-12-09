@@ -121,11 +121,19 @@ Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-p
      
   |Issue Title|Link|
   |-----|:--------:|
-   |||
-  |||
-  |||
-  |||
-  |||
+  |[Backend] Implement "update profile information"|[[Backend] Implement "update profile information"](https://github.com/bounswe/bounswe2022group9/issues/333)|
+  |Backend] Implement "get profile information"|[[Backend] Implement "get profile information"](https://github.com/bounswe/bounswe2022group9/issues/339)|
+  |[Backend] Create a new Django project for Annotations|[[Backend] Create a new Django project for Annotations](https://github.com/bounswe/bounswe2022group9/issues/370)|
+  |[Backend] Dockerize the Annotations Project|[[Backend] Dockerize the Annotations Project](https://github.com/bounswe/bounswe2022group9/issues/371)|
+  |[Backend] Add database connection to Annotation Project|[[Backend] Add database connection to Annotation Project](https://github.com/bounswe/bounswe2022group9/issues/373)|
+  |Backend] Implement Unfollow Endpoint|[[Backend] Implement Unfollow Endpoint](https://github.com/bounswe/bounswe2022group9/issues/417)|
+  |[Backend] Implement Helper Function to Delete Followed Users from Followings List of Follower Users|[[Backend] Implement Helper Function to Delete Followed Users from Followings List of Follower Users](https://github.com/bounswe/bounswe2022group9/issues/387)|
+  |[Backend] Implement Helper function to delete users from followers list|[[Backend] Implement Helper function to delete users from followers list](https://github.com/bounswe/bounswe2022group9/issues/379)|
+  |Add Backend Meeting 3 Notes to Wiki|[Add Backend Meeting 3 Notes to Wiki](https://github.com/bounswe/bounswe2022group9/issues/419)|
+  |Document "update_profile_info" endpoint of the API|[Document "update_profile_info" endpoint of the API](https://github.com/bounswe/bounswe2022group9/issues/343)|
+  |[Backend] Document "unfollow" endpoint of the API|[[Backend] Document "unfollow" endpoint of the API](https://github.com/bounswe/bounswe2022group9/issues/437)|
+  |Feeding Prod Database|[Feeding Prod Database](https://github.com/bounswe/bounswe2022group9/issues/432)|
+  |[Documentation] Document "Annotations" and "Standards" parts of Milestone2 Group Review|[[Documentation] Document "Annotations" and "Standards" parts of Milestone2 Group Review](https://github.com/bounswe/bounswe2022group9/issues/457)|
   
   |Pull Request Title|Link|
   |-----|:--------:|
