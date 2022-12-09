@@ -1,7 +1,7 @@
 ## Group Review
 
 ### 1. Executive Summary
-* Frontend
+**Frontend**
 Our development started with endpoint connections. After that, we created a detailed architecture plan for the front-end group. We split the tasks. In the end, we created three main tabs (home, search, profile) and four pages (home, search, user, profile). We created a bulk art-item show list such as a four-column table with art items and art-items details - owner name, created date, description, tags, number of comments, and number of favorites. When the user clicks the comment icon, the web page creates a comment pop-up page and the user can see details of comments and can make comments on this pop-up page. Also, a similar implementation has been done to favorites, the user can like the art item on the favorite pop-up page. We used this bulk art-item list on the homepage, user pages, and profile pages. We implemented a search page with an input bar and a list of results in the lower part of the page. When there is no input, the backend returns all users. If there is a search input, the page is refreshing at every change and the result of the search can be seen as a user list. In the result list, there have three details - the profile picture, the username, and the name of the user. When a user clicks on an element of the list, the web page navigates to the clicked user page.  The users' page and profile page has similar implementation. The only difference is in the user page, there has a follow/unfollow button but the unfollow button has not been deployed yet and on the profile page this button is the edit profile button. When the user clicks this button, a pop-up page is opening and the user can edit the details of the profile. Pages have two main parts. The upper part is the details of the user - profile picture, username, location, name, email, birthdate, follower button, and the following button. The lower part has two tabs which are posted by the user tab and favorited by the user tab. When the user posts an art item, it will show in the first tab and when the user likes an art item, it will be shown in the second tab.
     - Sign up page updated
     - Profile page created
@@ -18,8 +18,8 @@ Our development started with endpoint connections. After that, we created a deta
     - Make a comment implemented
     - Add to your favourites implemented
     
- * Backend
- In backend, firstly we need models since all the CRUD operations will be handled using these models. We created six models: art item, notification, comment, exhibition, user, and tag. After that we started to implement end-points. Implemented features are:
+**Backend**
+In backend, firstly we need models since all the CRUD operations will be handled using these models. We created six models: art item, notification, comment, exhibition, user, and tag. After that we started to implement end-points. Implemented features are:
  
     - Get profile page
     - Update profile photo
