@@ -55,7 +55,7 @@
 
 ### 2. List and Status of Deliverables
 
-
+We didn't change any of the deliverables from milestone 1. You can see the current deliverables from this [page](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/Deliverables.md).
 
 ### 3. Progress according to requirements
 
