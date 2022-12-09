@@ -54,6 +54,8 @@ I created an empty project for Annotations, connected it to a PostgreSQL databas
 * [update profile information has been added](https://github.com/bounswe/bounswe2022group9/pull/340)
 * [[Backend] Upgrade User Model](https://github.com/bounswe/bounswe2022group9/pull/325) (reviewed by me)
 * [Enhancement of helpers](https://github.com/bounswe/bounswe2022group9/pull/389) (reviewed by me)
+* [Count numbers Added](https://github.com/bounswe/bounswe2022group9/pull/390) (reviewed by me)
+* [Search art item](https://github.com/bounswe/bounswe2022group9/pull/385) (reviewed by me)
 
 ## Unit Tests
 
