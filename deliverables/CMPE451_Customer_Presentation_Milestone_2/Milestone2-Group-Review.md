@@ -31,9 +31,9 @@ Our development started with endpoint connections. After that, we created a deta
     - Search engines for user/art item/exhibition
     - Started annotations but not complete
     
-  In addition to that features, we have written unit tests to test whether we implemented correct or not. On the other hand, we have created a lot of helper functions to make implemetation easier. You can check it out helpers folder.
+  In addition to that features, we have written unit tests to test whether we implemented correct or not. On the other hand, we have created a lot of helper functions to make implementation easier. You can check it out helpers folder.
   
-  As the backend team, we did all the things that we have planned to do so far. The project is complete except recommendation system, exhibiton feature implementation, and annotation enhancement. 
+  As the backend team, we did all the things that we have planned to do so far. The project is complete except recommendation system, exhibiton feature implementation, and annotation enhancement. We will be implementing these features till the final milestone.
 
 ### 2. List and Status of Deliverables
 
