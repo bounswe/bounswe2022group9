@@ -290,6 +290,10 @@ Source: Userpage/Profile
   |Created a new empty project for Annotations and Dockerized it. |[Created a new empty project for Annotations and Dockerized it. ](https://github.com/bounswe/bounswe2022group9/pull/372)|
   |added "get_profile_info" endpoint|[added "get_profile_info" endpoint](https://github.com/bounswe/bounswe2022group9/pull/344)|
   |update_profile_information endpoint has been added|[update profile information has been added](https://github.com/bounswe/bounswe2022group9/pull/340)|
+  |[Backend] Upgrade User Model|(https://github.com/bounswe/bounswe2022group9/pull/325 (reviewed by me)|
+  |Enhancement of helpers|https://github.com/bounswe/bounswe2022group9/pull/389 (reviewed by me)|
+  |Count numbers Added|https://github.com/bounswe/bounswe2022group9/pull/390 reviewed by me)|
+  |Search art item|https://github.com/bounswe/bounswe2022group9/pull/385 (reviewed by me)|
   
   **Oğuzhan Özboyacı**
    
