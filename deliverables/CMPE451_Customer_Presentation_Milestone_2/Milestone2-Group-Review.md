@@ -45,20 +45,35 @@ In backend, firstly we need models since all the CRUD operations will be handled
 The requirements addressed in this milestone are as follows:
 
 3.1.3.2. Users shall be able to comment on art items.
+
 3.1.3.3. Users shall be able to like art items.
+
 3.1.3.4. Users shall be able to save an art item to favorites.
+
 3.1.3.6. Users should be able to have a repository for their favorite art items.
+
 3.1.3.7. Users shall be able to add tags to their shared art items.
+
 3.1.4.1. Users shall be able to have profiles.
+
 3.1.4.2. Users shall be able to see art items that he/she shared in his/her profile.
+
 3.1.4.3. Users shall be able to add profile picture, description and personal information into their profiles.
+
 3.1.4.4. Users shall be able to change profile picture, description and personal information from their profiles.
+
 3.1.5.1. Users shall be able to follow other users.
+
 3.1.5.2. Users shall be able to unfollow other users.
+
 3.1.5.3. Users shall be able to see the art items of followed users.
+
 3.1.5.4. Users shall be able to see the liked art items of followed users.
+
 3.1.8.2. Users shall be able to pick a category for their search(art item, art exhibit, tag, account) and get the results starting from the most relevant.
+
 3.2.2.1. The platform shall include a search engine to find other users, art items or discussion forums.
+
 3.2.2.4. The search engine shall match the arts and artists with given tags.
 
 
