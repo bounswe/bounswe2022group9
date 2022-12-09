@@ -182,3 +182,21 @@
   |||
   |||
   
+  ## Annotations
+  
+ In the backend side: As instructors of the course said a seperate API for annotations should be created. To do so:
+ * we created a new Django project, added a new empty app into it
+ * created a seperated PotgreSQL database, connected the database to the app
+ * added a "waiting for database" command to prevent the app starts before the database (otherwise, errors related to database may occur)
+ * dockerized this empty app-database pair.
+ 
+ As a result, we can say that, we created the "basic infrastructure" to start implementing the annotations API.
+ We didn't started to implement the API yet.
+ 
+ We are planning to implement the annotations until Milestone 3 and present annotations in the Milestone Presentation.
+ 
+ ## Standards
+ 
+ Since, we didn't implement annotations yet, we aren't able to talk about it'a compatibility with standards.
+ We will implement annotations and evaluate it's compatibility with standards at Milestone 3.
+  
