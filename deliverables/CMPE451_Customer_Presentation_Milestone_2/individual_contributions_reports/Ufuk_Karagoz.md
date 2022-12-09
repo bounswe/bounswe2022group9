@@ -23,6 +23,7 @@
 ### Management-related significant issues 
 * [Documentation] Documenting Individual Contribution Report of Ufuk Karagoz [Issue Link](https://github.com/bounswe/bounswe2022group9/issues/450)
 * [Documentation] Documenting UI/UX related parts in the Group Review for Web [Issue Link](https://github.com/bounswe/bounswe2022group9/issues/455)
+* [Documentation] Documenting Executive Summary part in the Group Review for Frontend [Issue Link](https://github.com/bounswe/bounswe2022group9/issues/459)
 
 ## Pull Requests
 * Final version of  frontend Pull Request with detailed commits [#436](https://github.com/bounswe/bounswe2022group9/pull/436)
