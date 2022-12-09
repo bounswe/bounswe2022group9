@@ -52,7 +52,60 @@ Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-p
 <img src="https://user-images.githubusercontent.com/45214804/206678892-4c5cd5ef-aade-4ed1-a947-d6336da50f5f.png" width="240">
 Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/Profile.js
 
+**Frontend**
+1. Login
+<img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/login_page.png" height="240">
+Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Login.js
 
+2. Sign up
+<img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/sign_up_page.png" height="240">
+Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Signup.js
+
+3. Profile
+<img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/profile_page.png" height="240">
+Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Profile.js
+
+4. Edit Profile
+<img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/edit_profile.png" height="240">
+Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Profile.js
+
+
+5. Homepage
+<img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/home_page.png" height="240">
+Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Home.js
+
+
+6. Comments Pop-up
+<img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/comments_page.png" height="240">
+Source: Homepage/Userpage/Profile
+
+
+7. Favourites Pop-up
+<img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/favourites_page.png" height="240">
+Source: Homepage/Userpage/Profile
+
+
+8. Search Page
+<img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/search_page.png" height="240">
+
+
+<img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/search_with_text_page.png" height="240">
+Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Search.js
+
+
+9. User Page
+<img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/user_page.png" height="240">
+Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/User.js
+
+
+10. Posted Art-Items
+<img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/posted_art_items.png" height="240">
+Source: Userpage/Profile
+
+
+11. Favourited by User Art-Items
+<img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/favourited_by_user_art_items.png" height="240">
+Source: Userpage/Profile
 
 
 ### 7. A Summary of Work Performed by Each Team Member 
