@@ -17,6 +17,23 @@ Our development started with endpoint connections. After that, we created a deta
     - Follow the user implemented
     - Make a comment implemented
     - Add to your favourites implemented
+    
+ * Backend
+ In backend, firstly we need models since all the CRUD operations will be handled using these models. We created six models: art item, notification, comment, exhibition, user, and tag. After that we started to implement end-points. Implemented features are:
+ 
+    - Get profile page
+    - Update profile photo
+    - Get followers/follower count/followings/following count/favourites/comments/exhibitions/notifications of a user
+    - Get user/comment/exhibition/notification/art item
+    - Post art item
+    - Post comment
+    - Post favorite
+    - Search engines for user/art item/exhibition
+    - Started annotations but not complete
+    
+  In addition to that features, we have written unit tests to test whether we implemented correct or not. On the other hand, we have created a lot of helper functions to make implemetation easier. You can check it out helpers folder.
+  
+  As the backend team, we did all the things that we have planned to do so far. The project is complete except recommendation system, exhibiton feature implementation, and annotation enhancement. 
 
 ### 2. List and Status of Deliverables
 
@@ -26,9 +43,6 @@ Our development started with endpoint connections. After that, we created a deta
 
 
 ### 4. API Endpoints
-* [The API Documentation](https://documenter.getpostman.com/view/21597705/2s8YmSqfTg)
-* Link to the API : `http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1`
-* [3 Examples of API Calls](https://github.com/bounswe/bounswe2022group9/wiki/3-Example-API-Endpoint)
 
 
 ### 5. User Interface / User Experience
@@ -171,20 +185,20 @@ Source: Userpage/Profile
    
   |Issue Title|Link|
   |-----|:--------:|
-  |[Frontend] - Endpoint connections|https://github.com/bounswe/bounswe2022group9/issues/423|
-  |[Frontend] - Navigation Bar design|https://github.com/bounswe/bounswe2022group9/issues/424|
-  |[Frontend] - Search User Implementation|https://github.com/bounswe/bounswe2022group9/issues/425|
-  |[Frontend] - Art item list|https://github.com/bounswe/bounswe2022group9/issues/427|
-  |[Frontend] - Profile update|https://github.com/bounswe/bounswe2022group9/issues/428|
-  |[Frontend] - Bulk user list|https://github.com/bounswe/bounswe2022group9/issues/434|
-  |[Frontend] - Two sub-menu on user pages|https://github.com/bounswe/bounswe2022group9/issues/435|
-  |[Documentation] Documenting Individual Contribution Report of Ufuk Karagoz|https://github.com/bounswe/bounswe2022group9/issues/450|
-  |[Documentation] Documenting UI/UX related parts in the Group Review for Web|https://github.com/bounswe/bounswe2022group9/issues/455|
-  |[Documentation] Documenting Executive Summary part in the Group Review for Frontend|https://github.com/bounswe/bounswe2022group9/issues/459|
+   |||
+  |||
+  |||
+  |||
+  |||
+  
   
   |Pull Request Title|Link|
   |-----|:--------:|
-  |Final version of  frontend Pull Request with detailed commits|https://github.com/bounswe/bounswe2022group9/pull/436|
+   |||
+  |||
+  |||
+  |||
+  |||
   
    **Burak Ferit Aktan**
      
@@ -323,5 +337,4 @@ Source: Userpage/Profile
  ## Individual Contributions Reports
  
  * [Burak Ferit Aktan](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_2/individual_contributions_reports/Burak_Ferit_Aktan.md)
- * [Ufuk Karagöz](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_2/individual_contributions_reports/Ufuk_Karagoz.md)
   
