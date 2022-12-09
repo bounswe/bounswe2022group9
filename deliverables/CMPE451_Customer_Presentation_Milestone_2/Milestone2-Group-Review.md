@@ -90,11 +90,15 @@
   
   |Pull Request Title|Link|
   |-----|:--------:|
-   |||
-  |||
-  |||
-  |||
-  |||
+  |Unfollow Endpoint|[Unfollow Endpoint](https://github.com/bounswe/bounswe2022group9/pull/418)|
+  |Delete user from followings list function|[Delete user from followings list function](https://github.com/bounswe/bounswe2022group9/pull/386)|
+  |Unfollow helper function - deleting follower from followers list of followed user|[Unfollow helper function - deleting follower from followers list of followed user](https://github.com/bounswe/bounswe2022group9/pull/378)|
+  |Unit tests for Unfollow, get_profile_info and update_profile_info endpoints|[Unit tests for Unfollow, get_profile_info and update_profile_info endpoints](https://github.com/bounswe/bounswe2022group9/pull/429)|
+  |Add proxy and uWSGI to empty Annotations project Docker Image|[Add proxy and uWSGI to empty Annotations project Docker Image](https://github.com/bounswe/bounswe2022group9/pull/391)|
+  |Adding Database (dockerized) and empty sample app to Annotation Project|[Adding Database (dockerized) and empty sample app to Annotation Project](https://github.com/bounswe/bounswe2022group9/pull/374)|
+  |Created a new empty project for Annotations and Dockerized it. |[Created a new empty project for Annotations and Dockerized it. ](https://github.com/bounswe/bounswe2022group9/pull/372)|
+  |added "get_profile_info" endpoint|[added "get_profile_info" endpoint](https://github.com/bounswe/bounswe2022group9/pull/344)|
+  |update_profile_information endpoint has been added|[update profile information has been added](https://github.com/bounswe/bounswe2022group9/pull/340)|
   
   **Oğuzhan Özboyacı**
    
