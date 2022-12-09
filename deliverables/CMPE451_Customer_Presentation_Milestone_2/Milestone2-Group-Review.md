@@ -327,9 +327,9 @@ Source: Userpage/Profile
   |[Backend] Implement count numbers for user|[Issue](https://github.com/bounswe/bounswe2022group9/issues/466)|
   |[Backend] Write helper functions|[Issue](https://github.com/bounswe/bounswe2022group9/issues/467)|
   
-    |Pull Request Title|Link|
+  |Pull Request Title|Link|
   |-----|:--------:|
-   |Search Engine For a User|[PR](https://github.com/bounswe/bounswe2022group9/pull/376)|
+  |Search Engine For a User|[PR](https://github.com/bounswe/bounswe2022group9/pull/376)|
   |Search art item |[PR](https://github.com/bounswe/bounswe2022group9/pull/385)|
   |Search exhibition|[PR](https://github.com/bounswe/bounswe2022group9/pull/388)|
   |Enhancement of helpers|[PR](https://github.com/bounswe/bounswe2022group9/pull/389)|
