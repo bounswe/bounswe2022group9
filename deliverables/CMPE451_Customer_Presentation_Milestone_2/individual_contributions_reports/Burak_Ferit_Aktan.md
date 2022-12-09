@@ -35,6 +35,7 @@ I created an empty project for Annotations, connected it to a PostgreSQL databas
 * [Document "update_profile_info" endpoint of the API](https://github.com/bounswe/bounswe2022group9/issues/343)
 * [[Backend] Document "unfollow" endpoint of the API](https://github.com/bounswe/bounswe2022group9/issues/437)
 * [Feeding Prod Database](https://github.com/bounswe/bounswe2022group9/issues/432)
+* [[Documentation] Document "Annotations" and "Standards" parts of Milestone2 Group Review](https://github.com/bounswe/bounswe2022group9/issues/457)
 
 ## Pull Requests
  * [Unfollow Endpoint](https://github.com/bounswe/bounswe2022group9/pull/418)
