@@ -80,20 +80,22 @@ Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-p
    
   |Issue Title|Link|
   |-----|:--------:|
-   |||
-  |||
-  |||
-  |||
-  |||
+   |[Mobile] - Profile Page Backend Connection and UI changes #381|https://github.com/bounswe/bounswe2022group9/issues/381|
+  |[Mobile] - List All Users #382|https://github.com/bounswe/bounswe2022group9/issues/382|
+  |[Mobile] - Navigation from Feed and Profile to Art Item #383|https://github.com/bounswe/bounswe2022group9/issues/383|
+  |[Mobile] - Creating APK #384|https://github.com/bounswe/bounswe2022group9/issues/384|
+  |[Mobile] - Feed Page #420|https://github.com/bounswe/bounswe2022group9/issues/420|
+  |[Mobile] Likes navigate to Users #431|https://github.com/bounswe/bounswe2022group9/issues/431|
+  |[Documentation] Documenting Individual Contribution Report of İbrahim Buğra Elmas #452|https://github.com/bounswe/bounswe2022group9/issues/452|
+  |[Documentation] Documenting UI/UX related parts in the Group Review for Mobile #453|https://github.com/bounswe/bounswe2022group9/issues/453|
   
   
   |Pull Request Title|Link|
   |-----|:--------:|
-  |||
-  |||
-  |||
-  |||
-  |||
+  |add profile backend #375|https://github.com/bounswe/bounswe2022group9/pull/375|
+  |Feature/search-users #421|https://github.com/bounswe/bounswe2022group9/pull/421|
+  |Feed-user #433|https://github.com/bounswe/bounswe2022group9/pull/433|
+
   
   
    **Ufuk Karagöz**
