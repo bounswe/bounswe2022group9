@@ -43,15 +43,17 @@ I created an empty project for Annotations, connected it to a PostgreSQL databas
 * [[Documentation] Documenting Individual Contribution Report of Burak Ferit Aktan](https://github.com/bounswe/bounswe2022group9/issues/446)
 
 ## Pull Requests
- * [Unfollow Endpoint](https://github.com/bounswe/bounswe2022group9/pull/418)
- * [Delete user from followings list function](https://github.com/bounswe/bounswe2022group9/pull/386)
- * [Unfollow helper function - deleting follower from followers list of followed user](https://github.com/bounswe/bounswe2022group9/pull/378)
- * [Unit tests for Unfollow, get_profile_info and update_profile_info endpoints](https://github.com/bounswe/bounswe2022group9/pull/429)
- * [Add proxy and uWSGI to empty Annotations project Docker Image](https://github.com/bounswe/bounswe2022group9/pull/391)
- * [Adding Database (dockerized) and empty sample app to Annotation Project](https://github.com/bounswe/bounswe2022group9/pull/374)
- * [Created a new empty project for Annotations and Dockerized it. ](https://github.com/bounswe/bounswe2022group9/pull/372)
- * [added "get_profile_info" endpoint](https://github.com/bounswe/bounswe2022group9/pull/344)
- * [update profile information has been added](https://github.com/bounswe/bounswe2022group9/pull/340)
+* [Unfollow Endpoint](https://github.com/bounswe/bounswe2022group9/pull/418)
+* [Delete user from followings list function](https://github.com/bounswe/bounswe2022group9/pull/386)
+* [Unfollow helper function - deleting follower from followers list of followed user](https://github.com/bounswe/bounswe2022group9/pull/378)
+* [Unit tests for Unfollow, get_profile_info and update_profile_info endpoints](https://github.com/bounswe/bounswe2022group9/pull/429)
+* [Add proxy and uWSGI to empty Annotations project Docker Image](https://github.com/bounswe/bounswe2022group9/pull/391)
+* [Adding Database (dockerized) and empty sample app to Annotation Project](https://github.com/bounswe/bounswe2022group9/pull/374)
+* [Created a new empty project for Annotations and Dockerized it. ](https://github.com/bounswe/bounswe2022group9/pull/372)
+* [added "get_profile_info" endpoint](https://github.com/bounswe/bounswe2022group9/pull/344)
+* [update profile information has been added](https://github.com/bounswe/bounswe2022group9/pull/340)
+* [[Backend] Upgrade User Model](https://github.com/bounswe/bounswe2022group9/pull/325) (reviewed by me)
+* [Enhancement of helpers](https://github.com/bounswe/bounswe2022group9/pull/389) (reviewed by me)
 
 ## Unit Tests
 
