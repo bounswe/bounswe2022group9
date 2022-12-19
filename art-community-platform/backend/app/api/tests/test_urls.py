@@ -14,6 +14,7 @@ from ..views.notification import *
 from ..views.tag import *
 from ..views.user import *
 from ..views.profile import *
+from ..views.recommend import *
 
 
 class TestUrls(TestCase):
@@ -120,4 +121,8 @@ class TestUrls(TestCase):
     def test_unfollow_url_is_resolved(self):
         url = reverse('unfollow')
         self.assertEqual(resolve(url).func, unfollow)
+
+    def test_recommend_art_item_url_is_resolved(self):
+        url = reverse('recommend_art_items')
+        self.assertEqual(resolve(url).func, recommend_art_items)
 

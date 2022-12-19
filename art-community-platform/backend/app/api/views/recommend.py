@@ -15,9 +15,8 @@ def recommend_art_items(req, user_id):
         u = User.objects.get(id=user_id)
     except:
         return HttpResponse('no user found with this id', status=404)
-
     if is_new_user_for_art_recommendation(u):
-        return JsonResponse(popular_art_items())
+        return JsonResponse({"recommendations": popular_art_items()})
     else:
         tags = get_tags_of_favourites()
         arts = ArtItem.objects.all()
@@ -25,7 +24,7 @@ def recommend_art_items(req, user_id):
         for art in arts:
             if set(art.tags).intersection(tags):
                 art_items_to_recommend.append(art.id)
-        return JsonResponse(list(art_items_to_recommend))
+        return JsonResponse({"recommendations" : list(art_items_to_recommend)})
 
 
 
