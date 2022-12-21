@@ -14,6 +14,7 @@ from .views.tag import *
 from .views.follow import *
 from .views.homepage import *
 from .views.search import *
+from .views.annotation import *
 
 urlpatterns = [
     path('health-check', health_check, name='health_check'),
@@ -59,5 +60,8 @@ urlpatterns = [
     path('users/search/<str:keyword>', search_user, name='search_user'),
     path('art-items/search/<str:keyword>', search_art_item, name='search_art_item'),
     path('exhibitions/search/<str:keyword>', search_exhibition, name='search_exhibition'),
+
+    path('annotations/<int:annotation_id>', get_annotation_by_id, name='get_annotation_by_id'),
+    path('annotation', create_annotation, name='create_annotation'),
 
 ]
