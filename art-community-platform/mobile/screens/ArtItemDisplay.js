@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { getArtItem, like, comment } from "./services/ArtItemService";
-import { getLikedUsers } from "./services/GeneralServices";
+import { TextAnnotator } from 'react-text-annotate'
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import { useState, useEffect } from "react";
 
