@@ -5,6 +5,7 @@ from ..models.comment import Comment
 from ..models.tag import Tag
 from ..models.exhibition import Exhibition
 from ..models.notification import Notification
+from ..models.annotation import Annotation
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -40,4 +41,10 @@ class ExhibitionSerializer(serializers.ModelSerializer):
 class NotificationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Notification
+        fields = '__all__'
+
+
+class AnnotationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Annotation
         fields = '__all__'
