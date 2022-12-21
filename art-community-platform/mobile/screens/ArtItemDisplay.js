@@ -9,15 +9,16 @@ import {
   SafeAreaView,
   Pressable,
   TextInput,
+  State
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { getArtItem, like, comment } from "./services/ArtItemService";
 import { TextAnnotator } from 'react-text-annotate'
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import { useState, useEffect } from "react";
+import Annotation from "./components/Annotation";
 
 const dimensions = Dimensions.get("window");
-
 
 const ArtItemDisplay = (props) => {
   const { navigation } = props;
@@ -60,9 +61,10 @@ const ArtItemDisplay = (props) => {
       <ScrollView>
         <Text style={styles.creator}>Created by {art_item.owner_name}</Text>
         <Text style={styles.timestamp}> {art_item.date}</Text>
-        <View style={styles.caption}>
-          <Text>{art_item.description}</Text>
-        </View>
+
+        <Annotation content={art_item.description}></Annotation>
+            
+        <Text>{art_item.description}</Text>
         <Image style={styles.photo} source={{ uri: art_item.img_url }} />
         <View style={{ flexDirection: "row" }}>
           <Pressable
@@ -171,7 +173,6 @@ const ArtItemDisplay = (props) => {
     </SafeAreaView>
   );
 };
-
 
 export default ArtItemDisplay;
 
