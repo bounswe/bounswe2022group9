@@ -1,6 +1,6 @@
 import React from "react";
 import {Component} from 'react';  
-import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
+import { StyleSheet, Text, View, Image, Dimensions, Mark } from "react-native";
 import Colors from "../constants/Colors";
 import { TextAnnotator } from "react-text-annotate";
 const dimensions = Dimensions.get("window");
@@ -52,7 +52,7 @@ export default class Annotation extends React.Component {
                 color: TAG_COLORS[desc]
             })}
             renderMark={props => (
-                <mark
+                <Mark
                 key={props.key}
                 onClick={() =>
                     props.onClick({
@@ -83,7 +83,7 @@ export default class Annotation extends React.Component {
                     {" "}
                     {props.tag}
                 </Text>
-                </mark>
+                </Mark>
             )}
             />
         </View>
