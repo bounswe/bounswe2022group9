@@ -6,6 +6,7 @@ import json
 import requests
 import base64
 from ..helpers.comment_helpers import get_comment_by_id_helper
+from ..helpers.annotation_helpers import get_annotation_by_id_helper
 from ..helpers.exhibition_helpers import get_exhibition_by_id_helper
 from ..helpers.notification_helpers import get_notification_by_id_helper
 from ..helpers.tag_helpers import get_tag_by_id_helper
@@ -124,6 +125,27 @@ def get_comments_of_art_item(req, art_item_id):
 
     return JsonResponse({"comments": comments})
 
+@api_view(['GET'])
+def get_annotations_of_art_item(req, art_item_id):
+    try:
+        token = req.headers['Authorization']
+    except:
+        return HttpResponse('token is missing', status=401)
+
+    try:
+        art = ArtItem.objects.get(id=art_item_id)
+    except:
+        return HttpResponse("no art item found with this id", status=404)
+
+    try:
+        annotations = []
+        for annotation_id in art.annotations:
+            annotations.append(get_annotation_by_id_helper(annotation_id))
+    except:
+        return HttpResponse('annotations of art item can not fetched', status=404)
+
+    return JsonResponse({"annotations": annotations})
+
 
 @api_view(['POST'])
 def create_art_item(req):
@@ -170,3 +192,5 @@ def create_art_item(req):
         return HttpResponse('art item id can not added in art items of user', status=400)
 
     return HttpResponse(status=201)
+
+
