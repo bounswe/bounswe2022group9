@@ -90,6 +90,13 @@ def create_annotation(req):
         return HttpResponse('annotation can not created', status=400)
 
     # add annotation to art item
+    try:
+        annotations_of_art = art.annotations
+        if a.id not in annotations_of_art:
+            annotations_of_art.append(a.id)
+        ArtItem.objects.filter(id=art_item_id).update(annotations=annotations_of_art)
+    except:
+        return HttpResponse('annotation can not added to annotations of art item', status=400)
 
     return HttpResponse(status=201)
 
