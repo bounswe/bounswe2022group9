@@ -5,6 +5,7 @@ from .models.comment import Comment
 from .models.notification import Notification
 from .models.exhibition import Exhibition
 from .models.tag import Tag
+from .models.annotation import Annotation
 
 
 admin.site.register(User)
@@ -13,3 +14,4 @@ admin.site.register(Comment)
 admin.site.register(Tag)
 admin.site.register(Exhibition)
 admin.site.register(Notification)
+admin.site.register(Annotation)
