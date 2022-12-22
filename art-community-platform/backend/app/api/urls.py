@@ -63,5 +63,6 @@ urlpatterns = [
 
     path('annotations/<int:annotation_id>', get_annotation_by_id, name='get_annotation_by_id'),
     path('annotation', create_annotation, name='create_annotation'),
+    path('annotation/<int:annotation_id>', update_annotation, name='update_annotation'),
 
 ]
