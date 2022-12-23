@@ -42,6 +42,7 @@ urlpatterns = [
 
     path('art-items/<int:art_item_id>/favourites', get_favourites_of_art_item, name='get_favourites_of_art_item'),
     path('art-items/<int:art_item_id>/comments', get_comments_of_art_item, name='get_comments_of_art_item'),
+    path('art-items/<int:art_item_id>/annotations', get_annotations_of_art_item, name='get_annotations_of_art_item'),
 
     path('art-item', create_art_item, name='create_art_item'),
     path('upload-image', upload_image, name='upload_image'),
@@ -68,5 +69,6 @@ urlpatterns = [
 
     path('annotations/<int:annotation_id>', get_annotation_by_id, name='get_annotation_by_id'),
     path('annotation', create_annotation, name='create_annotation'),
+    path('annotation/<int:annotation_id>', update_annotation, name='update_annotation'),
 
 ]

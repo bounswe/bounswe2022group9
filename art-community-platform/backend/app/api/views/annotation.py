@@ -90,8 +90,71 @@ def create_annotation(req):
         return HttpResponse('annotation can not created', status=400)
 
     # add annotation to art item
+    try:
+        annotations_of_art = art.annotations
+        if a.id not in annotations_of_art:
+            annotations_of_art.append(a.id)
+        ArtItem.objects.filter(id=art_item_id).update(annotations=annotations_of_art)
+    except:
+        return HttpResponse('annotation can not added to annotations of art item', status=400)
 
     return HttpResponse(status=201)
+
+@api_view(['PUT'])
+def update_annotation(req, annotation_id):
+    try:
+        token = req.headers['Authorization']
+    except:
+        return HttpResponse('token is missing', status=401)
+
+    try:
+        body = json.loads(req.body)
+    except:
+        return HttpResponse('request body is missing', status=400)
+
+    try:
+        owner_id = body['owner_id']
+        art_item_id = body['art_item_id']
+        annotation_comment = body['annotation_comment']
+        annotation_type = body['annotation_type']
+        annotation_format = body['annotation_format']
+        annotation_source = body['annotation_source']
+    except:
+        return HttpResponse("missing fields", status=400)
+
+    try:
+        u = User.objects.get(id=owner_id)
+        art = ArtItem.objects.get(id=art_item_id)
+    except:
+        return HttpResponse('no user or art item found with this id', status=404)
+
+    try:
+        a = Annotation.objects.get(id=annotation_id)
+    except:
+        return HttpResponse('annotation can not fetched', status=400)
+
+    annotation = {
+        "@context": "http://www.w3.org/ns/anno.jsonld",
+        "id": a.annotation['id'],
+        "type": "Annotation",
+        "body": {
+            "type": "TextualBody",
+            "value": annotation_comment,
+            "purpose": "commenting"
+        },
+        "target": {
+            "id": annotation_source,
+            "type": annotation_type,
+            "format": annotation_format
+        }
+    }
+
+    try:
+        Annotation.objects.filter(id=annotation_id).update(annotation=annotation)
+    except:
+        return HttpResponse('annotation can not updated', status=400)
+
+    return HttpResponse(status=200)
 
 
 @api_view(['GET'])

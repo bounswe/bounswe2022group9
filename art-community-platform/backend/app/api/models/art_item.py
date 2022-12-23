@@ -11,3 +11,4 @@ class ArtItem(models.Model):
     tags = ArrayField(models.CharField(max_length=100), default=[])
     comments = ArrayField(models.IntegerField(), default=[])
     favourites = ArrayField(models.IntegerField(), default=[])
+    annotations = ArrayField(models.IntegerField(), default=[])
