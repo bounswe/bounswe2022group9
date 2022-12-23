@@ -91,3 +91,17 @@ class TestProfile(TestCase):
                 continue
             self.assertTrue(art.id in recommendation_ids, "missing recommendation")
 
+    def test_users_having_gte_five_favourites(self):
+        req = self.factory.get('/api/v1/recommend/art-items/'+str(self.users[1].id), content_type="application/json")
+        res = recommend_art_items(req, self.users[1].id)
+        res_json = json.loads(res.content)
+
+        self.assertEqual(res.status_code, 200)
+        # there are 10 art items having mutual tags with user[1]'s favouites
+        self.assertEqual(len(res_json['recommendations']), 10)
+
+        # check the values
+        recommendation_ids = [art['id'] for art in res_json['recommendations']]
+        for art in enumerate(self.arts):
+            self.assertTrue("medieval" in art.tags, "recommendation not having mutual tags with user's favourites")
+
