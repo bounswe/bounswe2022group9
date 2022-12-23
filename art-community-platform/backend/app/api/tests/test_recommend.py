@@ -5,6 +5,7 @@ import json
 from ..models.art_item import ArtItem
 from faker import Faker
 import random
+import unittest
 
 from ..views.auth import signup
 from ..views.user import *
@@ -77,13 +78,16 @@ class TestProfile(TestCase):
 
 
     def test_users_having_less_than_five_favourites(self):
-        req = self.factory.get('/api/v1/users/'+str(self.user.id)+'/get_profile_info', content_type="application/json")
-        res = get_profile_info(req, self.user.id)
+        req = self.factory.get('/api/v1/recommend/art-items/'+str(self.users[0].id), content_type="application/json")
+        res = recommend_art_items(req, self.users[0].id)
         res_json = json.loads(res.content)
 
         self.assertEqual(res.status_code, 200)
 
         # check the values
-        self.assertEqual(res_json['profile_img_url'], self.user.profile_img_url)
-        self.assertEqual(res_json['birthdate'], self.user.birthdate)
-        self.assertEqual(res_json['location'], self.user.location)
+        recommendation_ids = [art['id'] for art in res_json['recommendations']]
+        for art in enumerate(self.arts):
+            if len(art.favourites) == 0:
+                continue
+            self.assertTrue(art.id in recommendation_ids, "missing recommendation")
+
