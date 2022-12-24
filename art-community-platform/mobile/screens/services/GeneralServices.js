@@ -188,6 +188,29 @@ export const followUser = async (token, followed_id) => {
     });
 };
 
+export const unfollowUser = async (token, followed_id) => {
+  return axios
+    .post(
+      `http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1/unfollow`,
+      {
+        followed_user_id: followed_id,
+        date: new Date().toISOString().split("T")[0],
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `${token}`,
+        },
+      }
+    )
+    .then((response) => {
+      return response;
+    })
+    .catch((error) => {
+      return error.response;
+    });
+};
+
 export const getFavourites = async (userId, token) => {
   return axios
     .get(
