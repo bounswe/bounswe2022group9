@@ -193,8 +193,7 @@ export const unfollowUser = async (token, followed_id) => {
     .post(
       `http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1/unfollow`,
       {
-        followed_user_id: followed_id,
-        date: new Date().toISOString().split("T")[0],
+        followed_id: followed_id,
       },
       {
         headers: {
