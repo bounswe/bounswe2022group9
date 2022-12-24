@@ -74,7 +74,28 @@ const Feed = (props) => {
           />
         </TabController.TabPage>
         <TabController.TabPage index={1} lazy>
-            <Text>Recommendations</Text>
+        <FlatList
+            data={recommendations}
+            renderItem={({ item }) => (
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("ArtItem", {
+                    token: token,
+                    art_item_id: item.id,
+                    userId: userId,
+                  })
+                }
+              >
+                <Post
+                  username={item["owner_name"]}
+                  uri={item["img_url"]}
+                  date={item["date"]}
+                  desc={item["description"]}
+                ></Post>
+              </TouchableOpacity>
+            )}
+            keyExtractor={(item, index) => index.toString()}
+          />
         </TabController.TabPage>
         </TabController.PageCarousel>
       </TabController>
