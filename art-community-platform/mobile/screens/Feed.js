@@ -11,7 +11,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import Post from "./components/Post";
-import { getFeed } from "./services/GeneralServices";
+import { getFeed , getRecommendations } from "./services/GeneralServices";
 import { TabController } from "react-native-ui-lib";
 
 const Feed = (props) => {
@@ -23,6 +23,13 @@ const Feed = (props) => {
       setPosts(response.data["art_items"]);
     });
   }, []);
+  const [recommendations, setRecommendations] = React.useState([]);
+  useEffect(() => {
+    getRecommendations(userId, token).then((response) => {
+      setRecommendations(response.data["art_items"]);
+    });
+  }, []);
+
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <TabController
