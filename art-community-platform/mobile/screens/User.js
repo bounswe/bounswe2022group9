@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import {
+  unfollowUser,
   followUser,
   getFavourites,
   getProfile,
