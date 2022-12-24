@@ -25,8 +25,8 @@ const Feed = (props) => {
   }, []);
   const [recommendations, setRecommendations] = React.useState([]);
   useEffect(() => {
-    getRecommendations(userId, token).then((response) => {
-      setRecommendations(response.data["art_items"]);
+    getRecommendations(userId).then((response) => {
+      setRecommendations(response.data["recommendations"]);
     });
   }, []);
 
