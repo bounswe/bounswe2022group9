@@ -168,10 +168,6 @@ export const getFeed = async (userId, token) => {
 export const getRecommendations = async (userId, token) => {
   return axios
     .get(`http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1/recommend/art-items/${userId}`, {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `${token}`,
-      },
     })
     .then((response) => {
       return response;
