@@ -46,6 +46,15 @@ const User = (props) => {
       }
     });
   };
+  const unfollow = () => {
+    unfollowUser(token, userId).then((response) => {
+      if (response.status == 200) {
+        getProfile(userId, token).then((response) => {
+          setProfile(response.data);
+        });
+      }
+    });
+  };
   useEffect(() => {
     getProfile(userId, token).then((response) => {
       setProfile(response.data);
@@ -101,7 +110,7 @@ const User = (props) => {
           <Text style={styles.namee}>{profile.name}</Text>
           <Text style={styles.description}>{profile.username}</Text>
           <TouchableOpacity
-            onPress={profile.is_following ? null : follow}
+            onPress={profile.is_following ? unfollow : follow}
             style={{ width: "100%", alignItems: "center" }}
           >
             <View
