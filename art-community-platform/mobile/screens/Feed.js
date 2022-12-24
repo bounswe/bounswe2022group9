@@ -18,20 +18,25 @@ const Feed = (props) => {
   const { userId, token } = props.route.params;
   const { navigation } = props;
   const [posts, setPosts] = React.useState([]);
-  useEffect(() => {
-    getFeed(userId, token).then((response) => {
-      setPosts(response.data["art_items"]);
-    });
-  }, []);
   const [recommendations, setRecommendations] = React.useState([]);
+  const [index, setIndex] = React.useState(0);
+
   useEffect(() => {
-    getRecommendations(userId).then((response) => {
-      setRecommendations(response.data["recommendations"]);
-    });
-  }, []);
+    if (index === 0) {
+      getFeed(userId, token).then((response) => {
+        setPosts(response.data["art_items"]);
+      });
+    } else if (index === 1) {
+      getRecommendations(userId).then((response) => {
+        console.log("data")
+        console.log(response.data)
+        setRecommendations(response.data["recommendations"]);
+      });
+    }
+  }, [index]);
 
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+    <View style={{ flex: 1, alignItems: "center" }}>
       <TabController
         items={[
           { label: "Feed" },
@@ -74,6 +79,7 @@ const Feed = (props) => {
           />
         </TabController.TabPage>
         <TabController.TabPage index={1} lazy>
+          <Text>Recommendations</Text>
         <FlatList
             data={recommendations}
             renderItem={({ item }) => (
