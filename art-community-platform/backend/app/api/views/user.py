@@ -68,12 +68,17 @@ def get_user_by_id(req, user_id):
     followings_count = len(followings["followings"])
     art_item_count = len(art_item_list["art_items"])
 
+    try:
+        user_level = (len(u.comments) + art_item_count) / 5
+    except:
+        user_level = 1
 
     try:
         resp = {"id": u.id, "username": u.username, "email": u.email,
                 "birthdate": u.birthdate, "name": u.name, "art_items:": art_items,
                 "profile_img_url": u.profile_img_url, "location": u.location, "is_following": is_following,
-                "follower_count":followers_count,"following_count":followings_count,"art_item_count":art_item_count}
+                "follower_count":followers_count,"following_count":followings_count,
+                "art_item_count":art_item_count, "user_level": user_level}
     except:
         return HttpResponse('response can not created', status=404)
 
