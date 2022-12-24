@@ -4,5 +4,4 @@ uWSGI>=2.0.19.1,<2.1
 djangorestframework
 Faker==13.11.1
 django-cors-headers
-Pillow
-requests
+cloudinary

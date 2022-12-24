@@ -1,21 +1,14 @@
-import os
-
 from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse
 from rest_framework.decorators import api_view
 import json
-import requests
-import base64
 from ..helpers.comment_helpers import get_comment_by_id_helper
 from ..helpers.annotation_helpers import get_annotation_by_id_helper
-from ..helpers.exhibition_helpers import get_exhibition_by_id_helper
-from ..helpers.notification_helpers import get_notification_by_id_helper
-from ..helpers.tag_helpers import get_tag_by_id_helper
-from ..helpers.art_item_helpers import *
 from ..helpers.user_helpers import *
 from ..models.user import User
 from ..models.art_item import ArtItem
-from ..models.comment import Comment
-from ..models.tag import Tag
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 
 @api_view(['GET'])
@@ -125,6 +118,7 @@ def get_comments_of_art_item(req, art_item_id):
 
     return JsonResponse({"comments": comments})
 
+
 @api_view(['GET'])
 def get_annotations_of_art_item(req, art_item_id):
     try:
@@ -161,8 +155,7 @@ def create_art_item(req):
 
     try:
         owner_id = body['owner_id']
-        img_url = body['img_url']
-        img_str = body['img_str']
+        img_base64 = body['img_base64']
         description = body['description']
         tags = body['tags']
         date = body['date']
@@ -177,8 +170,17 @@ def create_art_item(req):
     if u.token != token:
         return HttpResponse("owner id and token mismatch", status=401)
 
+    cloudinary.config(
+        cloud_name="do0e4xvp8",
+        api_key="999946577192328",
+        api_secret="aVAettwhPS5SNq74ReNSRAnBCfg"
+    )
+
+    cloudinary.uploader.upload(img_base64, public_id=description)
+    img_url = cloudinary.CloudinaryImage(description).build_url()
+
     try:
-        a = ArtItem.objects.create(owner_id=owner_id, img_url=img_url, image=img_str,
+        a = ArtItem.objects.create(owner_id=owner_id, img_url=img_url,
                                    description=description, date=date, tags=tags)
         a.save()
     except:
