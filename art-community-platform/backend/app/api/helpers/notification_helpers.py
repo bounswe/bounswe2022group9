@@ -16,5 +16,6 @@ def get_notification_by_receiver_id_helper(receiver_id):
     result = []
     for obj in objects:
         if obj.receiver_id == receiver_id:
-            result.append(obj)
+            dictionary = {"id": obj.id, "receiver_id": obj.receiver_id, "text": obj.text, "date": str(obj.date)}
+            result.append(dictionary)
     return result

@@ -32,5 +32,14 @@ def get_notification_by_receiver_id(req, receiver_id):
     except:
         return HttpResponseBadRequest("no such user with given id")
     # return notifications coming to the user
-    return JsonResponse({"notifications": get_notification_by_receiver_id_helper()})
+    result = []
+    try:
+        result = get_notification_by_receiver_id_helper(receiver_id)
+    except Exception as e:
+        print(e.message)
+    try:
+        return JsonResponse({"notifications": result})
+    except Exception as e:
+        print(e.message)
+        return result
 

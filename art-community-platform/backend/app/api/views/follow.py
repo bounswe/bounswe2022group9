@@ -1,3 +1,5 @@
+import datetime
+
 from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse
 from rest_framework.decorators import api_view
 import hashlib
@@ -14,6 +16,7 @@ from ..models.user import User
 from ..models.art_item import ArtItem
 from ..models.comment import Comment
 from ..models.tag import Tag
+from ..models.notification import *
 
 
 @api_view(['POST'])
@@ -62,7 +65,12 @@ def follow(req):
     except:
         return HttpResponse('f can not added to followings of u', status=400)
 
-    # TODO : send a notification to f like 'u started following you'
+    # send a notification to the followed user
+    try:
+        Notification.objects.create(receiver_id=f.id,
+                                    text=str(u.username) + " started following you", date=datetime.datetime.now())
+    except:
+        return HttpResponse('couldnt send notification to the followed user but following is successful', status=400)
 
     return HttpResponse(status=200)
 
@@ -96,7 +104,6 @@ def unfollow(req):
         follower_id = u.id
     except:
         return HttpResponse('no user found with this token', status=404)
-
     result = delete_user_from_following(follower_id, followed_id)
     result2 = delete_user_from_followers(follower_id, followed_id)
 
