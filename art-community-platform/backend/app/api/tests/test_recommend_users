@@ -63,3 +63,16 @@ class TestUser(TestCase):
         sorted(must_be)
         self.assertTrue(recommendation_ids == must_be)
 
+    def test_users_having_not_less_than_three_followings(self):
+        req = self.factory.get('/api/v1/recommend/user/'+str(self.users[4].id), content_type="application/json")
+        res = recommend_users_to_follow(req, self.users[4].id)
+        res_json = json.loads(res.content)
+
+        self.assertEqual(res.status_code, 200)
+        # check the values
+        recommendation_ids = res_json['recommendations']
+        must_be = [5,6,7,8,9]
+        sorted(recommendation_ids)
+        sorted(must_be)
+        self.assertTrue(recommendation_ids == must_be)
+
