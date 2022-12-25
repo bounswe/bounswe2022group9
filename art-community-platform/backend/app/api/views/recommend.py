@@ -27,4 +27,12 @@ def recommend_art_items(req, user_id):
         return JsonResponse({"recommendations" : list(art_items_to_recommend)})
 
 
+@api_view(['GET'])
+def recommend_users_to_follow(req, user_id):
+
+    pass
+
+
+
+
 

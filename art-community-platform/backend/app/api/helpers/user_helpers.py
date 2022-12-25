@@ -150,48 +150,6 @@ def delete_user_from_following(follower_id, followed_id):
     # success case
     return [True, ""]
 
-#get 8 most popular users in the system
-def get_popular_users():
-    try:
-        user_list = User.objects.all()
-
-    except:
-        return [False, "couldnt get the users from database"]
-
-    #This is the list that is sorted by number of followers in decreasing order
-    new_list = sorted(user_list,key=lambda user: len(user.followers),reverse=True)
-
-
-    if len(new_list)<8:
-        return new_list
-    else:
-        new_list[:8]
-
-    return new_list
-
-
-
-# get user id as a parameter returning users having at least one follower that is followed by the user with the given id.
-def get_related_users(user_id):
-
-    try:
-        u = User.objects.get(id = user_id)
-        following_list = u.followings
-
-    except:
-        return [False,"can not fetch following user"]
-
-    
-    second_level_following = []
-
-    for following_user_id in following_list:
-        following_user = User.objects.get(user_id = following_user_id)
-        second_level_following.append(following_user.followings)
-
-    # removing duplicates
-    new_list = list(set(second_level_following))
-
-    return new_list
 
         
 
