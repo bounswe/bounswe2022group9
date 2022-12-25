@@ -1,3 +1,5 @@
+import datetime
+
 from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse
 from rest_framework.decorators import api_view
 import hashlib
@@ -13,6 +15,7 @@ from ..models.user import User
 from ..models.art_item import ArtItem
 from ..models.comment import Comment
 from ..models.tag import Tag
+from ..models.notification import Notification
 
 
 @api_view(['POST'])
@@ -62,5 +65,15 @@ def favourite(req):
         return HttpResponse('user can not added to favourites of art item', status=400)
 
     # TODO : send a notification to a.owner like 'u favourited your post a.id'
+    try:
+        art_item_owner = User.objects.get(id=a.owner_id)
+        print("owner: ", str(art_item_owner.id))
+        Notification.objects.create(receiver_id=int(art_item_owner.id),
+                                    text=str(art_item_owner.username) + " favourited your post" + str(a.id),
+                                    date=datetime.datetime.now())
+    except Exception as e:
+        print(e.messsage)
+        return HttpResponse('couldnt send notification to the owner of the art but favouriting is successful',
+                            status=400)
 
     return HttpResponse(status=200)

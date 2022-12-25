@@ -1,3 +1,5 @@
+import datetime
+
 from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse
 from rest_framework.decorators import api_view
 import hashlib
@@ -14,6 +16,7 @@ from ..models.user import User
 from ..models.art_item import ArtItem
 from ..models.comment import Comment
 from ..models.tag import Tag
+from ..models.notification import Notification
 
 
 @api_view(['POST'])
@@ -61,6 +64,16 @@ def create_exhibition(req):
         User.objects.filter(id=u.id).update(exhibitions=exhibitions_of_u)
     except:
         return HttpResponse('exhibition can not added to exhibitions of user', status=400)
+
+    # send a notification to each follower like 'u is started a new exhibition: e.id'
+    for follower_id in u.followers:
+        try:
+            Notification.objects.create(receiver_id=int(follower_id),
+                                        text=str(u.username) + " started a new exhibiton with id " + str(e.id),
+                                        date=datetime.datetime.now())
+        except:
+            return HttpResponse('couldnt send notification to the followers of the user but exhibition starting is successful',
+                                status=400)
 
     return HttpResponse(status=201)
 

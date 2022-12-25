@@ -9,7 +9,7 @@ from .views.user import *
 from .views.art_item import *
 from .views.comment import get_comment_by_id, comment
 from .views.exhibition import get_exhibition_by_id, create_exhibition
-from .views.notification import get_notification_by_id
+from .views.notification import get_notification_by_id, get_notification_by_receiver_id
 from .views.tag import *
 from .views.follow import *
 from .views.homepage import *
@@ -70,5 +70,8 @@ urlpatterns = [
     path('annotations/<int:annotation_id>', get_annotation_by_id, name='get_annotation_by_id'),
     path('annotation', create_annotation, name='create_annotation'),
     path('annotation/<int:annotation_id>', update_annotation, name='update_annotation'),
+
+    # notification urls
+    path('notification/<int:receiver_id>', get_notification_by_receiver_id, name='get_notification_by_receiver_id')
 
 ]
