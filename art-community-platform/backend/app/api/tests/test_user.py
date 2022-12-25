@@ -56,6 +56,7 @@ class TestUser(TestCase):
         self.assertEqual(res_json['password'], password)
         self.assertEqual(res_json['email'], email)
         self.assertEqual(res_json['birthdate'], birthdate)
+        self.assertEqual(res_json['user_level'], (len(res_json["art_items"]) + len(res_json["comments"])) / 5)
 
     def test_get_followers_of_users(self):
         request = self.factory.get('/api/v1/users/1/followers', **header)

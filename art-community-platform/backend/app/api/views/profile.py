@@ -67,12 +67,17 @@ def get_profile_info(req, user_id):
     following_count = None
     try:
         following_count = len(user.followings)
+        user_level = (len(user.comments) + len(art_items)) / 5
     except:
         following_count = 0
+        user_level = 1
+
     data = {"id": user.id, "username": user.username, "email": user.email, "birthdate": user.birthdate,
             "name": user.name,
             "art_items": art_items,
             "follower_count": follower_count,
             "following_count": following_count,
-            "profile_img_url": user.profile_img_url, "location": user.location, "password": user.password}
+            "profile_img_url": user.profile_img_url, "location": user.location,
+            "password": user.password, "user_level": user_level}
+
     return JsonResponse(data)
