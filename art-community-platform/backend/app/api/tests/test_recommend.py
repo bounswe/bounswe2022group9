@@ -106,7 +106,7 @@ class TestProfile(TestCase):
             self.assertTrue("medieval" in art.tags, "recommendation not having mutual tags with user's favourites")
 
 
-# we will have 10 users
+# we will have 10 users for user test
 username = [fake.username() for i in range(10)]
 password = [fake.password() for i in range(10)]
 email = [fake.email() for i in range(10)]
