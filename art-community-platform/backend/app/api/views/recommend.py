@@ -27,4 +27,17 @@ def recommend_art_items(req, user_id):
         return JsonResponse({"recommendations" : list(art_items_to_recommend)})
 
 
+@api_view(['GET'])
+def recommend_users_to_follow(req, user_id):
+
+    if is_new_users_wrt_followings(user_id):
+        return  JsonResponse({"recommendations": get_popular_users()})  
+
+    else:
+        return JsonResponse({"recommendations" : get_related_users(user_id)}) 
+
+
+
+
+
 

@@ -126,6 +126,10 @@ class TestUrls(TestCase):
     def test_recommend_art_item_url_is_resolved(self):
         url = reverse('recommend_art_items')
         self.assertEqual(resolve(url).func, recommend_art_items)
+    
+    def test_recommend_user_is_resoled(self):
+        url = reverse('recommend_users_to_follow')
+        self.assertEqual(resolve(url).func,recommend_users_to_follow)
 
     def test_create_annotation_url_is_resolved(self):
         url = reverse('annotation')

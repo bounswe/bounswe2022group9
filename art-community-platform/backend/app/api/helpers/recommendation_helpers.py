@@ -1,6 +1,7 @@
 from ..models.user import User
 from ..models.art_item import ArtItem
 from .art_item_helpers import *
+from .user_helpers import *
 
 number_of_arts_to_recommend_new_users = 20
 
@@ -40,5 +41,69 @@ def get_tags_of_favourites(user):
     return tags
 
 
+#get 8 most popular users in the system
+def get_popular_users():
+    try:
+        user_list = User.objects.all()
+
+    except:
+        return [False, "couldnt get the users from database"]
+
+    #This is the list that is sorted by number of followers in decreasing order
+    new_list = sorted(user_list,key=lambda user: len(user.followers),reverse=True)
+
+
+    if len(new_list)<8:
+         return [get_user_by_id_helper(u.id) for u in new_list]
+    else:
+         return [get_user_by_id_helper(u.id) for u in new_list[:8]]
+
+    
+
+
+
+# get user id as a parameter returning users having at least one follower that is followed by the user with the given id.
+def get_related_users(user_id):
+
+    try:
+        u = User.objects.get(id = user_id)
+        following_list = u.followings
+
+    except:
+        return [False,"can not fetch following user"]
+
+    
+    second_level_following = []
+
+    for following_user_id in following_list:
+        following_user = User.objects.get(id = following_user_id)
+        for following in following_user.followings:
+            second_level_following.append(following)
+
+    # removing duplicates
+    new_list = list(set(second_level_following))
+
+    toReturn = [get_user_by_id_helper(u) for u in new_list]
+
+    return toReturn
+
+def is_new_users_wrt_followings(user_id):
+    u = None
+
+    try:
+        user = User.objects.get(id = user_id)
+    except:
+        return [False,"cannot fetch user from user id"]
+
+    followings = user.followings
+    followings_count = len(followings)
+
+    if followings_count < 3:
+        return True
+    
+    else:
+        return False
+
+    
 
 

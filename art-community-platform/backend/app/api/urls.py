@@ -66,6 +66,8 @@ urlpatterns = [
 
     # recommendation urls
     path('recommend/art-items/<int:user_id>', recommend_art_items, name='recommend_art_items'),
+    path('recommend/user/<int:user_id>', recommend_users_to_follow, name='recommend_users_to_follow'),
+
 
     path('annotations/<int:annotation_id>', get_annotation_by_id, name='get_annotation_by_id'),
     path('annotation', create_annotation, name='create_annotation'),
