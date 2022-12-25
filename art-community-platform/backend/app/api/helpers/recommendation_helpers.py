@@ -1,6 +1,7 @@
 from ..models.user import User
 from ..models.art_item import ArtItem
 from .art_item_helpers import *
+from .user_helpers import *
 
 number_of_arts_to_recommend_new_users = 20
 
@@ -53,11 +54,11 @@ def get_popular_users():
 
 
     if len(new_list)<8:
-        return new_list
+         return [get_user_by_id_helper(u.id) for u in new_list]
     else:
-        new_list[:8]
+         return [get_user_by_id_helper(u.id) for u in new_list[:8]]
 
-    return new_list
+    
 
 
 
@@ -75,13 +76,16 @@ def get_related_users(user_id):
     second_level_following = []
 
     for following_user_id in following_list:
-        following_user = User.objects.get(user_id = following_user_id)
-        second_level_following.append(following_user.followings)
+        following_user = User.objects.get(id = following_user_id)
+        for following in following_user.followings:
+            second_level_following.append(following)
 
     # removing duplicates
     new_list = list(set(second_level_following))
 
-    return new_list
+    toReturn = [get_user_by_id_helper(u) for u in new_list]
+
+    return toReturn
 
 def is_new_users_wrt_followings(user_id):
     u = None
