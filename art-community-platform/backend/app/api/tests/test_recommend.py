@@ -106,61 +106,8 @@ class TestProfile(TestCase):
             self.assertTrue("medieval" in art.tags, "recommendation not having mutual tags with user's favourites")
 
 
-# we will have 10 users for user test
-username = [fake.username() for i in range(10)]
-password = [fake.password() for i in range(10)]
-email = [fake.email() for i in range(10)]
-name = [fake.name() for i in range(10)]
-birthdate = [fake.date() for i in range(10)]
-token = [hashlib.sha256((usernames[i] + passwords[i] + emails[i]).encode('utf-8')).hexdigest() for i in range(10)]
-header = [{"HTTP_AUTHORIZATION": tokens[i]} for i in range(10)]
-
-class TestUser(TestCase):
-
-    def setUp(self):
-        # Setup run before every test method.
-        # Every test needs access to the request factory.
-        self.factory = RequestFactory()
-
-        # we will have 10 users
-        self.users = [User.objects.create(
-                                        name=names[i], birthdate=birthdates[i], username=usernames[i],
-                                        password=passwords[i], email=emails[i], token=tokens[i]
-                                        ) for i in range(10)]
-
-        # Following network: users[x] follows users[y] such that y > x
-
-        for i in range(10):
-            for j in range(i+1,10):
-                self.users[i].followings.append(j)
-                self.users[j].followers.append(i)
 
 
 
-    def test_users_having_less_than_three_followings(self):
-        req = self.factory.get('/api/v1/recommend/user/'+str(self.users[8].id), content_type="application/json")
-        res = recommend_users_to_follow(req, self.users[8].id)
-        res_json = json.loads(res.content)
 
-        self.assertEqual(res.status_code, 200)
-
-        # check the values
-        recommendation_ids = res_json['recommendations']
-        must_be = [0,1,2,3,4,5,6,7]
-        sorted(recommendation_ids)
-        sorted(must_be)
-        self.assertTrue(recommendation_ids == must_be)
-
-    def test_users_having_not_less_than_three_followings(self):
-        req = self.factory.get('/api/v1/recommend/user/'+str(self.users[4].id), content_type="application/json")
-        res = recommend_users_to_follow(req, self.users[4].id)
-        res_json = json.loads(res.content)
-
-        self.assertEqual(res.status_code, 200)
-        # check the values
-        recommendation_ids = res_json['recommendations']
-        must_be = [5,6,7,8,9]
-        sorted(recommendation_ids)
-        sorted(must_be)
-        self.assertTrue(recommendation_ids == must_be)
 
