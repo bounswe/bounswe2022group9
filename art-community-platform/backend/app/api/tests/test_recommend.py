@@ -105,3 +105,10 @@ class TestProfile(TestCase):
         for art in enumerate(self.arts):
             self.assertTrue("medieval" in art.tags, "recommendation not having mutual tags with user's favourites")
 
+    
+    def test_users_having_more_than_or_equal_to_3_followings(self):
+        pass
+
+    def test_users_having_less_than_3_followings(self):
+        pass
+
