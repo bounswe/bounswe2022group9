@@ -149,3 +149,30 @@ def delete_user_from_following(follower_id, followed_id):
     follower_user.save()
     # success case
     return [True, ""]
+
+#get 8 most popular users in the system
+def get_popular_users():
+    try:
+        user_list = User.objects.all()
+
+    except:
+        return [False, "couldnt get the users from database"]
+
+    #This is the list that is sorted by number of followers in decreasing order
+    new_list = sorted(user_list,key=lambda user: len(user.followers),reverse=True)
+
+
+    if len(new_list)<8:
+        return new_list
+    else:
+        new_list[:8]
+
+    return new_list
+
+
+
+
+
+        
+
+
