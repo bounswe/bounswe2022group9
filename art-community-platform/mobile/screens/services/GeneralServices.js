@@ -267,3 +267,32 @@ export const updateProfile = async(name, birthDate, email, location, profile_img
       return error.response;
     });
 }
+
+export const createExhibition = async(description, exhibitionName, type, location, openAddress, startTime, endTime, date, token) =>{
+  return axios
+    .post(
+      `http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1/exhibition`,
+      {
+        description: description,
+        exhibitionName: exhibitionName,
+        type: type,
+        location: location,
+        openAddress: openAddress,
+        startTime: startTime,
+        endTime: endTime,
+        date: date,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `${token}`,
+        },
+      }
+    )
+    .then((response) => {
+      return response;
+    })
+    .catch((error) => {
+      return error.response;
+    });
+}
