@@ -40,6 +40,7 @@ import {
   get_followers,
   get_followings,
   get_favourites,
+  get_user_exhibitions,
 } from "../store/axios";
 import Navbar from "./Navbar";
 
@@ -63,6 +64,7 @@ const User = () => {
   const [listTitle, setTitle] = useState("");
   const [selected, setSelected] = useState('post');
 
+  const [type, setType] = useState("post");
   const [birthDate, setBirthDate] = useState("1900-01-01");
   const [artItemId, setArtItemId] = useState(0);
   const [open, setOpen] = useState(false);
@@ -202,7 +204,11 @@ const User = () => {
     navigate("/art_item/"+values.id);
     }
   };
-  
+  const handleSearchExhibitionClick = (values) => {
+    console.log("Success:", values);
+    
+    navigate("/exhibition/"+values.id.toString());
+  };
   const postedArts = async () => {
     setLoading(true);
     const response = await get_user_info({ token: token, user_id: user_id }).then((result) => {
@@ -211,6 +217,7 @@ const User = () => {
         var arr = result.data["art_items:"];
         setArtItems(arr);
         setSelected("post");
+        setType("post");
         setLoading(false); //set loading state
       }
     });
@@ -224,11 +231,28 @@ const User = () => {
         var arr = result.data.favourites;
         setArtItems(arr);
         setSelected("favourites");
+        setType("favourites");
         setLoading(false); //set loading state
       }
     });
   };
-
+  const exhibitions = async () => {
+    setLoading(true);
+    const response = await get_user_exhibitions({ token: token, user_id: user_id }).then((result) => {
+      if (result.status === 200 || result.status === 201) {
+        console.log("get_user_info", result.data);
+        var arr = result.data.exhibitions;
+        console.log("exhibitions")
+        console.log(arr)
+        const arr2 = arr.filter(item => item !== null)
+        console.log(arr2)
+        setArtItems(arr2);
+        setSelected("exhibitions");
+        setType("exhibitions");
+        setLoading(false); //set loading state
+      }
+    });
+  };
   useEffect(() => {
     // useEffect hook
     setTimeout(() => {
@@ -347,11 +371,14 @@ const User = () => {
       </>
       <Divider />
       <Menu style={centerStyle} mode="horizontal" theme='dark' selectedKeys={selected}>
-      <Menu.Item key="post"  onClick={postedArts} style={{ width: '35%', textAlign: 'center'  }}>
+      <Menu.Item key="post"  onClick={postedArts} style={{ width: '15%', textAlign: 'center'  }}>
         Posted Art Items
       </Menu.Item>
-      <Menu.Item key="favourites"  onClick={favouriteArts} style={{ width: '35%', textAlign: 'center'  }}>
+      <Menu.Item key="favourites"  onClick={favouriteArts} style={{ width: '15%', textAlign: 'center'  }}>
         Favourite Art Items
+      </Menu.Item>
+      <Menu.Item key="exhibitions"  onClick={exhibitions} style={{ width: '15%', textAlign: 'center'  }}>
+        Exhibitions
       </Menu.Item>
       </Menu>
       <Divider />
@@ -363,7 +390,73 @@ const User = () => {
         loading={isLoading}
         dataSource={data}
         renderItem={(item) => (
+          type == "exhibitions" ?
+<List.Item  onClick={() => handleSearchExhibitionClick(item)}>
+            <Card
+              hoverable
+            >
+              <Meta title={item.owner_name} description={item.description} />
+              <p><b>Exhibition Name: {item.name}</b></p>
+              <br/>
+              <p><b>Date:</b> {item.date}</p>
+              <p><b>Start Time:</b> {item.start_time}</p>
+              <p><b>End Time:</b> {item.end_time}</p>
+              <p><b>Location:</b> {item.location}</p>
+              <p><b>Open Address:</b> {item.open_address}</p>
+              <p><b>Type:</b> {item.type}</p>
+              <List
+        grid={{
+          column: 4,
+          gutter: 16,
+        }}
+        loading={isLoading}
+        dataSource={item.art_items}
+        renderItem={(item) => (
           <List.Item>
+            <Card
+              hoverable
+              cover={
+                <Image
+                  height={300}
+                  preview={false}
+                  alt="example"
+                  src={item.img_url}
+                  onClick={() => handleClick(item)}
+                />
+              }
+              actions={[
+                <a onClick={() => handleClick(item, "comment")}>
+                  <Badge count={item.comment_count} showZero={true}>
+                    <CommentOutlined />
+                  </Badge>
+                </a>,
+                <a onClick={() => handleClick(item, "favourite")}>
+                  <Badge count={item.favourite_count} showZero={true}>
+                    <StarOutlined />
+                  </Badge>
+                </a>,
+              ]}
+            >
+              <Meta title={item.owner_name} description={item.description} />
+              <br/>
+              <p><b>Date:</b> {item.date}</p>
+              <br/>
+              <p><b>Tags:</b></p>
+              <List
+                  grid={{
+                    column: 4,
+                  }}
+                  dataSource={item["tags:"]}
+                  renderItem={(tag) => <List.Item>{tag}</List.Item>}
+                />
+            </Card>
+          </List.Item>
+        )}
+      />
+            </Card>
+          </List.Item>
+
+          : <List.Item>
             <Card
               hoverable
               cover={

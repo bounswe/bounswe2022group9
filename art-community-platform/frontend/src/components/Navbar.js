@@ -52,7 +52,7 @@ import {
       const sendToExhibition = (values) => {
         console.log("Success:", values);
         setSelected(values.key);
-        navigate("/homepage");
+        navigate("/exhibition/4");
       };
 
     return (

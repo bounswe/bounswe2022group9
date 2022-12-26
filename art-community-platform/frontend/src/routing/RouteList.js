@@ -15,6 +15,7 @@ import AuthRoute from "./AuthRoute";
 import HomePage from "../pages/HomePage";
 import SearchPage from "../pages/SearchPage";
 import UserPage from "../pages/UserPage";
+import ExhibitionPage from "../pages/ExhibitionPage";
 
 export default function RouteList() {
   return (
@@ -60,6 +61,14 @@ export default function RouteList() {
           element={
             <AuthRoute>
               <SearchPage />
+            </AuthRoute>
+          }
+        />
+        <Route
+          path="/exhibition/:id"
+          element={
+            <AuthRoute>
+              <ExhibitionPage />
             </AuthRoute>
           }
         />

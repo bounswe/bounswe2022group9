@@ -23,7 +23,9 @@ import {
   ART_FAVOURITES_ENDPOINT,
   ART_COMMENTS_ENDPOINT,
   HOMEPAGE_ENDPOINT,
-  SEARCH_ENDPOINT,
+  SEARCH_USER_ENDPOINT,
+  SEARCH_ART_ITEMS_ENDPOINT,
+  SEARCH_EXHIBITIONS_ENDPOINT,
   USERS_BASE_ENDPOINT,
   ARTS_BASE_ENDPOINT,
   UNFOLLOW_ENDPOINT,
@@ -630,21 +632,62 @@ export async function homepage(info) {
 
 export async function get_search_result(info) {
   console.log("response", info);
-  try {
-    const response = await axios.get(
-      SEARCH_ENDPOINT+ info.text,
-      {
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": info.token,
-        },
-      }
-    );
-    console.log(response);
-    return response;
-  } catch (error) {
-    console.log(error);
-
-    return error;
+  if(info.type === "user"){
+    try {
+      const response = await axios.get(
+        SEARCH_USER_ENDPOINT+ info.text,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": info.token,
+          },
+        }
+      );
+      console.log(response);
+      return response;
+    } catch (error) {
+      console.log(error);
+  
+      return error;
+    }
   }
+  if(info.type === "artitem"){
+    try {
+      const response = await axios.get(
+        SEARCH_ART_ITEMS_ENDPOINT+ info.text,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": info.token,
+          },
+        }
+      );
+      console.log(response);
+      return response;
+    } catch (error) {
+      console.log(error);
+  
+      return error;
+    }
+  }
+  if(info.type === "exhibition"){
+    try {
+      const response = await axios.get(
+        SEARCH_EXHIBITIONS_ENDPOINT+ info.text,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": info.token,
+          },
+        }
+      );
+      console.log(response);
+      return response;
+    } catch (error) {
+      console.log(error);
+  
+      return error;
+    }
+  }
+  
 } 
