@@ -15,6 +15,20 @@ function CreateExhibition() {
   const [endTime, setEndTime] = React.useState("");
   const [date, setDate] = React.useState("");
 
+  const handleExhibition = () =>{
+    createExhibition(description, exhibitionName, type, location, openAddress, startTime, endTime, date, token)
+      .then((response)=>{
+        if (response.status === 201){
+          Alert.alert("Signup Succesful ✅",[
+          ]);
+        }
+        else if (response.status === 400) {
+          Alert.alert("Signup Failed ❌", response.data);
+        }
+        console.log(response.status);
+      })
+  }
+  
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
