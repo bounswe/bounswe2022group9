@@ -80,6 +80,7 @@ const Signup = (props) => {
           <Text style={styles.term_service}>By signing up, you agree to </Text>
 
           <Text
+            testID="TermsandConditions"
             onPress={() => navigation.navigate("TermsAndConditions")}
             style={styles.terms_text}
           >
