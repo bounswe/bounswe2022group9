@@ -1,7 +1,7 @@
 {
   "hostType": "lan",
   "lanType": "ip",
-  "dev": false,
+  "dev": true,
   "minify": false,
   "urlRandomness": null,
   "https": false,

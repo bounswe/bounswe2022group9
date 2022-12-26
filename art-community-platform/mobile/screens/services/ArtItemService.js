@@ -81,3 +81,29 @@ export const getAllPosts = async (token) => {
       return error.response;
     });
 };
+
+export const uploadArtItem = async (token, owner, base64, desc, tags, date) => {
+  return axios
+    .post(
+      `http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1/art-item`,
+      {
+        owner_id: owner,
+        img_base64: base64,
+        description: desc,
+        tags: [...tags],
+        date: date,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      }
+    )
+    .then((response) => {
+      return response;
+    })
+    .catch((error) => {
+      return error.response;
+    });
+};

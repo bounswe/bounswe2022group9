@@ -9,15 +9,24 @@ import {
   Dimensions,
   FlatList,
   TouchableOpacity,
+  Modal,
+  TextInput,
+  Pressable,
 } from "react-native";
 import { getFavourites } from "./services/GeneralServices";
 import { TabController } from "react-native-ui-lib";
 import { getProfile } from "./services/GeneralServices";
+import * as ImagePicker from "expo-image-picker";
+import { uploadArtItem } from "./services/ArtItemService";
+import { Ionicons } from "@expo/vector-icons";
+import Colors from "./constants/Colors";
 
 const dimensions = Dimensions.get("window");
 const Profile = (props) => {
   const { userId, token } = props.route.params;
   const { navigation } = props;
+  const [showModal, setShowModal] = React.useState(false);
+  const [newAdded, setNewAdded] = React.useState(false);
   const [profile, setProfile] = React.useState({
     "art_items:": [],
     art_item_count: 0,
@@ -34,11 +43,27 @@ const Profile = (props) => {
   });
   const [index, setIndex] = React.useState(0);
   const [posts, setPosts] = React.useState([]);
+  const [newArtItem, setNewArtItem] = React.useState({
+    owner_id: userId,
+    img_base64: "",
+    img_url: "",
+    description: "",
+    tags: [],
+    date: "2022-12-27",
+  });
   useEffect(() => {
     getProfile(userId, token).then((response) => {
       setProfile(response.data);
     });
   }, []);
+  useEffect(() => {
+    if (newAdded) {
+      getProfile(userId, token).then((response) => {
+        setProfile(response.data);
+      });
+      setNewAdded(false);
+    }
+  }, [newAdded]);
   useEffect(() => {
     if (index === 1) {
       getFavourites(userId, token).then((response) => {
@@ -46,6 +71,21 @@ const Profile = (props) => {
       });
     }
   }, [index]);
+
+  const imageGalleryLaunch = async () => {
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      base64: true,
+    });
+    if (!result.cancelled) {
+      let fileExtension = result.uri.substring(result.uri.lastIndexOf(".") + 1);
+      setNewArtItem({
+        ...newArtItem,
+        img_base64: `data:image/${fileExtension};base64,${result.base64}`,
+        img_url: result.uri,
+      });
+    }
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -175,6 +215,150 @@ const Profile = (props) => {
           </TabController>
         </View>
       </ScrollView>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={showModal}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+          setShowModal(!showModal);
+        }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={styles.modalText}>Create Art Item</Text>
+            <View
+              style={{
+                width: Dimensions.get("window").width * 0.6,
+                justifyContent: "space-between",
+                marginVertical: 12,
+              }}
+            >
+              <Text>Image</Text>
+              {newArtItem.img_url.length > 0 ? (
+                <Image
+                  source={{ uri: newArtItem.img_url }}
+                  style={{ height: 80, width: 80, marginBottom: 8 }}
+                />
+              ) : (
+                <Pressable
+                  onPress={imageGalleryLaunch}
+                  style={{
+                    alignItems: "center",
+                    padding: 4,
+                    marginBottom: 8,
+                    borderWidth: 1,
+                    borderRadius: 4,
+                  }}
+                >
+                  <Text>Add New Image</Text>
+                </Pressable>
+              )}
+              <Text>Description</Text>
+              <TextInput
+                style={{
+                  borderRadius: 4,
+                  borderWidth: 1,
+                  padding: 6,
+                  marginBottom: 8,
+                }}
+                value={newArtItem.description}
+                onChangeText={(text) => {
+                  setNewArtItem({ ...newArtItem, description: text });
+                }}
+              ></TextInput>
+              <Text>Tags</Text>
+              <TextInput
+                value={newArtItem.tags.join(" ")}
+                onChangeText={(text) => {
+                  setNewArtItem({ ...newArtItem, tags: text.split(" ") });
+                }}
+                style={{
+                  borderRadius: 4,
+                  borderWidth: 1,
+                  padding: 6,
+                  marginBottom: 8,
+                }}
+              ></TextInput>
+            </View>
+            <View
+              style={{
+                flexDirection: "row",
+                width: Dimensions.get("window").width * 0.6,
+                justifyContent: "space-between",
+              }}
+            >
+              <Pressable
+                style={[styles.button]}
+                onPress={() => {
+                  uploadArtItem(
+                    token,
+                    newArtItem.owner_id,
+                    newArtItem.img_base64,
+                    newArtItem.description,
+                    newArtItem.tags,
+                    newArtItem.date
+                  )
+                    .then((response) => {
+                      setNewAdded(true);
+                      setShowModal(!showModal);
+                      setNewArtItem({
+                        owner_id: userId,
+                        img_url: "",
+                        img_base64: "",
+                        description: "",
+                        tags: [],
+                        date: "2022-12-27",
+                      });
+                    })
+                    .catch((error) => {
+                      console.log(error);
+                    });
+                }}
+              >
+                <Text style={styles.textStyle}>Save</Text>
+              </Pressable>
+              <Pressable
+                style={[styles.buttonClose]}
+                onPress={() => {
+                  setShowModal(!showModal);
+                  setNewArtItem({
+                    owner_id: userId,
+                    img_url: "",
+                    img_base64: "",
+                    description: "",
+                    tags: [],
+                    date: "2022-12-27",
+                  });
+                }}
+              >
+                <Text style={styles.textStyle}>Cancel</Text>
+              </Pressable>
+            </View>
+          </View>
+        </View>
+      </Modal>
+      <TouchableOpacity
+        onPress={() => setShowModal(!showModal)}
+        style={{
+          position: "absolute",
+          right: 12,
+          bottom: 12,
+          width: 52,
+          height: 52,
+          borderRadius: 26,
+          backgroundColor: Colors.primary,
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Ionicons
+          name="add-outline"
+          size={48}
+          color={"white"}
+          style={{ marginLeft: 3 }}
+        />
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -238,5 +422,50 @@ const styles = StyleSheet.create({
     height: dimensions.width * 0.3,
     marginTop: 5,
     marginRight: 5,
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 24,
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2,
+    backgroundColor: "#2196F3",
+  },
+  buttonOpen: {
+    backgroundColor: "#F194FF",
+  },
+  buttonClose: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2,
+    backgroundColor: "#F194FF",
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center",
   },
 });
