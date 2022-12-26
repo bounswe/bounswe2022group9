@@ -12,7 +12,7 @@ import {
   RefreshControl,
 } from "react-native";
 import Post from "./components/Post";
-import { getFeed , getRecommendations } from "./services/GeneralServices";
+import { getFeed , getRecommendations , getUserRecommendations} from "./services/GeneralServices";
 import { TabController } from "react-native-ui-lib";
 
 const Feed = (props) => {
@@ -43,11 +43,12 @@ const Feed = (props) => {
       });
     } else if (index === 1) {
       getRecommendations(userId).then((response) => {
-        console.log("data")
-        console.log(response.data)
         setRecommendations(response.data["recommendations"]);
       });
     } else if (index === 2) {
+      getUserRecommendations(userId).then((response) => {
+        setUserRecommendations(response.data["recommendations"]);
+      });
     }
   }, [index]);
 
@@ -120,9 +121,33 @@ const Feed = (props) => {
           />
         </TabController.TabPage>
         <TabController.TabPage index={2} lazy>
-
-          
-        </TabController.TabPage>
+            <FlatList
+              data={userRecommendations}
+              renderItem={({ item }) => (
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate("User", {
+                      userId: item.id,
+                      token: token,
+                    });
+                  }}
+                >
+                  <View style={styles.user}>
+                    <Image
+                      style={styles.photo}
+                      source={{ uri: item["profile_img_url"] }}
+                    />
+                    <Text style={styles.username}>{item.name}</Text>
+                    <Text style={styles.location}>
+                      {"\n"}
+                      {item.location}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              )}
+              keyExtractor={(item, index) => index.toString()}
+            />
+          </TabController.TabPage>
         </TabController.PageCarousel>
       </TabController>
     </View>

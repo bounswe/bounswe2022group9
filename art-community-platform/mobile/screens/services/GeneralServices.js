@@ -177,6 +177,18 @@ export const getRecommendations = async (userId) => {
     });
 };
 
+export const getUserRecommendations = async (userId) => {
+  return axios
+    .get(`http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1/recommend/user/${userId}`, {
+    })
+    .then((response) => {
+      return response;
+    })
+    .catch((error) => {
+      return error.response;
+    });
+};
+
 export const followUser = async (token, followed_id) => {
   return axios
     .post(
