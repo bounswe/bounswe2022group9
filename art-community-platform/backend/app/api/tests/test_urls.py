@@ -139,3 +139,6 @@ class TestUrls(TestCase):
         url = reverse('annotation/:id')
         self.assertEqual(resolve(url).func, update_annotation)
 
+    def test_notification_url_is_resolved(self):
+        url = reverse('get_notification_by_receiver_id')
+        self.assertEqual(resolve(url).func, get_notification_by_receiver_id)
