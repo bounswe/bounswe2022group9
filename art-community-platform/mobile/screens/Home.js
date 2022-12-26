@@ -123,6 +123,24 @@ const FeedStack = (props) => {
   );
 };
 
+const SettingsStack = (props) => {
+  const { userId, token } = props.route.params;
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen
+        name="Settings"
+        component={Settings}
+        initialParams={{ userId: userId, token: token }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+
 const Home = (props) => {
   const { userId, token } = props.route.params;
   return (
@@ -165,7 +183,7 @@ const Home = (props) => {
         component={ProfileStack}
         initialParams={{ userId: userId, token: token }}
       />
-      <Tab.Screen name="Settings" component={Settings} />
+      <Tab.Screen name="Settings" component={Settings} initialParams={{ userId: userId, token: token }}/>
     </Tab.Navigator>
   );
 };
