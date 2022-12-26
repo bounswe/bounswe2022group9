@@ -41,6 +41,7 @@ const User = (props) => {
   const follow = () => {
     followUser(token, userId).then((response) => {
       if (response.status == 200) {
+        profile.is_following = true;
         getProfile(userId, token).then((response) => {
           setProfile(response.data);
         });
@@ -49,7 +50,9 @@ const User = (props) => {
   };
   const unfollow = () => {
     unfollowUser(token, userId).then((response) => {
+      console.log(response)
       if (response.status == 200) {
+        profile.is_following = false;
         getProfile(userId, token).then((response) => {
           setProfile(response.data);
         });
