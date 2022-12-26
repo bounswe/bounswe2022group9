@@ -70,7 +70,7 @@ def get_art_item_by_id(req, art_item_id):
         favourite_count = 0
 
     try:
-        resp = {"id": a.id, "owner_name": u.name, "img_url": a.img_url, "description": a.description, "date": a.date,
+        resp = {"id": a.id, "owner_id": u.id, "owner_name": u.name, "img_url": a.img_url, "description": a.description, "date": a.date,
                 "comments": comments, "tags:": a.tags, "comment_count": len(comments), "favourite_count": favourite_count}
     except:
         return HttpResponse('response can not created', status=404)
