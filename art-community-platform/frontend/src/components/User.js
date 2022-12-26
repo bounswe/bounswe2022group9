@@ -27,6 +27,7 @@ import {
   upload_comment,
   upload_favourite,
   follow,
+  unfollow,
   get_followers,
   get_followings,
   get_favourites,
@@ -138,6 +139,14 @@ const User = ({ id }) => {
       token: token,
       user_id: userData.id,
       date: moment().format("YYYY-MM-DD"),
+    });
+    console.log(response.status);
+  };
+
+  const unfollowUser = async () => {
+    const response = await unfollow({
+      token: token,
+      user_id: userData.id,
     });
     console.log(response.status);
   };
@@ -283,6 +292,9 @@ const User = ({ id }) => {
               </Button><Divider/> 
               <Button disabled={userData.is_following} size="large" shape="round" block icon={<UserAddOutlined />} onClick={followUser}>
                 Follow User
+              </Button>
+              <Button disabled={!userData.is_following} size="large" shape="round" block icon={<UserAddOutlined />} onClick={unfollowUser}>
+                Unfollow User
               </Button>
             </Space>
           </Col>

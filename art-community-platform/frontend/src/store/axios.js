@@ -26,6 +26,7 @@ import {
   SEARCH_ENDPOINT,
   USERS_BASE_ENDPOINT,
   ARTS_BASE_ENDPOINT,
+  UNFOLLOW_ENDPOINT,
 } from "./urls";
 
 export async function login(info) {
@@ -114,6 +115,30 @@ export async function follow(info) {
       {
         "followed_user_id": info.user_id,
         "date": info.date
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": info.token,
+        },
+      }
+    );
+    console.log(response);
+    return response;
+  } catch (error) {
+    console.log(error);
+
+    return error;
+  }
+}
+
+export async function unfollow(info) {
+  console.log("response", info);
+  try {
+    const response = await axios.post(
+      UNFOLLOW_ENDPOINT,
+      {
+        "followed_user_id": info.user_id
       },
       {
         headers: {

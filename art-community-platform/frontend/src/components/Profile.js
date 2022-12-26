@@ -42,6 +42,7 @@ import {
   get_favourites,
 } from "../store/axios";
 import Navbar from "./Navbar";
+
 const { Meta } = Card;
 const { Text } = Typography;
 const centerStyle = {
@@ -159,7 +160,7 @@ const User = () => {
     const response = await update_profile({
       token: token,
       user_id: userData.id,
-      email: values.email,
+      email: userData.email,
       name: values.name,
       birthdate: birthDate,
       image_url: userData.profile_img_url,
@@ -181,6 +182,7 @@ const User = () => {
         var userTempData = response.data;
         setCommentData(arr);
         setUserData(userTempData);
+        setBirthDate(userTempData.birthdate);
         setCommentOpen(true);
       }
     }
@@ -241,7 +243,7 @@ const User = () => {
         }
       });
     });
-  }, [favouritesOpen, commentOpen, open]);
+  }, [favouritesOpen, commentOpen, open, editOpen]);
 
   if (isLoading) {
     return (
@@ -504,10 +506,6 @@ const User = () => {
         ]}
       >
         <Form name="basic" onFinish={submitEditProfile}>
-          <Text strong>Email</Text>
-          <Form.Item name="email" initialValue={editData.email}>
-            <Input />
-          </Form.Item>
 
           <Text strong>Name</Text>
           <Form.Item name="name" initialValue={editData.name}>
@@ -516,7 +514,7 @@ const User = () => {
 
           <Text strong>Birthdate</Text>
           <Form.Item name="birthdate">
-            <DatePicker defaultValue={dayjs(editData.birthdate, 'YYYY-MM-DD')} onChange={onChange} />
+            <DatePicker onChange={onChange} />
           </Form.Item>
 {/* 
           <Text strong>Profile Picture</Text>

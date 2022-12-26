@@ -26,3 +26,4 @@ export const ART_FAVOURITES_ENDPOINT = `/favourites`;
 export const ART_COMMENTS_ENDPOINT = `/comments`;
 export const HOMEPAGE_ENDPOINT = `${BASE_URL}/homepage`;
 export const SEARCH_ENDPOINT = `${BASE_URL}/users/search/`;
+export const UNFOLLOW_ENDPOINT = `${BASE_URL}/unfollow`;
