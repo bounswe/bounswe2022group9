@@ -23,7 +23,8 @@ def recommend_art_items(req, user_id):
         art_items_to_recommend = []
         for art in arts:
             if set(art.tags).intersection(tags):
-                art_items_to_recommend.append(get_art_item_by_id_helper(art.id))
+                if art.owner_id != user_id:
+                    art_items_to_recommend.append(get_art_item_by_id_helper(art.id))
         return JsonResponse({"recommendations" : list(art_items_to_recommend)})
 
 

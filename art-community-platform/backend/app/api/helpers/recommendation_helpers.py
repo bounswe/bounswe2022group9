@@ -52,6 +52,7 @@ def get_popular_users():
     #This is the list that is sorted by number of followers in decreasing order
     new_list = sorted(user_list,key=lambda user: len(user.followers),reverse=True)
 
+    resp = []
 
     if len(new_list)<8:
          return [get_user_by_id_helper(u.id) for u in new_list]
@@ -83,7 +84,11 @@ def get_related_users(user_id):
     # removing duplicates
     new_list = list(set(second_level_following))
 
-    toReturn = [get_user_by_id_helper(u) for u in new_list]
+    # toReturn = [get_user_by_id_helper(u) for u in new_list]
+    toReturn = []
+    for u in new_list:
+        if u != user_id:
+            toReturn.append(get_user_by_id_helper(u))
 
     return toReturn
 
