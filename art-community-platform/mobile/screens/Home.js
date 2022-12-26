@@ -134,6 +134,23 @@ const SettingsStack = (props) => {
   );
 };
 
+const ExhibitionsStack = (props) => {
+  const { token } = props.route.params;
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen
+        name="Exhibitions"
+        component={Exhibitions}
+        initialParams={{ token: token }}
+      />
+    </Stack.Navigator>
+  );
+};
+
 
 const Home = (props) => {
   const { userId, token } = props.route.params;
@@ -171,7 +188,7 @@ const Home = (props) => {
         component={SearchStack}
         initialParams={{ userId: userId, token: token }}
       />
-      <Tab.Screen name="Exhibitions" component={Exhibitions} />
+      <Tab.Screen name="Exhibitions" component={Exhibitions}initialParams={{ token: token }} />
       <Tab.Screen
         name="Profile"
         component={ProfileStack}
