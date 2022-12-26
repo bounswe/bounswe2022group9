@@ -3,6 +3,7 @@ import unittest
 from django.test import TestCase, Client
 from django.urls import resolve, reverse
 from .. import views
+from ..views.annotation import *
 from ..views.art_item import *
 from ..views.auth import *
 from ..views.comment import *
@@ -125,4 +126,19 @@ class TestUrls(TestCase):
     def test_recommend_art_item_url_is_resolved(self):
         url = reverse('recommend_art_items')
         self.assertEqual(resolve(url).func, recommend_art_items)
+    
+    def test_recommend_user_is_resoled(self):
+        url = reverse('recommend_users_to_follow')
+        self.assertEqual(resolve(url).func,recommend_users_to_follow)
 
+    def test_create_annotation_url_is_resolved(self):
+        url = reverse('annotation')
+        self.assertEqual(resolve(url).func, create_annotation)
+
+    def test_update_annotation_url_is_resolved(self):
+        url = reverse('annotation/:id')
+        self.assertEqual(resolve(url).func, update_annotation)
+
+    def test_notification_url_is_resolved(self):
+        url = reverse('get_notification_by_receiver_id')
+        self.assertEqual(resolve(url).func, get_notification_by_receiver_id)

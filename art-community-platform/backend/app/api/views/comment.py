@@ -1,3 +1,5 @@
+import datetime
+
 from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse
 from rest_framework.decorators import api_view
 import hashlib
@@ -13,6 +15,7 @@ from ..models.user import User
 from ..models.art_item import ArtItem
 from ..models.comment import Comment
 from ..models.tag import Tag
+from ..models.notification import Notification
 
 
 @api_view(['GET'])
@@ -88,6 +91,17 @@ def comment(req):
     except:
         return HttpResponse('comment can not added to comments of art item', status=400)
 
-    # TODO : send a notification to a.owner like 'u commented on your post a.id a.text'
+    # done : send a notification to a.owner like 'u commented on your post a.id a.text'
+    # send a notification to the owner of the art
+    try:
+        art_item_owner = User.objects.get(id=a.owner_id)
+        print("owner: ", str(art_item_owner.id))
+        Notification.objects.create(receiver_id=int(art_item_owner.id),
+                                    text=str(art_item_owner.username) + " commented on your post " + str(a.id) + " " + str(c.text),
+                                    date=datetime.datetime.now())
+    except Exception as e:
+        print(e.messsage)
+        return HttpResponse('couldnt send notification to the owner of the art but commenting is successful',
+                            status=400)
 
     return HttpResponse(status=200)

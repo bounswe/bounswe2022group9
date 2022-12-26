@@ -1,3 +1,5 @@
+import datetime
+
 from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse
 from rest_framework.decorators import api_view
 import json
@@ -9,6 +11,7 @@ from ..models.art_item import ArtItem
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+from ..models.notification import Notification
 
 
 @api_view(['GET'])
@@ -67,7 +70,7 @@ def get_art_item_by_id(req, art_item_id):
         favourite_count = 0
 
     try:
-        resp = {"id": a.id, "owner_name": u.name, "img_url": a.img_url, "description": a.description, "date": a.date,
+        resp = {"id": a.id, "owner_id": u.id, "owner_name": u.name, "img_url": a.img_url, "description": a.description, "date": a.date,
                 "comments": comments, "tags:": a.tags, "comment_count": len(comments), "favourite_count": favourite_count}
     except:
         return HttpResponse('response can not created', status=404)
@@ -192,6 +195,17 @@ def create_art_item(req):
         User.objects.filter(id=u.id).update(art_items=art_items_of_u)
     except:
         return HttpResponse('art item id can not added in art items of user', status=400)
+
+    # send a notification to each follower like 'u is shared a new art item a.id'
+    for follower_id in u.followers:
+        try:
+            Notification.objects.create(receiver_id=int(follower_id),
+                                        text=str(u.username) + " shared a new post with id " + str(a.id),
+                                        date=datetime.datetime.now())
+        except Exception as e:
+            print(e.messsage)
+            return HttpResponse('couldnt send notification to the followers of the user but art sharing is successful',
+                                 status=400)
 
     return HttpResponse(status=201)
 

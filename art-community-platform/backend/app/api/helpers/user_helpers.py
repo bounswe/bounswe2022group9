@@ -122,10 +122,10 @@ def delete_user_from_followers(follower_id, followed_id):
     except:
         return [False, "either follower_id or followed_id is not true"]
     # check whether user with follower_id follows user with followed_id
-    if followed_user.followers.count(follower_id) == 0:
+    if int(follower_id) not in followed_user.followers:
         return [False, "follower not exist"]
     # remove follower and save the object to the database
-    followed_user.followers.remove(follower_id)
+    followed_user.followers.remove(int(follower_id))
     followed_user.save()
     # success case
     return [True, ""]
@@ -142,10 +142,15 @@ def delete_user_from_following(follower_id, followed_id):
     except:
         return [False, "either follower_id or followed_id is not true"]
     # check whether user with follower_id follows user with followed_id
-    if follower_user.followings.count(followed_id) == 0:
+    if int(followed_id) not in follower_user.followings:
         return [False, "follower not exist"]
     # remove follower and save the object to the database
-    follower_user.followings.remove(followed_id)
+    follower_user.followings.remove(int(followed_id))
     follower_user.save()
     # success case
     return [True, ""]
+
+
+        
+
+

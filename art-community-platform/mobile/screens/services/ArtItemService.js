@@ -42,7 +42,6 @@ export const like = async (token, art_item_id, date) => {
     });
 };
 
-
 export const comment = async (token, art_item_id, comment_text) => {
   return axios
     .post(
@@ -59,6 +58,22 @@ export const comment = async (token, art_item_id, comment_text) => {
         },
       }
     )
+    .then((response) => {
+      return response;
+    })
+    .catch((error) => {
+      return error.response;
+    });
+};
+
+export const getAllPosts = async (token) => {
+  return axios
+    .get(`http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1/art-items`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+    })
     .then((response) => {
       return response;
     })

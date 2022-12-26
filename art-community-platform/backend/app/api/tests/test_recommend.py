@@ -105,3 +105,9 @@ class TestProfile(TestCase):
         for art in enumerate(self.arts):
             self.assertTrue("medieval" in art.tags, "recommendation not having mutual tags with user's favourites")
 
+
+
+
+
+
+

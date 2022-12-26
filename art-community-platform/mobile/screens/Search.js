@@ -19,6 +19,7 @@ import {
   searchPosts,
   searchUsers,
 } from "./services/GeneralServices";
+import { getAllPosts } from "./services/ArtItemService";
 
 const Search = (props) => {
   const { userId, token } = props.route.params;
@@ -47,6 +48,10 @@ const Search = (props) => {
     } else if (search.length === 0 && index === 1) {
       getAllUsers(userId, token).then((response) => {
         setUsers(response.data.users);
+      });
+    } else if (search.length === 0 && index === 0) {
+      getAllPosts(token).then((response) => {
+        setPosts(response.data["art_items"]);
       });
     }
   }, [index, search]);

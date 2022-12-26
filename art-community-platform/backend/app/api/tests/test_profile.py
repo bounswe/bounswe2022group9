@@ -36,6 +36,8 @@ class TestProfile(TestCase):
         self.new_birthdate = fake.date()
         self.new_location = 'Ankara'
         self.new_name = fake.name()
+        self.new_art_items = [1, 2, 3, 4, 5, 6, 7]
+        self.new_comments = [1, 2, 3, 4, 5, 6, 7, 8]
 
     def test_get_profile_info(self):
 
@@ -49,6 +51,7 @@ class TestProfile(TestCase):
         self.assertEqual(res_json['profile_img_url'], self.user.profile_img_url)
         self.assertEqual(res_json['birthdate'], self.user.birthdate)
         self.assertEqual(res_json['location'], self.user.location)
+        self.assertEqual(res_json['user_level'], (len(self.new_art_items) + len(self.new_comments)) / 5)
 
     def test_update_profile_info(self):
 

@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import {
+  unfollowUser,
   followUser,
   getFavourites,
   getProfile,
@@ -40,6 +41,18 @@ const User = (props) => {
   const follow = () => {
     followUser(token, userId).then((response) => {
       if (response.status == 200) {
+        profile.is_following = true;
+        getProfile(userId, token).then((response) => {
+          setProfile(response.data);
+        });
+      }
+    });
+  };
+  const unfollow = () => {
+    unfollowUser(token, userId).then((response) => {
+      console.log(response)
+      if (response.status == 200) {
+        profile.is_following = false;
         getProfile(userId, token).then((response) => {
           setProfile(response.data);
         });
@@ -101,7 +114,7 @@ const User = (props) => {
           <Text style={styles.namee}>{profile.name}</Text>
           <Text style={styles.description}>{profile.username}</Text>
           <TouchableOpacity
-            onPress={profile.is_following ? null : follow}
+            onPress={profile.is_following ? unfollow : follow}
             style={{ width: "100%", alignItems: "center" }}
           >
             <View
