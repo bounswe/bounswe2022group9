@@ -241,3 +241,29 @@ export const getFavourites = async (userId, token) => {
       return error.response;
     });
 };
+
+export const updateProfile = async(name, birthDate, email, location, profile_img_url, token, userId) =>{
+  return axios
+    .post(
+      `http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1/users/${userId}/update-profile-info`,
+      {
+        name: name,
+        email: email,
+        birthDate: birthDate,
+        location: location,
+        profile_img_url: profile_img_url,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `${token}`,
+        },
+      }
+    )
+    .then((response) => {
+      return response;
+    })
+    .catch((error) => {
+      return error.response;
+    });
+}
