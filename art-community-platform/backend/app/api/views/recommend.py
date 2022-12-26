@@ -18,7 +18,7 @@ def recommend_art_items(req, user_id):
     if is_new_user_for_art_recommendation(u):
         return JsonResponse({"recommendations": popular_art_items()})
     else:
-        tags = get_tags_of_favourites()
+        tags = get_tags_of_favourites(u)
         arts = ArtItem.objects.all()
         art_items_to_recommend = []
         for art in arts:
