@@ -48,7 +48,6 @@ const Annotations = (props) => {
   }, [newAdded]);
 
   const addNewAnnotation = () => {
-    console.log("here");
     if (type != "" && comment != "") {
       postAnnotation(
         token,
@@ -59,7 +58,6 @@ const Annotations = (props) => {
         type,
         type
       ).then((response) => {
-        console.log(response);
         if (response.status == 201) {
           setShowModal(false);
           setNewAdded(true);

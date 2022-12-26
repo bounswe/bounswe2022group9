@@ -181,8 +181,10 @@ export const getRecommendations = async (userId) => {
 
 export const getUserRecommendations = async (userId) => {
   return axios
-    .get(`http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1/recommend/user/${userId}`, {
-    })
+    .get(
+      `http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1/recommend/user/${userId}`,
+      {}
+    )
     .then((response) => {
       return response;
     })
@@ -256,15 +258,22 @@ export const getFavourites = async (userId, token) => {
     });
 };
 
-
-export const updateProfile = async(name, birthDate, email, location, profile_img_url, token, userId) =>{
+export const updateProfile = async (
+  name,
+  birthDate,
+  email,
+  location,
+  profile_img_url,
+  token,
+  userId
+) => {
   return axios
     .post(
       `http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1/users/${userId}/update-profile-info`,
       {
         name: name,
         email: email,
-        birthDate: birthDate,
+        birthdate: birthDate,
         location: location,
         profile_img_url: profile_img_url,
       },

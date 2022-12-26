@@ -1,7 +1,13 @@
 import {
-  Pressable, ScrollView, StyleSheet, Text, View,
-  Image, TextInput,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TextInput,
   SafeAreaView,
+  Alert,
 } from "react-native";
 import Colors from "./constants/Colors";
 import React, { useEffect } from "react";
@@ -9,6 +15,10 @@ import { getProfile, updateProfile } from "./services/GeneralServices";
 
 const Settings = (props) => {
   const { userId, token } = props.route.params;
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [birthDate, setBirthdate] = React.useState("");
+  const [location, setLocation] = React.useState("");
   const [profile, setProfile] = React.useState({
     birthdate: "",
     email: "",
@@ -18,28 +28,35 @@ const Settings = (props) => {
     profile_img_url: "",
     username: "",
   });
+  useEffect(() => {
     getProfile(userId, token).then((response) => {
       console.log(response.data);
       setProfile(response.data);
+      setName(response.data.name);
+      setEmail(response.data.email);
+      setBirthdate(response.data.birthdate);
+      setLocation(response.data.location);
     });
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [birthDate, setBirthdate] = React.useState("");
-  const [location, setLocation] = React.useState("");
+  }, []);
 
-  const handleUpdate = () =>{
-    updateProfile(name, birthDate, email, location, profile.profile_img_url, token, userId)
-      .then((response)=>{
-        if (response.status === 201){
-          Alert.alert("Signup Succesful ✅", [
-          ]);
-        }
-        else if (response.status === 400) {
-          Alert.alert("Signup Failed ❌", response.data);
-        }
-        console.log(response.status);
-      })
-  }
+  const handleUpdate = () => {
+    updateProfile(
+      name,
+      birthDate,
+      email,
+      location,
+      profile.profile_img_url,
+      token,
+      userId
+    ).then((response) => {
+      if (response.status === 200) {
+        Alert.alert("Update Succesful ✅");
+      } else if (response.status === 400) {
+        Alert.alert("Update Failed ❌");
+      }
+      console.log(response.status);
+    });
+  };
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
@@ -48,9 +65,7 @@ const Settings = (props) => {
             style={styles.avatar}
             source={{ uri: profile.profile_img_url }}
           />
-          <Pressable
-            style={styles.button}
-          >
+          <Pressable style={styles.button}>
             <Text style={styles.buttonText}>Change Profile Photo</Text>
           </Pressable>
         </View>
@@ -58,25 +73,25 @@ const Settings = (props) => {
         <View style={styles.inputContainer}>
           <Text style={{ color: Colors.primaryDark }}>Name</Text>
           <TextInput
-            value={profile.name}
+            value={name}
             onChangeText={(text) => setName(text)}
             style={styles.input}
           />
           <Text style={{ color: Colors.primaryDark }}>Birthdate</Text>
           <TextInput
-            value={profile.birthdate}
+            value={birthDate}
             onChangeText={(text) => setBirthdate(text)}
             style={styles.input}
           />
           <Text style={{ color: Colors.primaryDark }}>Email</Text>
           <TextInput
-            value={profile.email}
+            value={email}
             onChangeText={(text) => setEmail(text)}
             style={styles.input}
           />
           <Text style={{ color: Colors.primaryDark }}>Location</Text>
           <TextInput
-            value={profile.location}
+            value={location}
             onChangeText={(text) => setLocation(text)}
             style={styles.input}
           />
