@@ -13,7 +13,9 @@ import {
   Pressable,
 } from "react-native";
 import Post from "./components/Post";
-import { getFeed, getRecommendations } from "./services/GeneralServices";
+
+import { getFeed , getRecommendations , getUserRecommendations} from "./services/GeneralServices";
+
 import { TabController } from "react-native-ui-lib";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -35,6 +37,7 @@ const Feed = (props) => {
     });
   };
   const [recommendations, setRecommendations] = React.useState([]);
+  const [userRecommendations , setUserRecommendations] = React.useState([]);
   const [index, setIndex] = React.useState(0);
 
   useEffect(() => {
@@ -44,9 +47,11 @@ const Feed = (props) => {
       });
     } else if (index === 1) {
       getRecommendations(userId).then((response) => {
-        console.log("data");
-        console.log(response.data);
         setRecommendations(response.data["recommendations"]);
+      });
+    } else if (index === 2) {
+      getUserRecommendations(userId).then((response) => {
+        setUserRecommendations(response.data["recommendations"]);
       });
     }
   }, [index]);
@@ -54,7 +59,13 @@ const Feed = (props) => {
   return (
     <View style={{ flex: 1, alignItems: "center" }}>
       <TabController
-        items={[{ label: "Feed" }, { label: "Recommendations" }]}
+
+        items={[
+          { label: "Feed" },
+          { label: "Post Recommendations" },
+          { label: "User Recommendations" },
+        ]}
+
         asCarousel
         initialIndex={0}
         onChangeIndex={(index) => setIndex(index)}
@@ -67,49 +78,77 @@ const Feed = (props) => {
           backgroundColor="#fdfdfd"
         />
         <TabController.PageCarousel>
-          <TabController.TabPage index={0} lazy>
+        <TabController.TabPage index={0} lazy>
+          <FlatList
+            data={posts}
+            renderItem={({ item }) => (
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("ArtItem", {
+                    token: token,
+                    art_item_id: item.id,
+                    userId: userId,
+                  })
+                }
+              >
+                <Post
+                  username={item["owner_name"]}
+                  uri={item["img_url"]}
+                  date={item["date"]}
+                  desc={item["description"]}
+                ></Post>
+              </TouchableOpacity>
+            )}
+            keyExtractor={(item, index) => index.toString()}
+          />
+        </TabController.TabPage>
+        <TabController.TabPage index={1} lazy>
+        <FlatList
+            data={recommendations}
+            renderItem={({ item }) => (
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("ArtItem", {
+                    token: token,
+                    art_item_id: item.id,
+                    userId: userId,
+                  })
+                }
+              >
+                <Post
+                  username={item["owner_name"]}
+                  uri={item["img_url"]}
+                  date={item["date"]}
+                  desc={item["description"]}
+                ></Post>
+              </TouchableOpacity>
+            )}
+            keyExtractor={(item, index) => index.toString()}
+          />
+        </TabController.TabPage>
+        <TabController.TabPage index={2} lazy>
             <FlatList
-              data={posts}
+              data={userRecommendations}
               renderItem={({ item }) => (
                 <TouchableOpacity
-                  onPress={() =>
-                    navigation.navigate("ArtItem", {
+                  onPress={() => {
+                    navigation.navigate("User", {
+                      userId: item.id,
                       token: token,
-                      art_item_id: item.id,
-                      userId: userId,
-                    })
-                  }
+                    });
+                  }}
                 >
-                  <Post
-                    username={item["owner_name"]}
-                    uri={item["img_url"]}
-                    date={item["date"]}
-                    desc={item["description"]}
-                  ></Post>
-                </TouchableOpacity>
-              )}
-              keyExtractor={(item, index) => index.toString()}
-            />
-          </TabController.TabPage>
-          <TabController.TabPage index={1} lazy>
-            <FlatList
-              data={recommendations}
-              renderItem={({ item }) => (
-                <TouchableOpacity
-                  onPress={() =>
-                    navigation.navigate("ArtItem", {
-                      token: token,
-                      art_item_id: item.id,
-                      userId: userId,
-                    })
-                  }
-                >
-                  <Post
-                    username={item["owner_name"]}
-                    uri={item["img_url"]}
-                    date={item["date"]}
-                    desc={item["description"]}
-                  ></Post>
+                  <View style={styles.user}>
+                    <Image
+                      style={styles.photo}
+                      source={{ uri: item["profile_img_url"] }}
+                    />
+                    <Text style={styles.username}>{item.name}</Text>
+                    <Text style={styles.location}>
+                      {"\n"}
+                      {item.location}
+                    </Text>
+                  </View>
                 </TouchableOpacity>
               )}
               keyExtractor={(item, index) => index.toString()}
