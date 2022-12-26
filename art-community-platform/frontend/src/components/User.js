@@ -218,7 +218,7 @@ const User = ({ id }) => {
         }
       });
     });
-  }, [favouritesOpen, commentOpen, open]);
+  }, [favouritesOpen, commentOpen, open, userData]);
 
   if (isLoading) {
     return (
