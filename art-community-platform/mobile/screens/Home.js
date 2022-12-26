@@ -13,6 +13,7 @@ import Colors from "./constants/Colors";
 import UserList from "./UserList";
 import ArtItemDisplay from "./ArtItemDisplay";
 import User from "./User";
+import Annotations from "./Annotations";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -40,6 +41,11 @@ const ProfileStack = (props) => {
         component={ArtItemDisplay}
         initialParams={{ userId: userId, token: token }}
       />
+      <Stack.Screen
+        name="Annotations"
+        component={Annotations}
+        initialParams={{ userId: userId, token: token }}
+      />
       <Stack.Screen name="User" component={User} />
     </Stack.Navigator>
   );
@@ -61,6 +67,11 @@ const SearchStack = (props) => {
       <Stack.Screen
         name="ArtItem"
         component={ArtItemDisplay}
+        initialParams={{ userId: userId, token: token }}
+      />
+      <Stack.Screen
+        name="Annotations"
+        component={Annotations}
         initialParams={{ userId: userId, token: token }}
       />
       <Stack.Screen name="User" component={User} />
@@ -89,6 +100,11 @@ const FeedStack = (props) => {
       <Stack.Screen
         name="ArtItem"
         component={ArtItemDisplay}
+        initialParams={{ userId: userId, token: token }}
+      />
+      <Stack.Screen
+        name="Annotations"
+        component={Annotations}
         initialParams={{ userId: userId, token: token }}
       />
       <Stack.Screen name="User" component={User} />

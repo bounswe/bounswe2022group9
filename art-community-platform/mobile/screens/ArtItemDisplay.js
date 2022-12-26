@@ -18,10 +18,9 @@ import { useState, useEffect } from "react";
 
 const dimensions = Dimensions.get("window");
 
-
 const ArtItemDisplay = (props) => {
   const { navigation } = props;
-  const { token, art_item_id } = props.route.params;
+  const { token, userId, art_item_id } = props.route.params;
   const [liked, setLiked] = useState(false);
   const [newComment, setNewComment] = useState("");
   const [comments, setComments] = useState([]);
@@ -36,6 +35,7 @@ const ArtItemDisplay = (props) => {
     "tags:": [],
     comment_count: 0,
     favourite_count: 0,
+    owner_id: 0,
   });
 
   useEffect(() => {
@@ -54,7 +54,6 @@ const ArtItemDisplay = (props) => {
     }
   }, [newAdded]);
 
-
   return (
     <SafeAreaView>
       <ScrollView>
@@ -64,7 +63,7 @@ const ArtItemDisplay = (props) => {
           <Text>{art_item.description}</Text>
         </View>
         <Image style={styles.photo} source={{ uri: art_item.img_url }} />
-        <View style={{ flexDirection: "row" }}>
+        <View style={{ flexDirection: "row", width: "100%" }}>
           <Pressable
             onPress={() => {
               setLiked(true);
@@ -93,6 +92,21 @@ const ArtItemDisplay = (props) => {
               : art_item.favourite_count}{" "}
             Likes{" "}
           </Text>
+          <Pressable
+            onPress={() => {
+              navigation.navigate("Annotations", { art_item_id });
+            }}
+            style={{
+              marginTop: 20,
+              position: "absolute",
+              right: dimensions.width * 0.15,
+              borderWidth: 1,
+              padding: 8,
+              borderRadius: 12,
+            }}
+          >
+            <Text>annotations</Text>
+          </Pressable>
         </View>
         <View style={{ flexDirection: "row" }}>
           <Text
@@ -171,7 +185,6 @@ const ArtItemDisplay = (props) => {
     </SafeAreaView>
   );
 };
-
 
 export default ArtItemDisplay;
 
