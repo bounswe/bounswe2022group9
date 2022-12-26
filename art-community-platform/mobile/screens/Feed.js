@@ -10,10 +10,14 @@ import {
   FlatList,
   TouchableOpacity,
   RefreshControl,
+  Pressable,
 } from "react-native";
 import Post from "./components/Post";
+
 import { getFeed , getRecommendations , getUserRecommendations} from "./services/GeneralServices";
+
 import { TabController } from "react-native-ui-lib";
+import { Ionicons } from "@expo/vector-icons";
 
 const Feed = (props) => {
   const { userId, token } = props.route.params;
@@ -55,11 +59,13 @@ const Feed = (props) => {
   return (
     <View style={{ flex: 1, alignItems: "center" }}>
       <TabController
+
         items={[
           { label: "Feed" },
           { label: "Post Recommendations" },
           { label: "User Recommendations" },
         ]}
+
         asCarousel
         initialIndex={0}
         onChangeIndex={(index) => setIndex(index)}
@@ -150,6 +156,22 @@ const Feed = (props) => {
           </TabController.TabPage>
         </TabController.PageCarousel>
       </TabController>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("Notifications")}
+        style={{
+          position: "absolute",
+          right: 12,
+          bottom: 12,
+          width: 48,
+          height: 48,
+          borderRadius: 26,
+          backgroundColor: Colors.primary,
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Ionicons name="notifications" size={32} color={"white"} />
+      </TouchableOpacity>
     </View>
   );
 };

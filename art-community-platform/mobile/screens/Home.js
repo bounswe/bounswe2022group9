@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Pressable } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -14,6 +14,7 @@ import UserList from "./UserList";
 import ArtItemDisplay from "./ArtItemDisplay";
 import User from "./User";
 import Annotations from "./Annotations";
+import Notifications from "./Notifications";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -27,7 +28,7 @@ const ProfileStack = (props) => {
       }}
     >
       <Stack.Screen
-        name="Profile"
+        name="Profilee"
         component={Profile}
         initialParams={{ userId: userId, token: token }}
       />
@@ -60,7 +61,7 @@ const SearchStack = (props) => {
       }}
     >
       <Stack.Screen
-        name="Search"
+        name="Searchh"
         component={Search}
         initialParams={{ userId: userId, token: token }}
       />
@@ -93,8 +94,13 @@ const FeedStack = (props) => {
       }}
     >
       <Stack.Screen
-        name="Feed"
+        name="Feedd"
         component={Feed}
+        initialParams={{ userId: userId, token: token }}
+      />
+      <Stack.Screen
+        name="Notifications"
+        component={Notifications}
         initialParams={{ userId: userId, token: token }}
       />
       <Stack.Screen
@@ -116,6 +122,24 @@ const FeedStack = (props) => {
     </Stack.Navigator>
   );
 };
+
+const SettingsStack = (props) => {
+  const { userId, token } = props.route.params;
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen
+        name="Settings"
+        component={Settings}
+        initialParams={{ userId: userId, token: token }}
+      />
+    </Stack.Navigator>
+  );
+};
+
 
 const Home = (props) => {
   const { userId, token } = props.route.params;
@@ -159,7 +183,7 @@ const Home = (props) => {
         component={ProfileStack}
         initialParams={{ userId: userId, token: token }}
       />
-      <Tab.Screen name="Settings" component={Settings} />
+      <Tab.Screen name="Settings" component={Settings} initialParams={{ userId: userId, token: token }}/>
     </Tab.Navigator>
   );
 };
