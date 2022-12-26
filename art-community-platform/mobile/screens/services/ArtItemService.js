@@ -88,7 +88,7 @@ export const uploadArtItem = async (token, owner, base64, desc, tags, date) => {
       `http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1/art-item`,
       {
         owner_id: owner,
-        img_base64: `data:image/png;base64,${base64}`,
+        img_base64: base64,
         description: desc,
         tags: [...tags],
         date: date,

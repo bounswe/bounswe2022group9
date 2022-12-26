@@ -18,6 +18,8 @@ import { TabController } from "react-native-ui-lib";
 import { getProfile } from "./services/GeneralServices";
 import * as ImagePicker from "expo-image-picker";
 import { uploadArtItem } from "./services/ArtItemService";
+import { Ionicons } from "@expo/vector-icons";
+import Colors from "./constants/Colors";
 
 const dimensions = Dimensions.get("window");
 const Profile = (props) => {
@@ -76,12 +78,12 @@ const Profile = (props) => {
       base64: true,
     });
     if (!result.cancelled) {
+      let fileExtension = result.uri.substring(result.uri.lastIndexOf(".") + 1);
       setNewArtItem({
         ...newArtItem,
-        img_base64: result.base64,
+        img_base64: `data:image/${fileExtension};base64,${result.base64}`,
         img_url: result.uri,
       });
-      console.log(result.base64);
     }
   };
 
@@ -289,7 +291,6 @@ const Profile = (props) => {
               <Pressable
                 style={[styles.button]}
                 onPress={() => {
-                  console.log(newArtItem.date);
                   uploadArtItem(
                     token,
                     newArtItem.owner_id,
@@ -297,10 +298,22 @@ const Profile = (props) => {
                     newArtItem.description,
                     newArtItem.tags,
                     newArtItem.date
-                  ).then((response) => {
-                    setNewAdded(true);
-                    setShowModal(!showModal);
-                  });
+                  )
+                    .then((response) => {
+                      setNewAdded(true);
+                      setShowModal(!showModal);
+                      setNewArtItem({
+                        owner_id: userId,
+                        img_url: "",
+                        img_base64: "",
+                        description: "",
+                        tags: [],
+                        date: "2022-12-27",
+                      });
+                    })
+                    .catch((error) => {
+                      console.log(error);
+                    });
                 }}
               >
                 <Text style={styles.textStyle}>Save</Text>
@@ -333,10 +346,19 @@ const Profile = (props) => {
           bottom: 12,
           width: 52,
           height: 52,
-          backgroundColor: "red",
           borderRadius: 26,
+          backgroundColor: Colors.primary,
+          alignItems: "center",
+          justifyContent: "center",
         }}
-      ></TouchableOpacity>
+      >
+        <Ionicons
+          name="add-outline"
+          size={48}
+          color={"white"}
+          style={{ marginLeft: 3 }}
+        />
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
