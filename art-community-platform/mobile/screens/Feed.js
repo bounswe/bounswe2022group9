@@ -9,6 +9,7 @@ import {
   Dimensions,
   FlatList,
   TouchableOpacity,
+  RefreshControl,
 } from "react-native";
 import Post from "./components/Post";
 import { getFeed } from "./services/GeneralServices";
@@ -17,15 +18,26 @@ const Feed = (props) => {
   const { userId, token } = props.route.params;
   const { navigation } = props;
   const [posts, setPosts] = React.useState([]);
+  const [refreshing, setRefreshing] = React.useState(false);
   useEffect(() => {
     getFeed(userId, token).then((response) => {
       setPosts(response.data["art_items"]);
     });
   }, []);
+  const onRefresh = () => {
+    setRefreshing(true);
+    getFeed(userId, token).then((response) => {
+      setRefreshing(false);
+      setPosts(response.data["art_items"]);
+    });
+  };
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <FlatList
         data={posts}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() =>
