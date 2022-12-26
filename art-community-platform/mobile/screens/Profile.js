@@ -344,8 +344,8 @@ const Profile = (props) => {
           position: "absolute",
           right: 12,
           bottom: 12,
-          width: 52,
-          height: 52,
+          width: 48,
+          height: 48,
           borderRadius: 26,
           backgroundColor: Colors.primary,
           alignItems: "center",
@@ -354,7 +354,7 @@ const Profile = (props) => {
       >
         <Ionicons
           name="add-outline"
-          size={48}
+          size={46}
           color={"white"}
           style={{ marginLeft: 3 }}
         />
