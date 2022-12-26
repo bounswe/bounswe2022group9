@@ -33,6 +33,7 @@ const Feed = (props) => {
     });
   };
   const [recommendations, setRecommendations] = React.useState([]);
+  const [userRecommendations , setUserRecommendations] = React.useState([]);
   const [index, setIndex] = React.useState(0);
 
   useEffect(() => {
@@ -46,6 +47,7 @@ const Feed = (props) => {
         console.log(response.data)
         setRecommendations(response.data["recommendations"]);
       });
+    } else if (index === 2) {
     }
   }, [index]);
 
@@ -54,7 +56,8 @@ const Feed = (props) => {
       <TabController
         items={[
           { label: "Feed" },
-          { label: "Recommendations" },
+          { label: "Post Recommendations" },
+          { label: "User Recommendations" },
         ]}
         asCarousel
         initialIndex={0}
@@ -115,6 +118,10 @@ const Feed = (props) => {
             )}
             keyExtractor={(item, index) => index.toString()}
           />
+        </TabController.TabPage>
+        <TabController.TabPage index={2} lazy>
+
+          
         </TabController.TabPage>
         </TabController.PageCarousel>
       </TabController>
