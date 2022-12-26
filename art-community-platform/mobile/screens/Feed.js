@@ -79,7 +79,6 @@ const Feed = (props) => {
           />
         </TabController.TabPage>
         <TabController.TabPage index={1} lazy>
-          <Text>Recommendations</Text>
         <FlatList
             data={recommendations}
             renderItem={({ item }) => (
