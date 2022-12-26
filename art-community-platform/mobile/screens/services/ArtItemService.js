@@ -81,3 +81,57 @@ export const getAllPosts = async (token) => {
       return error.response;
     });
 };
+
+export const postAnnotation = async (
+  token,
+  owner,
+  art_item,
+  comment,
+  type,
+  format,
+  source
+) => {
+  return axios
+    .post(
+      `http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1/annotation`,
+      {
+        owner_id: owner,
+        art_item_id: art_item,
+        annotation_comment: comment,
+        annotation_type: type,
+        annotation_format: format,
+        annotation_source: source,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      }
+    )
+    .then((response) => {
+      return response;
+    })
+    .catch((error) => {
+      return error.response;
+    });
+};
+
+export const getAnnotations = async (token, art_item_id) => {
+  return axios
+    .get(
+      `http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1/art-items/${art_item_id}/annotations`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      }
+    )
+    .then((response) => {
+      return response;
+    })
+    .catch((error) => {
+      return error.response;
+    });
+};
