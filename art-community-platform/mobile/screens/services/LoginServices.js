@@ -16,6 +16,7 @@ export const login = async (username, password) => {
       }
     )
     .then((response) => {
+      console.log(response);
       token = response.data.token;
       return response;
     })

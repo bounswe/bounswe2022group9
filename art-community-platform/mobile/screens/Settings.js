@@ -14,6 +14,7 @@ import React, { useEffect } from "react";
 import { getProfile, updateProfile } from "./services/GeneralServices";
 
 const Settings = (props) => {
+  const { navigation } = props;
   const { userId, token } = props.route.params;
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
@@ -103,6 +104,14 @@ const Settings = (props) => {
           }}
         >
           <Text style={styles.buttonText}>Change Profile Info</Text>
+        </Pressable>
+        <Pressable
+          style={styles.buttonSubmit}
+          onPress={() => {
+            navigation.navigate("Login");
+          }}
+        >
+          <Text style={styles.buttonText}>Logout</Text>
         </Pressable>
       </ScrollView>
     </SafeAreaView>
