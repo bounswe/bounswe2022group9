@@ -23,9 +23,12 @@ import {
   ART_FAVOURITES_ENDPOINT,
   ART_COMMENTS_ENDPOINT,
   HOMEPAGE_ENDPOINT,
-  SEARCH_ENDPOINT,
+  SEARCH_USER_ENDPOINT,
+  SEARCH_ART_ITEMS_ENDPOINT,
+  SEARCH_EXHIBITIONS_ENDPOINT,
   USERS_BASE_ENDPOINT,
   ARTS_BASE_ENDPOINT,
+  UNFOLLOW_ENDPOINT,
 } from "./urls";
 
 export async function login(info) {
@@ -131,6 +134,30 @@ export async function follow(info) {
   }
 }
 
+export async function unfollow(info) {
+  console.log("response", info);
+  try {
+    const response = await axios.post(
+      UNFOLLOW_ENDPOINT,
+      {
+        "followed_user_id": info.user_id
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": info.token,
+        },
+      }
+    );
+    console.log(response);
+    return response;
+  } catch (error) {
+    console.log(error);
+
+    return error;
+  }
+}
+
 export async function upload_image(info) {
   console.log("response", info);
   try {
@@ -162,11 +189,11 @@ export async function upload_art(info) {
     const response = await axios.post(
       UPLOAD_ART,
       {
-        "owner_id": 1,
-        "img_url": "some-image-url-here",
-        "description": "my art item description",
-        "tags": ["art", "picasso", "contemporary"],
-        "date": "2022-01-01"
+        "owner_id": info.owner_id,
+        img_base64: info.base64,
+        "description": info.description,
+        "tags": info.tags,
+        "date": info.date
       },
       {
         headers: {
@@ -241,15 +268,15 @@ export async function create_exhibition(info) {
     const response = await axios.post(
       CREATE_EXHIBITION_ENDPOINT,
       {
-        "name": "exhibition name",
-        "description": "description",
-        "type": "virtual",
-        "location": "Beylikduzu",
-        "open_address": "Acelya Cd. No:23/13 Beylikduzu/Istanbul",
-        "start_time": "10:00",
-        "end_time": "14:00",
-        "date": "2022-08-08",
-        "art_items": []
+        "name": info.name,
+        "description": info.description,
+        "type": info.type,
+        "location": info.location,
+        "open_address": info.open_address,
+        "start_time": info.start_time,
+        "end_time": info.end_time,
+        "date": info.date,
+        "art_items": info.art_items
       },
       {
         headers: {
@@ -605,21 +632,62 @@ export async function homepage(info) {
 
 export async function get_search_result(info) {
   console.log("response", info);
-  try {
-    const response = await axios.get(
-      SEARCH_ENDPOINT + info.text,
-      {
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": info.token,
-        },
-      }
-    );
-    console.log(response);
-    return response;
-  } catch (error) {
-    console.log(error);
-
-    return error;
+  if(info.type === "user"){
+    try {
+      const response = await axios.get(
+        SEARCH_USER_ENDPOINT+ info.text,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": info.token,
+          },
+        }
+      );
+      console.log(response);
+      return response;
+    } catch (error) {
+      console.log(error);
+  
+      return error;
+    }
   }
+  if(info.type === "artitem"){
+    try {
+      const response = await axios.get(
+        SEARCH_ART_ITEMS_ENDPOINT+ info.text,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": info.token,
+          },
+        }
+      );
+      console.log(response);
+      return response;
+    } catch (error) {
+      console.log(error);
+  
+      return error;
+    }
+  }
+  if(info.type === "exhibition"){
+    try {
+      const response = await axios.get(
+        SEARCH_EXHIBITIONS_ENDPOINT+ info.text,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": info.token,
+          },
+        }
+      );
+      console.log(response);
+      return response;
+    } catch (error) {
+      console.log(error);
+  
+      return error;
+    }
+  }
+  
 } 

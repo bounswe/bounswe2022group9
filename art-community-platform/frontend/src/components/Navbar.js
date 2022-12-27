@@ -52,26 +52,26 @@ import {
       const sendToExhibition = (values) => {
         console.log("Success:", values);
         setSelected(values.key);
-        navigate("/homepage");
+        navigate("/exhibition/4");
       };
 
     return (
       <Layout>
         <Header>
             <Menu style={centerStyle} mode="horizontal" theme='dark' >
-                <Menu.Item key="Home"  onClick={sendToHome} style={{ width: '20%', textAlign: 'center'  }}>
+                <Menu.Item key="Home"  onClick={sendToHome} style={{ width: '15%', textAlign: 'center'  }}>
                     Home
                 </Menu.Item>
-                <Menu.Item key="Search"  onClick={sendToSearch} style={{ width: '20%', textAlign: 'center' }}>
+                <Menu.Item key="Search"  onClick={sendToSearch} style={{ width: '15%', textAlign: 'center' }}>
                     Search
                 </Menu.Item>
-                <Menu.Item key="Exhibition"  onClick={sendToExhibition} style={{ width: '20%', textAlign: 'center' }}>
+                <Menu.Item key="Exhibition"  onClick={sendToExhibition} style={{ width: '15%', textAlign: 'center' }}>
                 Exhibition
                 </Menu.Item>
-                <Menu.Item key="Profile"  onClick={sendToProfile} style={{ width: '20%', textAlign: 'center' }}>
+                <Menu.Item key="Profile"  onClick={sendToProfile} style={{ width: '15%', textAlign: 'center' }}>
                     Profile
                 </Menu.Item>
-                <Menu.Item key="SignOut"  onClick={sendToSignout} style={{ width: '20%', textAlign: 'center' }}>
+                <Menu.Item key="SignOut"  onClick={sendToSignout} style={{ width: '15%', textAlign: 'center' }}>
                     Sign Out
                 </Menu.Item>
             </Menu>
