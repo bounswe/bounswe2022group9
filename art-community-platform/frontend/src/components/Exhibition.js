@@ -9,8 +9,8 @@ import {
   Form,
   Input,
   Avatar,
-  Col,
-  Space,
+  message,
+  Upload,
   Row,
   Divider,
   Menu,
@@ -18,8 +18,7 @@ import {
 import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-
-import { CommentOutlined, StarOutlined, UserAddOutlined, UsergroupAddOutlined, UsergroupDeleteOutlined } from "@ant-design/icons";
+import { CommentOutlined, StarOutlined, UploadOutlined, UsergroupAddOutlined, UsergroupDeleteOutlined } from "@ant-design/icons";
 import {
   get_user_info,
   get_art_comments,
@@ -128,6 +127,9 @@ const Exhibition = ({ id }) => {
         setFavouritesOpen(true);
       }
     }
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
   };
 
   useEffect(() => {

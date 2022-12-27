@@ -32,6 +32,7 @@ import {
 } from "@ant-design/icons";
 import {
   get_user_info,
+  upload_art,
   get_art_comments,
   get_art_favourites,
   upload_comment,
@@ -41,6 +42,7 @@ import {
   get_followings,
   get_favourites,
   get_user_exhibitions,
+  create_exhibition,
 } from "../store/axios";
 import Navbar from "./Navbar";
 
@@ -63,14 +65,18 @@ const User = () => {
   const [editData, setEditData] = useState([]);
   const [listTitle, setTitle] = useState("");
   const [selected, setSelected] = useState('post');
+  const [image64, setImage64] = useState("");
 
   const [type, setType] = useState("post");
+  const [exhibitionDate, setExhibitionDate] = useState("1900-01-01");
   const [birthDate, setBirthDate] = useState("1900-01-01");
   const [artItemId, setArtItemId] = useState(0);
   const [open, setOpen] = useState(false);
   const [commentOpen, setCommentOpen] = useState(false);
   const [favouritesOpen, setFavouritesOpen] = useState(false);
   const [editOpen, setEditOpen] = useState(false);
+  const [createOpen, setCreateOpen] = useState(false);
+  const [exhibitionOpen, setExhibitionOpen] = useState(false);
 
   const handleOkFavourites = () => {
     setTimeout(() => {
@@ -253,6 +259,68 @@ const User = () => {
       }
     });
   };
+  const convertToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0];
+    const base64 = await convertToBase64(file);
+      console.log("upload");
+      console.log(base64);
+    setImage64(base64);
+  } 
+  const handleCreate = () => {
+    setCreateOpen(true);
+  };
+  const handleCreateCancel = () => {
+    setCreateOpen(false);
+  };
+  const submitCreateArtItem = async (values) => {
+    const response = await upload_art({
+      token: token,
+      owner_id: userData.id,
+      base64: image64,
+      description: values.description,
+      tags: [values.tag1,values.tag2,values.tag3],
+      date:  moment().format("YYYY-MM-DD"),
+    });
+    console.log(response.status);
+  };
+
+  const handleExhibition = () => {
+    setExhibitionOpen(true);
+  };
+  const handleExhibitionCancel = () => {
+    setExhibitionOpen(false);
+  };
+  const onDateChange = (date, dateString) => {
+    setExhibitionDate(dateString);
+  };
+  const submitExhibition = async (values) => {
+    const response = await create_exhibition({
+      token: token,
+      description: values.description,
+      name: values.name,
+      type: values.type,
+      location: values.location,
+      open_address: values.open_address,
+      start_time: values.start_time,
+      end_time: values.end_time,
+      date: exhibitionDate,
+      art_items: [],
+    });
+    console.log(response.status);
+  };
+
   useEffect(() => {
     // useEffect hook
     setTimeout(() => {
@@ -364,6 +432,26 @@ const User = () => {
                 onClick={editProfile}
               >
                 Edit Profile
+              </Button>
+              <Divider />
+              <Button
+                size="large"
+                shape="round"
+                block
+                icon={<StarOutlined />}
+                onClick={handleCreate}
+              >
+                Create Art Item
+              </Button>
+              <Divider />
+              <Button
+                size="large"
+                shape="round"
+                block
+                icon={<CommentOutlined />}
+                onClick={handleExhibition}
+              >
+                Create Exhibition
               </Button>
             </Space>
           </Col>
@@ -627,6 +715,110 @@ const User = () => {
           >
             <Button type="primary" htmlType="submit" shape="round">
               Submit Form
+            </Button>
+          </Form.Item>
+        </Form>
+      </Modal>
+      <Modal
+        open={createOpen}
+        title="Create Art Item"
+        onCancel={handleCreateCancel}
+        footer={[
+          <Button key="back" onClick={handleCreateCancel}>
+            Return
+          </Button>,
+        ]}
+      >
+        <Form name="basic" onFinish={submitCreateArtItem}>
+        <input
+          type="file"
+          label="Image"
+          name="myFile"
+          accept=".jpeg, .png, .jpg"
+          onChange={(e) => handleFileUpload(e)}
+        />
+          <Text strong>Description</Text>
+          <Form.Item name="description">
+            <Input />
+          </Form.Item>
+
+          <Text strong>Tags</Text>
+          <Form.Item name="tag1">
+            <Input />
+          </Form.Item>
+          <Form.Item name="tag2">
+            <Input />
+          </Form.Item>
+          <Form.Item name="tag3">
+            <Input />
+          </Form.Item>
+
+          <Form.Item
+            wrapperCol={{
+              offset: 4,
+            }}
+          >
+            <Button type="primary" htmlType="submit" shape="round">
+              Create
+            </Button>
+          </Form.Item>
+        </Form>
+      </Modal>
+      <Modal
+        open={exhibitionOpen}
+        title="Create Exhibition"
+        onCancel={handleExhibitionCancel}
+        footer={[
+          <Button key="back" onClick={handleExhibitionCancel}>
+            Return
+          </Button>,
+        ]}
+      >
+        <Form name="basic" onFinish={submitExhibition}>
+        <Text strong>Name</Text>
+          <Form.Item name="name">
+            <Input />
+          </Form.Item>
+          <Text strong>Description</Text>
+          <Form.Item name="description">
+            <Input />
+          </Form.Item>
+          <Text strong>Type</Text>
+          <Form.Item name="type">
+            <Input />
+          </Form.Item>
+          <Text strong>Date</Text>
+          <Form.Item name="date" >
+            <DatePicker onChange={onDateChange} />
+          </Form.Item>
+          <Text strong>Location</Text>
+          <Form.Item name="location">
+            <Input />
+          </Form.Item>
+          <Text strong>Open Address</Text>
+          <Form.Item name="open_address">
+            <Input />
+          </Form.Item>
+          <Text strong>Start Time</Text>
+          <Form.Item name="start_time">
+            <Input />
+          </Form.Item>
+          <Text strong>End Time</Text>
+          <Form.Item name="end_time">
+            <Input />
+          </Form.Item>
+          <Text strong>Art Items</Text>
+          <Form.Item name="art_items">
+            <Input />
+          </Form.Item>
+
+          <Form.Item
+            wrapperCol={{
+              offset: 4,
+            }}
+          >
+            <Button type="primary" htmlType="submit" shape="round">
+              Create
             </Button>
           </Form.Item>
         </Form>

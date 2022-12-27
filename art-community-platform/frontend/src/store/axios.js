@@ -189,11 +189,11 @@ export async function upload_art(info) {
     const response = await axios.post(
       UPLOAD_ART,
       {
-        "owner_id": 1,
-        "img_url": "some-image-url-here",
-        "description": "my art item description",
-        "tags": ["art", "picasso", "contemporary"],
-        "date": "2022-01-01"
+        "owner_id": info.owner_id,
+        img_base64: info.base64,
+        "description": info.description,
+        "tags": info.tags,
+        "date": info.date
       },
       {
         headers: {
@@ -268,15 +268,15 @@ export async function create_exhibition(info) {
     const response = await axios.post(
       CREATE_EXHIBITION_ENDPOINT,
       {
-        "name": "exhibition name",
-        "description": "description",
-        "type": "virtual",
-        "location": "Beylikduzu",
-        "open_address": "Acelya Cd. No:23/13 Beylikduzu/Istanbul",
-        "start_time": "10:00",
-        "end_time": "14:00",
-        "date": "2022-08-08",
-        "art_items": []
+        "name": info.name,
+        "description": info.description,
+        "type": info.type,
+        "location": info.location,
+        "open_address": info.open_address,
+        "start_time": info.start_time,
+        "end_time": info.end_time,
+        "date": info.date,
+        "art_items": info.art_items
       },
       {
         headers: {
