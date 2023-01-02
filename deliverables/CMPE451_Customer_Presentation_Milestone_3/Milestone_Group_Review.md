@@ -770,7 +770,119 @@ Added features:
   The W3C document describing the data annotation model can be found here: https://www.w3.org/TR/2017/REC-annotation-model-20170223/
   
   Our implementation details can be found in API documentation. To summarize, GET 'annotations/<int:annotation_id>' endpoint returns the annotation information with given annotation ID. POST 'annotation' endpoint is used to create an annotation. PUT 'annotation/<int:annotation_id>' endpoint enables the use to update an annotation with the given id.
-  
+ 
+ **Scenarios**
+ 
+ 
+   * Scenario 1
+   
+   **Persona:**
+   
+   Beril is a 29 years old software engineer. She lives in Ankara and graduated from Boğaziçi University 6 years ago. She loves nature and nature photos especially snowy mountains. When she studies she is a member of photograph clup of the university. She is not a professional, however she wants to see professional's nature photos. She wants to follow her favorite photographer.
+   
+   
+   **Preconditions:**
+   
+* She downloaded the application.
+   
+   **Goals:**
+   
+* She wants to sign up to the application.
+* She wants to log ing to the application.
+* She wants to follow her favorite photographer. 
+   
+   **Actions:**
+   
+* She sign up to the application with her username, password, loction and other credential.
+* She log in to the application with username and password.
+* She navigates to the feed page and search users for her favorite photographer.
+* She clicks to the photographer and goes to the profile.
+* She follows the photographer.
+* She notice a art item and likes it. 
+* She logs out.
+   
+   **Acceptance Criteria:**
+   
+* 3.1.1.1. Guest users shall be able to sign up to the platform with their name, their email account, a username and password.
+* 3.1.1.4. User password should be at least 8 characters long should contain at least one uppercase, one lowercase and one symbol.
+* 3.1.2.1. Users shall be able to log in with their username and their password.
+* 3.1.8.1. Users shall be able to perform semantic search on the website.
+* 3.1.8.2. Users shall be able to pick a category for their search(art item, art exhibit, tag, account) and get the results starting from the most relevant.
+* 3.1.5.1. Users shall be able to follow other users.
+* 3.1.5.3. Users shall be able to see the art items of followed users.
+* 3.1.4.2. Users shall be able to see art items that he/she shared in his/her profile.
+* 3.1.3.3. Users shall be able to like art items.
+* 3.1.2.2. Users shall be able to log out.
+   
+   
+  * Scenario 2
+   
+   **Persona:**
+   
+   John is a 58 years old artist. Initially his occasion was driver. He was painting wil animals as hobby, however he decided to leave his hob and make his living from painting. He sells his paintings via exhibitions. Also he wants to meet new people who paints especially wild animals, however it is very hard to find someone who paint wild animals. He wants to discover new people to share experince.
+   
+   **Preconditions:**
+   
+* He is sign up.
+* He is logged in.
+   
+   **Goals:**
+   
+* He wants to create exhibition.
+* He wants to discover new paintings with the recomemded art items.
+   
+   **Actions:**
+   
+* He navigates to the exhibition section from his computer.
+* He creates physical exhibition for his paintings with name, location and other informations.
+* He navigates to the home page and discover other art items.
+* He notices an art item and navigates to the profile of the owner of the art item.
+* He discover other art items on the profile and likes some of them.
+   
+   **Acceptance Criteria:**
+   
+* 3.1.6.2. Users shall be able to start physical exhibitions solo or collaboratively.
+* 3.2.3.1. The platform shall include a recommendation system.
+* 3.2.3.2. Art items that has same tags with users' favorite ones, shall be recommended to users.
+* 3.2.3.5. Art items of followed users shall be recommended to the follower.
+* 3.1.4.2. Users shall be able to see art items that he/she shared in his/her profile.
+* 3.1.3.3. Users shall be able to like art items.
+* 3.1.3.7. Users shall be able to add tags to their shared art items.
+   
+   
+   * Scenario 3
+   
+   **Persona:**
+   
+   Mary is a farmer aged 36. Whe produce grapes to make wine. She lives in a little village. Many years ago she make cat scultures to frighten the birds. Because birds demages the grapes. Her first trial is above her expectations and she discovered a skill of hers. Then, she started to make scultures generally fruits sculptures and paints them. She wants to share her art works with other and collect the greetings. 
+   
+   **Preconditions:**
+   
+* She is sign up.
+* She is logged in.
+* She has already share art items. 
+   
+   **Goals:**
+   
+* She wants to share new art items.
+   
+   **Actions:**
+   
+* She navigates to her profile and wants to share a new art item.
+* She selects the art item that she wants to share and add some tag and give an explanation. 
+* She wants to annotate the some part of the text in the explanation.
+* When she shared the art item, a notification comes to report her about the comment on the art item.
+* She navigates to the art item and wants to see comment. 
+   
+   **Acceptance Criteria:**
+   
+* 3.1.3.1. Users shall be able to share art items.
+* 3.1.3.7. Users shall be able to add tags to their shared art items.
+* 4.4.2.2 Annotations created by user
+* 4.5.1. Annotations shall comply with the W3C Web Annotation Data Model.
+* 4.5.2. Annotations shall follow W3C standards.
+* 3.2.4.6. When any user makes a comment about an art, owner of that art should be notified.
+ 
   ## c. Project Artifacts
   ### 1. Manuals
   #### i) User Manual
