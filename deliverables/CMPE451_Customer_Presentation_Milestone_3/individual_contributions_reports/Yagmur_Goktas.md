@@ -21,7 +21,6 @@ From the beginning of the term, my responsibilities include being a good team me
 
 ##### Milestone 1
 
-### Code Related Significant Issues
 * [[Mobile] Terms and Privacy Policy] https://github.com/bounswe/bounswe2022group9/issues/266
 * [[Mobile] Profile Page] https://github.com/bounswe/bounswe2022group9/issues/276
 * [[Mobile] Backend Connection for Login] https://github.com/bounswe/bounswe2022group9/issues/284
@@ -55,7 +54,6 @@ From the beginning of the term, my responsibilities include being a good team me
 
 ##### Milestone 1
 
-### Management related significant issues
 * [Introduction to React Native] https://github.com/bounswe/bounswe2022group9/issues/250
 * [[Mobile] - Determining background, primary and secondary colors for mobile application] https://github.com/bounswe/bounswe2022group9/issues/256
 * [Communication Plan Revision] https://github.com/bounswe/bounswe2022group9/issues/246
