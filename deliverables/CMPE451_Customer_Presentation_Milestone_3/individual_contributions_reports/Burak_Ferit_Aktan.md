@@ -26,10 +26,11 @@
 * contributing to Milestone 3 Group Report by preparing: Executive Summary
 * Creating my own individual contribution reports and summary of work performed for each milestone.
 * revising use-case diagrams
+* contributing the API documentation by documenting the endpoints I write, or providing sample requests with curl
 
 ## Main Contributions
 
-### Code Related Significant Issues
+### a.Code Related Significant Issues
 
 ##### Milestone 1
 
@@ -66,7 +67,7 @@ In addition to these, the following issues are created by me with very detailed 
 * [[Backend] Recommending "Users To Follow" to Users](https://github.com/bounswe/bounswe2022group9/issues/492)
 * [[Backend] Implement User Levels](https://github.com/bounswe/bounswe2022group9/issues/494)
 
-### Management Related Significant Issues
+### b.Management Related Significant Issues
 
 ##### Milestone 1
 
@@ -91,6 +92,7 @@ In addition to these, the following issues are created by me with very detailed 
 * [[Milestone] Prepare Individual Contributions Report for Burak Ferit Aktan](https://github.com/bounswe/bounswe2022group9/issues/550)
 * [[Milestone] Document Summary of Work Performed by Burak Ferit Aktan](https://github.com/bounswe/bounswe2022group9/issues/551)
 * [[Release] Create tag for version 0.9.0](https://github.com/bounswe/bounswe2022group9/issues/544)
+* [[Documentation] Documentation of API Endpoints](https://github.com/bounswe/bounswe2022group9/issues/515) -- contributed to this issue by commenting
 * [Add Backend Meeting 4 Notes to Wiki](https://github.com/bounswe/bounswe2022group9/issues/521)
 * [Extra Meeting on Recommendation Feature - Burak and Berkkant](https://github.com/bounswe/bounswe2022group9/issues/518)
 * [[Documentation] Document art item recommendation endpoint](https://github.com/bounswe/bounswe2022group9/issues/514)
