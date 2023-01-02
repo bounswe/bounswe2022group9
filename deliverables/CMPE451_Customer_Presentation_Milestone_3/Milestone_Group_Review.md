@@ -357,46 +357,6 @@ Added features:
   |[Milestone] Prepare Individual Contributions Report for Ömer Faruk Şişman|[#553](https://github.com/bounswe/bounswe2022group9/issues/553)|
   |[Milestone] Document Summary of Work Performed by Ömer Faruk Şişman|[#552](https://github.com/bounswe/bounswe2022group9/issues/552)|
   |[Documentation] Documentation of API Endpoints|[#515](https://github.com/bounswe/bounswe2022group9/issues/515)|
-  |-----|:--------:|
-  |**Milestone 2**|-|
-  |-----|:--------:|
-  |[Backend] [Feature] Get all users|[#397](https://github.com/bounswe/bounswe2022group9/issues/397)|
-  |[Backend] [Feature] Get all art items|[#398](https://github.com/bounswe/bounswe2022group9/issues/398)|
-  |[Backend] [Feature] Get user by id|[#399](https://github.com/bounswe/bounswe2022group9/issues/399)|
-  |[Backend] [Feature] Get art item by id|[#400](https://github.com/bounswe/bounswe2022group9/issues/400)|
-  |[Backend] [Feature] Get tag by id|[#401](https://github.com/bounswe/bounswe2022group9/issues/401)|
-  |[Backend] [Feature] Get comment by id|[#402](https://github.com/bounswe/bounswe2022group9/issues/402)|
-  |[Backend] [Feature] Get notification by id|[#403](https://github.com/bounswe/bounswe2022group9/issues/403)|
-  |[Backend] [Feature] Get exhibition by id|[#404](https://github.com/bounswe/bounswe2022group9/issues/404)|
-  |[Backend] [Feature] Get followers of a user|[#405](https://github.com/bounswe/bounswe2022group9/issues/405)|
-  |[Backend] [Feature] Get followings of a user|[#406](https://github.com/bounswe/bounswe2022group9/issues/406)|
-  |[Backend] [Feature] Get favourites of a user|[#407](https://github.com/bounswe/bounswe2022group9/issues/407)|
-  |[Backend] [Feature] Get comments of a user|[#408](https://github.com/bounswe/bounswe2022group9/issues/408)|
-  |[Backend] [Feature] Get exhibitions of a user|[#409](https://github.com/bounswe/bounswe2022group9/issues/409)|
-  |[Backend] [Feature] Get notifications of a user|[#410](https://github.com/bounswe/bounswe2022group9/issues/410)|
-  |[Backend] [Feature] Get favourites of an art item|[#411](https://github.com/bounswe/bounswe2022group9/issues/411)|
-  |[Backend] [Feature] Get comments of an art item|[#412](https://github.com/bounswe/bounswe2022group9/issues/412)|
-  |[Backend] [Feature] Homepage of a user|[#413](https://github.com/bounswe/bounswe2022group9/issues/413)|
-  |[Backend] Deploying API|[#414](https://github.com/bounswe/bounswe2022group9/issues/414)|
-  |PS Meeting actions|[#350](https://github.com/bounswe/bounswe2022group9/issues/350)|
-  |[Backend] Postman Documentation|[#415](https://github.com/bounswe/bounswe2022group9/issues/415)|
-  |[Backend] Models Documentation|[#416](https://github.com/bounswe/bounswe2022group9/issues/416)|
-  |Feeding Prod Database|[#432](https://github.com/bounswe/bounswe2022group9/issues/432)|
-  [Documentation]3 example backend endpoint request and response|[#472](https://github.com/bounswe/bounswe2022group9/issues/472)|
-  |Creating individual report of Omer Faruk Sisman|[#468](https://github.com/bounswe/bounswe2022group9/issues/468)|
-  |-----|:--------:|
-  |**Milestone 1**|-|
-  |-----|:--------:|
-  |[Backend] Initializing the backend app|[#269](https://github.com/bounswe/bounswe2022group9/issues/269)|
-  |[Backend] Dockerizing the backend app|[#270](https://github.com/bounswe/bounswe2022group9/issues/270)|
-  |[Backend] Deploying the signup endpoint|[#272](https://github.com/bounswe/bounswe2022group9/issues/272)|
-  |[Backend] Implementing the login endpoint|[#273](https://github.com/bounswe/bounswe2022group9/issues/273)|
-  |[Backend] Deploying the login endpoint|[#274](https://github.com/bounswe/bounswe2022group9/issues/274)|
-  |[Backend] CORS error on server side|[#294](https://github.com/bounswe/bounswe2022group9/issues/294)|
-  |Updating "Login" and "Follow" Use-Case Diagrams|[#243](https://github.com/bounswe/bounswe2022group9/issues/243)|
-  |[Backend] Creating AWS free-tier account and ECR for docker images.|[#268](https://github.com/bounswe/bounswe2022group9/issues/268)|
-  |[Milestone] Creating Pre-Release version of project|[#288](https://github.com/bounswe/bounswe2022group9/issues/288)|
-  |[Milestone] Creating frontend scenario for signup|[#290](https://github.com/bounswe/bounswe2022group9/issues/290)|
   
   |Pull Request Title|Link|
   |-----|:--------:|
