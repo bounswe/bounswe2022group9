@@ -341,23 +341,15 @@ Added features:
   
   
   * **Ömer Faruk Şişman**
+
   |Issue Title|Link|
   |-----|:--------:|
-  |**Final Milestone 3**|
-  |-----|:--------:|
-  |[Backend] Self-recommendation bug in the recommendation system|[#535](https://github.com/bounswe/bounswe2022group9/issues/535)|
-  |[Backend] Deploy|[#528](https://github.com/bounswe/bounswe2022group9/issues/528)|
-  |[BUG] Return owner_id in art_item response|[#527](https://github.com/bounswe/bounswe2022group9/issues/527)|
-  |[Backend] Deployment|[#516](https://github.com/bounswe/bounswe2022group9/issues/516)|
-  |[Backend] Unit Tests for Creating/Updating Art Item Annotations|[#507](https://github.com/bounswe/bounswe2022group9/issues/507)|
-  |[Backend] Implementation of W3C Annotations|[#496](https://github.com/bounswe/bounswe2022group9/issues/496)|
-  |[Backend] Research on Web Annotation Protocol|[#495](https://github.com/bounswe/bounswe2022group9/issues/495)|
-  |[Backend] Implement User Levels|[#494](https://github.com/bounswe/bounswe2022group9/issues/494)|
-  |[Milestone] Add API documentation to Final Milestone Report|[#555](https://github.com/bounswe/bounswe2022group9/issues/555)|
-  |[Milestone] 3 example backend endpoint request and response|[#554](https://github.com/bounswe/bounswe2022group9/issues/554)|
-  |[Milestone] Prepare Individual Contributions Report for Ömer Faruk Şişman|[#553](https://github.com/bounswe/bounswe2022group9/issues/553)|
-  |[Milestone] Document Summary of Work Performed by Ömer Faruk Şişman|[#552](https://github.com/bounswe/bounswe2022group9/issues/552)|
-  |[Documentation] Documentation of API Endpoints|[#515](https://github.com/bounswe/bounswe2022group9/issues/515)|
+  |**Milestone 1**|
+  |[Mobile] - Login/Signup Pages Implementations|https://github.com/bounswe/bounswe2022group9/issues/252|
+  |[Mobile] - Axios and Linking App with Backend|https://github.com/bounswe/bounswe2022group9/issues/262|
+  |[Mobile] - Search Page Mockup |https://github.com/bounswe/bounswe2022group9/issues/283|
+  |**Milestone 2**|
+  
   
   |Pull Request Title|Link|
   |-----|:--------:|
