@@ -763,11 +763,6 @@ Added features:
    Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Detailed-Art-Item.js
   
 
-
-
-### API Endpoints
-  
-
   
 ### Annotation Implementation & W3C Standard Compliance
   Our annotation data model, which can be found [here](https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/backend/app/api/views/annotation.py) is partially compliant to the W3C annotation model recommendation, released in 23 Feb 2017.
