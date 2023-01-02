@@ -102,6 +102,7 @@ In addition to these, the following issues are created by me with very detailed 
 * [Feeding Prod Database](https://github.com/bounswe/bounswe2022group9/issues/432)
 * [[Documentation] Document "Annotations" and "Standards" parts of Milestone2 Group Review](https://github.com/bounswe/bounswe2022group9/issues/457)
 * [[Documentation] Documenting Individual Contribution Report of Burak Ferit Aktan](https://github.com/bounswe/bounswe2022group9/issues/446)
+* [Deliverables Image View Issue](https://github.com/bounswe/bounswe2022group9/issues/328)
 
 ##### Milestone 3
 
