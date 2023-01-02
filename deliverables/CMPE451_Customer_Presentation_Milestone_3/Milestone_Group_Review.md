@@ -248,3 +248,5 @@ Added features:
   Our annotation data model, which can be found [here](https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/backend/app/api/views/annotation.py) is partially compliant to the W3C annotation model recommendation, released in 23 Feb 2017.
   The W3C document describing the data annotation model can be found here: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/backend/app/api/views/annotation.py.
   
+  Our implementation details can be found in API documentation. To summarize, GET 'annotations/<int:annotation_id>' endpoint returns the annotation information with given annotation ID. POST 'annotation' endpoint is used to create an annotation. PUT 'annotation/<int:annotation_id>' endpoint enables the use to update an annotation with the given id.
+  
