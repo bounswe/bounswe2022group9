@@ -14,11 +14,11 @@ Currently, in our Art Community platform application named "Artie", users can:
 * share art items
 * add art items to their favourites lists
 * comment on art items
-* create and view exhibitions (only on frontend)
+* create and view exhibitions (on frontend and backend)
 * receive user recommendations, recommending them new users to follow
 * receive art item recommendations
-* annotate contents using annotate button under posts filling annotated part/annotation body fields in the appearing form and view annotations (only on mobile)
-* receive notifications when: (only on mobile)
+* annotate contents using annotate button under posts filling annotated part/annotation body fields in the appearing form and view annotations (on mobile and backend)
+* receive notifications when: (on mobile and backend)
     * a user follows them
     * a user comments on one of their art items
     * a user adds one of their art items to favourite list
