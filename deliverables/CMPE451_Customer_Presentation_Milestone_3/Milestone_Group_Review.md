@@ -790,5 +790,5 @@ Added features:
   ### 5. Project plan
   Project plan can be accessed from [here](https://github.com/bounswe/bounswe2022group9/tree/master/resources) .
   ### 6. Unit tests
-  
+  Unit tests can be accessed from [here](https://github.com/bounswe/bounswe2022group9/tree/master/art-community-platform/backend/app/api/tests)
   
