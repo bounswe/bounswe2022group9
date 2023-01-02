@@ -29,7 +29,7 @@ I was also responsible with creating my own individual contribution reports and 
 
 ## Main Contributions
 
-* writing and testing the API endpoints for
+* writing code and unit tests of the API endpoints for
    - signup (register)
    - getting profile information
    - updating profile information
@@ -91,6 +91,7 @@ In addition to these, the following issues are created by me with very detailed 
 * [API Documentation (signup)](https://github.com/bounswe/bounswe2022group9/issues/279)
 * [Open a discord server for CmpE451](https://github.com/bounswe/bounswe2022group9/issues/233)
 * [Backend Meeting Notes for Meeting 1](https://github.com/bounswe/bounswe2022group9/issues/282)
+* [Revising Sequence Diagrams](https://github.com/bounswe/bounswe2022group9/issues/244) -- created by me, then I assigned this issue to another team member
 * [Scenario Preparation(signup) for Milestone](https://github.com/bounswe/bounswe2022group9/issues/290)
 
 ##### Milestone 2
