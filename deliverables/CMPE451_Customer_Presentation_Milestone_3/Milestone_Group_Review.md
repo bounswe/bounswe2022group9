@@ -85,6 +85,7 @@ Added features:
 ### Individual Contributions Reports
 *  [Burak Ferit Aktan](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_3/individual_contributions_reports/Burak_Ferit_Aktan.md)
 *  [Furkan Özdemir](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_3/individual_contributions_reports/Furkan_Ozdemir.md)
+* [Ufuk Karagöz](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_3/individual_contributions_reports/Ufuk_Karagoz.md)
 *  [Ömer Faruk Şişman](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_3/individual_contributions_reports/Omer_Faruk_Sisman.md)
 
 ### Summary of Work Performed by Each Team Member
@@ -243,6 +244,50 @@ Added features:
   |[Backend] Login|[#280](https://github.com/bounswe/bounswe2022group9/pull/280) (reviewed)|
   |[Frontend] Axios and Routing|[#292](https://github.com/bounswe/bounswe2022group9/pull/292) (reviewed)|
   |||
+  
+  **Ufuk Karagöz**
+  
+  |Issue Title|Link|
+  |-----|:--------:|
+  |**Milestone 3**|
+  |[Frontend] - Unfollow a followed user|https://github.com/bounswe/bounswe2022group9/issues/474|
+  |[Frontend] - Search Art Item Implementation|https://github.com/bounswe/bounswe2022group9/issues/440|
+  |[Frontend] - Search Exhibition Implementation|https://github.com/bounswe/bounswe2022group9/issues/441|
+  |[Frontend] - Create Art Item |https://github.com/bounswe/bounswe2022group9/issues/443|
+  |[Frontend] - Upload a new image|https://github.com/bounswe/bounswe2022group9/issues/478|
+  |[Frontend] - Create Exhibition|https://github.com/bounswe/bounswe2022group9/issues/444|
+  |[Frontend] - Create Annotations for images|https://github.com/bounswe/bounswe2022group9/issues/476|
+  |[Frontend] - Create Annotations for texts|https://github.com/bounswe/bounswe2022group9/issues/477|
+  |[Documentation] Documenting Individual Contribution Report of Ufuk Karagoz|https://github.com/bounswe/bounswe2022group9/issues/561|
+  |[Documentation] Documenting UI/UX related parts in the Group Review for Web|https://github.com/bounswe/bounswe2022group9/issues/560|
+  |**Milestone 2**|
+  |[Frontend] - Endpoint connections|https://github.com/bounswe/bounswe2022group9/issues/423|
+  |[Frontend] - Navigation Bar design|https://github.com/bounswe/bounswe2022group9/issues/424|
+  |[Frontend] - Search User Implementation|https://github.com/bounswe/bounswe2022group9/issues/425|
+  |[Frontend] - Art item list|https://github.com/bounswe/bounswe2022group9/issues/427|
+  |[Frontend] - Profile update|https://github.com/bounswe/bounswe2022group9/issues/428|
+  |[Frontend] - Bulk user list|https://github.com/bounswe/bounswe2022group9/issues/434|
+  |[Frontend] - Two sub-menu on user pages|https://github.com/bounswe/bounswe2022group9/issues/435|
+  |[Documentation] Documenting Individual Contribution Report of Ufuk Karagoz|https://github.com/bounswe/bounswe2022group9/issues/450|
+  |[Documentation] Documenting UI/UX related parts in the Group Review for Web|https://github.com/bounswe/bounswe2022group9/issues/455|
+  |[Documentation] Documenting Executive Summary part in the Group Review for Frontend|https://github.com/bounswe/bounswe2022group9/issues/459|
+  |**Milestone 1**|
+  |[Frontend] - Sign up/Password Reset Pages Implementations|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/253)|
+  |[Frontend] - Axios and Routing Implementations|[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/254)|
+  |Updating README Page |[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/239)|
+  |Creating Project Plan on ProjectLibre |[Issue Link](https://github.com/bounswe/bounswe2022group9/issues/249)|
+  |Frontend Meeting Notes #1|[Issue Link](https://github.com/bounswe/bounswe2022group9/wiki/Frontend-Meeting-Notes-1)|
+  
+  
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |**Milestone 3**|
+  |[Frontend] Final version|https://github.com/bounswe/bounswe2022group9/pull/545|
+  |**Milestone 2**|
+  |Final version of  frontend Pull Request with detailed commits|https://github.com/bounswe/bounswe2022group9/pull/436|
+  |**Milestone 1**|
+  |initial react files|[#258](https://github.com/bounswe/bounswe2022group9/pull/258)|
+  |[Frontend] - Axios, Rounting and Login & Sign up pages|[#292](https://github.com/bounswe/bounswe2022group9/pull/292)|
   
   **Yağmur Göktaş**
    
@@ -617,6 +662,99 @@ Added features:
   <img src = "https://user-images.githubusercontent.com/56403828/210265150-6cc39ca3-6b7a-43a0-894e-2a4195898c70.jpeg" width="240">
 
   
+  ### Frontend
+   1. Login
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/login_page.png" height="240">
+   Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Login.js
+
+   2. Sign up
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/final/sign_up.png" height="240">
+   Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Signup.js
+
+   3. Profile
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/final/profile_info.png" height="240">
+   Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Profile.js
+
+   4. Edit Profile
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/edit_profile.png" height="240">
+   Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Profile.js
+
+
+   5. Homepage
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/home_page.png" height="240">
+   Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Home.js
+
+
+   6. Comments Pop-up
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/comments_page.png" height="240">
+   Source: Homepage/Userpage/Profile
+
+
+   7. Favourites Pop-up
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/favourites_page.png" height="240">
+   Source: Homepage/Userpage/Profile
+
+
+   8. Search Page
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/search_page.png" height="240">
+   Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Search.js
+
+   9. Search Page with text
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/search_with_text_page.png" height="240">
+   Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Search.js
+
+   10. Search Art Item Page
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/final/search_art_item.png" height="240">
+   Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Search.js
+   
+   11. Search Exhibition Page
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/final/search_exhibition.png" height="240">
+   Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Search.js
+
+
+   12. User Page
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/user_page.png" height="240">
+   Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/User.js
+   
+   13. User Page unfollow version
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/final/unfollow.png" height="240">
+   Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/User.js
+
+
+   14. Posted Art-Items
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/final/profile_shared.png" height="240">
+   Source: Userpage/Profile
+
+
+   15. Favourited by User Art-Items
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/final/profile_favs.png" height="240">
+   Source: Userpage/Profile
+   
+   16. Created Exhibitions
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/final/profile_exhibitions.png" height="240">
+   Source: Userpage/Profile
+   
+   17. Create Art Item
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/final/create_art_item.png" height="240">
+   Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Profile.js
+   
+   18. Create Exhibitions
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/final/create_exhibition.png" height="240">
+   Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Profile.js
+   
+   19. Exhibition with details
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/final/exhibition_detail.png" height="240">
+   Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Exhibition.js
+   
+   18. One Detailed Art Item page
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/final/art_item_big.png" height="240">
+   Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Detailed-Art-Item.js
+   
+   19. One Detailed Art Item page - annotations
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/final/anno_small.png" height="240">
+   
+   <img src="https://github.com/bounswe/bounswe2022group9/blob/master/resources/fronted_UI/final/anno_big.png" height="240">
+   Source: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/frontend/src/components/Detailed-Art-Item.js
   
 
 
