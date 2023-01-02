@@ -430,7 +430,8 @@ Added features:
   |[Backend] Login|[#280](https://github.com/bounswe/bounswe2022group9/pull/280)|
   |[Backend] Signup(register) --reviewed|[#259](https://github.com/bounswe/bounswe2022group9/pull/259)|
   
-  * **Berkkant Koç**
+   **Berkkant Koç**
+  
   |Issue Title|Link|
   |-----|:--------:|
   |**Final Milestone 3**|
