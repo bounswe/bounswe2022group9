@@ -430,6 +430,58 @@ Added features:
   |[Backend] Login|[#280](https://github.com/bounswe/bounswe2022group9/pull/280)|
   |[Backend] Signup(register) --reviewed|[#259](https://github.com/bounswe/bounswe2022group9/pull/259)|
   
+  * **Berkkant Koç**
+  |Issue Title|Link|
+  |-----|:--------:|
+  |**Final Milestone 3**|
+  |Recommending "Users To Follow" to Users|https://github.com/bounswe/bounswe2022group9/issues/492|
+  |Create unit tests for User recommendations|https://github.com/bounswe/bounswe2022group9/issues/520|
+  |Self-recommendation bug in the recommendation system|https://github.com/bounswe/bounswe2022group9/issues/535|
+  |Extra Meeting on Recommendation Feature - Burak and Berkkant|https://github.com/bounswe/bounswe2022group9/issues/518|
+  |[Milestone] Prepare Annotations and Standards Part of the Milestone|https://github.com/bounswe/bounswe2022group9/issues/557|
+  |[Milestone] Prepare individual work report for Berkant Koç|https://github.com/bounswe/bounswe2022group9/issues/558|
+  |**Milestone 2**|-|
+  |[Documentation] Create Executive part for backend|https://github.com/bounswe/bounswe2022group9/issues/461|
+  |[Documentatiton] Create individual report for Milestone 2|https://github.com/bounswe/bounswe2022group9/issues/462|
+  |[Backend] IDs are missing in models|https://github.com/bounswe/bounswe2022group9/issues/331|
+  |[Backend] Search Engine for User shall be created|https://github.com/bounswe/bounswe2022group9/issues/463|
+  |[Backend] Search Engine For Art item shall be implemented|https://github.com/bounswe/bounswe2022group9/issues/464|
+  |[Backend] Search Engine for Exhibitions|https://github.com/bounswe/bounswe2022group9/issues/465|
+  |[Backend] Implement count numbers for user|https://github.com/bounswe/bounswe2022group9/issues/466|
+  |[Backend] Write helper functions for the project|https://github.com/bounswe/bounswe2022group9/issues/467|
+  |**Milestone 1**|-|
+  |Implementing the login endpoint|[#273](https://github.com/bounswe/bounswe2022group9/issues/273)|
+  |[Milestone] Creating personal report for milestone|[#310](https://github.com/bounswe/bounswe2022group9/issues/310)|
+  |Taking Notes in Project Presentation|[#315](https://github.com/bounswe/bounswe2022group9/issues/315)|
+  |Create "Evaluation of Tools" part of the Milestone 1|[#316](https://github.com/bounswe/bounswe2022group9/issues/316)|
+  
+  
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |**Final Milestone 3**|
+  |[Backend] Annotation Model|https://github.com/bounswe/bounswe2022group9/issues/499|
+  |[Hotfix] Image Upload|https://github.com/bounswe/bounswe2022group9/issues/506|
+  |Annotation create endpoint|https://github.com/bounswe/bounswe2022group9/issues/500 (reviewed)|
+  |[Backend] Annotation Endpoints|https://github.com/bounswe/bounswe2022group9/issues/503 (reviewed)|
+  |[Backend] [Test] Create and Update Annotation Tests|https://github.com/bounswe/bounswe2022group9/issues/508 (reviewed)|
+  |[Backend] User level information added to profile|https://github.com/bounswe/bounswe2022group9/issues/509 (reviewed)|
+  |**Milestone 2**|
+  |[Backend] Upgrade User Model|https://github.com/bounswe/bounswe2022group9/pull/325|
+  |[Backend] Create ArtItem Model|https://github.com/bounswe/bounswe2022group9/pull/327|
+  |Notification and Exhibition Models|https://github.com/bounswe/bounswe2022group9/pull/347|
+  |Creating Art Items|https://github.com/bounswe/bounswe2022group9/pull/357|
+  |Be/fix/ps issues 1|https://github.com/bounswe/bounswe2022group9/pull/349 (reviewed)|
+  |refactoring and some features|https://github.com/bounswe/bounswe2022group9/pull/338 (reviewed)|
+  |added "get_profile_info" endpoint|https://github.com/bounswe/bounswe2022group9/pull/344 (reviewed)|
+  |exhibition feature implemented|https://github.com/bounswe/bounswe2022group9/pull/362 (reviewed)|
+  |favourite comment features|https://github.com/bounswe/bounswe2022group9/pull/363 (reviewed)|
+  |response lists sorted|https://github.com/bounswe/bounswe2022group9/pull/364 (reviewed)|
+  |Feature Recommendation|https://github.com/bounswe/bounswe2022group9/pull/365 (reviewed)|
+  |**Milestone 1**|
+  |[Backend] Login|[#280](https://github.com/bounswe/bounswe2022group9/pull/280) (reviewed)|
+  |[Frontend] Axios and Routing|[#292](https://github.com/bounswe/bounswe2022group9/pull/292) (reviewed)|
+  
+  
   ### API Documentation
    * [The API Documentation](https://documenter.getpostman.com/view/21597705/2s8YmSqfTg)
    * Link to the API : `http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1`
