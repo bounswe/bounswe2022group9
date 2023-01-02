@@ -11,6 +11,24 @@
 
 ## Responsibilities
 
+* At the beginning of the semester, my first responsibilities was: revising use-case diagrams and opening a Discord server for our team
+* As a member of backend team, one of the most important responsibilities of mine is writing and testing the API endpoints, I wrote codes and unit tests for
+   - signup (register)
+   - getting profile information
+   - updating profile information
+   - unfollow
+   - art item recommendation
+   - notifications
+* Taking backend meeting notes and documenting them for backend meetings 1,3,4, was one of my responsibilities
+* I was also responsible with creating an empty project for Annotations, connecting it to a PostgreSQL database and dockerizing it.
+* I was responsible with tagging the repository for version 0.9.0 and creating a tag description
+* In addition, as a member of the team, I'm responsible for contributing to Milestone group reviews, in the 1st milestone, I was reposnible with preparing "Evaluation of the status of deliverables and its impact on your project plan" part; in the 2nd milestone I was responsible with preparing "Annotations" and "Standards" parts, and in the 3rd (final) milestone I was responsible with preparing "Executive Summary" part of the Milestone Group Review.
+I was also responsible with creating my own individual contribution reports and summary of work performed for each milestone.
+* contributing the API documentation by documenting the endpoints I write, or providing sample requests with curl
+* reviewing pull requests of other team members
+
+## Main Contributions
+
 * writing and testing the API endpoints for
    - signup (register)
    - getting profile information
@@ -21,15 +39,13 @@
 * creating an empty project for Annotations, connecting it to a PostgreSQL database and dockerizing it.
 * taking meeting notes and documenting them for backend meetings 1,3,4.
 * tagging the repository for version 0.9.0 and creating a tag description
-* contibuting to Milestone 1 Group Report by perparing: Evaluation of the status of deliverables and its impact on your project plan
+* contributing to Milestone 1 Group Report by perparing: Evaluation of the status of deliverables and its impact on your project plan
 * contributing to Milestone 2 Group report by preparing: Annotations and Standards part
 * contributing to Milestone 3 Group Report by preparing: Executive Summary
 * Creating my own individual contribution reports and summary of work performed for each milestone.
 * revising use-case diagrams
 * contributing the API documentation by documenting the endpoints I write, or providing sample requests with curl
-
-## Main Contributions
-
+ 
 ### a.Code Related Significant Issues
 
 ##### Milestone 1
@@ -152,7 +168,10 @@ Here you can see 4 unit tests:
 Here you can see 2 unit tests:
     - testing a valid request to unfollow request (i.e., first user follows the second one)
     - testing an invalid request to unfollow request (i.e., there is no following relationship)
-* [get_profile_info AND update_profile_info tests](https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/backend/app/api/tests/test_profile.py) -- 2 tests in the same file, all the file is written by me
+* [get_profile_info AND update_profile_info tests](https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/backend/app/api/tests/test_profile.py)
+Here you can see view unit tests for:
+    - get profile information
+    - update profile information
 * [signup view tests - (functions named test_signup and test_signup_when_user_already_exists)](https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/backend/app/api/tests/test_auth.py#L40)
 
 ##### Milestone 3
