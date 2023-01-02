@@ -244,6 +244,82 @@ Added features:
   |||
   
   
+  ### Status of Requirements
+    
+  |Requirements|Status|
+  |-----|:--------:|
+  |[3.1.1.1](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#311-registration)| Completed |
+  |[3.1.1.2](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#311-registration)| Not Started |
+  |[3.1.1.3](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#311-registration)| Completed |
+  |[3.1.1.4](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#311-registration)| Completed |
+  |[3.1.2.1](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#312-login)| Completed |
+  |[3.1.2.2](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#312-login)| Completed |
+  |[3.1.2.3](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#312-login)| Not Started |
+  |[3.1.2.4](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#312-login)| In Progress |
+  |[3.1.3.1](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#313-art-items)| Completed |
+  |[3.1.3.2](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#313-art-items)| Completed |
+  |[3.1.3.3](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#313-art-items)| Completed |
+  |[3.1.3.4](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#313-art-items)| Completed |
+  |[3.1.3.5](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#313-art-items)| Not Started |
+  |[3.1.3.6](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#313-art-items)| Completed |
+  |[3.1.3.7](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#313-art-items)| Completed |
+  |[3.1.4.1](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#314-profile)| Completed |
+  |[3.1.4.2](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#314-profile)| Completed |
+  |[3.1.4.3](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#314-profile)| Completed |
+  |[3.1.4.4](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#314-profile)| Completed |
+  |[3.1.4.5](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#314-profile)| Completed |
+  |[3.1.4.6](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#314-profile)| Not Started |
+  |[3.1.4.7](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#314-profile)| In Progress |
+  |[3.1.4.8](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#314-profile)| Not Started |
+  |[3.1.5.1](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#315-user-follow)| Completed |
+  |[3.1.5.2](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#315-user-follow)| Completed |
+  |[3.1.5.3](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#315-user-follow)| Completed |
+  |[3.1.5.4](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#315-user-follow)| Completed |
+  |[3.1.6.1](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#316-exhibitions)| In Progress |
+  |[3.1.6.2](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#316-exhibitions)| In Progress |
+  |[3.1.6.3](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#316-exhibitions)| In Progress |
+  |[3.1.6.4](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#316-exhibitions)| In Progress |
+  |[3.1.6.5](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#316-exhibitions)| In Progress |
+  |[3.1.7.1](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#317-comments)| Completed |
+  |[3.1.7.2](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#317-comments)| Not Started |
+  |[3.1.8.1](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#318-search)| In Progress |
+  |[3.1.8.2](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#318-search)| Completed |
+  |[3.1.8.3](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#318-search)| In Progress |
+  |[3.2.1.1](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#321-verification)| Not Started |
+  |[3.2.1.2](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#321-verification)| Not Started |
+  |[3.2.2.1](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#322-search-engine)| Completed |
+  |[3.2.2.2](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#322-search-engine)| Not Started |
+  |[3.2.2.3](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#322-search-engine)| Not Started |
+  |[3.2.2.4](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#322-search-engine)| Completed |
+  |[3.2.3.1](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#323-recommendation)| Completed |
+  |[3.2.3.2](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#323-recommendation)| Completed |
+  |[3.2.3.3](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#323-recommendation)| Completed |
+  |[3.2.3.4](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#323-recommendation)| Not Started |
+  |[3.2.3.5](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#323-recommendation)| Completed |
+  |[3.2.3.6](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#323-recommendation)| Not Started |
+  |[3.2.4.1](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#324-notification)| Completed |
+  |[3.2.4.2](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#324-notification)| Not Started |
+  |[3.2.4.3](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#324-notification)| Not Started |
+  |[3.2.4.4](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#324-notification)| Completed |
+  |[3.2.4.5](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#324-notification)| Not Started |
+  |[3.2.4.6](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#324-notification)| Completed |
+  |[3.2.4.7](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#324-notification)| Completed |
+  |[3.2.4.8](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#324-notification)| Not Started |
+  |[3.2.5.1](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#325-database)| Completed |
+  |[3.2.5.2](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#325-database)| Completed |
+  
+  
+  
+  
+  
+  
+  
+
+
+
+### API Endpoints
+  
+  
   **Annotation Implementation & W3C Standard Compliance**
   Our annotation data model, which can be found [here](https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/backend/app/api/views/annotation.py) is partially compliant to the W3C annotation model recommendation, released in 23 Feb 2017.
   The W3C document describing the data annotation model can be found here: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/backend/app/api/views/annotation.py.
