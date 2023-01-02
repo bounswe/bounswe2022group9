@@ -90,8 +90,82 @@ Added features:
 * **Burak Ferit Aktan**
   |Issue Title|Link|
   |-----|:--------:|
-  |||
+  |**Final Milestone 3**|
+  |[Backend] Recommending Art Items to Newly Registered Users|[#484](https://github.com/bounswe/bounswe2022group9/issues/484)|
+  |[Backend] Recommending Art Items to non-new Users|[#485](https://github.com/bounswe/bounswe2022group9/issues/485)|
+  |[Backend] Implement Notifications|[#493](https://github.com/bounswe/bounswe2022group9/issues/493)|
+  |[Backend] Unit Tests for Recommending Art Items|[#502](https://github.com/bounswe/bounswe2022group9/issues/502)|
+  |[Review] Review PR #511|[#513](https://github.com/bounswe/bounswe2022group9/issues/513)|
+  |[BUG] Recommend Art Item, function call with wrong parameter|[#526](https://github.com/bounswe/bounswe2022group9/issues/526)|
+  |Review the PR: Unit test recommend #519|[#541](https://github.com/bounswe/bounswe2022group9/issues/541)|
+  |[BUG] Unfollow smal bug caused by typecasting|[#542](https://github.com/bounswe/bounswe2022group9/issues/542)|
+  |[Backend] Recommending "Users To Follow" to Users|[#492](https://github.com/bounswe/bounswe2022group9/issues/492) -- issue is created by me with a detailed description, then  I assigned it to another team member|
+  |[Backend] Implement User Levels|[#494](https://github.com/bounswe/bounswe2022group9/issues/494) -- issue is created by me with a detailed description, then  I assigned it to another team member|
+  |[Milestone] Prepare Executive Summary For the Final Milestone|[#546](https://github.com/bounswe/bounswe2022group9/issues/546)|
+  |[Milestone] Prepare Individual Contributions Report for Burak Ferit Aktan|[#550](https://github.com/bounswe/bounswe2022group9/issues/550)|
+  |[Milestone] Document Summary of Work Performed by Burak Ferit Aktan|[#551](https://github.com/bounswe/bounswe2022group9/issues/551)|
+  |[Release] Create tag for version 0.9.0|[#544](https://github.com/bounswe/bounswe2022group9/issues/544)|
+  |Add Backend Meeting 4 Notes to Wiki|[#521](https://github.com/bounswe/bounswe2022group9/issues/521)|
+  |Extra Meeting on Recommendation Feature - Burak and Berkkant|[#521](https://github.com/bounswe/bounswe2022group9/issues/518)|
+  |[Documentation] Document art item recommendation endpoint|[#514](https://github.com/bounswe/bounswe2022group9/issues/514)|
+  |-----|:--------:|
+  |**Milestone 2**|-|
+  |-----|:--------:|
+  |[Backend] Implement "update profile information"|[#333](https://github.com/bounswe/bounswe2022group9/issues/333)|
+  |[Backend] Implement "get profile information"|[#339](https://github.com/bounswe/bounswe2022group9/issues/339)|
+  |[Backend] Create a new Django project for Annotations|[#370](https://github.com/bounswe/bounswe2022group9/issues/370)|
+  |[Backend] Dockerize the Annotations Project|[#371](https://github.com/bounswe/bounswe2022group9/issues/371)|
+  |[Backend] Add database connection to Annotation Project|[#373](https://github.com/bounswe/bounswe2022group9/issues/373)|
+  |[Backend] Implement Unfollow Endpoint|[#417](https://github.com/bounswe/bounswe2022group9/issues/417)|
+  |[Backend] Implement Helper Function to Delete Followed Users from Followings List of Follower Users|[#387](https://github.com/bounswe/bounswe2022group9/issues/387)|
+  |[Backend] Implement Helper function to delete users from followers list|[#379](https://github.com/bounswe/bounswe2022group9/issues/379)|
+  |[Backend] Write unit tests for signup|[#471](https://github.com/bounswe/bounswe2022group9/issues/471)|
+  |[Backend] Write Unit Tests for "update profile info"|[#470](https://github.com/bounswe/bounswe2022group9/issues/470)|
+  |[Backend] Add unit tests for get profile info|[#469](https://github.com/bounswe/bounswe2022group9/issues/469)|
+  |[Backend] Add Unit Tests for Unfollow|[#460](https://github.com/bounswe/bounswe2022group9/issues/460)|
+  |Add Backend Meeting 3 Notes to Wiki|[#419](https://github.com/bounswe/bounswe2022group9/issues/419)|
+  |Document "update_profile_info" endpoint of the API|[#343](https://github.com/bounswe/bounswe2022group9/issues/343)|
+  |[Backend] Document "unfollow" endpoint of the API|[#437](https://github.com/bounswe/bounswe2022group9/issues/437)|
+  |Feeding Prod Database|[#432](https://github.com/bounswe/bounswe2022group9/issues/432)|
+  |[Documentation] Document "Annotations" and "Standards" parts of Milestone2 Group Review|[#457](https://github.com/bounswe/bounswe2022group9/issues/457)|
+  |[Documentation] Documenting Individual Contribution Report of Burak Ferit Aktan|[#446](https://github.com/bounswe/bounswe2022group9/issues/446)|
+  |**Milestone 1**|-|
+  |[Backend] Implement Signup Feature|[#251](https://github.com/bounswe/bounswe2022group9/issues/251)|
+  |[Backend] Write Unit Tests for Signup|[277](https://github.com/bounswe/bounswe2022group9/issues/277)|
+  |Revising Use Case Diagrams|[#236](https://github.com/bounswe/bounswe2022group9/issues/236)|
+  |API Documentation (signup)|[#279](https://github.com/bounswe/bounswe2022group9/issues/279)|
+  |Open a discord server for CmpE451|[#233](https://github.com/bounswe/bounswe2022group9/issues/233)|
+  |Revising Sequence Diagrams |[#244](https://github.com/bounswe/bounswe2022group9/issues/244) -- I created this issue and assigned to another team member|
+  |Backend Meeting Notes for Meeting 1|[#282](https://github.com/bounswe/bounswe2022group9/issues/282)|
+  |Scenario Preparation(signup) for Milestone|[#290](https://github.com/bounswe/bounswe2022group9/issues/290)|
+  
   
   |Pull Request Title|Link|
   |-----|:--------:|
+  |**Final Milestone 3**|
+  |Notifications|[#512](https://github.com/bounswe/bounswe2022group9/pull/512)|
+  |Recommend Art Items|[#501](https://github.com/bounswe/bounswe2022group9/pull/501)|
+  |Added Art Item Recommendation Unit Tests|[#504](https://github.com/bounswe/bounswe2022group9/pull/504)|
+  |bugfix: function call parameter fixed and URL test for notification|[#525](https://github.com/bounswe/bounswe2022group9/pull/525)|
+  |[Backend] User recommendation|[#511](https://github.com/bounswe/bounswe2022group9/pull/511) --reviewed by me|
+  |Unit test recommend|[#519](https://github.com/bounswe/bounswe2022group9/pull/519) --reviewed by me|
+  |[Backend] Rename test file|[#522](https://github.com/bounswe/bounswe2022group9/pull/522) -- reviewed by me|
+  |-----|:--------:|
+  |**Milestone 2**|
+  |Unfollow Endpoint|[#418](https://github.com/bounswe/bounswe2022group9/pull/418)|
+  |Delete user from followings list function|[#386](https://github.com/bounswe/bounswe2022group9/pull/386)|
+  |Unfollow helper function - deleting follower from followers list of followed user|[#378](https://github.com/bounswe/bounswe2022group9/pull/378)|
+  |Unit tests for Unfollow, get_profile_info and update_profile_info endpoints|[#429](https://github.com/bounswe/bounswe2022group9/pull/429)|
+  |Add proxy and uWSGI to empty Annotations project Docker Image|[#391](https://github.com/bounswe/bounswe2022group9/pull/391)|
+  |Adding Database (dockerized) and empty sample app to Annotation Project|[#374](https://github.com/bounswe/bounswe2022group9/pull/374)|
+  |Created a new empty project for Annotations and Dockerized it.|[#372](https://github.com/bounswe/bounswe2022group9/pull/372)|
+  |added "get_profile_info" endpoint|[#344](https://github.com/bounswe/bounswe2022group9/pull/344)|
+  |update profile information has been added|[#340](https://github.com/bounswe/bounswe2022group9/pull/340)|
+  |[Backend] Upgrade User Model|[#325](https://github.com/bounswe/bounswe2022group9/pull/325) (reviewed by me)|
+  |Enhancement of helpers|[#389](https://github.com/bounswe/bounswe2022group9/pull/389) (reviewed by me)|
+  |Count numbers Added|[#390](https://github.com/bounswe/bounswe2022group9/pull/390) (reviewed by me)|
+  |Search art item|[#385](https://github.com/bounswe/bounswe2022group9/pull/385) (reviewed by me)|
+  |-----|:--------:|
+  |**Milestone 1**|
+  |[Backend] Signup (register)|[#259](https://github.com/bounswe/bounswe2022group9/pull/259)|
   |||
