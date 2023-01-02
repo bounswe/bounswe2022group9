@@ -22,26 +22,24 @@ the codes to the origin there is problems and due to my local changes we couldn'
 
 ### Code Related Significant Issues
 Milestone 1:
-* [[Mobile] - Login/Signup Pages Implementations](https://github.com/bounswe/bounswe2022group9/issues/252)
-* [[Mobile] Feed Page MockUp](https://github.com/bounswe/bounswe2022group9/issues/303)
-
-Milestone 3:
-* [Mobile] Exhibitions Backend Connection and Creation (https://github.com/bounswe/bounswe2022group9/issues/486)
-* [Mobile] Backend connection of settings page (https://github.com/bounswe/bounswe2022group9/issues/491)
+* [Mobile] - Login/Signup Pages Implementations(https://github.com/bounswe/bounswe2022group9/issues/252)
+* [Mobile] Feed Page MockUp(https://github.com/bounswe/bounswe2022group9/issues/303)
 
 Milestone 2:
 * [Mobile] Create exhibition and exhibition page ( https://github.com/bounswe/bounswe2022group9/issues/392 )
 * [Mobile] Create settings page and backend connection (https://github.com/bounswe/bounswe2022group9/issues/393)
 
 Milestone 3:
+* [Mobile] Exhibitions Backend Connection and Creation (https://github.com/bounswe/bounswe2022group9/issues/486)
+* [Mobile] Backend connection of settings page (https://github.com/bounswe/bounswe2022group9/issues/491)
 
 ### Management Related Significant Issues
 Milestone 1:
-* [Scenarios and Mockups Revision](https://github.com/bounswe/bounswe2022group9/issues/245)
-* [[Mobile] - Determining background, primary and secondary colors for mobile application](https://github.com/bounswe/bounswe2022group9/issues/256)
+* Scenarios and Mockups Revision(https://github.com/bounswe/bounswe2022group9/issues/245)
+* [Mobile] - Determining background, primary and secondary colors for mobile application(https://github.com/bounswe/bounswe2022group9/issues/256)
 
 Milestone 2:
-* [Documentation] Documenting Individual Contribution Report of Oğuzhan Özboyacı] (https://github.com/bounswe/bounswe2022group9/issues/454)
+* [Documentation] Documenting Individual Contribution Report of Oğuzhan Özboyacı (https://github.com/bounswe/bounswe2022group9/issues/454)
 * [Documentation] Documenting Executive Summary part in the Group Review for Mobile (https://github.com/bounswe/bounswe2022group9/issues/456)
 
 Milestone 3:
@@ -50,12 +48,12 @@ Milestone 3:
 
 ## Pull Requests
 Milestone 1:
-* [[Mobile]ForgetPassword page](https://github.com/bounswe/bounswe2022group9/pull/260)
- * [[Mobile] feed page mockup](https://github.com/bounswe/bounswe2022group9/pull/301)
+* [Mobile]ForgetPassword page(https://github.com/bounswe/bounswe2022group9/pull/260)
+ * [Mobile] feed page mockup(https://github.com/bounswe/bounswe2022group9/pull/301)
 
 Milestone 2:
-* [[Mobile] Exhibition is created](https://github.com/bounswe/bounswe2022group9/pull/395)
-* [[Mobile] Settings page is created](https://github.com/bounswe/bounswe2022group9/pull/396)
+* [Mobile] Exhibition is created(https://github.com/bounswe/bounswe2022group9/pull/395)
+* [Mobile] Settings page is created(https://github.com/bounswe/bounswe2022group9/pull/396)
 
 Milestone 3:
 * [Mobile] Create exhibition and exhibition page ( https://github.com/bounswe/bounswe2022group9/issues/392 )
