@@ -170,3 +170,7 @@ Added features:
   |**Milestone 1**|
   |[Backend] Signup (register)|[#259](https://github.com/bounswe/bounswe2022group9/pull/259)|
   |||
+  
+  **Annotation Implementation & W3C Standard Compliance**
+  Our annotation data model, which can be found [here](https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/backend/app/api/views/annotation.py) is partially compliant to the W3C annotation model recommendation, released in 23 Feb 2017.
+  The W3C document describing the data annotation model can be found here: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/backend/app/api/views/annotation.py.
