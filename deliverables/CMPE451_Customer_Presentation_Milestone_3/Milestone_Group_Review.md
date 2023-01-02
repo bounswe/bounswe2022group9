@@ -477,7 +477,40 @@ Added features:
   |[Backend] Login|[#280](https://github.com/bounswe/bounswe2022group9/pull/280)|
   |[Backend] Signup(register) --reviewed|[#259](https://github.com/bounswe/bounswe2022group9/pull/259)|
   
-   **Berkkant Koç**
+  **Oğuzhan Özboyacı**
+  
+   |Issue Title|Link|
+  |-----|:--------:|
+  |**Final Milestone 3**|
+  |[Mobile] Exhibitions Backend Connection and Creation|https://github.com/bounswe/bounswe2022group9/issues/486|
+  |[Mobile] Backend connection of settings page|https://github.com/bounswe/bounswe2022group9/issues/491|
+  |[Documentation] Scenarios part for Group Review|https://github.com/bounswe/bounswe2022group9/issues/565|
+  |[Documentation] Documenting Individual Contribution Report of Oğuzhan Özboyacı|https://github.com/bounswe/bounswe2022group9/issues/564|
+  |**Milestone 2**|
+  |[Mobile] Create exhibition and exhibition page|https://github.com/bounswe/bounswe2022group9/issues/392|
+  |[Mobile] Create settings page and backend connection|https://github.com/bounswe/bounswe2022group9/issues/393|
+  |[Documentation] Documenting Individual Contribution Report of Oğuzhan Özboyacı|https://github.com/bounswe/bounswe2022group9/issues/454|
+  |[Documentation] Documenting Executive Summary part in the Group Review for Mobile|https://github.com/bounswe/bounswe2022group9/issues/456|
+  |**Milestone 1**|
+  |[Mobile] - Login/Signup Pages Implementations|https://github.com/bounswe/bounswe2022group9/issues/252|
+  |[Mobile] Feed Page MockUp|https://github.com/bounswe/bounswe2022group9/issues/303|
+  |Scenarios and Mockups Revision|https://github.com/bounswe/bounswe2022group9/issues/245|
+  |[Mobile] - Determining background, primary and secondary colors for mobile application|https://github.com/bounswe/bounswe2022group9/issues/256|
+  
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |**Final Milestone 3**|
+  |[Mobile] Create exhibition and exhibition page|https://github.com/bounswe/bounswe2022group9/issues/392|
+  |[Mobile] Create settings page and backend connection|https://github.com/bounswe/bounswe2022group9/issues/393|
+  |**Milestone 2**|
+  |[Mobile] Exhibition is created|https://github.com/bounswe/bounswe2022group9/pull/395|
+  |[Mobile] Settings page is created|https://github.com/bounswe/bounswe2022group9/pull/396|
+  |**Milestone 1**|
+  |[Mobile]ForgetPassword page|https://github.com/bounswe/bounswe2022group9/pull/260|
+  |[Mobile] feed page mockup|https://github.com/bounswe/bounswe2022group9/pull/301|
+  
+  
+  **Berkkant Koç**
   
   |Issue Title|Link|
   |-----|:--------:|
