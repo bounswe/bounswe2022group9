@@ -344,6 +344,7 @@ Added features:
   |Issue Title|Link|
   |-----|:--------:|
   |**Final Milestone 3**|
+  |-----|:--------:|
   |[Backend] Self-recommendation bug in the recommendation system|[#535](https://github.com/bounswe/bounswe2022group9/issues/535)|
   |[Backend] Deploy|[#528](https://github.com/bounswe/bounswe2022group9/issues/528)|
   |[BUG] Return owner_id in art_item response|[#527](https://github.com/bounswe/bounswe2022group9/issues/527)|
