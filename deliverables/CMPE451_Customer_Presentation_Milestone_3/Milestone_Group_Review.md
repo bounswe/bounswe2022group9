@@ -300,6 +300,45 @@ Added features:
   | Bugfix/image size|[#298](https://github.com/bounswe/bounswe2022group9/pull/298)|
   | Post number is corrected|[#300](https://github.com/bounswe/bounswe2022group9/pull/300)|
    |||
+   
+     
+  * **İbrahim Buğra Elmas**
+
+
+   |Issue Title|Link|
+  |-----|:--------:|
+  |**Milestone 1**|
+  |[Mobile] - Login/Signup Pages Implementations|https://github.com/bounswe/bounswe2022group9/issues/252|
+  |[Mobile] - Axios and Linking App with Backend|https://github.com/bounswe/bounswe2022group9/issues/262|
+  |[Mobile] - Search Page Mockup |https://github.com/bounswe/bounswe2022group9/issues/283|
+  |**Milestone 2**|
+  |[Mobile] - Profile Page Backend Connection and UI changes|https://github.com/bounswe/bounswe2022group9/issues/381|
+  |[Mobile] - List All Users|https://github.com/bounswe/bounswe2022group9/issues/382|
+  |[Mobile] - Navigation from Feed and Profile to Art Item |https://github.com/bounswe/bounswe2022group9/issues/383|
+  |[Mobile] - Creating APK|https://github.com/bounswe/bounswe2022group9/issues/384|
+  |[Mobile] - Feed Page|https://github.com/bounswe/bounswe2022group9/issues/420|
+  |[Mobile] Likes navigate to Users |https://github.com/bounswe/bounswe2022group9/issues/431|
+  |**Milestone 3**|
+  |[Mobile] - Annotations|https://github.com/bounswe/bounswe2022group9/issues/531|
+  |[Mobile] Creating Art Item|https://github.com/bounswe/bounswe2022group9/issues/488|
+  |[Mobile] Notifications UI and Backend Connection|https://github.com/bounswe/bounswe2022group9/issues/487|
+  
+   |Pull Request Title|Link|
+  |-----|:--------:|
+  |**Milestone 1**|
+  |mobile initial commit|https://github.com/bounswe/bounswe2022group9/pull/255|
+  |[Mobile] - add constant colors|https://github.com/bounswe/bounswe2022group9/pull/261|
+  |signup backend connection|https://github.com/bounswe/bounswe2022group9/pull/281|
+  |[Mobil] - search mockup|https://github.com/bounswe/bounswe2022group9/pull/293|
+  |**Milestone 2**|
+  |add profile backend|https://github.com/bounswe/bounswe2022group9/pull/375|
+  |Feature/search-users|https://github.com/bounswe/bounswe2022group9/pull/421|
+  |Feed-user|https://github.com/bounswe/bounswe2022group9/pull/433|
+  |**Milestone 3**|
+  |added notifications|https://github.com/bounswe/bounswe2022group9/pull/539|
+  |add annotations in text form|https://github.com/bounswe/bounswe2022group9/pull/530|
+  |create art item|https://github.com/bounswe/bounswe2022group9/pull/529|
+  
   
   ### Status of Requirements
     
@@ -436,44 +475,7 @@ Added features:
 
 ### API Endpoints
   
-  
-  * **İbrahim Buğra Elmas**
 
-
-   |Issue Title|Link|
-  |-----|:--------:|
-  |**Milestone 1**|
-  |[Mobile] - Login/Signup Pages Implementations|https://github.com/bounswe/bounswe2022group9/issues/252|
-  |[Mobile] - Axios and Linking App with Backend|https://github.com/bounswe/bounswe2022group9/issues/262|
-  |[Mobile] - Search Page Mockup |https://github.com/bounswe/bounswe2022group9/issues/283|
-  |**Milestone 2**|
-  |[Mobile] - Profile Page Backend Connection and UI changes|https://github.com/bounswe/bounswe2022group9/issues/381|
-  |[Mobile] - List All Users|https://github.com/bounswe/bounswe2022group9/issues/382|
-  |[Mobile] - Navigation from Feed and Profile to Art Item |https://github.com/bounswe/bounswe2022group9/issues/383|
-  |[Mobile] - Creating APK|https://github.com/bounswe/bounswe2022group9/issues/384|
-  |[Mobile] - Feed Page|https://github.com/bounswe/bounswe2022group9/issues/420|
-  |[Mobile] Likes navigate to Users |https://github.com/bounswe/bounswe2022group9/issues/431|
-  |**Milestone 3**|
-  |[Mobile] - Annotations|https://github.com/bounswe/bounswe2022group9/issues/531|
-  |[Mobile] Creating Art Item|https://github.com/bounswe/bounswe2022group9/issues/488|
-  |[Mobile] Notifications UI and Backend Connection|https://github.com/bounswe/bounswe2022group9/issues/487|
-  
-   |Pull Request Title|Link|
-  |-----|:--------:|
-  |**Milestone 1**|
-  |mobile initial commit|https://github.com/bounswe/bounswe2022group9/pull/255|
-  |[Mobile] - add constant colors|https://github.com/bounswe/bounswe2022group9/pull/261|
-  |signup backend connection|https://github.com/bounswe/bounswe2022group9/pull/281|
-  |[Mobil] - search mockup|https://github.com/bounswe/bounswe2022group9/pull/293|
-  |**Milestone 2**|
-  |add profile backend|https://github.com/bounswe/bounswe2022group9/pull/375|
-  |Feature/search-users|https://github.com/bounswe/bounswe2022group9/pull/421|
-  |Feed-user|https://github.com/bounswe/bounswe2022group9/pull/433|
-  |**Milestone 3**|
-  |added notifications|https://github.com/bounswe/bounswe2022group9/pull/539|
-  |add annotations in text form|https://github.com/bounswe/bounswe2022group9/pull/530|
-  |create art item|https://github.com/bounswe/bounswe2022group9/pull/529|
-  
   
   **Annotation Implementation & W3C Standard Compliance**
   Our annotation data model, which can be found [here](https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/backend/app/api/views/annotation.py) is partially compliant to the W3C annotation model recommendation, released in 23 Feb 2017.
