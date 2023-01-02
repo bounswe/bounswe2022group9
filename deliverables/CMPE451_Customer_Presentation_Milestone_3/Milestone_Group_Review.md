@@ -79,3 +79,19 @@ Added features:
 - In backend team, at the beginning we had only one class for view functions (view functions are the codes executed first when a request to an endpoint is reached), were in only one file. With time, number of view functions increased too much and we started having troubles to find functions we need in that long file. In addition, because lots of features are implemented at the same time and all of those are changing the view file, we were facing so many merge conflicts. Then we decided to have mutiple view files instead of one. For example, all authentication related view functions are collected in a file and named view_auth, and so on. This good practice made finding view function of an endpoint easier and reduced number of merge conflicts much. We also used the same architecture for helper functions.
 - At the beginning of the course, annotations wasn't included in project plan, before the first milestone, we added annotations into our project plan. This caused us to have a more intense plan but resulted a project more compatible with requirements.
 - At the beginning of the year, we were distributing the tasks to the members randomly; since we thought it would be more fair. But after some of group members left the course (not related to randomness in task distribution), we realized that tasks should distributed according to willingness, because if a member of our team is planning to left the course and random lottery shows him, then that task will remain incomplete. Random distribution of tasks also may cause people need to do tasks they are not interested in while there are other group members who are interested in that task (in this case human resources are used in an inefficient manner). Then we decided to prepare surveys for task distribution, in this new method we also considered interests of our developers, therefore our team started to be more productive.
+
+## b. Progress Based on Teamwork
+
+### Individual Contributions Reports
+* [Burak Ferit Aktan] (https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_3/individual_contributions_reports/Burak_Ferit_Aktan.md)
+
+### Summary of Work Performed by Each Team Member
+
+* **Burak Ferit Aktan**
+  |Issue Title|Link|
+  |-----|:--------:|
+  |||
+  
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |||
