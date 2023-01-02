@@ -130,6 +130,7 @@ Added features:
   |Feeding Prod Database|[#432](https://github.com/bounswe/bounswe2022group9/issues/432)|
   |[Documentation] Document "Annotations" and "Standards" parts of Milestone2 Group Review|[#457](https://github.com/bounswe/bounswe2022group9/issues/457)|
   |[Documentation] Documenting Individual Contribution Report of Burak Ferit Aktan|[#446](https://github.com/bounswe/bounswe2022group9/issues/446)|
+  |Deliverables Image View Issue|[#328](https://github.com/bounswe/bounswe2022group9/issues/328)|
   |**Milestone 1**|-|
   |[Backend] Implement Signup Feature|[#251](https://github.com/bounswe/bounswe2022group9/issues/251)|
   |[Backend] Write Unit Tests for Signup|[277](https://github.com/bounswe/bounswe2022group9/issues/277)|
