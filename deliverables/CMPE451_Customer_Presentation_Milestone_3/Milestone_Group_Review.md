@@ -84,7 +84,6 @@ Added features:
 
 ### Individual Contributions Reports
 *  [Burak Ferit Aktan](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_3/individual_contributions_reports/Burak_Ferit_Aktan.md)
-*  [Furkan Özdemir](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_3/individual_contributions_reports/Furkan_Ozdemir.md)
 
 ### Summary of Work Performed by Each Team Member
 
@@ -102,7 +101,7 @@ Added features:
   |[BUG] Unfollow smal bug caused by typecasting|[#542](https://github.com/bounswe/bounswe2022group9/issues/542)|
   |[Backend] Recommending "Users To Follow" to Users|[#492](https://github.com/bounswe/bounswe2022group9/issues/492) -- issue is created by me with a detailed description, then  I assigned it to another team member|
   |[Backend] Implement User Levels|[#494](https://github.com/bounswe/bounswe2022group9/issues/494) -- issue is created by me with a detailed description, then  I assigned it to another team member|
-  |[Documentation] Documentation of API Endpoints|[#515](https://github.com/bounswe/bounswe2022group9/issues/515) -- contributed to this issue by commenting example requests|
+  |[Documentation] Documentation of API Endpoints|[#515](https://github.com/bounswe/bounswe2022group9/issues/515) -- contributed to this issue by commenting|
   |[Milestone] Prepare Executive Summary For the Final Milestone|[#546](https://github.com/bounswe/bounswe2022group9/issues/546)|
   |[Milestone] Prepare Individual Contributions Report for Burak Ferit Aktan|[#550](https://github.com/bounswe/bounswe2022group9/issues/550)|
   |[Milestone] Document Summary of Work Performed by Burak Ferit Aktan|[#551](https://github.com/bounswe/bounswe2022group9/issues/551)|
@@ -131,7 +130,6 @@ Added features:
   |Feeding Prod Database|[#432](https://github.com/bounswe/bounswe2022group9/issues/432)|
   |[Documentation] Document "Annotations" and "Standards" parts of Milestone2 Group Review|[#457](https://github.com/bounswe/bounswe2022group9/issues/457)|
   |[Documentation] Documenting Individual Contribution Report of Burak Ferit Aktan|[#446](https://github.com/bounswe/bounswe2022group9/issues/446)|
-  |Deliverables Image View Issue|[#328](https://github.com/bounswe/bounswe2022group9/issues/328)|
   |**Milestone 1**|-|
   |[Backend] Implement Signup Feature|[#251](https://github.com/bounswe/bounswe2022group9/issues/251)|
   |[Backend] Write Unit Tests for Signup|[277](https://github.com/bounswe/bounswe2022group9/issues/277)|
@@ -172,3 +170,7 @@ Added features:
   |**Milestone 1**|
   |[Backend] Signup (register)|[#259](https://github.com/bounswe/bounswe2022group9/pull/259)|
   |||
+  
+  **Annotation Implementation & W3C Standard Compliance**
+  Our annotation data model, which can be found [here](https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/backend/app/api/views/annotation.py) is partially compliant to the W3C annotation model recommendation, released in 23 Feb 2017.
+  The W3C document describing the data annotation model can be found here: https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/backend/app/api/views/annotation.py.
