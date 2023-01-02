@@ -288,3 +288,26 @@ Added features:
   
   Our implementation details can be found in API documentation. To summarize, GET 'annotations/<int:annotation_id>' endpoint returns the annotation information with given annotation ID. POST 'annotation' endpoint is used to create an annotation. PUT 'annotation/<int:annotation_id>' endpoint enables the use to update an annotation with the given id.
   
+  ## c. Project Artifacts
+  ### 1. Manuals
+  #### i) User Manual
+* Mobile: Users will welcome with login page. If they are registered before, they can login with their credentials and navigate to Feed page safely. If they are a newcomer, they should click on Signup ubtton and register to our application. If signup is successful, they will directed to login page. If signup fails, they will granted with a message about what went wrong. Feed is users's home page where they can see their following users art items in a chronological order. If they want to see recommendatations about users or posts they can change tabs from top of the screen to explore what others share, like and comment. At the bottom tab, beside home page, we have search page where users can search for post, exhibitions, tags and users. They can click on search results and then navigate to required content. Besides search we have exhibitons where users can see other people's exhibitons. At the fourth tab we have profile page where users can view their posts, create a new art item or their previously liked posts. Also they can see their followers and followings in the same page. Fİnally we have settings page where users can change their profile info and logout from our application.
+  #### ii) System Manual
+  * Mobile: First, users need to install expo and yarn cli tools. After checking out master branch of repo, users should navigate to "mobile" directory. THen, they should install packages and dependencies with running "yarn install" in terminal. After that, they can start emulator with "expo start" command. Finally, they should click "a" button in order to open project in android emulator.
+  ### 2. Software Requirements Specification (SRS)
+  All requirements can be accessed from: [Requirement Analysis](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis)
+  ### 3. Software design documents 
+  Following design diagrams can be accessed from
+  * Class Diagrams: [here](https://github.com/bounswe/bounswe2022group9/wiki/Class-Diagram)
+  * Use Case Diagrams: [here](https://github.com/bounswe/bounswe2022group9/wiki/Use-Case-Diagram)
+  * Sequence Diagrams: [here](https://github.com/bounswe/bounswe2022group9/wiki/Sequence-Diagrams)
+  ### 4. User scenarios and mockups
+   Scenarios and mockups can be found in:
+   * Sharing an art: [here](https://github.com/bounswe/bounswe2022group9/wiki/%22Sharing-an-art%22)
+   * Following a User: [here](https://github.com/bounswe/bounswe2022group9/wiki/Following-a-User)
+   * Commenting on Content: [here](https://github.com/bounswe/bounswe2022group9/wiki/%22Commenting-on-content%22-scenario)
+  ### 5. Project plan
+  Project plan can be accessed from [here](https://github.com/bounswe/bounswe2022group9/tree/master/resources) .
+  ### 6. Unit tests
+  
+  
