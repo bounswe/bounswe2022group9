@@ -505,27 +505,32 @@ Added features:
   |Pull Request Title|Link|
   |-----|:--------:|
   |**Final Milestone 3**|
-  |[Backend] Annotation Model|https://github.com/bounswe/bounswe2022group9/issues/499|
-  |[Hotfix] Image Upload|https://github.com/bounswe/bounswe2022group9/issues/506|
-  |Annotation create endpoint|https://github.com/bounswe/bounswe2022group9/issues/500 (reviewed)|
-  |[Backend] Annotation Endpoints|https://github.com/bounswe/bounswe2022group9/issues/503 (reviewed)|
-  |[Backend] [Test] Create and Update Annotation Tests|https://github.com/bounswe/bounswe2022group9/issues/508 (reviewed)|
-  |[Backend] User level information added to profile|https://github.com/bounswe/bounswe2022group9/issues/509 (reviewed)|
+  |[Backend] User recommendation|https://github.com/bounswe/bounswe2022group9/issues/511|
+  |Unit test recommend|https://github.com/bounswe/bounswe2022group9/issues/519|
+  |Rename test file|https://github.com/bounswe/bounswe2022group9/issues/522|
+  |Recommend art items|https://github.com/bounswe/bounswe2022group9/issues/501 (reviewed)|
+  |Added Art Item Recommendation Unit Tests|https://github.com/bounswe/bounswe2022group9/issues/504 (reviewed)|
+  |Notifications|https://github.com/bounswe/bounswe2022group9/issues/512 (reviewed)|
+  |bugfix: function call parameter fixed and URL test for notification|https://github.com/bounswe/bounswe2022group9/issues/525 (reviewed)|
   |**Milestone 2**|
-  |[Backend] Upgrade User Model|https://github.com/bounswe/bounswe2022group9/pull/325|
-  |[Backend] Create ArtItem Model|https://github.com/bounswe/bounswe2022group9/pull/327|
-  |Notification and Exhibition Models|https://github.com/bounswe/bounswe2022group9/pull/347|
-  |Creating Art Items|https://github.com/bounswe/bounswe2022group9/pull/357|
-  |Be/fix/ps issues 1|https://github.com/bounswe/bounswe2022group9/pull/349 (reviewed)|
-  |refactoring and some features|https://github.com/bounswe/bounswe2022group9/pull/338 (reviewed)|
-  |added "get_profile_info" endpoint|https://github.com/bounswe/bounswe2022group9/pull/344 (reviewed)|
-  |exhibition feature implemented|https://github.com/bounswe/bounswe2022group9/pull/362 (reviewed)|
-  |favourite comment features|https://github.com/bounswe/bounswe2022group9/pull/363 (reviewed)|
-  |response lists sorted|https://github.com/bounswe/bounswe2022group9/pull/364 (reviewed)|
-  |Feature Recommendation|https://github.com/bounswe/bounswe2022group9/pull/365 (reviewed)|
+  |Search Engine For a User|https://github.com/bounswe/bounswe2022group9/pull/376|
+  |Search art item|https://github.com/bounswe/bounswe2022group9/pull/385|
+  |Search exhibition|https://github.com/bounswe/bounswe2022group9/pull/388|
+  |Enhancement of helpers|https://github.com/bounswe/bounswe2022group9/pull/389|
+  |Count numbers Added|https://github.com/bounswe/bounswe2022group9/pull/390|
+  |Created a new empty project for Annotations and Dockerized it|https://github.com/bounswe/bounswe2022group9/pull/372 (reviewed)|
+  |Adding Database (dockerized) and empty sample app to Annotation Project|https://github.com/bounswe/bounswe2022group9/pull/374 (reviewed)|
+  |Fix search user|https://github.com/bounswe/bounswe2022group9/pull/377 (reviewed)|
+  |Unfollow helper function - deleting follower from followers list of followed user|https://github.com/bounswe/bounswe2022group9/pull/378 (reviewed)|
+  |Unit tests|https://github.com/bounswe/bounswe2022group9/pull/380 (reviewed)|
+  |Add proxy and uWSGI to empty Annotations project Docker Image|https://github.com/bounswe/bounswe2022group9/pull/391 (reviewed)|
+  |image upload fields changed|https://github.com/bounswe/bounswe2022group9/pull/394 (reviewed)|
+  |Unfollow endpoint|https://github.com/bounswe/bounswe2022group9/pull/418 (reviewed)|
+  |Unit tests|https://github.com/bounswe/bounswe2022group9/pull/429 (reviewed)|
   |**Milestone 1**|
-  |[Backend] Login|[#280](https://github.com/bounswe/bounswe2022group9/pull/280) (reviewed)|
-  |[Frontend] Axios and Routing|[#292](https://github.com/bounswe/bounswe2022group9/pull/292) (reviewed)|
+  |Update Milestone-Group-Review.md|[#314](https://github.com/bounswe/bounswe2022group9/pull/314)|
+  |Homepage of user implemented|[#341](https://github.com/bounswe/bounswe2022group9/pull/341) (reviewed)|
+  
   
   
   ### API Documentation
