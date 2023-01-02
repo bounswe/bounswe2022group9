@@ -23,10 +23,7 @@ I worked on API documentation and wrote login part.
 
 I created an installation and running guide for backend.
 
-I reviewed the pull requests about 
-- backend code of login page. 
-- frontend code of login page.
-- backend code of like and comment. 
+I reviewed many pull requests.
 
 I created models for art items, exhibition and notification. I upgraded the model of user.
 
