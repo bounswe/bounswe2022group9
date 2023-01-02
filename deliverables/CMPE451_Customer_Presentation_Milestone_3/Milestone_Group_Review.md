@@ -86,6 +86,7 @@ Added features:
 *  [Burak Ferit Aktan](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_3/individual_contributions_reports/Burak_Ferit_Aktan.md)
 *  [Furkan Özdemir](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_3/individual_contributions_reports/Furkan_Ozdemir.md)
 * [Ufuk Karagöz](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_3/individual_contributions_reports/Ufuk_Karagoz.md)
+*  [Ömer Faruk Şişman](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_3/individual_contributions_reports/Omer_Faruk_Sisman.md)
 
 ### Summary of Work Performed by Each Team Member
 
@@ -386,6 +387,7 @@ Added features:
   
   
   * **Ömer Faruk Şişman**
+
   |Issue Title|Link|
   |-----|:--------:|
   |**Final Milestone 3**|
@@ -472,6 +474,11 @@ Added features:
   |**Milestone 1**|
   |[Backend] Login|[#280](https://github.com/bounswe/bounswe2022group9/pull/280)|
   |[Backend] Signup(register) --reviewed|[#259](https://github.com/bounswe/bounswe2022group9/pull/259)|
+  
+  ### API Documentation
+   * [The API Documentation](https://documenter.getpostman.com/view/21597705/2s8YmSqfTg)
+   * Link to the API : `http://ec2-44-202-130-117.compute-1.amazonaws.com/api/v1`
+   * [3 Examples of API Calls](https://github.com/bounswe/bounswe2022group9/wiki/3-Example-API-Endpoint)
   
   ### Status of Requirements
     
