@@ -243,6 +243,63 @@ Added features:
   |[Frontend] Axios and Routing|[#292](https://github.com/bounswe/bounswe2022group9/pull/292) (reviewed)|
   |||
   
+  **Yağmur Göktaş**
+   
+   |Issue Title|Link|
+   |-----|:--------:|
+   |**Final Milestone 3**|
+   |[Mobile] Research on Annotations | https://github.com/bounswe/bounswe2022group9/issues/481 |
+   |[Mobile] Recommendation UI Page | https://github.com/bounswe/bounswe2022group9/issues/482 |
+   |[Mobile] Unit Tests | https://github.com/bounswe/bounswe2022group9/issues/483 |
+   |[Mobile] Text Annotations| https://github.com/bounswe/bounswe2022group9/issues/497|
+   |[Mobile] Unfollow button | https://github.com/bounswe/bounswe2022group9/issues/498 |
+   |[Mobile] User Recommendations | https://github.com/bounswe/bounswe2022group9/issues/536 |
+   | Individual Report | https://github.com/bounswe/bounswe2022group9/issues/523 |
+   | Weekly Efforts | https://github.com/bounswe/bounswe2022group9/issues/510 |
+   |**Milestone 2**|
+  |[Mobile] Art Item Display | https://github.com/bounswe/bounswe2022group9/issues/323 |
+  |[Mobile] Art Item Display Page Backend Connection | https://github.com/bounswe/bounswe2022group9/issues/352|
+  |[Mobile] Component to render user list | https://github.com/bounswe/bounswe2022group9/issues/353|
+  |[Mobile] Update on Signup | https://github.com/bounswe/bounswe2022group9/issues/354|
+  |[Mobile] User List Backend Connection | https://github.com/bounswe/bounswe2022group9/issues/359 |
+  |[Mobile] Location information on User List | https://github.com/bounswe/bounswe2022group9/issues/426 |
+  |[Mobile] Likes navigate to User | https://github.com/bounswe/bounswe2022group9/issues/431 |
+  |[Documentation] Individual Report of Yağmur Göktaş | https://github.com/bounswe/bounswe2022group9/issues/449 |
+  |[Mobile] Organizing Meeting Notes | https://github.com/bounswe/bounswe2022group9/issues/332 |
+  |**Milestone 1**|
+  |[Mobile] - Terms and Privacy Policy| https://github.com/bounswe/bounswe2022group9/issues/266 |
+  |[Mobile] - Profile Page | https://github.com/bounswe/bounswe2022group9/issues/276 |
+  |[Mobile] - Backend Connection for Login| https://github.com/bounswe/bounswe2022group9/issues/284 |
+  |[Mobile] -On the profile page, the images are disorganized according to the screen size| https://github.com/bounswe/bounswe2022group9/issues/297 |
+  |[Mobile] - Application name should be added to Terms and Privacy Policy| https://github.com/bounswe/bounswe2022group9/issues/295 |
+  |[Mobile] - Mock Art Image Collection| https://github.com/bounswe/bounswe2022group9/issues/285 |
+  |[Mobile] - Post number is wrong| https://github.com/bounswe/bounswe2022group9/issues/299 |
+  |[Mobile] - Determining background, primary and secondary colors for mobile application | https://github.com/bounswe/bounswe2022group9/issues/256 |
+  
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |**Final Milestone 3**|
+  | Individual report | https://github.com/bounswe/bounswe2022group9/pull/451 |
+  | Update Milestone2 Report | https://github.com/bounswe/bounswe2022group9/pull/473 |
+  | Feature/mobile/recommendations | https://github.com/bounswe/bounswe2022group9/pull/532 |
+  | Feature/mobile/unfollow | https://github.com/bounswe/bounswe2022group9/pull/534 |
+  | Feature/user recommendation | https://github.com/bounswe/bounswe2022group9/pull/537 |
+  | signup test | https://github.com/bounswe/bounswe2022group9/pull/543 |
+  |**Milestone 2**|
+  | Feature/art item display | https://github.com/bounswe/bounswe2022group9/pull/351 |
+  | Bugfix/signup update | https://github.com/bounswe/bounswe2022group9/pull/355 |
+  | Feature/user list comp | https://github.com/bounswe/bounswe2022group9/pull/358 |
+  | Feature/userlist backend | https://github.com/bounswe/bounswe2022group9/pull/422 |
+  | Feature/art item backend | https://github.com/bounswe/bounswe2022group9/pull/430 |
+  |**Milestone 1**|
+  | Feature/signup|[#265](https://github.com/bounswe/bounswe2022group9/pull/265)|
+  | Feature/privacy policy|[#275](https://github.com/bounswe/bounswe2022group9/pull/275)|
+  | Feature/mock profile|[#286](https://github.com/bounswe/bounswe2022group9/pull/286)|
+  | Feature/login backend|[#287](https://github.com/bounswe/bounswe2022group9/pull/287)|
+  | App name added to Terms and Privacy text|[#296](https://github.com/bounswe/bounswe2022group9/pull/296)|
+  | Bugfix/image size|[#298](https://github.com/bounswe/bounswe2022group9/pull/298)|
+  | Post number is corrected|[#300](https://github.com/bounswe/bounswe2022group9/pull/300)|
+   |||
   
   ### Status of Requirements
     
@@ -309,9 +366,69 @@ Added features:
   |[3.2.5.2](https://github.com/bounswe/bounswe2022group9/wiki/Requirement-Analysis#325-database)| Completed |
   
   
+ ## User Interface / User Experience
+  ### Mobile Application 
   
+  **Login Page** :
+  - Code : https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/Login/Login.js
+  - UI : 
+  <img src = "https://user-images.githubusercontent.com/56403828/210264580-ecb21373-e3b1-418c-aef9-667bc0934d94.jpeg" width="240">
   
+  **Signup Page** :
+  - Code : https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/Login/Signup.js
+  - UI : 
+  <img src = "https://user-images.githubusercontent.com/56403828/210264660-abcaabd3-e909-4230-8ea0-f728be00c023.jpeg" width="240">
+
+  **Home Page** :
+  - Code : https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/Home.js
+  - UI :  
+  <img src = "https://user-images.githubusercontent.com/56403828/210264777-e18e3a40-c540-4a7b-9d72-090b9be89fc5.jpeg" width="240">
+
+  **Profile Page** :
+  - Code : https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/Profile.js
+  - UI : 
+  <img src = "https://user-images.githubusercontent.com/56403828/210264979-52b80410-a8ac-4561-96f2-fd9e6db7f6d7.jpeg" width="240">
   
+  **Art Item Page** :
+  - Code : https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/ArtItemDisplay.js
+  - UI : 
+  <img src = "https://user-images.githubusercontent.com/56403828/210265172-4e803cb9-a1df-4e7c-8e01-87ef91b40033.jpeg" width="240"><img src = "https://user-images.githubusercontent.com/56403828/210265266-786b635e-3896-4613-95b6-2df1ed4a0f2c.jpeg" width="240">
+
+  **Search Page** :
+  - Code : https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/Search.js
+  - UI :  
+  <img src = "https://user-images.githubusercontent.com/56403828/210265002-59017b0c-43a0-46c3-811a-ab91e4a39658.jpeg" width="240"><img src = "https://user-images.githubusercontent.com/56403828/210265101-69f0139f-6244-418d-bed8-50dcc7be6e8e.jpeg" width="240">
+  
+  **Notifications Page** :
+  - Code : https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/Notifications.js
+  - UI :  
+  <img src = "https://user-images.githubusercontent.com/56403828/210265657-4b22b6cb-84d9-4337-8fee-02b57d4b4aab.jpeg" width="240">
+
+  **Post Recommendations Page** :
+  - Code : https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/Feed.js
+  - UI :  
+  <img src = "https://user-images.githubusercontent.com/56403828/210264802-fdac5de6-201f-45de-ba0b-459a83748a82.jpeg" width="240">
+
+  **User Recommendations Page** :
+  - Code : https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/Feed.js
+  - UI :  
+  <img src = "https://user-images.githubusercontent.com/56403828/210264861-73e1a2ad-7523-4869-87c8-620a2e5e5d1d.jpeg" width="240">
+
+  **Settings Page**:
+  - Code : https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/Settings.js
+  - UI : 
+  <img src = "https://user-images.githubusercontent.com/56403828/210265227-e0be7417-1e44-44ae-8d3e-41c536b02e42.jpeg" width="240">
+  
+  **Create Annotations Page**:
+  - Code : https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/Annotations.js
+  - UI :  
+  <img src = "https://user-images.githubusercontent.com/56403828/210265671-b0c8de7e-e3eb-4344-964a-54fe021c9390.jpeg" width="240">
+
+  **Create Art Item Page**:
+  - Code : https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/mobile/screens/Profile.js
+  - UI : 
+  <img src = "https://user-images.githubusercontent.com/56403828/210265150-6cc39ca3-6b7a-43a0-894e-2a4195898c70.jpeg" width="240">
+
   
   
 
