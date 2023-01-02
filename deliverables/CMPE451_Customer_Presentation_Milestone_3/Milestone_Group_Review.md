@@ -84,6 +84,7 @@ Added features:
 
 ### Individual Contributions Reports
 *  [Burak Ferit Aktan](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_3/individual_contributions_reports/Burak_Ferit_Aktan.md)
+*  [Furkan Özdemir](https://github.com/bounswe/bounswe2022group9/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_3/individual_contributions_reports/Furkan_Ozdemir.md)
 
 ### Summary of Work Performed by Each Team Member
 
