@@ -173,6 +173,7 @@ Here you can see view unit tests for:
     - get profile information
     - update profile information
 * [signup view tests - (functions named test_signup and test_signup_when_user_already_exists)](https://github.com/bounswe/bounswe2022group9/blob/master/art-community-platform/backend/app/api/tests/test_auth.py#L40)
+Here you can see 2 unit tests: one testing a valid signup request, other sign up request of a user already signed up
 
 ##### Milestone 3
 
